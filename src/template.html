@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MARÉVYS PARIS — Rune, Tarot and I Ching readings, paired with fragrance and objects for everyday rituals.">
+<meta name="theme-color" content="#102524">
+<title>MARÉVYS PARIS — Symbolic Readings & Everyday Rituals</title>
+<!--STYLES-->
+</head>
+<body class="experience-v11 experience-v15 experience-v16 experience-v17 experience-v18 experience-v19">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="announcement">RUNE · TAROT · I CHING READINGS OPEN TO EXPLORE · PRODUCT COLLECTION NOT YET FOR SALE</div>
+<nav aria-label="Main navigation">
+  <a class="brand-identity brand-home" href="#main-content" onclick="goHome(event)" aria-label="Return to home"><img data-image="logo" alt="MARÉVYS"><span class="logo">MARÉVYS<small>PARIS</small></span></a>
+  <div class="links">
+    <button type="button" onclick="navigateSection(event,'reading-systems')">Choose a reading</button>
+    <button type="button" onclick="openCollection('ALL')">The collection</button>
+    <button type="button" onclick="openPath()">My readings</button>
+    <button type="button" onclick="navigateSection(event,'about')">About MARÉVYS</button>
+  </div>
+  <div class="nav-actions">
+    <button type="button" onclick="openBag()">Wishlist <span id="bagCount">0</span></button>
+    <label class="language-control"><span class="sr-only">Language</span><select data-language aria-label="Language"><option value="en" lang="en">EN</option><option value="fr" lang="fr">FR</option><option value="zh" lang="zh-Hans">中文</option></select></label>
+    <button type="button" class="menu-toggle" onclick="toggleMenu()" aria-controls="mobileMenu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button type="button" onclick="navigateSection(event,'reading-systems')">Choose a reading</button>
+  <button type="button" onclick="start()">Rune reading</button>
+  <button type="button" onclick="startTarot()">Tarot reading</button>
+  <button type="button" onclick="startIChing()">I Ching reading</button>
+  <button type="button" onclick="openCollection('ALL')">The collection</button>
+  <button type="button" onclick="openPath()">My readings</button>
+  <button type="button" onclick="navigateSection(event,'about')">About MARÉVYS</button>
+  <button type="button" onclick="openBag()">Wishlist <span id="bagCountMobile">0</span></button>
+  <button type="button" onclick="navigateSection(event,'questions')">Questions & answers</button>
+</div>
+<main id="main-content" tabindex="-1">
+<section class="hero" aria-labelledby="homeHeading">
+  <div class="hero-copy">
+    <h1 id="homeHeading">What lies beneath.</h1>
+    <div class="entry-actions">
+      <button type="button" class="primary" onclick="navigateSection(event,'reading-systems')">Choose a reading</button>
+    </div>
+  </div>
+</section>
+
+<section class="discovery-section reading-systems reading-experience-merged reveal-on-scroll" id="reading-systems" aria-labelledby="systemsHeading">
+  <div class="section-heading systems-heading">
+    <div><div class="eyebrow">01 / CHOOSE YOUR READING</div><h2 id="systemsHeading">Choose by<br>what you need to know.</h2></div>
+    <p>Runes isolate one priority. Tarot shows the forces shaping your week. The I Ching reads the structure and timing of a larger change. Choose the horizon that fits your question.</p>
+  </div>
+  <div class="reading-entry-list">
+    <article class="reading-entry system-rune" aria-label="Rune reading and example">
+      <figure class="system-image"><img data-image="runes" alt="Natural dark rune stones"><figcaption>24 · ELDER FUTHARK</figcaption></figure>
+      <div class="reading-entry-copy"><div class="system-meta"><span>7-DAY FOCUS</span><small>ONE BLIND DRAW</small></div><h3>Runes</h3><p class="entry-promise">Find the one thing that matters this week.</p><p class="entry-purpose">One symbol narrows a crowded question into a supporting force, a central friction and one action within your control.</p><blockquote class="entry-case"><small>EXAMPLE · WORK</small><strong>Should I accept this change in my work?</strong><p>Move toward the opportunity only after the role, resources and decision boundary are stated in writing. This week, ambiguity is the risk to watch.</p></blockquote><button type="button" class="primary dark-primary" onclick="start()">Begin my Rune reading</button></div>
+    </article>
+    <article class="reading-entry system-tarot" aria-label="Tarot reading and example">
+      <figure class="system-image"><img data-image="oracle" alt="Unbranded symbolic cards"><figcaption>XXII · MAJOR ARCANA</figcaption></figure>
+      <div class="reading-entry-copy"><div class="system-meta"><span>7-DAY OUTLOOK</span><small>THREE-CARD SPREAD</small></div><h3>Tarot</h3><p class="entry-promise">See the full pattern of your week.</p><p class="entry-purpose">Three illustrated cards show the week’s theme, its opening and its main friction across the parts of life relevant to your question.</p><blockquote class="entry-case"><small>EXAMPLE · RELATIONSHIP</small><strong>Why does this relationship feel unable to move?</strong><p>The pattern points to unequal responsibility. Watch for vague promises and repeated postponement; one clear boundary will reveal more than another attempt to keep the peace.</p></blockquote><button type="button" class="primary dark-primary" onclick="startTarot()">Begin my Tarot reading</button></div>
+    </article>
+    <article class="reading-entry system-iching" aria-label="I Ching reading and example">
+      <figure class="system-image"><img data-image="yi" alt="An unbranded I Ching book and coins"><figcaption>64 · SIX-LINE CAST</figcaption></figure>
+      <div class="reading-entry-copy"><div class="system-meta"><span>3–12 MONTH HORIZON</span><small>STRUCTURE & TIMING</small></div><h3>I Ching</h3><p class="entry-promise">Know when to advance, hold or change.</p><p class="entry-purpose">The primary hexagram maps the present field, changing lines locate the turning point and the relating hexagram shows a conditional direction.</p><blockquote class="entry-case"><small>EXAMPLE · PROJECT</small><strong>Should this project begin now, or wait?</strong><p>Build the foundation now, but delay the public launch. The next phase depends on confirming the people, materials and proof that can sustain a longer commitment.</p></blockquote><button type="button" class="primary dark-primary" onclick="startIChing()">Begin my I Ching reading</button></div>
+    </article>
+  </div>
+</section>
+
+<section class="discovery-section collection-discovery reveal-on-scroll" id="collections" aria-labelledby="collectionHeading">
+  <div class="section-heading">
+    <div><div class="eyebrow">02 / THE COLLECTION</div><h2 id="collectionHeading">Objects for<br>the everyday.</h2></div>
+    <div><p>Fragrance, tactile objects and paper for small moments of attention. Explore them independently: a reading is never required.</p><span class="release-badge">Collection preview — not yet for sale</span></div>
+  </div>
+  <figure class="collection-world-image"><img data-image="ritualObjects" alt="An editorial still life of eight ritual objects"><figcaption><span>THE EXPANDING ATELIER</span><p>Pulse oil, solid perfume, incense, candlelight, ritual linen, tea, paper and carved stone — a wider family of objects designed around moments of use.</p></figcaption></figure>
+  <div class="section-end collection-entry"><p>Twelve individual objects, each photographed in its own complete composition. Explore materials, energy roles and the rituals they can form together.</p><button type="button" class="primary dark-primary" onclick="openCollection('ALL')">Explore all twelve objects</button></div>
+</section>
+
+<section class="discovery-section everyday-ritual reveal-on-scroll" id="everyday-ritual" aria-labelledby="ritualHeading">
+  <figure class="ritual-photograph"><img data-image="ritualEveryday" alt="A quiet everyday ritual with linen, candlelight, tea and writing"><figcaption>SMALL GESTURES. YOUR OWN PACE.</figcaption></figure>
+  <div class="ritual-explainer">
+    <div class="eyebrow">03 / INTO EVERYDAY LIFE</div><h2 id="ritualHeading">From a reading to<br>a real ritual.</h2>
+    <p>After your interpretation, four objects form one practical sequence. Complementary cues of material, temperature, scent, light or writing help shift the atmosphere without forcing every set into the same formula.</p>
+    <div class="practice-example"><span>REST · EXAMPLE RITUAL SET</span><h3>Fifteen quiet minutes. One clear ending.</h3><ol><li>Unfold CLOTH 01 and leave the phone outside its edge.</li><li>Light VEIL 01 to create a contained interval.</li><li>Brew GROUND 01 and let warmth slow the pace.</li><li>Close with one sentence in RETURN 01.</li></ol></div>
+    <p class="quiet-note">The complete set is selected from your question and reading. You will see exactly what each object contributes before choosing it.</p>
+    <button type="button" class="text-link" onclick="navigateSection(event,'reading-systems')">Receive my matched ritual →</button>
+  </div>
+</section>
+
+<section class="discovery-section record-discovery reveal-on-scroll" id="my-readings" aria-labelledby="recordHeading">
+  <div class="record-landscape"><img data-image="path" alt="A quiet stone path beside water"></div>
+  <div class="record-content">
+    <div><div class="eyebrow">04 / THE CERCLE ARCHIVE</div><h2 id="recordHeading">Return to<br>what you noticed.</h2><p>Your readings are kept on this device. Sign in or join MARÉVYS CERCLE to reopen the symbols, questions and rituals you chose to keep.</p><p class="quiet-note">The account gate is an interactive preview. It does not create an account, transmit an email address or synchronize your records.</p><button type="button" class="primary dark-primary" onclick="openPath()">Unlock my archive</button></div>
+    <div class="record-preview is-member-locked"><small>CERCLE MEMBER ARCHIVE</small><div class="path-preview" id="homePath"></div><button type="button" class="text-link" onclick="navigateSection(event,'reading-systems')">Begin a new reading →</button></div>
+  </div>
+</section>
+
+<section class="discovery-section about-discovery about-manifesto reveal-on-scroll" id="about" aria-labelledby="aboutHeading">
+  <figure class="about-manifesto-image"><img data-image="aboutHouse" alt="A cultural ritual atelier with paper, mineral pigment, linen and bronze tools"><figcaption>REVEALED BY LIGHT</figcaption></figure>
+  <div class="about-statement">
+    <div><div class="eyebrow">05 / ABOUT MARÉVYS</div><h2 id="aboutHeading">Symbols begin the reading.<br>Objects bring it into life.</h2></div>
+    <p>MARÉVYS is a cultural ritual house. Runes, Tarot and the I Ching offer distinct ways to see a real question; fragrance, touch, light and writing translate that insight into something you can actually do.</p>
+  </div>
+  <ol class="house-method">
+    <li><span>01</span><strong>READ</strong><p>Let one symbolic tradition respond to the question you actually brought.</p></li>
+    <li><span>02</span><strong>TRANSLATE</strong><p>Turn the symbolic pattern into a direct response and one action that can be tested in real life.</p></li>
+    <li><span>03</span><strong>EMBODY</strong><p>Use scent, touch, light and writing to give the response a place in the day.</p></li>
+  </ol>
+  <button type="button" class="text-link" onclick="openMaison('JOURNAL')">Read the house notes →</button>
+</section>
+
+<section class="discovery-section faq-discovery reveal-on-scroll" id="questions" aria-labelledby="faqHeading">
+  <div><div class="eyebrow">BEFORE YOU BEGIN</div><h2 id="faqHeading">A few clear answers.</h2><p>What is available, what is saved, and what this experience can offer.</p></div>
+  <div class="faq-list">
+    <details><summary>Which reading should I choose?</summary><p>Choose Runes to isolate one priority for the next seven days, Tarot to see a three-part weekly pattern, or the I Ching to examine structure and timing across a larger 3–12 month change.</p></details>
+    <details><summary>What is a rune reading?</summary><p>You blind-draw one of the 24 Elder Futhark characters. MARÉVYS places its historical identity inside a modern seven-day framework: supporting force, blocked or excessive expression, warning signs and one controlled action.</p></details>
+    <details><summary>Are the stones drawn blind? Do runes have upright and reversed positions?</summary><p>Yes. The rune experience reshuffles all 24 stones and asks you to blind-draw one. MARÉVYS does not assign upright or reversed positions: every rune is considered through both its central meaning and its shadow edge.</p></details>
+    <details><summary>Is the reading free? Do I need an account?</summary><p>The current reading preview is free and needs no account to begin. The personal archive demonstrates a future member feature: sign in or join CERCLE to reopen past readings.</p></details>
+    <details><summary>Are Tarot cards selected blind? Are reversed cards used?</summary><p>Yes. The 22 Major Arcana remain face down until you select them. This edition does not use reversed cards; each card is read through both its central expression and its shadow or caution.</p></details>
+    <details><summary>How is an I Ching hexagram formed?</summary><p>You cast three virtual coins six times, placing the lines from bottom to top. The primary hexagram shows the present structure; changing lines locate the turning conditions; the relating hexagram shows a conditional direction rather than a fixed final outcome.</p></details>
+    <details><summary>Can I buy the products?</summary><p>Not in this preview. The collection shows product concepts, not final offers for sale. You can browse details and save a wishlist; ordering, payment and delivery are not available.</p></details>
+    <details><summary>Where are my readings and wishlist saved?</summary><p>In this preview they remain only in this browser on this device. The member gate demonstrates future access but does not create a cloud account or synchronization. Clearing browser data or using a private session may remove them.</p></details>
+    <details><summary>How does energy matching work?</summary><p>MARÉVYS connects the context of your question with the themes in your chosen symbolic system, then composes four sensory objects into one practical ritual. For the full explanation, see the Reading notice.</p></details>
+    <details><summary>Can I save Tarot and I Ching readings?</summary><p>Yes. Completed readings from all three systems can be saved on this device with your reflection. Reopening the archive passes through the CERCLE member preview.</p></details>
+  </div>
+</section>
+
+<section class="closing-invitation">
+  <div class="eyebrow">ONE QUESTION IS ENOUGH</div><h2>Bring the question.<br>We will guide the rest.</h2>
+  <div class="entry-actions"><button type="button" class="primary" onclick="navigateSection(event,'reading-systems')">Find my reading</button></div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="footer-brand"><div class="brand-identity"><img data-image="logo" alt="MARÉVYS"><div class="logo">MARÉVYS<small>PARIS</small></div></div><p>Runes, Tarot, the I Ching and objects for everyday rituals.</p></div>
+  <div class="footer-col"><small>READINGS</small><button type="button" onclick="start()">Runes</button><button type="button" onclick="startTarot()">Tarot</button><button type="button" onclick="startIChing()">I Ching</button><button type="button" onclick="openPath()">My readings</button></div>
+  <div class="footer-col"><small>EXPLORE</small><button type="button" onclick="openCollection('ALL')">The collection</button><button type="button" onclick="openBag()">Wishlist</button><button type="button" onclick="navigateSection(event,'about')">About MARÉVYS</button><button type="button" onclick="openMaison('JOURNAL')">House notes</button></div>
+  <div class="footer-col"><small>INFORMATION</small><button type="button" onclick="navigateSection(event,'questions')">Questions & answers</button><button type="button" onclick="openLegal('privacy')">Privacy</button><button type="button" onclick="openLegal('terms')">Terms</button><button type="button" onclick="openLegal('reading')">Reading notice</button></div>
+  <div class="footer-bottom"><span>© 2026 MARÉVYS PARIS</span><span>INTERACTIVE PREVIEW · NO ORDERS OR PAYMENTS</span></div>
+</footer>
+
+<div class="overlay" id="reading" aria-label="Rune reading">
+<div class="readnav"><a class="brand-identity brand-home" href="#main-content" onclick="goHome(event)" aria-label="Return to home"><img data-image="logo" alt="MARÉVYS"><span class="logo">MARÉVYS<small>PARIS</small></span></a><div class="reading-progress" id="readingProgress"></div><button class="close" onclick="closeReading()">×</button></div>
+<div class="reading-status" id="readingStatus" aria-live="polite"></div>
+<section class="stage active" id="s0"><div class="panel">
+  <div class="journey-step">01 · YOUR QUESTION</div><div class="eyebrow">RUNE READING</div><h2 id="readingIntentionTitle">What is the one question you want to see more clearly?</h2>
+  <div class="reading-onboarding">Write it as you would say it to someone you trust. You can also leave the page empty for an open reading.</div>
+  <label class="question-label" for="question">Your question</label>
+  <textarea id="question" placeholder="For example: What am I not seeing about this change?" maxlength="4000"></textarea>
+  <p class="reading-privacy" id="questionPrivacy">In this preview, your question stays on this device.</p>
+  <button type="button" class="primary" onclick="continueFromQuestion()">Continue with this question</button>
+</div></section>
+<section class="stage" id="s2"><div class="panel"><div class="eyebrow">02 · BLIND DRAW</div><h2 id="drawHeading">Let one come forward.</h2><p class="intro" id="drawHint">Choose a stone without trying to explain why.</p><p class="blind-draw-note" id="blindDrawNote"></p><div class="draw-slots" id="drawSlots" role="group" aria-label="Selected positions"></div><p class="draw-status" id="drawStatus" role="status" aria-live="polite"></p><div class="ritual-cue" id="ritualCue"><span>REST YOUR ATTENTION HERE</span><div class="breath-orbit"></div><p>Notice the question once. Then let it go.</p></div><button class="stage-back text-link" onclick="go(0)">← BACK TO MY QUESTION</button><div class="stones-wrap"><div class="draw-glow"></div><div class="stones" id="stones" role="group" aria-labelledby="drawHeading" aria-describedby="drawHint blindDrawNote drawStatus"></div></div><button type="button" class="primary begin-reveal" id="beginReveal" onclick="beginReveal()" hidden>Reveal my symbol</button></div></section>
+<section class="stage reveal-stage" id="s3"><div class="reveal-light"></div><div class="panel reveal-panel"><div class="eyebrow">REVEALED BY LIGHT</div><div class="reveal-stones" id="revealStones"></div><div class="reveal-caption" id="revealCaption">A SYMBOL COMES FORWARD</div><h2 id="revealName"></h2><p class="intro" id="revealTitle"></p><p class="reveal-announcement" id="revealAnnouncement" role="status" aria-live="polite"></p><button type="button" class="primary" id="revealNext" onclick="revealNext()" hidden>Reveal the next symbol</button><button type="button" class="primary" id="enterReading" onclick="showReading()" hidden>ENTER THE READING</button></div></section>
+<section class="stage" id="s4"><div class="panel reading editorial-reading">
+  <div class="reading-result-head"><div class="journey-step">04 · YOUR INTERPRETATION</div><div class="reading-meta" id="readMeta"></div><h2 id="readTitle"></h2><div class="interpretation-source" id="interpretationSource" aria-live="polite"></div></div>
+  <div class="interpretation-loading" id="interpretationLoading" role="status" aria-live="polite" hidden><span class="interpretation-loading-mark" aria-hidden="true"></span><p>Connecting your question, intention and symbols…</p></div>
+  <div class="reading-interpretation" id="readBody"></div>
+  <div class="reading-next-actions"><button type="button" class="primary" id="runeContinueEnergy" onclick="goEnergyMatch()" disabled>Reveal my matched ritual</button></div>
+</div></section>
+<section class="stage" id="s5"><div class="panel energy-match-panel">
+  <div class="journey-step">05 · THE REVEAL</div><div class="eyebrow">YOUR PRIVATE MATCH</div><h2>Your ritual set is ready.</h2><p class="stage-intro">Try this four-object sequence to work with the difficult part of your reading. You will see what each object is, how to use it and why it belongs here.</p>
+  <div class="energy-match-profile" id="energyMatchProfile" aria-live="polite"></div>
+  <div class="energy-signals" id="energySignals"></div>
+  <div class="energy-primary-product" id="energyPrimaryProduct"></div>
+  <div class="stage-navigation"><button type="button" class="stage-back text-link" onclick="go(4)">← BACK TO MY READING</button><button type="button" class="primary" onclick="showRitualPlan()">Begin my ritual</button></div>
+</div></section>
+<section class="stage" id="s6"><div class="panel ritual-match-panel">
+  <div class="journey-step">06 · HOW TO USE IT</div><div class="eyebrow">YOUR COMPLETE RITUAL</div><h2>A ritual you can actually follow.</h2><p class="stage-intro">Move through the four bookmarks in order. Each object has one action, one duration and one practical role in changing the atmosphere around your question.</p>
+  <div class="ritual-plan" id="ritualPlan" aria-live="polite"></div>
+  <div class="matched-products" id="matchedProducts"></div>
+  <div class="matched-product-actions"><button type="button" class="primary" onclick="selectMatchedSet()">Keep the complete ritual set</button></div>
+  <button type="button" class="stage-back text-link" onclick="go(5)">← BACK TO MY ENERGY MATCH</button>
+</div></section>
+<section class="stage" id="s7"><div class="panel saved-reading-panel">
+  <div class="journey-step">07 · KEEP THE READING</div><div class="eyebrow">SAVED IN THIS BROWSER</div><h2>Your reading, written down.</h2>
+  <div class="reading-notebook">
+    <figure class="reading-notebook-art" role="img" aria-label="An open RETURN 01 journal ready for a private reading record"></figure>
+    <div class="reading-notebook-page"><div class="saved save-reveal" id="savedSummary"></div>
+      <div class="reflection final-reflection"><label for="reflection">One sentence to remember</label><textarea id="reflection" placeholder="What feels important to remember?" maxlength="8000"></textarea><button type="button" class="text-link" onclick="saveReading(false)">Update my note</button></div>
+    </div>
+  </div>
+  <aside class="return-journal-invitation"><small>CONTINUE THE RECORD</small><h3>Write the next seven days into RETURN 01.</h3><p>Keep the facts, changes and decisions that follow this reading in one place.</p><button type="button" class="text-link" onclick="openProduct('RETURN 01')">View RETURN 01 →</button></aside>
+  <div class="saved-note"><p>This reading is kept on this device. Join CERCLE or use the member sign-in preview to reopen it later.</p><p id="savedStorageNote" role="status"></p></div>
+  <div class="circle-invitation"><small>MARÉVYS CERCLE · PREVIEW</small><h3>Let the reading continue beyond today.</h3><p>A future weekly letter with one personal prompt, one ritual and early access to new objects.</p><form onsubmit="subscribe(event)"><label class="sr-only" for="readingEmail">Email address</label><input id="readingEmail" type="email" placeholder="Email address" required><button type="submit" class="primary">Join the future circle</button></form><p class="circle-preview-notice">Preview only — entering an email does not create a subscription or send data.</p></div>
+  <div class="entry-actions"><button type="button" class="primary" onclick="openPath()">Open my readings</button><button type="button" class="text-link" onclick="goHome(event)">Return to home</button></div>
+</div></section>
+</div>
+
+<div class="overlay oracle-overlay" id="oracleReading" aria-labelledby="oracleReadingTitle" data-oracle-system="tarot">
+  <div class="readnav oracle-readnav">
+    <a class="brand-identity brand-home" href="#main-content" onclick="goHome(event)" aria-label="Return to home"><img data-image="logo" alt="MARÉVYS"><span class="logo">MARÉVYS<small>PARIS</small></span></a>
+    <div class="oracle-progress" id="oracleProgress" aria-label="Reading progress"></div>
+    <button type="button" class="close oracle-close" onclick="closeOracleReading()" aria-label="Close reading">×</button>
+  </div>
+  <div class="oracle-status" id="oracleStatus" role="status" aria-live="polite"></div>
+
+  <section class="stage oracle-stage active" id="o0" aria-labelledby="oracleReadingTitle"><div class="panel oracle-panel oracle-intention-panel">
+    <div class="journey-step">01 · YOUR QUESTION</div><div class="eyebrow" id="oracleSystemLabel">SYMBOLIC READING</div>
+    <h2 id="oracleReadingTitle">What is the one question you want to see more clearly?</h2>
+    <p class="oracle-onboarding">Write it as you would say it to someone you trust. You can also leave the page empty for an open reading.</p>
+    <label class="question-label" for="oracleQuestion">Your question</label>
+    <textarea id="oracleQuestion" placeholder="For example: What am I not seeing about this relationship?" maxlength="4000"></textarea>
+    <p class="reading-privacy" id="oraclePrivacy">In this preview, your question stays on this device.</p>
+    <button type="button" class="primary" onclick="oracleContinueQuestion()">Continue with this question</button>
+  </div></section>
+
+  <section class="stage oracle-stage oracle-draw-stage" id="o2" aria-labelledby="oracleDrawHeading"><div class="panel oracle-panel oracle-draw-panel">
+    <div class="eyebrow">02 · DRAW OR CAST</div>
+    <h2 id="oracleDrawHeading">Let the pattern form.</h2>
+    <p class="intro" id="oracleDrawHint">Follow the ritual in front of you. Nothing is revealed ahead of time.</p>
+    <button type="button" class="stage-back text-link" onclick="oracleGo(0)">← BACK TO MY QUESTION</button>
+    <div class="oracle-draw-area" id="oracleDrawArea"></div>
+    <p class="oracle-draw-status" id="oracleDrawStatus" role="status" aria-live="polite"></p>
+  </div></section>
+
+  <section class="stage oracle-stage oracle-reveal-stage" id="o3" aria-labelledby="oracleRevealTitle"><div class="oracle-reveal-light" aria-hidden="true"></div><div class="panel oracle-panel oracle-reveal-panel">
+    <div class="eyebrow">03 · REVEAL</div>
+    <div class="oracle-reveal-area" id="oracleRevealArea"></div>
+    <p class="oracle-reveal-kicker" id="oracleRevealKicker">THE SYMBOLIC PATTERN</p>
+    <h2 id="oracleRevealTitle">Your symbolic pattern</h2>
+    <p class="intro" id="oracleRevealText"></p>
+    <p class="oracle-reveal-status" id="oracleRevealStatus" role="status" aria-live="polite"></p>
+    <button type="button" class="primary" id="oracleRevealNext" onclick="advanceOracleReveal()" hidden>Continue the reveal</button>
+  </div></section>
+
+  <section class="stage oracle-stage" id="o4" aria-labelledby="oracleInterpretationTitle"><div class="panel oracle-panel oracle-interpretation-panel editorial-reading">
+    <div class="oracle-result-head"><div class="journey-step">04 · YOUR INTERPRETATION</div><div class="oracle-read-meta" id="oracleReadMeta"></div><h2 id="oracleInterpretationTitle">Your interpretation.</h2><div class="interpretation-source" id="oracleInterpretationSource" aria-live="polite"></div></div>
+    <div class="interpretation-loading oracle-interpretation-loading" id="oracleInterpretationLoading" role="status" aria-live="polite" hidden><span class="interpretation-loading-mark" aria-hidden="true"></span><p>Connecting your question, intention and symbols…</p></div>
+    <div class="oracle-interpretation" id="oracleInterpretation"></div>
+    <div class="oracle-reading-next"><button type="button" class="primary" id="oracleContinueEnergy" onclick="oracleContinueEnergy()" disabled>Reveal my matched ritual</button></div>
+  </div></section>
+
+  <section class="stage oracle-stage" id="o5" aria-labelledby="oracleEnergyTitle"><div class="panel oracle-panel oracle-energy-panel">
+    <div class="journey-step">05 · THE REVEAL</div><div class="eyebrow">YOUR PRIVATE MATCH</div><h2 id="oracleEnergyTitle">Your ritual set is ready.</h2><p class="stage-intro">Try this four-object sequence to work with the difficult part of your reading. You will see what each object is, how to use it and why it belongs here.</p>
+    <div class="energy-match-profile oracle-energy-profile" id="oracleEnergyProfile" aria-live="polite"></div>
+    <div class="energy-signals oracle-energy-signals" id="oracleEnergySignals"></div>
+    <div class="energy-primary-product oracle-primary-product" id="oraclePrimaryProduct"></div>
+    <div class="stage-navigation"><button type="button" class="stage-back text-link" onclick="oracleGo(4)">← BACK TO MY INTERPRETATION</button><button type="button" class="primary" onclick="oracleShowRitual()">Begin my ritual</button></div>
+  </div></section>
+
+  <section class="stage oracle-stage" id="o6" aria-labelledby="oracleRitualTitle"><div class="panel oracle-panel oracle-ritual-panel">
+    <div class="journey-step">06 · HOW TO USE IT</div><div class="eyebrow">YOUR COMPLETE RITUAL</div><h2 id="oracleRitualTitle">A ritual you can actually follow.</h2><p class="stage-intro">Move through the four bookmarks in order. Each object has one action, one duration and one practical role in changing the atmosphere around your question.</p>
+    <div class="ritual-plan oracle-ritual-plan" id="oracleRitualPlan" aria-live="polite"></div>
+    <div class="matched-products oracle-matched-products" id="oracleMatchedProducts"></div>
+    <div class="matched-product-actions oracle-product-actions"><button type="button" class="primary" onclick="oracleSaveSet('all')">Keep the complete ritual set</button></div>
+    <button type="button" class="stage-back text-link" onclick="oracleGo(5)">← BACK TO MY ENERGY MATCH</button>
+  </div></section>
+
+  <section class="stage oracle-stage" id="o7" aria-labelledby="oracleSavedTitle"><div class="panel oracle-panel oracle-saved-panel saved-reading-panel">
+    <div class="journey-step">07 · KEEP THE READING</div><div class="eyebrow">SAVED IN THIS BROWSER</div><h2 id="oracleSavedTitle">Your reading, written down.</h2>
+    <div class="reading-notebook">
+      <figure class="reading-notebook-art" role="img" aria-label="An open RETURN 01 journal ready for a private reading record"></figure>
+      <div class="reading-notebook-page"><div class="saved oracle-saved-summary" id="oracleSavedSummary" aria-live="polite"></div>
+        <div class="reflection final-reflection"><label for="oracleReflection">One sentence to remember</label><textarea id="oracleReflection" placeholder="What feels important to remember?" maxlength="8000"></textarea><button type="button" class="text-link" onclick="saveOracleReading(false)">Update my note</button></div>
+      </div>
+    </div>
+    <aside class="return-journal-invitation"><small>CONTINUE THE RECORD</small><h3>Write what changes next into RETURN 01.</h3><p>Keep the facts, patterns and decisions that follow this reading in one place.</p><button type="button" class="text-link" onclick="openOracleProduct('RETURN 01')">View RETURN 01 →</button></aside>
+    <div class="saved-note"><p>This reading, its ritual and your own words are kept on this device. Join CERCLE or use the member sign-in preview to reopen them later.</p><p id="oracleSavedStorageNote" role="status"></p></div>
+    <div class="circle-invitation"><small>MARÉVYS CERCLE · PREVIEW</small><h3>Let the reading continue beyond today.</h3><p>A future weekly letter with one personal prompt, one ritual and early access to new objects.</p><form onsubmit="subscribe(event)"><label class="sr-only" for="oracleReadingEmail">Email address</label><input id="oracleReadingEmail" type="email" placeholder="Email address" required><button type="submit" class="primary">Join the future circle</button></form><p class="circle-preview-notice">Preview only — entering an email does not create a subscription or send data.</p></div>
+    <div class="entry-actions"><button type="button" class="primary" onclick="openPath()">Open my readings</button><button type="button" class="text-link" onclick="goHome(event)">Return to home</button></div>
+  </div></section>
+</div>
+
+<div class="strategy-overlay" id="strategyOverlay" aria-labelledby="strategyTitle">
+ <div class="strategy-panel">
+  <button class="close dark-close" onclick="closeStrategy()">×</button>
+  <div class="eyebrow" id="strategyEyebrow">THE WORLD</div>
+  <h2 id="strategyTitle"></h2>
+  <div id="strategyBody"></div>
+ </div>
+</div>
+
+<div class="legal-drawer" id="legalDrawer" aria-labelledby="legalTitle">
+  <div class="legal-inner">
+    <button class="close dark-close" onclick="closeLegal()">×</button>
+    <div class="eyebrow" id="legalEyebrow">LEGAL</div>
+    <h2 id="legalTitle">Privacy</h2>
+    <div class="legal-copy serif" id="legalCopy"></div>
+  </div>
+</div>
+
+<div class="maison-drawer" id="maisonDrawer" aria-labelledby="maisonTitle">
+  <div class="maison-topbar">
+    <a class="brand-identity brand-home" href="#main-content" onclick="goHome(event)" aria-label="Return to home"><img data-image="logo" alt="MARÉVYS"><span class="logo">MARÉVYS<small>PARIS</small></span></a>
+    <button class="close dark-close" onclick="closeMaison()">×</button>
+  </div>
+  <div class="maison-content">
+    <div class="eyebrow" id="maisonEyebrow">THE HOUSE</div>
+    <h1 id="maisonTitle">PARFUMS</h1>
+    <p class="maison-intro serif" id="maisonIntro"></p>
+    <div class="collection-notice" id="collectionNotice">Product concepts, not final offers for sale. Save favorites to your wishlist; ordering and payment are not available.</div>
+    <div class="collection-filters" id="collectionFilters" role="group" aria-label="Filter the collection"></div>
+    <p class="collection-count" id="collectionCount" aria-live="polite"></p>
+    <div id="maisonBody"></div>
+  </div>
+</div>
+
+<div class="modal-shell" id="productModal" aria-labelledby="productTitle">
+  <div class="modal-card">
+    <button type="button" class="close modal-close" onclick="closeProduct()">×</button><div class="modal-visual" id="productVisual"></div>
+    <div class="modal-copy">
+      <span class="release-badge">Preview only — not yet for sale</span>
+      <div class="eyebrow" id="productCategory"></div><h2 id="productTitle"></h2><p class="product-type" id="productType"></p><p class="serif" id="productDesc"></p><div class="product-meta" id="productMeta"></div>
+      <button type="button" class="primary dark-primary wishlist-action" id="productSave" onclick="addCurrentProduct()">Save to wishlist</button>
+      <button type="button" class="text-link" onclick="openBag()">View my wishlist →</button>
+      <p class="wishlist-note">Saving an object does not place an order or reserve stock. No payment is taken.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-shell" id="accountModal" aria-labelledby="accountTitle">
+  <div class="modal-card member-gate-card"><button type="button" class="close modal-close" onclick="closeAccount()">×</button>
+    <aside class="member-gate-story">
+      <small>MARÉVYS CERCLE</small>
+      <div class="member-gate-orbit"><span>ON-DEVICE ARCHIVE PREVIEW</span><strong id="memberGateCount" aria-live="polite">Your archive is ready.</strong></div>
+      <ul><li>Revisit every reading you chose to keep</li><li>Receive one considered ritual each week</li><li>Discover limited objects before release</li></ul>
+    </aside>
+    <div class="modal-copy member-gate-copy">
+      <div class="eyebrow">MEMBER ACCESS · INTERACTIVE PREVIEW</div><h2 id="accountTitle">Join the Cercle to keep your readings close.</h2>
+      <p id="memberGateIntro">CERCLE membership is designed to turn one reading into a private archive, a weekly ritual and early access to limited objects.</p>
+      <div class="member-mode-switch" role="group" aria-label="Choose member access">
+        <button type="button" data-member-mode="join" class="active" aria-pressed="true" onclick="chooseMemberMode('join')">Join CERCLE</button>
+        <button type="button" data-member-mode="signin" aria-pressed="false" onclick="chooseMemberMode('signin')">Member sign in</button>
+      </div>
+      <form id="memberGateForm" class="member-gate-form" onsubmit="completeMemberPreview(event)">
+        <label for="memberGateEmail">Email address</label><input id="memberGateEmail" type="email" autocomplete="email" placeholder="Email address" required>
+        <button type="submit" class="primary" id="memberGateAction">Preview joining the Cercle</button>
+      </form>
+      <p class="member-preview-notice"><strong>Prototype note.</strong> This demonstration neither sends nor stores your email. No account or subscription is created; access lasts only for this page visit.</p>
+      <button type="button" class="text-link" onclick="openLegal('privacy')">How your records are handled →</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-shell" id="bagModal" aria-labelledby="wishlistTitle">
+  <div class="modal-card small-modal"><button type="button" class="close modal-close" onclick="closeBag()">×</button><div class="modal-copy full">
+    <div class="eyebrow">SAVED OBJECTS</div><h2 id="wishlistTitle">Your wishlist.</h2>
+    <p class="wishlist-note">Keep a selection in this browser. The collection is not yet for sale, and no checkout takes place here.</p>
+    <p id="wishlistStorageNote" class="storage-notice" role="status"></p><div id="bagBody"></div>
+  </div></div>
+</div>
+
+<div class="pathdrawer" id="pathDrawer" aria-labelledby="recordDrawerTitle">
+  <div class="readnav" style="color:#28241f;border-color:rgba(0,0,0,.12)"><a class="brand-identity brand-home" href="#main-content" onclick="goHome(event)" aria-label="Return to home"><img data-image="logo" alt="MARÉVYS"><span class="logo">MARÉVYS<small>PARIS</small></span></a><button type="button" class="close" style="color:#28241f" onclick="closePath()">×</button></div>
+  <div class="drawerinner">
+    <div class="record-member-status"><span>CERCLE MEMBER VIEW · PREVIEW ONLY</span><button type="button" class="text-link" onclick="endMemberPreview()">End preview access</button></div>
+    <div class="eyebrow">YOUR PERSONAL RECORD</div><h2 id="recordDrawerTitle">My readings</h2>
+    <p class="record-intro">Your saved symbols, questions and reflections, together in one place. Patterns can invite reflection; they do not predict your future.</p>
+    <p class="record-local-note">This record is stored only in this browser on this device. Clearing browser data may remove it. There is no cloud synchronization.</p>
+    <div id="storageNotice" class="storage-notice" role="status"></div>
+    <div class="path-summary-grid" id="pathSummary"><div id="pathInsight"></div><div id="pathRhythm"></div></div>
+    <div class="timeline" id="timeline"></div>
+    <div class="oracle-timeline" id="oracleTimeline" aria-live="polite"></div>
+    <div id="savedRituals" class="saved-rituals"></div>
+  </div>
+</div>
+
+<div class="consent" id="consentBar">
+  <p class="serif">Your saved readings and wishlist stay in this browser. Member access is simulated in this preview.</p>
+  <div><button type="button" onclick="acceptConsent()">Got it</button><button onclick="openLegal('privacy')">LEARN MORE</button></div>
+</div>
+
+<div class="overlay-language" hidden><select data-language aria-label="Language"><option value="en" lang="en">EN</option><option value="fr" lang="fr">FR</option><option value="zh" lang="zh-Hans">中文</option></select></div><div id="toast" role="status" aria-live="polite"></div>
+<!--SCRIPTS-->
+</body></html>

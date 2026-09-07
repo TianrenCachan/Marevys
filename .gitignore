@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vercel/
+.env*
+!.env.example
+*.zip
+index.html
+source-images/
+alternatives/
+brand/

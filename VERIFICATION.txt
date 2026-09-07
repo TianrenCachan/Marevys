@@ -1,0 +1,217 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> marevys-paris@0.20.0 test
+> node --test tests/core.test.cjs tests/experience.test.cjs tests/oracle.test.cjs tests/server.test.cjs && node scripts/test-web-build.cjs
+
+PASS Every translation row has English, French and Chinese
+PASS English source strings round-trip exactly
+PASS French and Chinese use the dictionary
+PASS All interpolation parameters are preserved in translations
+PASS Case variations and compound product materials translate
+PASS French context detection handles accents and career questions
+PASS Chinese, English and French work context detection agree
+PASS A stable focus ID wins over translated words or ambiguous question content
+PASS Language changes preserve picks, mode, focus, input and saved IDs
+PASS All 24 runes have complete FR/ZH title, meaning and shadow text
+PASS All 24 rune title strings are translated
+PASS Every rune theme has a translation
+PASS All eight path names and descriptions are translated
+PASS All eight rituals are fully translated
+PASS All commerce suggestions have localized descriptions and material notes
+PASS All maison descriptions and item details are translated
+PASS All product descriptions and specification lines are translated
+PASS Known single rune mapping stays unchanged
+PASS Three-rune mapping uses the original position weights
+PASS Path scoring is independent of display language for all 24 runes
+PASS Daily rune stays stable within a local calendar day
+PASS Storage preserves language, reading and bag values
+PASS Blocked storage degrades to session memory without crashing
+PASS Legacy plain-string consent is retained
+PASS Malformed saved JSON cannot crash initialization
+PASS Legacy saved records keep user text and stable rune identifiers
+PASS User HTML is escaped
+PASS All application scripts parse
+PASS Final delivered HTML inline scripts parse successfully
+PASS Bundled JavaScript preserves every source byte including double-dollar selectors
+PASS Complete HTML contains one embedded copy of each RC19 asset and the Runic font
+PASS RC19 style and source layers are present in the delivered bundle
+PASS RC19 build targets a matching complete embedded output
+PASS All embedded image bytes match the delivered final assets
+PASS Every non-logo photograph has one semantic purpose and unique source bytes
+PASS Branding follows the latest per-product choices and the approved mark has transparency
+PASS Standalone makes no external code or asset requests
+PASS Template has all three language options and mobile support
+PASS Homepage system photographs remain unbranded and every catalogue master is the same 4:5 format
+PASS HTML nesting and closing tags are balanced
+PASS Every HTML ID is unique
+PASS Every static visible string and descriptive attribute is translated
+PASS Every inline handler has an exported implementation
+PASS Every legal paragraph and heading is localized
+PASS No legacy runtime inference or undefined context map remains
+PASS Homepage explains all three readings and the collection without a large overlaid logo
+PASS All five top-left brand marks are native home links
+PASS Home links have trilingual accessible names and participate in the dialog focus trap
+PASS Home closes the complete layer stack, mobile menu and pending reading transition
+PASS Home preserves language, wishlist, rune choices and typed input in all three languages
+PASS Returning home is safe and repeatable with no active layer or event argument
+PASS Selected rectangular perfume is the existing candidate, not a regenerated substitute
+
+52 tests passed; 2029 unique translation keys.
+✔ tests/core.test.cjs (1009.756627ms)
+PASS The delivered bundle initializes in all three languages without a network or account
+PASS Editable sources initialize with the same page state as the delivered bundle
+PASS Homepage presents one compact 01 chooser before any product reveal
+PASS Primary navigation stays concise and the two completion screens contain the retention preview
+PASS My readings uses an honest member preview gate without exposing or uploading local records
+PASS FAQ explains all three methods, blind drawing, storage and commerce
+PASS Every product, interpretation stage, matching stage and ritual action is localized
+PASS Curated concepts have unique canonical identities, valid images and correct categories
+PASS All eight recommendation themes point only to the expanded correctly pictured concepts
+PASS All eight energy paths have complete trilingual profiles, four products and four-step ritual data
+PASS Rune question continues directly to one blind draw with no need-choice scene
+PASS Reading payload carries a request ID and trust boundary without any client credential
+PASS Local structured interpretation visibly connects the actual question, context, outcome and rune
+PASS The single 01 chooser presents one private-result example and one action for each system
+PASS Every collection filter works without starting a reading, in EN, FR and ZH
+PASS All twelve product details explain energy roles without repeating catalogue photography
+PASS Product to wishlist journey is deduplicated and keeps stable IDs across language switches
+PASS Legacy bag content is preserved as a wishlist without duplicate entries
+PASS Wishlist user data is escaped and never interpolated into executable handlers
+PASS Single-rune interpretation can save the exact question and reflection in schema 3
+PASS Three-rune flow needs three distinct choices and preserves its sequence
+PASS Daily mode exposes one stable symbol and ordinary mode restores all 24 choices
+PASS Language changes during reading preserve entered text, stable focus and selected runes
+PASS Rune interpretation presents a centred evidence-led dossier before the private product reveal
+PASS Energy matching reveals one illustrated package and four complementary ritual objects
+PASS Real-world ritual contains four independent photographic bookmarks without repeating the package image
+PASS AI energy tags affect controlled path ranking but can never invent a product SKU
+PASS The single visible set action finishes at step 7 with all four products and schema 3 fields
+PASS Funnel analytics retain milestones but remove every raw question, prompt and answer field
+PASS Question privacy copy changes by language and whether an online AI endpoint is configured
+PASS The private-match CTA stays disabled while an AI interpretation is loading
+PASS A strict-schema AI response preserves only same-origin browser credentials
+PASS An invalid AI schema falls back after one request without repeating a paid generation
+PASS Rate-limited or unavailable Rune AI returns localized local results without retrying
+PASS Rune AI times out after 45 seconds during headers or body decoding and never retries
+PASS AI endpoint protocol validation accepts only relative, HTTPS and local-development HTTP URLs
+PASS A cross-origin Rune endpoint keeps the browser policy that omits cross-origin credentials
+PASS A late AI response cannot overwrite the newer language-specific interpretation
+PASS The main seven-stage flow has no need-choice or optional-products block
+PASS New reading clears completed notes but returning home preserves unfinished input
+PASS Empty records display a helpful action instead of empty statistics
+PASS Old records with unknown or null rune entries do not crash and retain the original words
+PASS Storage failure remains explicit for wishlist and saved readings while session actions work
+PASS Nested dialogs raise an existing collection and restore focus without duplicating layers
+PASS Escape closes only the top dialog and the dialog focus cycle includes the language control
+PASS Section navigation exits all dialogs and mobile navigation without losing session data
+PASS Tarot and I Ching are active reading entrances rather than future-project previews
+PASS Homepage ritual guidance leads into the matched reading journey instead of a choice grid
+PASS House notes are distinct from the filtered product collection
+PASS Both visible language controls are wired to update the complete interface
+PASS Reading stages move keyboard focus to their heading without stealing initial homepage focus
+PASS Language switching preserves the active complete-ritual journey
+PASS Section 06 has one unique image and a clear read, translate, embody method
+PASS RC19 tactile results, meditation, bookmark ritual and notebook record are source contracts
+PASS Reduced-motion rules explicitly reveal content otherwise animated from opacity zero
+PASS Every ordinary reading uses a complete shuffled face-down deck without leaking symbols
+PASS Blind selection remains unrevealed until the explicit reveal action
+PASS Three blind slots expose positions and selection state without rune identities
+PASS Language changes preserve deck, blind selections and reveal progress
+PASS Saved readings contain no invented upright or reversed orientation
+
+60 RC19 experience checks passed (DOM doubles, not browser rendering).
+✔ tests/experience.test.cjs (21314.129045ms)
+PASS The public Oracle API and both complete datasets load from editable sources
+PASS All 22 Major Arcana cards are unique, upright-only, symbolic and complete in three languages
+PASS Every Major Arcana card has its own numbered artwork asset
+PASS The eight bottom-to-top trigrams are unique and trilingual
+PASS The King Wen matrix and reference records cover numbers 1–64 exactly once
+PASS Known lower/upper trigram mappings resolve all-yang 1, all-yin 2, Peace 11 and Standstill 12
+PASS I Ching arrays store line 1 at index 0 and rendered stacks place line 6 above it
+PASS Changing values 6 and 9 flip while stable values 7 and 8 remain unchanged
+PASS Three virtual coins can produce every valid line value from 6 through 9
+PASS Tarot moves directly from one question to the fixed three-card blind draw
+PASS Tarot holds the question for five seconds once before revealing the blind deck
+PASS Returning to the Tarot question resumes the same meditation and draw
+PASS Returning home cancels a hidden Tarot countdown
+PASS I Ching moves directly from the written question to its fixed six-line cast
+PASS The public Oracle flow exposes no need or spread choices
+PASS One-card Tarot draw leaks neither names nor glyphs before reveal
+PASS Three-card Tarot draw stays blind, rejects duplicates and reveals one card at a time
+PASS Tarot keyboard focus advances across unfinished picks and reaches Reveal when complete
+PASS Tarot payload exposes the one- and three-card positions and explicitly disables reversals
+PASS Six guided casts preserve bottom-to-top order and form primary and relating hexagrams
+PASS I Ching keyboard focus follows every rebuilt Cast control and reaches Meet when complete
+PASS A stable I Ching cast keeps one primary pattern and no forced relating hexagram
+PASS Local Tarot interpretation is structured around the actual question, outcome and positions
+PASS Chinese work questions use WORK context and a natural three-paragraph card reading
+PASS Local I Ching dossier connects the question, phase path, timing and direction of change
+PASS I Ching local interpretation distinguishes line positions and names every moving layer
+PASS Energy matching always produces one of eight paths and exactly four canonical products
+PASS The real-world ritual contains four product actions without repeating the stage-five package image
+PASS Saving the matched set updates the shared wishlist and persists one complete Oracle record
+PASS Hidden compatibility save modes remain safe although the interface exposes only the complete set
+PASS Saved Tarot history stays behind the member preview gate until access is unlocked
+PASS Malformed but valid-JSON Tarot and I Ching records are discarded without breaking initialization
+PASS A saved I Ching record rebuilds canonical hexagram identity from six valid source lines
+PASS Language switching preserves an active Tarot session and relocalizes saved card names
+PASS Language switching preserves an active I Ching cast and relocalizes saved hexagram names
+PASS Language switching after an AI reading is saved never refetches or mutates the saved record
+PASS The energy-match CTA stays disabled and guarded while an AI interpretation is loading
+PASS A strict-schema AI Oracle response preserves only same-origin browser credentials
+PASS A valid online AI endpoint exposes a clickable Privacy control that opens legal details
+PASS A protocol-relative AI endpoint is rejected and always uses local privacy and interpretation
+PASS A cross-origin Oracle endpoint keeps the browser policy that omits cross-origin credentials
+PASS An invalid AI Oracle schema falls back after one request without leaking invented fields
+PASS Rate-limited or unavailable Oracle AI returns localized local results without retrying
+PASS Oracle AI times out after 45 seconds during headers or body decoding and never retries
+
+44 Oracle checks passed.
+✔ tests/oracle.test.cjs (12903.674573ms)
+✔ Server canonical snapshot matches all checked-in browser references (5.818432ms)
+✔ Real RUNES browser payload is accepted in en and retains exact identities (0.878839ms)
+✔ Real RUNES browser payload is accepted in fr and retains exact identities (0.247691ms)
+✔ Real RUNES browser payload is accepted in zh and retains exact identities (0.217216ms)
+✔ Real TAROT browser payload is accepted in en and retains exact identities (0.355143ms)
+✔ Real TAROT browser payload is accepted in fr and retains exact identities (0.297797ms)
+✔ Real TAROT browser payload is accepted in zh and retains exact identities (0.242354ms)
+✔ Real ICHING browser payload is accepted in en and retains exact identities (0.409395ms)
+✔ Real ICHING browser payload is accepted in fr and retains exact identities (0.329555ms)
+✔ Real ICHING browser payload is accepted in zh and retains exact identities (0.398738ms)
+✔ All 4096 valid casts resolve exactly as the browser does, bottom-to-top (110.603182ms)
+✔ Stable I Ching cast has no fabricated relating hexagram (218.834894ms)
+✔ Reconstructed references discard malicious client meanings, prompts, tags and output contracts (0.454051ms)
+✔ Invalid identities, duplicate cards, cast metadata, locales, modes and question limits are rejected (0.95956ms)
+✔ Output schema fixes exact property sets, identity enums and allowed energy labels (0.315073ms)
+✔ Output validator rejects hallucinated identities, reordered positions, duplicate tags, empty or extra fields and markup (0.560231ms)
+✔ Server accepts each browser-safe prose boundary and rejects one extra character before it can be truncated (1.374773ms)
+✔ Missing or invalid config fails closed without any external request (1.647543ms)
+✔ Real POST returns exactly the frontend schema using Responses JSON Schema and no persisted provider response (1.742495ms)
+✔ Successful Tarot and I Ching API responses retain exact French and Chinese identities (1.902295ms)
+✔ Origin, method, content type, oversized and malformed payloads are blocked before external requests (0.571337ms)
+✔ Raw stream bodies are supported and cannot bypass byte limits (3.150187ms)
+✔ Redis uses one atomic Lua reservation and charges request caps before calling OpenAI (0.440631ms)
+✔ Per-IP, global and concurrent limits return 429 with retry-after and never call OpenAI (0.875314ms)
+✔ Limiter outage fails closed and malformed limiter results never authorize AI (0.511027ms)
+✔ Trusted Vercel IP is hashed, spoofable forwarded-for is ignored and local requests share a bucket (0.439459ms)
+✔ Provider errors are sanitized, never retried, and release concurrency leases (1.272339ms)
+✔ Timeout aborts provider request and releases lease with a safe 504 response (15.393352ms)
+✔ Provider refusal, incomplete output, invalid JSON and invalid identity all trigger fallback status (1.267342ms)
+✔ Redis deadline includes response-body parsing, not only initial headers (15.800644ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21326.489265
+✔ online build preserves approved content, assets and dependency order without embedded photographs (185.641791ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 194.461075

@@ -1,0 +1,229 @@
+/* RC18 — one guided route, physically credible objects, three distinct reading materials. */
+.experience-v18{font-size:19px}
+
+/* The opening behaves like one quiet title card, not a left-heavy information panel. */
+.experience-v18 .hero{
+  min-height:clamp(570px,76svh,790px)!important;
+  height:auto;
+  padding:clamp(82px,10vw,150px) 5vw;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background-position:center 56%!important;
+}
+.experience-v18 .hero:before{
+  background:linear-gradient(180deg,rgba(5,15,14,.38),rgba(8,20,18,.16) 46%,rgba(5,14,13,.46));
+}
+.experience-v18 .hero .hero-copy{
+  width:min(1500px,94vw);
+  max-width:none;
+  margin:auto;
+  text-align:center;
+}
+.experience-v18 .hero h1{
+  width:100%;
+  max-width:none;
+  margin:0 auto;
+  color:#f5ecdd;
+  font-size:clamp(68px,8.7vw,144px);
+  line-height:.98;
+  letter-spacing:.015em;
+  white-space:nowrap;
+  text-wrap:balance;
+  text-shadow:0 3px 34px rgba(0,0,0,.38);
+}
+.experience-v18 .hero .entry-actions{justify-content:center;margin-top:clamp(34px,4vw,54px)}
+.experience-v18 .hero .primary{min-width:220px;margin:0!important;background:rgba(7,18,16,.28);backdrop-filter:blur(4px)}
+
+/* Question pages use the full visual axis; Chinese no longer sits inside a narrow 14-character block. */
+.experience-v18 #s0 .panel,.experience-v18 #o0 .panel{width:min(1180px,94vw);text-align:center}
+.experience-v18 #s0 h2,.experience-v18 #o0 h2{
+  width:min(100%,20ch);
+  max-width:none;
+  margin:15px auto 24px!important;
+  text-align:center;
+  text-wrap:balance;
+}
+.experience-v18 #s0 .reading-onboarding,.experience-v18 #o0 .oracle-onboarding{max-width:62ch}
+.experience-v18 #s0 textarea,.experience-v18 #o0 textarea{width:min(920px,100%);font-size:clamp(20px,2vw,30px)}
+
+/* Blind rune draw: real basalt cut-outs replace CSS pebbles. */
+.experience-v18 #s2 .panel{width:min(1220px,94vw)}
+.experience-v18 .stones{grid-template-columns:repeat(8,minmax(82px,1fr));gap:clamp(10px,1.4vw,21px);max-width:1120px;margin:38px auto 0}
+.experience-v18 .stone{
+  position:relative;
+  aspect-ratio:1;
+  overflow:visible;
+  padding:0;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:none;
+}
+.experience-v18 .stone:before,.experience-v18 .stone:after{display:none!important}
+.experience-v18 .stone img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transform:rotate(var(--stone-rotation,0deg)) scale(var(--stone-scale,.95));
+  filter:drop-shadow(0 16px 14px rgba(0,0,0,.4)) saturate(.86) contrast(1.08);
+  transition:transform .34s cubic-bezier(.2,.75,.2,1),filter .34s ease,opacity .34s ease;
+  pointer-events:none;
+}
+.experience-v18 .stone:nth-child(4n+1){--stone-rotation:-6deg;--stone-scale:.94}
+.experience-v18 .stone:nth-child(4n+2){--stone-rotation:4deg;--stone-scale:.9}
+.experience-v18 .stone:nth-child(4n+3){--stone-rotation:-1deg;--stone-scale:.98}
+.experience-v18 .stone:nth-child(4n){--stone-rotation:7deg;--stone-scale:.92}
+.experience-v18 .stone:hover:not(:disabled),.experience-v18 .stone:focus-visible{transform:none!important}
+.experience-v18 .stone:hover:not(:disabled) img,.experience-v18 .stone:focus-visible img{transform:translateY(-10px) rotate(var(--stone-rotation,0deg)) scale(1.02);filter:drop-shadow(0 24px 18px rgba(0,0,0,.5)) saturate(.95) contrast(1.12) brightness(1.08)}
+.experience-v18 .stone.chosen{transform:none!important;box-shadow:none!important}
+.experience-v18 .stone.chosen img{transform:translateY(-12px) rotate(var(--stone-rotation,0deg)) scale(1.04);filter:drop-shadow(0 0 2px #d3b174) drop-shadow(0 26px 20px rgba(0,0,0,.54)) brightness(1.1)}
+.experience-v18 .stone.fade-away img{opacity:.13;filter:grayscale(.35) blur(.3px);transform:rotate(var(--stone-rotation,0deg)) scale(.86)}
+.experience-v18 .reveal-stone{position:relative;isolation:isolate;overflow:visible;background:transparent!important;box-shadow:none!important;border-radius:0!important}
+.experience-v18 .reveal-stone-art{position:absolute;z-index:-1;inset:-8%;width:116%;height:116%;object-fit:contain;filter:drop-shadow(0 28px 26px rgba(0,0,0,.5)) saturate(.88) contrast(1.08)}
+.experience-v18 .reveal-stone .reveal-symbol{position:relative;z-index:1;color:#c7a36d;text-shadow:-1px -1px 1px #090a09,1px 1px 1px rgba(245,221,178,.28),0 0 16px rgba(173,127,67,.15)}
+
+/* The exact ARCANA 22 back image is used in both choosing and turning. */
+.experience-v18 .oracle-card-back{
+  aspect-ratio:2/3!important;
+  min-height:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:1px solid rgba(213,181,126,.58)!important;
+  border-radius:5px!important;
+  background:#07162a!important;
+}
+.experience-v18 .oracle-card-back:before,.experience-v18 .oracle-card-back:after{display:none!important}
+.experience-v18 .oracle-card-back-art{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.experience-v18 .oracle-card-back-panel{padding:0!important;overflow:hidden;background:#07162a!important;border-color:rgba(213,181,126,.58)!important}
+.experience-v18 .oracle-card-back-panel .oracle-card-back-art{position:absolute;inset:0}
+.experience-v18 .oracle-card-back-panel>small{position:absolute;z-index:2;left:50%;bottom:15px;transform:translateX(-50%);width:max-content;padding:6px 9px;background:rgba(5,13,22,.68);color:#ead5ad;font-size:9px;letter-spacing:.12em}
+.experience-v18 .oracle-card-face,.experience-v18 .oracle-card-front-panel{aspect-ratio:2/3}
+
+/* A reading is presented as one material manuscript rather than a stack of report cards. */
+.experience-v18 #s4,.experience-v18 #o4{padding:clamp(34px,5vw,76px) clamp(15px,3vw,44px)}
+.experience-v18 #s4 .editorial-reading,
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 .oracle-interpretation-panel,
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 .oracle-interpretation-panel{
+  position:relative;
+  width:min(1380px,100%);
+  max-width:1380px;
+  padding:clamp(46px,6vw,96px) clamp(28px,6vw,92px) clamp(58px,7vw,112px);
+  border:1px solid rgba(218,190,145,.2);
+  box-shadow:0 42px 100px rgba(0,0,0,.32),inset 0 0 70px rgba(0,0,0,.12);
+  overflow:hidden;
+  isolation:isolate;
+}
+.experience-v18 #s4 .editorial-reading{
+  background-color:#292a27;
+  background-image:linear-gradient(rgba(19,20,18,.2),rgba(15,16,14,.52)),var(--rune-reading-surface);
+  background-size:cover;
+  background-position:center;
+}
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 .oracle-interpretation-panel{
+  background-color:#0b1b30;
+  background-image:linear-gradient(rgba(7,18,34,.3),rgba(5,14,27,.58)),var(--tarot-reading-surface);
+  background-size:cover;
+  background-position:center;
+  border-color:rgba(202,163,96,.45);
+  box-shadow:0 42px 100px rgba(0,0,0,.4),inset 0 0 0 10px rgba(9,18,31,.26),inset 0 0 0 11px rgba(196,157,92,.18);
+}
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 .oracle-interpretation-panel{
+  background-color:#e3d5bd;
+  background-image:linear-gradient(rgba(239,228,207,.76),rgba(222,205,176,.78)),var(--iching-reading-surface);
+  background-size:cover;
+  background-position:center;
+  color:#302a22;
+  border-color:rgba(79,60,38,.28);
+  box-shadow:0 42px 100px rgba(0,0,0,.28),inset 0 0 90px rgba(92,64,31,.1);
+}
+.experience-v18 .reading-dossier,.experience-v18 .reading-dossier section,.experience-v18 .reading-dossier article,.experience-v18 .reading-dossier blockquote{background:transparent}
+.experience-v18 .reading-dossier .interpretation-question,.experience-v18 .reading-dossier .interpretation-answer,.experience-v18 .reading-dossier .interpretation-action,.experience-v18 .reading-dossier .reading-caution-disclosure,.experience-v18 .reading-dossier .closing-note,.experience-v18 .reading-dossier .oracle-reflection-prompt{border:0}
+.experience-v18 .reading-dossier .risk-watch{background:transparent;border-top:1px solid currentColor;border-bottom:1px solid currentColor}
+.experience-v18 .reading-dossier .risk-watch li:before{opacity:.48}
+.experience-v18 .reading-dossier .interpretation-thread{border-top:1px solid currentColor;border-bottom:1px solid currentColor;background:transparent}
+
+/* Rune: pale incised type on a dark basalt slab. */
+.experience-v18 #s4 .reading-result-head,.experience-v18 #s4 .rune-dossier{color:#d8d0c3}
+.experience-v18 #s4 .reading-result-head h2,.experience-v18 #s4 .rune-dossier h3,.experience-v18 #s4 .rune-dossier .interpretation-answer p,.experience-v18 #s4 .rune-dossier .interpretation-action p{
+  color:#ddd4c6;
+  text-shadow:-1px -1px 1px rgba(0,0,0,.88),1px 1px 1px rgba(255,255,255,.1);
+}
+.experience-v18 #s4 .rune-dossier p,.experience-v18 #s4 .rune-dossier li{color:#c6beb2}
+.experience-v18 #s4 .rune-dossier small,.experience-v18 #s4 .reading-meta,.experience-v18 #s4 .interpretation-source{color:#b99462}
+.experience-v18 #s4 .rune-dossier .risk-watch{color:rgba(210,197,177,.28)}
+.experience-v18 #s4 .rune-dossier .risk-watch h3,.experience-v18 #s4 .rune-dossier .risk-watch li{color:#d3cabd}
+.experience-v18 #s4 .rune-dossier .conditional-outlook{gap:0;border-top:1px solid rgba(215,201,180,.18);border-bottom:1px solid rgba(215,201,180,.18)}
+.experience-v18 #s4 .rune-dossier .conditional-outlook article{padding:36px;background:transparent}
+.experience-v18 #s4 .rune-dossier .conditional-outlook article+article{border-left:1px solid rgba(215,201,180,.18)}
+.experience-v18 #s4 .rune-dossier .rune-stone-portrait{border:1px solid rgba(213,197,172,.16);box-shadow:inset 0 0 45px rgba(0,0,0,.26)}
+
+/* Tarot: the three positions read as printed cards on the same navy-gold stock. */
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 .oracle-result-head,
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 .tarot-dossier{color:#eee2cc}
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 h2,
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 h3,
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 .interpretation-answer p,
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 .interpretation-action p{color:#f0e2c7}
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 p,
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 li{color:#d5c7b0}
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 small,
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 .oracle-read-meta,
+.experience-v18 .oracle-overlay[data-oracle-system="tarot"] #o4 .interpretation-source{color:#caa15f}
+.experience-v18 .tarot-dossier .interpretation-story{gap:clamp(18px,2.5vw,34px)}
+.experience-v18 .tarot-dossier .tarot-evidence{padding:clamp(31px,3.5vw,50px) clamp(20px,2.5vw,34px);border:1px solid rgba(202,161,94,.3);box-shadow:inset 0 0 0 7px rgba(6,15,28,.18)}
+.experience-v18 .tarot-dossier .card-friction{padding:22px 0 0;border-top:1px solid rgba(202,161,94,.24);background:transparent}
+.experience-v18 .tarot-dossier .risk-watch{color:rgba(213,177,115,.34)}
+.experience-v18 .tarot-dossier .risk-watch h3,.experience-v18 .tarot-dossier .risk-watch li{color:#eadbc2}
+
+/* I Ching: ink-dark text on xuan paper; phases read as one vertical scroll. */
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 .oracle-result-head,
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 .iching-dossier{color:#332c24}
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 h2,
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 h3,
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 p,
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 li,
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 .interpretation-answer p,
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 .interpretation-action p,
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 .interpretation-thread{color:#383128}
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 small,
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 .oracle-read-meta,
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 .interpretation-source{color:#8a3d31}
+.experience-v18 .iching-dossier .iching-landscape{border:1px solid rgba(67,51,34,.2);box-shadow:0 20px 45px rgba(61,43,25,.12)}
+.experience-v18 .iching-dossier .iching-phase-path{display:block;width:min(900px,100%);margin:0 auto 64px}
+.experience-v18 .iching-dossier .iching-phase-path article{padding:35px 15px;border-bottom:1px solid rgba(63,48,31,.22);background:transparent}
+.experience-v18 .iching-dossier .iching-phase-path article:first-child{border-top:1px solid rgba(63,48,31,.22)}
+.experience-v18 .iching-dossier .iching-phase-path p{color:#50483d}
+.experience-v18 .iching-dossier .timing-judgment{background:transparent;border-top:2px solid rgba(76,55,34,.38);border-bottom:1px solid rgba(76,55,34,.28)}
+.experience-v18 .iching-dossier .timing-judgment h3,.experience-v18 .iching-dossier .timing-judgment p{color:#352e25}
+.experience-v18 .iching-dossier .risk-watch{color:rgba(80,59,37,.32)}
+.experience-v18 .iching-dossier .risk-watch h3,.experience-v18 .iching-dossier .risk-watch li{color:#41382d}
+.experience-v18 .oracle-overlay[data-oracle-system="iching"] #o4 .oracle-reading-next .primary{border-color:#755c3c;background:rgba(250,243,229,.4);color:#30291f}
+
+/* Every single-object catalogue photograph is delivered as the same 4:5 master. */
+.experience-v18 .catalog-image{aspect-ratio:4/5;background:#d8cdbd}
+.experience-v18 .catalog-product-photo{width:100%;height:100%;object-fit:cover!important;object-position:center!important;transform:none!important}
+
+html[lang="zh-Hans"] .experience-v18 .hero h1{font-size:clamp(60px,7.4vw,124px);line-height:1.08;letter-spacing:.045em;white-space:nowrap;word-break:keep-all}
+html[lang="zh-Hans"] .experience-v18 #readingIntentionTitle,
+html[lang="zh-Hans"] .experience-v18 #oracleReadingTitle{width:min(100%,18em);font-size:clamp(48px,5.2vw,78px);line-height:1.32;letter-spacing:.025em;word-break:keep-all;text-wrap:balance}
+
+@media(max-width:900px){
+  .experience-v18 .stones{grid-template-columns:repeat(6,minmax(62px,1fr))}
+  .experience-v18 #s4 .editorial-reading,.experience-v18 .oracle-overlay #o4 .oracle-interpretation-panel{padding:45px 25px 64px}
+  .experience-v18 #s4 .rune-dossier .conditional-outlook{grid-template-columns:1fr}
+  .experience-v18 #s4 .rune-dossier .conditional-outlook article+article{border-left:0;border-top:1px solid rgba(215,201,180,.18)}
+}
+@media(max-width:560px){
+  .experience-v18 .hero{min-height:560px!important;padding:78px 5vw}
+  .experience-v18 .hero h1{font-size:clamp(42px,12.5vw,64px);line-height:1.08;white-space:normal}
+  html[lang="zh-Hans"] .experience-v18 .hero h1{font-size:clamp(32px,9.7vw,48px);letter-spacing:.025em;white-space:nowrap}
+  html[lang="zh-Hans"] .experience-v18 #readingIntentionTitle,
+  html[lang="zh-Hans"] .experience-v18 #oracleReadingTitle{font-size:clamp(37px,10.5vw,52px);line-height:1.35}
+  .experience-v18 .stones{grid-template-columns:repeat(4,minmax(58px,1fr));gap:9px}
+  .experience-v18 .reading-result-head h2,.experience-v18 .oracle-result-head h2{font-size:clamp(40px,12vw,58px)!important}
+  .experience-v18 .tarot-dossier .interpretation-story{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){.experience-v18 .stone img{transition:none}}

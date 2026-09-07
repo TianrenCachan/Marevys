@@ -1,0 +1,806 @@
+/* RC14 · Tarot and I Ching experience
+   Functional symbols are drawn with CSS so every card and hexagram remains unbranded. */
+
+.experience-v11 .reading-systems{
+  background:#e9e1d4;
+  border-bottom:1px solid #c9bdab;
+}
+.experience-v11 .systems-heading{align-items:end}
+.experience-v11 .reading-system-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  margin-top:42px;
+  border:1px solid #c7baa6;
+  background:#c7baa6;
+}
+.experience-v11 .reading-system-card{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  background:#f0eae0;
+  color:#2d2a24;
+}
+.experience-v11 .system-image{
+  position:relative;
+  aspect-ratio:1.38;
+  overflow:hidden;
+  background:#17241f;
+}
+.experience-v11 .system-image:after{
+  content:"";
+  position:absolute;
+  inset:35% 0 0;
+  background:linear-gradient(transparent,rgba(8,17,15,.6));
+  pointer-events:none;
+}
+.experience-v11 .system-image img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .65s cubic-bezier(.2,.65,.25,1);
+}
+.experience-v11 .reading-system-card:hover .system-image img{transform:scale(1.025)}
+.experience-v11 .system-count{
+  position:absolute;
+  z-index:1;
+  right:18px;
+  bottom:15px;
+  color:#efe6d4;
+  font:24px/1 var(--serif);
+  letter-spacing:.07em;
+}
+.experience-v11 .system-hex-count{font-size:37px;line-height:.8}
+.experience-v11 .system-copy{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  padding:27px 27px 29px;
+}
+.experience-v11 .system-meta{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  color:#745d3e;
+  font:9px/1.5 var(--sans);
+  letter-spacing:.11em;
+}
+.experience-v11 .system-meta>span{
+  padding:5px 7px;
+  border:1px solid #ad9875;
+}
+.experience-v11 .system-meta>small{font:9px/1.5 var(--sans);letter-spacing:.11em}
+.experience-v11 .system-copy h3{
+  font:35px/1.15 var(--serif);
+  margin:23px 0 11px;
+}
+.experience-v11 .system-copy>p{
+  min-height:5.4em;
+  margin:0;
+  color:#5d574b;
+  font:14px/1.8 var(--sans);
+}
+.experience-v11 .system-copy ul{
+  width:100%;
+  margin:22px 0 25px;
+  padding:0;
+  list-style:none;
+  border-top:1px solid #d0c4b1;
+}
+.experience-v11 .system-copy li{
+  position:relative;
+  padding:10px 0 10px 17px;
+  border-bottom:1px solid #d0c4b1;
+  color:#554e43;
+  font:12px/1.55 var(--sans);
+}
+.experience-v11 .system-copy li:before{
+  content:"";
+  position:absolute;
+  left:1px;
+  top:17px;
+  width:5px;
+  height:1px;
+  background:#917450;
+}
+.experience-v11 .system-copy .primary{width:100%;margin:auto 0 0!important}
+.experience-v11 .oracle-entry-actions{justify-content:center}
+
+/* Shared full-screen reading room */
+.experience-v11 .oracle-overlay{
+  --oracle-accent:#b58b59;
+  --oracle-accent-soft:#d3b989;
+  --oracle-ivory:#f0e7d7;
+  --oracle-muted:#bdb19e;
+  --oracle-line:rgba(207,188,150,.24);
+  isolation:isolate;
+  background:
+    radial-gradient(circle at 50% -15%,rgba(88,111,91,.2),transparent 40%),
+    linear-gradient(150deg,#111d1a 0%,#081311 64%,#101713 100%);
+  color:var(--oracle-ivory);
+  overscroll-behavior:contain;
+}
+.experience-v11 .oracle-overlay[data-oracle-system="tarot"],
+.experience-v11 .oracle-overlay[data-system="TAROT"],
+.experience-v11 .oracle-overlay[data-system="tarot"]{
+  --oracle-accent:#b78a59;
+  --oracle-accent-soft:#d7ba89;
+  background:
+    radial-gradient(ellipse at 50% -10%,rgba(137,91,54,.21),transparent 42%),
+    linear-gradient(145deg,#191815 0%,#0d1513 58%,#16130f 100%);
+}
+.experience-v11 .oracle-overlay[data-oracle-system="iching"],
+.experience-v11 .oracle-overlay[data-system="ICHING"],
+.experience-v11 .oracle-overlay[data-system="iching"]{
+  --oracle-accent:#9e8f62;
+  --oracle-accent-soft:#cec394;
+  background:
+    radial-gradient(ellipse at 70% -15%,rgba(121,128,93,.18),transparent 40%),
+    linear-gradient(155deg,#101b17 0%,#08120f 65%,#131813 100%);
+}
+.experience-v11 .oracle-readnav{
+  height:80px;
+  padding:0 4vw;
+  border-color:var(--oracle-line);
+  background:rgba(7,16,14,.72);
+}
+.experience-v11 .oracle-readnav .brand-identity>img{filter:brightness(0) invert(1);opacity:.88}
+.experience-v11 .oracle-close{
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  padding:0;
+  cursor:pointer;
+}
+.experience-v11 .oracle-progress{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-left:auto;
+  margin-right:clamp(25px,7vw,110px);
+  color:var(--oracle-muted);
+  font:10px/1.4 var(--sans);
+  letter-spacing:.1em;
+}
+.experience-v11 .oracle-progress>span,
+.experience-v11 .oracle-progress>i{
+  width:22px;
+  height:2px;
+  border:0;
+  background:rgba(229,216,192,.22);
+  transition:background .25s ease,width .25s ease;
+}
+.experience-v11 .oracle-progress>.active,
+.experience-v11 .oracle-progress>.on,
+.experience-v11 .oracle-progress>[aria-current="step"]{width:38px;background:var(--oracle-accent-soft)}
+.experience-v11 .oracle-status{
+  min-height:39px;
+  padding:10px 15px;
+  border-bottom:1px solid var(--oracle-line);
+  color:#cbbd9f;
+  text-align:center;
+  font:11px/1.6 var(--sans);
+  letter-spacing:.025em;
+}
+.experience-v11 .oracle-status:empty{min-height:0;padding:0;border:0}
+.experience-v11 .oracle-stage{
+  position:relative;
+  min-height:calc(100svh - 119px);
+  padding:62px 20px 72px;
+}
+.experience-v11 .oracle-status:empty~.oracle-stage{min-height:calc(100svh - 80px)}
+.experience-v11 .oracle-panel{width:min(980px,92vw)}
+.experience-v11 .oracle-panel>.eyebrow{color:var(--oracle-accent-soft)}
+.experience-v11 .oracle-panel h2{max-width:880px;margin-left:auto;margin-right:auto}
+.experience-v11 .oracle-onboarding{
+  max-width:740px;
+  margin:22px auto 25px;
+  padding:17px 20px;
+  border:1px solid var(--oracle-line);
+  color:#ddd1bd;
+  text-align:left;
+  font:14px/1.8 var(--sans);
+  background:rgba(255,255,255,.025);
+}
+.experience-v11 .oracle-panel .question-label{
+  display:block;
+  max-width:820px;
+  margin:22px auto 8px;
+  color:#d9c49f;
+  text-align:left;
+  font:12px/1.7 var(--sans);
+}
+.experience-v11 .oracle-panel textarea{
+  width:min(820px,100%);
+  min-height:128px;
+  border:1px solid rgba(203,184,147,.45);
+  background:rgba(255,255,255,.035);
+  color:#f2eadc;
+  font:16px/1.7 var(--sans);
+  resize:vertical;
+}
+.experience-v11 .oracle-panel textarea::placeholder{color:#a89f8e;opacity:1}
+.experience-v11 .oracle-focuses,
+.experience-v11 .oracle-outcomes{width:min(820px,100%);margin-left:auto;margin-right:auto}
+.experience-v11 .oracle-focuses .chip[aria-pressed="true"],
+.experience-v11 .oracle-outcomes .outcome-chip[aria-pressed="true"]{
+  border-color:var(--oracle-accent-soft);
+  background:rgba(181,139,89,.16);
+  color:#fff7ea;
+}
+.experience-v11 .oracle-outcomes{border:0;padding:0;text-align:left}
+.experience-v11 .oracle-outcomes legend{color:#d9c49f}
+.experience-v11 .oracle-intention-panel>.primary{margin-top:7px}
+
+/* Reading-form selection */
+.experience-v11 .oracle-mode-choices{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  width:min(920px,100%);
+  margin:25px auto 0;
+}
+.experience-v11 .oracle-mode-choices>.oracle-mode:only-child{grid-column:1/-1;width:min(580px,100%);justify-self:center}
+.experience-v11 .oracle-mode-choices>button,
+.experience-v11 .oracle-mode,
+.experience-v11 .oracle-mode-card{
+  position:relative;
+  min-height:180px;
+  padding:25px 22px;
+  border:1px solid var(--oracle-line);
+  background:rgba(255,255,255,.025);
+  color:var(--oracle-ivory);
+  text-align:left;
+  cursor:pointer;
+  transition:border-color .25s ease,background .25s ease,transform .25s ease;
+}
+.experience-v11 .oracle-mode-choices>button:hover,
+.experience-v11 .oracle-mode-choices>button:focus-visible,
+.experience-v11 .oracle-mode:hover,
+.experience-v11 .oracle-mode:focus-visible{
+  border-color:var(--oracle-accent-soft);
+  background:rgba(181,139,89,.09);
+  transform:translateY(-3px);
+}
+.experience-v11 .oracle-mode.selected,
+.experience-v11 .oracle-mode[aria-pressed="true"]{border-color:var(--oracle-accent-soft);background:rgba(181,139,89,.13)}
+.experience-v11 .oracle-mode-choices strong,
+.experience-v11 .oracle-mode-title{
+  display:block;
+  margin:9px 0 13px;
+  color:#f2e9d9;
+  font:27px/1.25 var(--serif);
+  font-weight:400;
+}
+.experience-v11 .oracle-mode-choices small{
+  display:block;
+  color:var(--oracle-accent-soft);
+  font:9px/1.5 var(--sans);
+  letter-spacing:.13em;
+}
+.experience-v11 .oracle-mode-choices p,
+.experience-v11 .oracle-mode-choices>button>span,
+.experience-v11 .oracle-mode-copy{
+  margin:0;
+  color:#c8bdab;
+  font:13px/1.75 var(--sans);
+}
+.experience-v11 .oracle-method-note{
+  min-height:24px;
+  margin:21px auto 0;
+  color:#baaf9e;
+  font:12px/1.7 var(--sans);
+}
+
+/* Blind Tarot selection */
+.experience-v11 .oracle-draw-panel{width:min(1180px,94vw)}
+.experience-v11 .oracle-draw-area{width:100%;margin:25px auto 18px}
+.experience-v11 .oracle-card-spread,
+.experience-v11 .tarot-deck,
+.experience-v11 .tarot-grid{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(8px,1.4vw,18px);
+  flex-wrap:wrap;
+}
+.experience-v11 .oracle-card,
+.experience-v11 .tarot-card,
+.experience-v11 [data-oracle-card]{
+  position:relative;
+  width:clamp(78px,9vw,116px);
+  aspect-ratio:2/3.22;
+  padding:0;
+  overflow:hidden;
+  border:1px solid rgba(205,177,130,.54);
+  border-radius:2px;
+  background:
+    radial-gradient(ellipse at 50% 48%,transparent 0 17%,rgba(206,173,119,.36) 18% 18.8%,transparent 19.8% 27%,rgba(206,173,119,.2) 28% 28.8%,transparent 30%),
+    repeating-radial-gradient(ellipse at 50% 122%,transparent 0 14px,rgba(209,182,137,.14) 15px 16px,transparent 17px 23px),
+    linear-gradient(145deg,#19332e,#0b1917 64%,#1c2a25);
+  color:#efe2cd;
+  box-shadow:0 16px 35px rgba(0,0,0,.22);
+  cursor:pointer;
+  isolation:isolate;
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.experience-v11 .oracle-card:before,
+.experience-v11 .tarot-card:before,
+.experience-v11 [data-oracle-card]:before{
+  content:"";
+  position:absolute;
+  inset:7px;
+  border:1px solid rgba(212,183,134,.28);
+  pointer-events:none;
+}
+.experience-v11 .oracle-card:after,
+.experience-v11 .tarot-card:after,
+.experience-v11 [data-oracle-card]:after{
+  content:"";
+  position:absolute;
+  left:15%;
+  right:15%;
+  top:48%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--oracle-accent-soft),transparent);
+  opacity:.55;
+  pointer-events:none;
+}
+.experience-v11 .oracle-card:hover:not(:disabled),
+.experience-v11 .oracle-card:focus-visible,
+.experience-v11 .tarot-card:hover:not(:disabled),
+.experience-v11 .tarot-card:focus-visible,
+.experience-v11 [data-oracle-card]:hover:not(:disabled),
+.experience-v11 [data-oracle-card]:focus-visible{
+  z-index:2;
+  transform:translateY(-9px);
+  border-color:var(--oracle-accent-soft);
+  box-shadow:0 21px 43px rgba(0,0,0,.34),0 0 0 2px rgba(206,178,128,.12);
+}
+.experience-v11 .oracle-card.is-selected,
+.experience-v11 .oracle-card.selected,
+.experience-v11 .tarot-card.is-selected,
+.experience-v11 .tarot-card.selected,
+.experience-v11 [data-oracle-card][aria-pressed="true"]{
+  transform:translateY(-13px);
+  border-color:#dfc18f;
+  box-shadow:0 20px 45px rgba(0,0,0,.4),0 0 22px rgba(188,147,87,.22);
+}
+.experience-v11 .oracle-card:disabled,
+.experience-v11 .tarot-card:disabled{cursor:default;opacity:.48}
+.experience-v11 .oracle-card-back{
+  position:relative;
+  display:grid;
+  place-items:center;
+  color:#efe2cd;
+}
+.experience-v11 .oracle-card-face,
+.experience-v11 .tarot-card-face{
+  position:relative;
+  width:100%;
+  aspect-ratio:2/3.22;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 12px 15px;
+  border:1px solid #9a784b;
+  border-radius:2px;
+  background:
+    linear-gradient(rgba(125,94,54,.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(125,94,54,.055) 1px,transparent 1px),
+    #eee4d2;
+  background-size:17px 17px;
+  color:#242721;
+  box-shadow:0 20px 45px rgba(0,0,0,.32);
+}
+.experience-v11 .oracle-card-face:before,
+.experience-v11 .tarot-card-face:before{content:"";position:absolute;inset:7px;border:1px solid rgba(111,80,44,.36)}
+.experience-v11 .oracle-card-face:after,
+.experience-v11 .tarot-card-face:after{display:none}
+.experience-v11 .oracle-card-number{font:10px/1.4 var(--sans);letter-spacing:.18em;color:#755733}
+.experience-v11 .oracle-card-symbol{font:clamp(40px,6vw,74px)/1 var(--serif);color:#273129}
+.experience-v11 .oracle-card-name{font:17px/1.2 var(--serif);text-align:center}
+.experience-v11 .oracle-card-position{font:8px/1.4 var(--sans);letter-spacing:.14em;color:#785e3d;text-align:center}
+.experience-v11 .oracle-card-face>p{position:relative;margin:8px 0;color:#474238;font:12px/1.55 var(--sans);text-align:center}
+.experience-v11 .oracle-card-shadow{position:relative;width:100%;padding-top:10px;border-top:1px solid rgba(111,80,44,.28);text-align:center}
+.experience-v11 .oracle-card-shadow small{display:block;color:#795b37;font:8px/1.4 var(--sans);letter-spacing:.12em}
+.experience-v11 .oracle-card-shadow span{display:block;margin-top:5px;color:#514a3e;font:10px/1.45 var(--sans)}
+.experience-v11 .oracle-back-lines{
+  width:55%;
+  height:55%;
+  display:block;
+  border:1px solid rgba(216,187,137,.2);
+  border-radius:50%;
+  background:repeating-radial-gradient(ellipse at 50% 100%,transparent 0 8px,rgba(220,192,143,.22) 9px 10px,transparent 11px 15px);
+}
+.experience-v11 .oracle-selection-order{
+  position:absolute;
+  z-index:2;
+  right:9px;
+  bottom:8px;
+  color:#f1d6a7;
+  font:10px/1 var(--sans);
+  letter-spacing:.08em;
+}
+.experience-v11 .oracle-card.is-muted{opacity:.37}
+.experience-v11 .oracle-draw-actions{display:flex;justify-content:center;margin:28px auto 0}
+.experience-v11 .oracle-draw-status{min-height:25px;margin:12px auto 0;color:#d0bea0;font:12px/1.7 var(--sans)}
+
+/* I Ching six-line cast */
+.experience-v11 .oracle-overlay[data-oracle-system="iching"] .oracle-draw-area,
+.experience-v11 .oracle-overlay[data-system="ICHING"] .oracle-draw-area,
+.experience-v11 .oracle-overlay[data-system="iching"] .oracle-draw-area{
+  display:grid;
+  grid-template-columns:minmax(245px,.85fr) minmax(320px,1.15fr);
+  grid-template-areas:"coins lines" "actions actions";
+  width:min(900px,100%);
+  min-height:360px;
+  border:1px solid var(--oracle-line);
+  background:rgba(255,255,255,.022);
+}
+.experience-v11 .oracle-overlay[data-oracle-system="iching"] #oracleCoins,
+.experience-v11 .oracle-overlay[data-system="ICHING"] #oracleCoins,
+.experience-v11 .oracle-overlay[data-system="iching"] #oracleCoins{
+  grid-area:coins;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:13px;
+  min-height:290px;
+  margin:0;
+  padding:35px 25px;
+  border-right:1px solid var(--oracle-line);
+}
+.experience-v11 .oracle-overlay[data-oracle-system="iching"] #oracleLines,
+.experience-v11 .oracle-overlay[data-system="ICHING"] #oracleLines,
+.experience-v11 .oracle-overlay[data-system="iching"] #oracleLines{
+  grid-area:lines;
+  display:flex;
+  align-items:center;
+  padding:32px clamp(28px,4vw,48px);
+}
+.experience-v11 .oracle-overlay[data-oracle-system="iching"] #oracleCastControls,
+.experience-v11 .oracle-overlay[data-system="ICHING"] #oracleCastControls,
+.experience-v11 .oracle-overlay[data-system="iching"] #oracleCastControls{
+  grid-area:actions;
+  margin:0;
+  padding:22px;
+  border-top:1px solid var(--oracle-line);
+}
+.experience-v11 .oracle-coin,
+.experience-v11 #oracleCoins>button,
+.experience-v11 #oracleCoins>span{
+  position:relative;
+  width:70px;
+  height:70px;
+  display:grid;
+  place-items:center;
+  flex:0 0 auto;
+  border:1px solid #c1a66f;
+  border-radius:50%;
+  background:radial-gradient(circle at 34% 28%,#c8ad76,#7e663e 72%,#49391f);
+  color:#241e14;
+  font:10px/1 var(--sans);
+  letter-spacing:.06em;
+  box-shadow:inset 0 0 0 4px rgba(32,27,18,.14),0 8px 18px rgba(0,0,0,.28);
+}
+.experience-v11 .oracle-coin:after,
+.experience-v11 #oracleCoins>button:after,
+.experience-v11 #oracleCoins>span:after{
+  content:"";
+  position:absolute;
+  width:14px;
+  height:14px;
+  border:1px solid rgba(42,32,17,.65);
+  background:#17201a;
+  transform:rotate(45deg);
+  opacity:.75;
+}
+.experience-v11 .oracle-coin>*{position:relative;z-index:1}
+.experience-v11 .oracle-coin.is-casting,
+.experience-v11 .oracle-coin.casting{animation:oracleCoinCast .65s cubic-bezier(.2,.75,.2,1)}
+.experience-v11 .oracle-coin:nth-child(2).is-casting,
+.experience-v11 .oracle-coin:nth-child(2).casting{animation-delay:.08s}
+.experience-v11 .oracle-coin:nth-child(3).is-casting,
+.experience-v11 .oracle-coin:nth-child(3).casting{animation-delay:.14s}
+@keyframes oracleCoinCast{0%{transform:translateY(0) rotateY(0)}45%{transform:translateY(-26px) rotateY(540deg)}100%{transform:translateY(0) rotateY(720deg)}}
+.experience-v11 .oracle-lines-stack{width:100%;display:flex;flex-direction:column;gap:12px;min-height:204px}
+.experience-v11 .oracle-line{
+  position:relative;
+  min-height:24px;
+  display:grid;
+  grid-template-columns:25px minmax(120px,1fr) 25px;
+  gap:12px;
+  align-items:center;
+  color:#c8bdac;
+  font:10px/1.4 var(--sans);
+}
+.experience-v11 .oracle-line-number{color:#a99e8d;text-align:right}
+.experience-v11 .oracle-line-rule{
+  grid-column:2;
+  height:8px;
+  display:flex;
+  gap:13%;
+}
+.experience-v11 .oracle-line-rule>i{height:7px;display:block;flex:1;background:#e4d8be}
+.experience-v11 .oracle-line.is-empty .oracle-line-rule>i{opacity:.16;background:repeating-linear-gradient(90deg,#d9cfbb 0 8px,transparent 8px 14px)}
+.experience-v11 .oracle-line.is-changing .oracle-line-rule>i{background:var(--oracle-accent-soft);box-shadow:0 0 12px rgba(206,195,148,.15)}
+.experience-v11 .oracle-line>b{grid-column:3;color:#dfc48e;font:18px/1 var(--serif);font-weight:400}
+.experience-v11 .oracle-line.is-changing{color:#dfc48e}
+
+/* Reveal and result surfaces */
+.experience-v11 .oracle-reveal-stage{overflow:hidden}
+.experience-v11 .oracle-reveal-light{
+  position:absolute;
+  z-index:-1;
+  left:50%;
+  top:4%;
+  width:min(750px,100vw);
+  height:min(750px,85vw);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(203,174,119,.16),rgba(203,174,119,.025) 52%,transparent 71%);
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+.experience-v11 .oracle-reveal-area{
+  min-height:300px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:clamp(15px,4vw,42px);
+  margin:5px auto 26px;
+}
+.experience-v11 .oracle-card-spread.is-reveal-spread{width:100%;flex-wrap:nowrap;align-items:stretch}
+.experience-v11 .oracle-card-spread.is-reveal-spread>.oracle-card{
+  width:clamp(190px,22vw,240px);
+  min-height:450px;
+  aspect-ratio:auto;
+}
+.experience-v11 .oracle-card-spread.is-reveal-spread>.oracle-card-face{padding:23px 18px 19px}
+.experience-v11 .oracle-card-spread.is-reveal-spread>.oracle-card-face .oracle-card-name{font-size:24px}
+.experience-v11 .oracle-card-spread.is-reveal-spread>.oracle-card-face>p{font-size:13px;line-height:1.62}
+.experience-v11 .oracle-card-spread.is-reveal-spread>.oracle-card-face .oracle-card-shadow span{font-size:11px;line-height:1.55}
+.experience-v11 .oracle-reveal-actions{display:flex;justify-content:center;margin:22px 0 0}
+.experience-v11 .oracle-reveal-kicker{
+  margin:0 0 8px;
+  color:var(--oracle-accent-soft);
+  font:9px/1.5 var(--sans);
+  letter-spacing:.16em;
+}
+.experience-v11 .oracle-reveal-panel h2{font-size:clamp(34px,4.6vw,60px);margin-top:8px;margin-bottom:10px}
+.experience-v11 .oracle-reveal-status{min-height:24px;color:#cdbb99;font:12px/1.7 var(--sans)}
+.experience-v11 .oracle-hexagram-spread{
+  width:min(820px,100%);
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  align-items:stretch;
+}
+.experience-v11 .oracle-hexagram{
+  min-width:0;
+  min-height:365px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:31px;
+  border:1px solid var(--oracle-line);
+  background:rgba(255,255,255,.035);
+  text-align:left;
+}
+.experience-v11 .oracle-hexagram>small{color:var(--oracle-accent-soft);font:9px/1.5 var(--sans);letter-spacing:.14em}
+.experience-v11 .oracle-hexagram-mark{
+  display:grid;
+  grid-template-columns:auto minmax(85px,130px);
+  align-items:center;
+  gap:24px;
+  margin:22px 0 18px;
+}
+.experience-v11 .oracle-hexagram-mark>span{font:clamp(68px,9vw,104px)/.8 var(--serif);color:#e7ddc8}
+.experience-v11 .oracle-hexagram-lines{display:flex;flex-direction:column;gap:7px;width:100%}
+.experience-v11 .oracle-hexagram-lines>span{height:7px;display:flex;gap:13%}
+.experience-v11 .oracle-hexagram-lines>span>i{display:block;flex:1;height:6px;background:#e4d8be}
+.experience-v11 .oracle-hexagram-lines>span.is-changing>i{background:var(--oracle-accent-soft);box-shadow:0 0 10px rgba(206,195,148,.15)}
+.experience-v11 .oracle-hexagram>.oracle-card-number{color:#bba781;margin:0;font-size:9px}
+.experience-v11 .oracle-hexagram h3{font:28px/1.25 var(--serif);font-weight:400;margin:9px 0 10px}
+.experience-v11 .oracle-hexagram>p:last-child{font:13px/1.7 var(--sans);color:#c9beab;margin:0}
+.experience-v11 .oracle-hexagram.is-veiled{align-items:center;text-align:center;background:rgba(255,255,255,.018)}
+.experience-v11 .oracle-hexagram.is-veiled .oracle-back-lines{width:122px;height:150px;margin:28px auto 22px;border-radius:2px}
+.experience-v11 .oracle-hexagram.is-stable{justify-content:center;background:rgba(159,145,99,.055)}
+.experience-v11 .oracle-hexagram.is-stable h3{font-size:31px;margin-top:28px}
+
+.experience-v11 .oracle-interpretation-panel,
+.experience-v11 .oracle-energy-panel,
+.experience-v11 .oracle-ritual-panel{width:min(1040px,92vw);text-align:left}
+.experience-v11 .oracle-result-head{text-align:center;margin-bottom:28px}
+.experience-v11 .oracle-read-meta{color:#c5b99f;font:10px/1.6 var(--sans);letter-spacing:.11em;text-transform:uppercase}
+.experience-v11 .oracle-interpretation{display:grid;gap:16px}
+.experience-v11 .oracle-interpretation-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--oracle-line);
+  color:#c5b99f;
+  font:10px/1.6 var(--sans);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.experience-v11 .oracle-reading-header{text-align:center;padding:18px 4vw 10px}
+.experience-v11 .oracle-reading-header h2{font:clamp(34px,4.6vw,54px)/1.22 var(--serif);margin:0 auto 17px;color:#f0e5d3}
+.experience-v11 .oracle-reading-header p{max-width:720px;margin:0 auto;color:#d6c8b0;font:italic 18px/1.7 var(--serif)}
+.experience-v11 .oracle-interpretation>.interpretation-direct,
+.experience-v11 .oracle-interpretation>.core-answer,
+.experience-v11 .oracle-interpretation>.reading-answer-card{
+  padding:30px;
+  border:1px solid rgba(205,177,130,.38);
+  background:rgba(181,139,89,.075);
+}
+.experience-v11 .oracle-interpretation>.interpretation-direct>small,
+.experience-v11 .oracle-thread>small,
+.experience-v11 .oracle-reflection-prompt>small,
+.experience-v11 .oracle-guidance-grid small{color:var(--oracle-accent-soft);font:9px/1.55 var(--sans);letter-spacing:.14em}
+.experience-v11 .oracle-interpretation>.interpretation-direct>p{margin:11px 0 0;color:#eee3cf;font:20px/1.7 var(--serif)}
+.experience-v11 .oracle-interpretation .evidence-grid,
+.experience-v11 .oracle-interpretation .oracle-symbol-connections{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+}
+.experience-v11 .oracle-interpretation .evidence-card,
+.experience-v11 .oracle-interpretation .rune-evidence,
+.experience-v11 .oracle-interpretation .oracle-symbol-card{
+  padding:23px;
+  border:1px solid var(--oracle-line);
+  background:rgba(255,255,255,.025);
+}
+.experience-v11 .oracle-interpretation .evidence-card>small{color:var(--oracle-accent-soft);font:9px/1.5 var(--sans);letter-spacing:.13em}
+.experience-v11 .oracle-interpretation .evidence-card>p{margin:12px 0 0;color:#d4c8b2;font:13px/1.78 var(--sans)}
+.experience-v11 .oracle-interpretation .evidence-card em{color:#ddc796;font-style:normal}
+.experience-v11 .oracle-thread,
+.experience-v11 .oracle-reflection-prompt{padding:27px;border:1px solid var(--oracle-line);background:rgba(255,255,255,.018)}
+.experience-v11 .oracle-thread p,
+.experience-v11 .oracle-reflection-prompt p{margin:10px 0 0;color:#e4d8c3;font:18px/1.75 var(--serif)}
+.experience-v11 .oracle-guidance-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.experience-v11 .oracle-interpretation .action-card,
+.experience-v11 .oracle-interpretation .caution-card,
+.experience-v11 .oracle-interpretation .reading-action,
+.experience-v11 .oracle-interpretation .reading-caution{padding:24px;border:1px solid var(--oracle-line)}
+.experience-v11 .oracle-guidance-grid p{margin:11px 0 0;color:#d8cbb5;font:14px/1.8 var(--sans)}
+.experience-v11 .oracle-interpretation-panel .reflection{margin-top:28px}
+.experience-v11 .oracle-interpretation-panel .reflection textarea{width:100%}
+.experience-v11 .oracle-reading-next{display:flex;justify-content:flex-end;margin-top:22px}
+.experience-v11 .oracle-energy-panel>h2,
+.experience-v11 .oracle-energy-panel>.stage-intro,
+.experience-v11 .oracle-ritual-panel>h2,
+.experience-v11 .oracle-ritual-panel>.stage-intro{text-align:center}
+.experience-v11 .oracle-saved-summary{margin-top:30px}
+.experience-v11 #oracleSavedStorageNote:not(:empty){margin-top:18px;padding:14px 17px;border:1px solid rgba(205,177,130,.42);color:#f0d2a1;font:13px/1.8 var(--sans)}
+
+/* Tarot and I Ching entries inside My readings */
+.experience-v11 .oracle-timeline:not(:empty){margin-top:44px;padding-top:36px;border-top:1px solid rgba(72,62,48,.2)}
+.experience-v11 .oracle-timeline article,
+.experience-v11 .oracle-timeline .oracle-entry{
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr);
+  gap:27px;
+  padding:24px 0;
+  border-top:1px solid rgba(72,62,48,.16);
+}
+.experience-v11 .oracle-timeline article small,
+.experience-v11 .oracle-timeline .oracle-entry small{color:#786345;font:10px/1.6 var(--sans);letter-spacing:.1em}
+.experience-v11 .oracle-timeline article h3,
+.experience-v11 .oracle-timeline .oracle-entry h3{font:27px/1.25 var(--serif);font-weight:400;margin:5px 0 9px}
+.experience-v11 .oracle-timeline article p,
+.experience-v11 .oracle-timeline .oracle-entry p{font:15px/1.75 var(--sans);margin:5px 0;color:#514c42}
+.experience-v11 .oracle-timeline-symbol{display:flex;align-items:flex-start;justify-content:center;color:#8a6c45;font:clamp(42px,6vw,70px)/1 var(--serif);letter-spacing:.06em}
+.experience-v11 .oracle-empty-record{padding:24px 0;border-top:1px solid rgba(72,62,48,.16)}
+.experience-v11 .oracle-empty-record>p{font:17px/1.7 var(--serif);color:#514c42}
+.experience-v11 .oracle-empty-record>div{display:flex;gap:18px;flex-wrap:wrap}
+
+.experience-v11 .oracle-overlay button:focus-visible,
+.experience-v11 .oracle-overlay textarea:focus-visible,
+.experience-v11 .reading-system-card button:focus-visible{
+  outline:2px solid var(--oracle-accent-soft,#98764c);
+  outline-offset:3px;
+}
+
+@media(max-width:1050px){
+  .experience-v11 .reading-system-grid{grid-template-columns:1fr 1fr}
+  .experience-v11 .reading-system-card:first-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}
+  .experience-v11 .reading-system-card:first-child .system-image{height:100%;aspect-ratio:auto}
+  .experience-v11 .system-copy>p{min-height:0}
+}
+
+@media(max-width:760px){
+  .experience-v11 .reading-system-grid{grid-template-columns:1fr;margin-top:30px}
+  .experience-v11 .reading-system-card:first-child{grid-column:auto;display:flex}
+  .experience-v11 .reading-system-card:first-child .system-image{height:auto;aspect-ratio:1.38}
+  .experience-v11 .system-copy{padding:24px 22px 25px}
+  .experience-v11 .system-copy h3{font-size:31px}
+  .experience-v11 .system-copy>p{font-size:14px}
+  .experience-v11 .oracle-entry-actions{display:grid;grid-template-columns:1fr 1fr}
+  .experience-v11 .oracle-entry-actions>*{width:100%}
+  .experience-v11 .oracle-entry-actions .secondary{grid-column:1/-1}
+  .experience-v11 .oracle-readnav{height:75px;padding:0 5vw}
+  .experience-v11 .oracle-progress{display:none}
+  .experience-v11 .oracle-status{min-height:38px;padding:9px 12px}
+  .experience-v11 .oracle-stage{min-height:calc(100svh - 113px);padding:42px 5vw 58px}
+  .experience-v11 .oracle-status:empty~.oracle-stage{min-height:calc(100svh - 75px)}
+  .experience-v11 .oracle-panel{width:100%}
+  .experience-v11 .oracle-onboarding{padding:15px 16px}
+  .experience-v11 .oracle-mode-choices{grid-template-columns:1fr}
+  .experience-v11 .oracle-mode-choices>button,
+  .experience-v11 .oracle-mode,
+  .experience-v11 .oracle-mode-card{min-height:0;padding:20px}
+  .experience-v11 .oracle-card-spread,
+  .experience-v11 .tarot-deck,
+  .experience-v11 .tarot-grid{gap:8px}
+  .experience-v11 .oracle-card,
+  .experience-v11 .tarot-card,
+  .experience-v11 [data-oracle-card]{width:clamp(63px,20vw,92px)}
+  .experience-v11 .oracle-overlay[data-oracle-system="iching"] .oracle-draw-area,
+  .experience-v11 .oracle-overlay[data-system="ICHING"] .oracle-draw-area,
+  .experience-v11 .oracle-overlay[data-system="iching"] .oracle-draw-area{grid-template-columns:1fr;grid-template-areas:"coins" "lines" "actions"}
+  .experience-v11 .oracle-overlay[data-oracle-system="iching"] #oracleCoins,
+  .experience-v11 .oracle-overlay[data-system="ICHING"] #oracleCoins,
+  .experience-v11 .oracle-overlay[data-system="iching"] #oracleCoins{min-height:155px;padding:25px 18px;border-right:0;border-bottom:1px solid var(--oracle-line)}
+  .experience-v11 .oracle-overlay[data-oracle-system="iching"] #oracleLines,
+  .experience-v11 .oracle-overlay[data-system="ICHING"] #oracleLines,
+  .experience-v11 .oracle-overlay[data-system="iching"] #oracleLines{padding:25px 20px}
+  .experience-v11 .oracle-coins{min-height:105px}
+  .experience-v11 .oracle-coin,
+  .experience-v11 #oracleCoins>button,
+  .experience-v11 #oracleCoins>span{width:60px;height:60px}
+  .experience-v11 .oracle-lines-stack{min-height:180px}
+  .experience-v11 .oracle-reveal-area{min-height:240px;gap:10px}
+  .experience-v11 .oracle-card-spread.is-reveal-spread{display:grid;grid-template-columns:1fr;justify-items:center;gap:16px}
+  .experience-v11 .oracle-card-spread.is-reveal-spread>.oracle-card{width:min(320px,88vw);min-height:465px}
+  .experience-v11 .oracle-hexagram-spread{grid-template-columns:1fr;gap:13px}
+  .experience-v11 .oracle-hexagram{min-height:0;padding:25px}
+  .experience-v11 .oracle-guidance-grid{grid-template-columns:1fr}
+  .experience-v11 .oracle-interpretation .evidence-grid,
+  .experience-v11 .oracle-interpretation .oracle-symbol-connections{grid-template-columns:1fr}
+  .experience-v11 .oracle-reading-next .primary{width:100%}
+  .experience-v11 .oracle-timeline article,
+  .experience-v11 .oracle-timeline .oracle-entry{grid-template-columns:1fr;gap:8px}
+}
+
+@media(max-width:420px){
+  .experience-v11 .oracle-entry-actions{grid-template-columns:1fr}
+  .experience-v11 .oracle-entry-actions .secondary{grid-column:auto}
+  .experience-v11 .oracle-card,
+  .experience-v11 .tarot-card,
+  .experience-v11 [data-oracle-card]{width:58px}
+  .experience-v11 .oracle-coin,
+  .experience-v11 #oracleCoins>button,
+  .experience-v11 #oracleCoins>span{width:54px;height:54px}
+  .experience-v11 .oracle-line,
+  .experience-v11 .hexagram-line{grid-template-columns:22px minmax(100px,1fr) 22px;gap:8px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .experience-v11 .reading-system-card:hover .system-image img,
+  .experience-v11 .oracle-card:hover,
+  .experience-v11 .tarot-card:hover,
+  .experience-v11 [data-oracle-card]:hover{transform:none}
+  .experience-v11 .oracle-coin.is-casting,
+  .experience-v11 .oracle-coin.casting{animation:none}
+}
+
+@media(forced-colors:active){
+  .experience-v11 .oracle-card,
+  .experience-v11 .tarot-card,
+  .experience-v11 [data-oracle-card],
+  .experience-v11 .oracle-mode-choices>button{border:2px solid ButtonText}
+  .experience-v11 .oracle-line-rule>i,
+  .experience-v11 .oracle-hexagram-lines>span>i{background:CanvasText!important}
+}

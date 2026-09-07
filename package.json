@@ -1,0 +1,15 @@
+{
+  "name": "marevys-paris",
+  "version": "0.20.0",
+  "private": true,
+  "description": "MAREVYS trilingual symbolic readings and ritual objects",
+  "engines": { "node": "22.x" },
+  "scripts": {
+    "build": "npm run build:web",
+    "build:web": "node server/generate-canonical.cjs && node scripts/build-web.cjs",
+    "build:offline": "node build.cjs",
+    "dev": "node --env-file-if-exists=.env.local scripts/serve-web.cjs",
+    "test": "node --test tests/core.test.cjs tests/experience.test.cjs tests/oracle.test.cjs tests/server.test.cjs tests/release-assets.test.cjs && node scripts/test-web-build.cjs",
+    "check:config": "node --env-file-if-exists=.env.local scripts/check-config.cjs"
+  }
+}

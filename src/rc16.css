@@ -1,0 +1,169 @@
+/* RC16 — one image, one purpose; larger editorial type; story-led readings. */
+.experience-v16{font-size:18px}
+.experience-v16 .announcement{font-size:12px;letter-spacing:.12em}
+.experience-v16 nav .links button,.experience-v16 .nav-actions button,.experience-v16 .language-control select{font-size:14px}
+.experience-v16 .hero-copy{width:min(760px,90vw)}
+.experience-v16 .hero-category,.experience-v16 .eyebrow,.experience-v16 .journey-step{font-size:13px!important;line-height:1.5;letter-spacing:.13em}
+.experience-v16 .hero h1{font-size:clamp(64px,8.7vw,132px);line-height:.9;max-width:8ch}
+.experience-v16 .hero-intro{max-width:48ch;font-size:21px;line-height:1.72}
+.experience-v16 .hero-assurance,.experience-v16 .hero-how,.experience-v16 .trust-line{font-size:15px;line-height:1.6}
+.experience-v16 .primary,.experience-v16 .secondary{font-size:14px;letter-spacing:.08em;padding:16px 23px}
+.experience-v16 .discovery-section{padding-left:clamp(28px,7vw,126px);padding-right:clamp(28px,7vw,126px)}
+.experience-v16 .section-heading{grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);gap:clamp(50px,9vw,150px);max-width:1500px}
+.experience-v16 .discovery-section h2{font-size:clamp(52px,5.8vw,88px);line-height:1.02}
+.experience-v16 .section-heading>p,.experience-v16 .section-heading>div>p{font-size:20px;line-height:1.78;max-width:48ch}
+
+/* 01–02 becomes one coherent chooser with the example inside each path. */
+.experience-v16 .reading-experience-merged{padding-top:clamp(100px,11vw,180px)}
+.experience-v16 .reading-entry-list{display:grid;gap:clamp(80px,10vw,155px);max-width:1500px;margin:clamp(70px,8vw,120px) auto 0}
+.experience-v16 .reading-entry{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(390px,.92fr);align-items:center;gap:clamp(46px,8vw,124px)}
+.experience-v16 .reading-entry:nth-child(even){grid-template-columns:minmax(390px,.92fr) minmax(0,1.08fr)}
+.experience-v16 .reading-entry:nth-child(even) figure{order:2}
+.experience-v16 .reading-entry figure{position:relative;margin:0;aspect-ratio:3/2;overflow:hidden;background:#142a25;box-shadow:0 36px 90px rgba(36,29,20,.13)}
+.experience-v16 .reading-entry figure:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(5,14,12,.64))}
+.experience-v16 .reading-entry figure img{width:100%;height:100%;object-fit:contain;transform:none!important}
+.experience-v16 .reading-entry figcaption{position:absolute;z-index:1;left:25px;bottom:21px;color:#f4ead9;font:13px/1.5 var(--sans);letter-spacing:.13em}
+.experience-v16 .reading-entry-copy{max-width:610px}
+.experience-v16 .reading-entry-copy .system-meta{font-size:12px}
+.experience-v16 .reading-entry-copy h3{font:clamp(48px,5.2vw,78px)/1 var(--serif);font-weight:400;margin:24px 0 20px}
+.experience-v16 .entry-purpose{font:19px/1.75 var(--sans);color:#595247;max-width:48ch}
+.experience-v16 .entry-case{margin:35px 0 36px;padding:30px 0;border-top:1px solid rgba(99,79,52,.18);border-bottom:1px solid rgba(99,79,52,.18)}
+.experience-v16 .entry-case small{display:block;color:#84663e;font:12px/1.5 var(--sans);letter-spacing:.12em}
+.experience-v16 .entry-case strong{display:block;margin:13px 0 12px;font:clamp(24px,2.2vw,33px)/1.35 var(--serif);font-weight:400}
+.experience-v16 .entry-case p{font:17px/1.72 var(--sans);color:#5f584c;margin:0}
+.experience-v16 .entry-case span{display:block;margin-top:19px;color:#866a42;font:12px/1.55 var(--sans);letter-spacing:.08em}
+.experience-v16 .availability-strip{margin-top:clamp(85px,10vw,150px);font-size:15px}
+
+/* Collection uses one overview image; individual product images live in the catalogue. */
+.experience-v16 .collection-world-image figcaption p{font-size:17px;line-height:1.7}
+.experience-v16 .collection-world-image>img{height:auto;min-height:0;aspect-ratio:3/2;object-fit:contain}
+.experience-v16 .collection-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:35px;margin-top:42px}
+.experience-v16 .collection-entry p{max-width:62ch;font-size:18px;line-height:1.75;margin:0}
+.experience-v16 .catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:54px 28px}
+.experience-v16 .catalog-image{background:#e4dacb}
+.experience-v16 .catalog-product-photo{width:100%;height:100%;object-fit:contain!important;object-position:center!important;transform:none!important}
+.experience-v16 .catalog-copy>small,.experience-v16 .catalog-status{font-size:13px}
+.experience-v16 .catalog-copy>p{font-size:16px;line-height:1.65}
+.experience-v16 .wishlist-text-row{grid-template-columns:46px 1fr auto}
+.experience-v16 .wishlist-index{font:13px/1.5 var(--sans);color:#92744a}
+.experience-v16 .house-note-intro{display:grid;grid-template-columns:80px 1fr;gap:30px;align-items:center;margin:0 0 48px;padding:25px 0;border-top:1px solid rgba(97,77,51,.15);border-bottom:1px solid rgba(97,77,51,.15)}
+.experience-v16 .house-note-intro>span{display:grid;place-items:center;width:66px;height:66px;border:1px solid #9d7a49;border-radius:50%;font:27px var(--serif)}
+.experience-v16 .house-note-intro p{font:21px/1.6 var(--serif);margin:0;max-width:48ch}
+
+/* 04 and 06 have distinct imagery and a clearer hierarchy. */
+.experience-v16 .ritual-explainer>p{font-size:19px;line-height:1.78}
+.experience-v16 .ritual-photograph img{height:auto;aspect-ratio:3/2;object-fit:contain}
+.experience-v16 .practice-example{border-color:rgba(99,79,52,.14);padding:31px 0}
+.experience-v16 .practice-example h3{font-size:32px}
+.experience-v16 .practice-example li{font-size:17px;line-height:1.72;margin-top:9px}
+.experience-v16 .about-manifesto{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(410px,.95fr);gap:clamp(45px,8vw,120px);align-items:start}
+.experience-v16 .about-manifesto-image{position:relative;grid-row:1/4;margin:0;min-height:0;aspect-ratio:3/2;overflow:hidden;background:#142923}
+.experience-v16 .about-manifesto-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 68%,rgba(6,16,14,.62))}
+.experience-v16 .about-manifesto-image img{width:100%;height:100%;min-height:0;object-fit:contain}
+.experience-v16 .about-manifesto-image figcaption{position:absolute;z-index:1;left:28px;bottom:23px;color:#f0e2cf;font:13px/1.5 var(--sans);letter-spacing:.14em}
+.experience-v16 .about-statement h2{font-size:clamp(48px,5vw,76px);max-width:12ch;margin:18px 0 28px}
+.experience-v16 .about-statement>p{font-size:19px;line-height:1.78;max-width:48ch}
+.experience-v16 .house-method{display:grid;gap:0;margin:38px 0 28px;padding:0;list-style:none}
+.experience-v16 .house-method li{display:grid;grid-template-columns:34px 115px 1fr;gap:18px;padding:22px 0;border-top:1px solid rgba(99,79,52,.15);align-items:start}
+.experience-v16 .house-method span,.experience-v16 .house-method strong{font:13px/1.6 var(--sans);letter-spacing:.1em;color:#85673f}
+.experience-v16 .house-method p{font-size:17px;line-height:1.68;margin:0;color:#5c554a}
+
+/* Interpretation is one centred visual story, with almost no visible rules. */
+.experience-v16 .editorial-reading{width:min(1380px,100%)}
+.experience-v16 .reading-result-head,.experience-v16 .oracle-result-head{display:flex;flex-direction:column;align-items:center;max-width:1040px;margin:0 auto 58px;padding-bottom:0;border:0;text-align:center}
+.experience-v16 .reading-result-head h2,.experience-v16 .oracle-result-head h2{font-size:clamp(50px,6vw,84px)!important}
+.experience-v16 .reading-meta,.experience-v16 .oracle-read-meta,.experience-v16 .interpretation-source{text-align:center!important}
+.experience-v16 .interpretation-source{padding:5px 0;border:0;background:transparent}
+.experience-v16 .interpretation-flow{display:flex;flex-direction:column;align-items:center;text-align:center}
+.experience-v16 .interpretation-question,.experience-v16 .interpretation-answer,.experience-v16 .interpretation-action{width:min(850px,100%);margin-inline:auto;text-align:center}
+.experience-v16 .interpretation-question{padding:0 0 38px;border-bottom:1px solid rgba(214,190,151,.10)}
+.experience-v16 .interpretation-question small,.experience-v16 .interpretation-answer small,.experience-v16 .interpretation-action small{font:13px/1.5 var(--sans);letter-spacing:.13em;color:#d0ad76}
+.experience-v16 .interpretation-question p{font:italic clamp(22px,2.3vw,32px)/1.6 var(--serif);color:#cfc1ad;margin:14px 0 0;text-align:center!important}
+.experience-v16 .interpretation-answer{padding:52px 0 62px}
+.experience-v16 .interpretation-answer p{font:clamp(29px,3vw,44px)/1.5 var(--serif);color:#f3e9d8;margin:17px auto 0;max-width:34ch;text-align:center!important}
+.experience-v16 .interpretation-flow .interpretation-hero{width:min(1160px,100%);aspect-ratio:3/2;margin:0 auto clamp(70px,8vw,112px)}
+.experience-v16 .interpretation-flow .interpretation-hero img{object-fit:contain}
+.experience-v16 .interpretation-flow .interpretation-hero figcaption{font-size:13px}
+.experience-v16 .interpretation-story{width:min(810px,100%);margin:0 auto}
+.experience-v16 .symbol-moment{position:relative;padding:52px 0;text-align:center}
+.experience-v16 .symbol-moment+.symbol-moment:before{content:"";display:block;width:42px;height:1px;margin:0 auto 52px;background:rgba(214,190,151,.13)}
+.experience-v16 .symbol-moment>span{display:block;margin-bottom:13px;color:#bc9864;font:13px/1.5 var(--sans)}
+.experience-v16 .symbol-moment>small{color:#ba9b6c;font:12px/1.5 var(--sans);letter-spacing:.11em}
+.experience-v16 .symbol-moment h3{font:clamp(34px,3.6vw,52px)/1.15 var(--serif);font-weight:400;margin:12px 0 18px;color:#f1e5d3}
+.experience-v16 .symbol-moment>p{max-width:42ch;margin:0 auto;font-size:18px;line-height:1.82;color:#d7cab7}
+.experience-v16 .symbol-moment details{max-width:40ch;margin:22px auto 0;color:#c9bca8}
+.experience-v16 .symbol-moment summary,.experience-v16 .reading-caution-disclosure summary{font-size:14px;color:#caa873}
+.experience-v16 .symbol-moment details p{font-size:16px;line-height:1.75}
+.experience-v16 .interpretation-thread{width:min(940px,100%);margin:55px auto 70px;font-size:clamp(27px,2.8vw,40px);line-height:1.55}
+.experience-v16 .interpretation-action{padding:45px 0;background:rgba(236,222,199,.055)}
+.experience-v16 .interpretation-action p{max-width:40ch;margin:16px auto 0;font-size:21px;line-height:1.75;color:#e7dac7}
+.experience-v16 .reading-caution-disclosure{border:0!important;width:min(780px,100%);padding:30px 0!important;text-align:center}
+.experience-v16 .reading-caution-disclosure p{font-size:17px;line-height:1.78}
+.experience-v16 .closing-note,.experience-v16 .oracle-reflection-prompt{border:0!important;padding:35px 0!important;text-align:center!important}
+
+/* Four products are presented as one composed ritual, not as four competing choices. */
+.experience-v16 .energy-match-panel>h2,.experience-v16 .oracle-energy-panel>h2{max-width:15ch}
+.experience-v16 .energy-match-profile,.experience-v16 .oracle-energy-profile{max-width:930px}
+.experience-v16 .energy-profile-card>p{font-size:19px;line-height:1.78}
+.experience-v16 .ritual-set-preview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:52px;border-top:1px solid rgba(214,190,151,.12);border-bottom:1px solid rgba(214,190,151,.12)}
+.experience-v16 .ritual-object-effect{padding:36px 27px 40px;text-align:left}
+.experience-v16 .ritual-object-effect+.ritual-object-effect{border-left:1px solid rgba(214,190,151,.10)}
+.experience-v16 .ritual-object-effect>span{display:block;color:#b99764;font:13px/1.5 var(--sans)}
+.experience-v16 .ritual-object-effect>small{display:block;margin-top:26px;color:#ccb07f;font:12px/1.5 var(--sans);letter-spacing:.1em}
+.experience-v16 .ritual-object-effect h3{font:clamp(27px,2.5vw,38px)/1.2 var(--serif);font-weight:400;color:#f1e6d4;margin:12px 0 17px}
+.experience-v16 .ritual-object-effect .energy-shift{font:13px/1.55 var(--sans);letter-spacing:.07em;color:#d8b779}
+.experience-v16 .ritual-object-effect .energy-shift b{font-weight:400;margin:0 4px}
+.experience-v16 .ritual-object-effect>p:last-child{font-size:16px;line-height:1.74;color:#cfc2ae}
+.experience-v16 .ritual-story{grid-template-columns:minmax(0,1.08fr) minmax(420px,.92fr);align-items:start}
+.experience-v16 .ritual-story>figure{min-height:0;aspect-ratio:3/2}
+.experience-v16 .ritual-story>figure img{object-fit:contain}
+.experience-v16 .ritual-step{grid-template-columns:48px 1fr;padding:25px 0;border-color:rgba(214,190,151,.12)}
+.experience-v16 .ritual-step p{font-size:17px;line-height:1.75}
+.experience-v16 .ritual-set-summary{margin:35px 0;padding:25px 0;border-top:1px solid rgba(214,190,151,.12);border-bottom:1px solid rgba(214,190,151,.12);text-align:center}
+.experience-v16 .ritual-set-summary small{font-size:12px;letter-spacing:.12em;color:#caa873}
+.experience-v16 .ritual-set-summary p{font:21px/1.6 var(--serif);color:#eadfcd;margin:10px 0 0}
+.experience-v16 .matched-product-actions{justify-content:center}
+
+/* A product photograph appears once in the catalogue. Details use a material
+   signature and explain the object's energy role without repeating that image. */
+.experience-v16 .modal-product-signature{position:relative;display:flex;min-height:100%;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 43%,rgba(245,232,209,.12),transparent 27%),linear-gradient(145deg,#0b211e,#183732 60%,#081816);color:#eadcc6;text-align:center}
+.experience-v16 .modal-product-signature:before,.experience-v16 .modal-product-signature:after{content:"";position:absolute;border:1px solid rgba(218,184,129,.18);border-radius:50%}
+.experience-v16 .modal-product-signature:before{width:48%;aspect-ratio:1;inset:auto}.experience-v16 .modal-product-signature:after{width:66%;aspect-ratio:1;inset:auto}
+.experience-v16 .modal-product-signature>span{position:relative;z-index:1;font:clamp(74px,11vw,150px)/1 var(--serif);font-weight:400;color:#d2b17d}
+.experience-v16 .modal-product-signature>small{position:relative;z-index:1;margin-top:24px;font:12px/1.6 var(--sans);letter-spacing:.16em;color:#bda77f}
+.experience-v16 .modal-product-signature>strong{position:relative;z-index:1;margin-top:9px;font:24px/1.3 var(--serif);font-weight:400}
+.experience-v16 .product-energy-note{margin:27px 0;padding:24px 0;border-top:1px solid rgba(77,61,40,.13);border-bottom:1px solid rgba(77,61,40,.13)}
+.experience-v16 .product-energy-note small{font-size:12px;letter-spacing:.13em;color:#8b6b40}
+.experience-v16 .product-energy-note p{margin:11px 0 9px;font:22px/1.45 var(--serif)}
+.experience-v16 .product-energy-note p b{font-weight:400;color:#9b7a4a}.experience-v16 .product-energy-note span{font-size:16px;line-height:1.68;color:#5c554a}
+
+/* Reveal uses procedural light only; interpretation art is never repeated as a background. */
+.experience-v16 #o3:before{background:radial-gradient(circle at 50% 38%,rgba(207,175,117,.10),transparent 30%),linear-gradient(135deg,rgba(7,17,15,.98),rgba(17,39,34,.94));background-image:none!important;opacity:1}
+.experience-v16 .record-landscape img{height:auto;aspect-ratio:2/1;object-fit:contain;object-position:center}
+.experience-v16 .record-content>div>p{font-size:18px;line-height:1.75}
+.experience-v16 .record-content>div>.quiet-note,.experience-v16 .ritual-explainer>.quiet-note{font-size:15px;line-height:1.72}
+.experience-v16 .circle-preview-notice{margin:13px 0 0;font:13px/1.65 var(--sans);color:#665f54}
+.experience-v16 .faq-list summary{font-size:20px}.experience-v16 .faq-list p{font-size:17px;line-height:1.75}
+
+@media(max-width:1120px){
+  .experience-v16 .reading-entry,.experience-v16 .reading-entry:nth-child(even){grid-template-columns:1fr 1fr;gap:45px}
+  .experience-v16 .ritual-set-preview{grid-template-columns:1fr 1fr}.experience-v16 .ritual-object-effect:nth-child(3){border-left:0}.experience-v16 .ritual-object-effect:nth-child(n+3){border-top:1px solid rgba(214,190,151,.10)}
+  .experience-v16 .about-manifesto{grid-template-columns:1fr}.experience-v16 .about-manifesto-image{grid-row:auto;min-height:0;aspect-ratio:3/2}.experience-v16 .about-manifesto-image img{min-height:0}
+  .experience-v16 .catalog-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .experience-v16{font-size:17px}.experience-v16 .hero .hero-intro{font-size:19px}.experience-v16 .hero h1{font-size:62px}.experience-v16 .entry-actions .primary,.experience-v16 .entry-actions .secondary{font-size:14px;letter-spacing:.04em}
+  .experience-v16 .section-heading{grid-template-columns:1fr;gap:28px}.experience-v16 .section-heading>p,.experience-v16 .section-heading>div>p{font-size:18px}
+  .experience-v16 .discovery-section h2{font-size:43px}
+  .experience-v16 .reading-entry,.experience-v16 .reading-entry:nth-child(even){grid-template-columns:1fr;gap:30px}.experience-v16 .reading-entry:nth-child(even) figure{order:0}.experience-v16 .reading-entry-copy h3{font-size:48px}.experience-v16 .entry-purpose,.experience-v16 .entry-case p{font-size:17px}
+  .experience-v16 .collection-entry{grid-template-columns:1fr;align-items:start}.experience-v16 .catalog-grid{grid-template-columns:1fr}
+  .experience-v16 .about-statement h2{font-size:43px}.experience-v16 .house-method li{grid-template-columns:30px 90px 1fr;gap:10px}
+  .experience-v16 .interpretation-answer p{font-size:29px}.experience-v16 .interpretation-flow .interpretation-hero{aspect-ratio:3/2}.experience-v16 .symbol-moment>p{font-size:17px}
+  .experience-v16 .ritual-set-preview{grid-template-columns:1fr}.experience-v16 .ritual-object-effect+.ritual-object-effect{border-left:0;border-top:1px solid rgba(214,190,151,.10)}
+  .experience-v16 .ritual-story>figure{min-height:0;aspect-ratio:3/2}.experience-v16 .ritual-step p{font-size:16px}
+}
+html[lang="zh-Hans"] .experience-v16 .hero-intro{font-size:21px;line-height:1.9}
+html[lang="zh-Hans"] .experience-v16 .discovery-section h2{font-size:clamp(43px,5.2vw,75px);line-height:1.2}
+html[lang="zh-Hans"] .experience-v16 .entry-purpose,html[lang="zh-Hans"] .experience-v16 .entry-case p,html[lang="zh-Hans"] .experience-v16 .section-heading p{line-height:1.9}
+@media(max-width:640px){html[lang="zh-Hans"] .experience-v16 .hero .hero-intro{font-size:19px;line-height:1.9}}
+@media(prefers-reduced-motion:reduce){.experience-v16 .reading-entry,.experience-v16 .interpretation-flow>*{transition:none!important;animation:none!important}}

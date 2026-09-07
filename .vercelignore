@@ -1,0 +1,9 @@
+node_modules
+.git
+.env*
+source-images
+alternatives
+brand
+index.html
+*.zip
+tests

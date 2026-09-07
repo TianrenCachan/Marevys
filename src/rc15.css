@@ -1,0 +1,236 @@
+/* RC15 compatibility layer — guided editorial journey; RC16 overrides follow it. */
+.experience-v15{
+  --rc15-paper:#f2ede4;
+  --rc15-ivory:#f7f1e7;
+  --rc15-ink:#292820;
+  --rc15-water:#102824;
+  --rc15-water-deep:#0a1716;
+  --rc15-bronze:#9a7547;
+  --rc15-rule:rgba(85,72,52,.24);
+  --page-gutter:clamp(24px,5.5vw,92px);
+  color:var(--rc15-ink);
+  font-size:17px;
+}
+.experience-v15 button,.experience-v15 input,.experience-v15 textarea,.experience-v15 select{font-size:inherit}
+.experience-v15 p{font-size:max(16px,1em)}
+.experience-v15 .eyebrow,.experience-v15 small{font-size:12px;line-height:1.55}
+.experience-v15 .primary,.experience-v15 .secondary,.experience-v15 .dark-primary{font-size:14px;line-height:1.45;min-height:54px;padding:16px 24px;letter-spacing:.035em}
+.experience-v15 .text-link{font-size:14px;line-height:1.55;letter-spacing:.015em}
+.experience-v15 .discovery-section{padding:clamp(82px,9vw,145px) var(--page-gutter)}
+.experience-v15 .section-heading{grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr);gap:clamp(45px,9vw,150px);margin-bottom:clamp(50px,6vw,92px)}
+.experience-v15 .section-heading p,.experience-v15 .ritual-explainer>p,.experience-v15 .record-content>div>p{font-size:18px;line-height:1.82;max-width:48ch}
+.experience-v15 .discovery-section h2{font-size:clamp(45px,5.5vw,78px);line-height:1.08}
+.experience-v15 .reading-system-grid{gap:clamp(18px,2.2vw,38px)}
+.experience-v15 .system-copy>p{font-size:17px;line-height:1.75}
+.experience-v15 .system-copy li{font-size:14px;line-height:1.65}
+
+/* Three complete examples replace the former rotating rune-only sample. */
+.experience-v15 .experience-case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.2vw,36px);max-width:1500px;margin:0 auto}
+.experience-v15 .experience-case{display:flex;flex-direction:column;min-width:0;background:#e9e1d5;border:1px solid var(--rc15-rule);transition:transform .45s ease,box-shadow .45s ease}
+.experience-v15 .experience-case:hover{transform:translateY(-7px);box-shadow:0 30px 70px rgba(37,31,22,.12)}
+.experience-v15 .experience-case figure{position:relative;aspect-ratio:3/2;margin:0;overflow:hidden;background:#152a25}
+.experience-v15 .experience-case figure:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(6,15,13,.72))}
+.experience-v15 .experience-case figure img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.experience-v15 .experience-case:hover figure img{transform:scale(1.035)}
+.experience-v15 .experience-case figure figcaption{position:absolute;z-index:1;left:22px;right:22px;bottom:18px;color:#f5ead7;font:12px/1.5 var(--sans);letter-spacing:.11em}
+.experience-v15 .case-copy{display:flex;flex:1;flex-direction:column;padding:clamp(25px,2.6vw,40px)}
+.experience-v15 .case-number{font:12px/1.5 var(--sans);letter-spacing:.13em;color:#80633e}
+.experience-v15 .case-copy h3{font:clamp(28px,2.4vw,38px)/1.22 var(--serif);margin:16px 0 12px}
+.experience-v15 .case-symbol{font:clamp(45px,5vw,74px)/1.1 var(--serif);color:#74552f;margin:8px 0 18px;letter-spacing:.08em}
+.experience-v15 .case-symbol-small{font-size:clamp(24px,2.4vw,35px);margin:17px 0 26px}
+.experience-v15 .case-answer{padding:21px 0;border-top:1px solid var(--rc15-rule);border-bottom:1px solid var(--rc15-rule)}
+.experience-v15 .case-answer small,.experience-v15 .case-landing small{display:block;color:#795d39;letter-spacing:.11em}
+.experience-v15 .case-answer p{font:20px/1.58 var(--serif);margin:9px 0 0}
+.experience-v15 .case-landing{padding:21px 0 28px}
+.experience-v15 .case-landing strong{display:block;font:17px/1.5 var(--sans);margin:8px 0;color:#302c24}
+.experience-v15 .case-landing p{font-size:15px;line-height:1.72;margin:0;color:#5b554a}
+.experience-v15 .case-copy>.primary{width:100%;margin-top:auto;color:#27352e}
+.experience-v15 .availability-strip{font-size:14px;margin-top:55px;justify-content:space-between}
+
+/* Product universe overview; RC16 gives every SKU its own independent image. */
+.experience-v15 .collection-world-image{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,.65fr);margin:0 0 55px;background:#142822;color:#f2eadc;min-height:470px}
+.experience-v15 .collection-world-image>img{width:100%;height:100%;min-height:470px;object-fit:cover}
+.experience-v15 .collection-world-image figcaption{display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(30px,4vw,62px)}
+.experience-v15 .collection-world-image figcaption span{font:12px/1.5 var(--sans);letter-spacing:.14em;color:#ccb187}
+.experience-v15 .collection-world-image figcaption p{font:clamp(23px,2.15vw,34px)/1.48 var(--serif);margin:17px 0 0;color:#f1e7d6}
+.experience-v15 .home-product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2vw,32px)}
+.experience-v15 .catalog-image{overflow:hidden}
+.experience-v15 .catalog-product-photo{width:100%;height:100%;object-fit:contain;transition:filter .35s ease}
+.experience-v15 .catalog-copy>small,.experience-v15 .catalog-status{font-size:12px}
+.experience-v15 .catalog-copy>p{font-size:15px;line-height:1.7}
+
+/* A screen is a scene, not a form. */
+.experience-v15 .stage{padding:clamp(62px,7vw,110px) var(--page-gutter);min-height:calc(100svh - 82px);overflow:hidden}
+.experience-v15 .stage.active .panel{animation:rc15-stage-in .72s cubic-bezier(.2,.75,.2,1) both}
+@keyframes rc15-stage-in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.experience-v15 .panel{width:min(1240px,100%);max-width:none}
+.experience-v15 #s0 .panel,.experience-v15 #s1 .panel,.experience-v15 #o0 .panel,.experience-v15 #o1 .panel{width:min(1040px,100%);padding-top:clamp(30px,5vw,80px)}
+.experience-v15 .journey-step{font:12px/1.5 var(--sans);letter-spacing:.15em;color:#c5a979;margin-bottom:46px}
+.experience-v15 #s0 h2,.experience-v15 #s1 h2,.experience-v15 #o0 h2,.experience-v15 #o1 h2{font-size:clamp(45px,6vw,78px);max-width:14ch;margin:15px 0 22px}
+.experience-v15 .reading-onboarding,.experience-v15 .oracle-onboarding,.experience-v15 .mode-guidance{max-width:59ch;font:20px/1.72 var(--serif);color:#d8cdbc;margin:0 0 45px}
+.experience-v15 .question-label{display:block;font:12px/1.5 var(--sans);letter-spacing:.12em;color:#cfb181;margin-bottom:12px;text-transform:uppercase}
+.experience-v15 .stage textarea{width:100%;min-height:150px;border:0;border-bottom:1px solid rgba(220,198,158,.62);background:transparent;padding:18px 0 22px;font:clamp(24px,2.4vw,34px)/1.5 var(--serif);color:#f5ede0;resize:vertical}
+.experience-v15 .stage textarea::placeholder{color:#918878;opacity:1}
+.experience-v15 .reading-privacy{font-size:13px;line-height:1.65;margin:17px 0 31px;color:#b9ae9d}
+.experience-v15 #s0 .primary,.experience-v15 #o0 .primary{min-width:min(100%,310px)}
+.experience-v15 .guided-need-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:38px}
+.experience-v15 .guided-need{position:relative;min-height:230px;padding:28px 24px;border:1px solid rgba(213,187,143,.34);background:rgba(255,255,255,.025);color:#f0e5d4;text-align:left;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;transition:.3s ease}
+.experience-v15 .guided-need:hover,.experience-v15 .guided-need:focus-visible{border-color:#d0ad74;background:rgba(193,151,88,.1);transform:translateY(-5px)}
+.experience-v15 .guided-need>span{position:absolute;top:25px;left:24px;font:13px var(--sans);color:#c5a16d}
+.experience-v15 .guided-need strong{font:clamp(22px,2vw,29px)/1.25 var(--serif);font-weight:400}
+.experience-v15 .guided-need small{display:block;margin-top:13px;color:#bdb2a0;font:14px/1.6 var(--sans)}
+.experience-v15 .oracle-mode-choices{display:block}
+.experience-v15 .oracle-method-note{font-size:14px;line-height:1.7;margin-top:25px}
+
+/* Tarot vault: overlapping cards, moving light and a deliberate reveal. */
+.experience-v15 .oracle-draw-stage[data-system="tarot"],.experience-v15 .oracle-overlay[data-oracle-system="tarot"] #o2{background:radial-gradient(circle at 50% 48%,#294039 0,#142824 38%,#071312 85%)}
+.experience-v15 .oracle-draw-panel{width:min(1380px,100%)}
+.experience-v15 .oracle-draw-area{position:relative;min-height:560px;margin-top:20px}
+.experience-v15 .tarot-vault{position:absolute;left:50%;top:47%;width:min(72vw,760px);aspect-ratio:1;border:1px solid rgba(199,166,111,.18);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 140px rgba(171,125,66,.09),inset 0 0 90px rgba(176,142,83,.06);pointer-events:none}
+.experience-v15 .tarot-vault:before,.experience-v15 .tarot-vault:after{content:"";position:absolute;border-radius:50%;inset:12%;border:1px solid rgba(210,179,123,.12)}
+.experience-v15 .tarot-vault:after{inset:30%;background:radial-gradient(circle,rgba(217,181,112,.11),transparent 68%);animation:rc15-pulse 4.8s ease-in-out infinite}
+@keyframes rc15-pulse{50%{transform:scale(1.11);opacity:.45}}
+.experience-v15 .tarot-vault span{position:absolute;width:4px;height:4px;border-radius:50%;background:#d5b77e;box-shadow:0 0 14px #d5b77e}
+.experience-v15 .tarot-vault span:nth-child(1){left:18%;top:33%}.experience-v15 .tarot-vault span:nth-child(2){right:22%;top:25%}.experience-v15 .tarot-vault span:nth-child(3){right:31%;bottom:18%}
+.experience-v15 .oracle-card-spread.is-draw-grid.tarot-fan{position:relative;display:block;height:390px;max-width:1320px;margin:0 auto;overflow:visible}
+.experience-v15 .tarot-fan>.oracle-card{position:absolute;left:calc(50% + (var(--fan-offset) * 27px));bottom:20px;width:145px;height:230px;min-height:230px;transform:translateX(-50%) rotate(calc(var(--fan-offset) * 1.15deg));transform-origin:50% 170%;z-index:calc(30 + var(--card-index));box-shadow:-12px 16px 26px rgba(0,0,0,.26);transition:transform .38s cubic-bezier(.2,.8,.2,1),filter .38s,opacity .38s}
+.experience-v15 .tarot-fan>.oracle-card:hover:not(:disabled),.experience-v15 .tarot-fan>.oracle-card:focus-visible{transform:translateX(-50%) translateY(-72px) rotate(0) scale(1.08);z-index:80;filter:brightness(1.18)}
+.experience-v15 .tarot-fan>.oracle-card.is-selected{transform:translateX(-50%) translateY(-105px) rotate(0) scale(1.08);z-index:90;box-shadow:0 28px 55px rgba(0,0,0,.42),0 0 0 1px #caa46b,0 0 42px rgba(195,151,83,.22)}
+.experience-v15 .tarot-selected-positions{display:flex;justify-content:center;gap:12px;margin:4px auto 22px}
+.experience-v15 .tarot-selected-positions span{min-width:130px;padding:12px 18px;border-top:1px solid rgba(211,181,132,.24);color:#827c70;font:11px/1.4 var(--sans);letter-spacing:.12em;text-align:center}
+.experience-v15 .tarot-selected-positions .is-filled{color:#e5ceaa;border-color:#c6a36a}
+.experience-v15 .oracle-card-scene{perspective:1200px;background:transparent!important;border:0!important;overflow:visible!important}
+.experience-v15 .oracle-card-inner{position:relative;width:100%;height:100%;min-height:inherit;transform-style:preserve-3d;transition:transform .78s cubic-bezier(.18,.78,.2,1)}
+.experience-v15 .oracle-card-scene.is-flipped .oracle-card-inner{animation:rc15-card-flip .82s cubic-bezier(.18,.78,.2,1) both}
+@keyframes rc15-card-flip{from{transform:rotateY(180deg) scale(.86);filter:brightness(.45)}to{transform:rotateY(0) scale(1);filter:brightness(1)}}
+.experience-v15 .oracle-card-back-panel,.experience-v15 .oracle-card-front-panel{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;backface-visibility:hidden;border:1px solid rgba(128,95,52,.42)}
+.experience-v15 .oracle-card-back-panel{background:linear-gradient(135deg,#172922,#0e1e1a);transform:rotateY(180deg)}
+.experience-v15 .oracle-card-front-panel{padding:25px 19px;background:linear-gradient(160deg,#efe4d0,#d9c8aa);color:#2b3027}
+.experience-v15 .oracle-card-front-panel>p{font:15px/1.62 var(--sans);text-align:center;color:#49453c}
+.experience-v15 .oracle-card-front-panel .oracle-card-shadow span{font-size:12px;line-height:1.55}
+.experience-v15 .oracle-card-spread.is-reveal-spread>.oracle-card{width:min(290px,29vw);min-height:455px}
+.experience-v15 .oracle-reveal-area{position:relative;z-index:1}
+.experience-v15 #o3:before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(7,17,15,.9),rgba(7,17,15,.58)),var(--oracle-art);background-size:cover;background-position:center;opacity:.5}
+
+/* I Ching cast feels physical without turning into a calculator. */
+.experience-v15 .oracle-coins{gap:clamp(18px,4vw,48px)}
+.experience-v15 .oracle-coin{width:clamp(92px,10vw,132px);height:clamp(92px,10vw,132px);font-size:30px;background:radial-gradient(circle at 35% 30%,#d5b16f,#896233 58%,#4a3420);box-shadow:inset 0 0 0 6px rgba(54,36,20,.2),0 26px 55px rgba(0,0,0,.25)}
+.experience-v15 .oracle-coin.is-casting{animation:rc15-coin-cast .7s cubic-bezier(.2,.8,.2,1)}
+@keyframes rc15-coin-cast{0%{transform:translateY(-80px) rotateX(0)}70%{transform:translateY(5px) rotateX(650deg)}100%{transform:none}}
+.experience-v15 .oracle-lines-stack{gap:14px}
+.experience-v15 .oracle-line-rule>i{height:8px;border-radius:10px;animation:rc15-line-grow .52s ease both}
+@keyframes rc15-line-grow{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+
+/* Interpretation is a visual essay, with detail available but no default dashboard. */
+.experience-v15 .editorial-reading{width:min(1320px,100%)}
+.experience-v15 .reading-result-head,.experience-v15 .oracle-result-head{max-width:980px;margin:0 auto clamp(36px,5vw,68px);text-align:center}
+.experience-v15 .reading-result-head h2,.experience-v15 .oracle-result-head h2{font-size:clamp(43px,5.3vw,74px)!important}
+.experience-v15 .interpretation-source{font-size:13px}
+.experience-v15 .reading-interpretation,.experience-v15 .oracle-interpretation{display:block}
+.experience-v15 .interpretation-editorial-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);gap:clamp(42px,7vw,105px);align-items:center;margin-bottom:clamp(70px,8vw,118px)}
+.experience-v15 .interpretation-hero{position:relative;margin:0;aspect-ratio:3/2;overflow:hidden;background:#142923;box-shadow:0 30px 80px rgba(0,0,0,.22)}
+.experience-v15 .interpretation-hero img{width:100%;height:100%;object-fit:cover}
+.experience-v15 .interpretation-hero figcaption{position:absolute;left:22px;right:22px;bottom:18px;color:#f1e5d1;font:12px/1.5 var(--sans);letter-spacing:.09em;text-shadow:0 1px 8px #000}
+.experience-v15 .interpretation-lead .reading-block,.experience-v15 .oracle-reading-header{border:0!important;padding:0 0 25px!important;margin:0 0 26px!important;border-bottom:1px solid rgba(214,190,151,.28)!important;text-align:left!important}
+.experience-v15 .interpretation-lead .reading-block p,.experience-v15 .oracle-reading-header p{font:italic 19px/1.65 var(--serif);text-align:left;margin:9px 0 0;color:#cbbca4}
+.experience-v15 .core-answer,.experience-v15 .interpretation-direct{padding:0!important;border:0!important;background:transparent!important}
+.experience-v15 .core-answer>small,.experience-v15 .interpretation-direct>small,.experience-v15 .action-now small{color:#d0ad76!important;font:12px/1.5 var(--sans)!important;letter-spacing:.12em}
+.experience-v15 .core-answer>p,.experience-v15 .interpretation-direct>p{font:clamp(24px,2.25vw,34px)/1.52 var(--serif)!important;color:#f3e9d8!important;margin:13px 0 0!important}
+.experience-v15 .action-now{margin-top:34px;padding:24px 0 0;border-top:1px solid rgba(214,190,151,.28)}
+.experience-v15 .action-now p{font:18px/1.75 var(--sans);color:#e2d6c3;margin:10px 0 0}
+.experience-v15 .interpretation-chapters{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(28px,4vw,58px)!important;margin:0 auto clamp(55px,7vw,92px);max-width:1220px}
+.experience-v15 .interpretation-chapters .story-chapter{display:grid;grid-template-columns:42px 1fr;gap:18px;padding:25px 0 0!important;border:0!important;border-top:1px solid rgba(214,190,151,.3)!important;background:transparent!important}
+.experience-v15 .story-chapter>span{font:13px/1.5 var(--sans);color:#bb9560}
+.experience-v15 .story-chapter small{color:#ba9b6c!important;font-size:11px!important;letter-spacing:.11em}
+.experience-v15 .story-chapter h3{font:clamp(26px,2vw,34px)/1.2 var(--serif);color:#f2e6d3;margin:8px 0 14px}
+.experience-v15 .story-chapter p{font:16px/1.78 var(--sans)!important;color:#d6c9b5!important;margin:0!important}
+.experience-v15 .story-chapter details{margin-top:18px;color:#c8bba7}
+.experience-v15 .story-chapter summary,.experience-v15 .reading-caution-disclosure summary{cursor:pointer;font:13px/1.6 var(--sans);color:#caa873;text-underline-offset:4px}
+.experience-v15 .story-chapter details p{margin-top:12px!important;font-size:14px!important}
+.experience-v15 .interpretation-thread{max-width:900px;margin:0 auto clamp(42px,6vw,72px);padding:0;border:0;font:clamp(25px,2.5vw,37px)/1.55 var(--serif);color:#eee1ce;text-align:center}
+.experience-v15 .reading-caution-disclosure{max-width:900px;margin:0 auto 45px;padding:22px 0;border-top:1px solid rgba(214,190,151,.28);border-bottom:1px solid rgba(214,190,151,.28)}
+.experience-v15 .reading-caution-disclosure p{font-size:16px;line-height:1.75;color:#cfc3af}
+.experience-v15 .closing-note,.experience-v15 .oracle-reflection-prompt{max-width:900px;margin:0 auto!important;padding:33px 0!important;border:0!important;text-align:center;background:transparent!important}
+.experience-v15 .closing-note p,.experience-v15 .oracle-reflection-prompt p{font:clamp(22px,2vw,30px)/1.55 var(--serif)!important}
+.experience-v15 .reading-next-actions,.experience-v15 .oracle-reading-next{display:flex;justify-content:center;margin-top:38px}
+
+/* Object and ritual pages use one dominant commercial choice. */
+.experience-v15 .energy-match-panel,.experience-v15 .oracle-energy-panel,.experience-v15 .ritual-match-panel,.experience-v15 .oracle-ritual-panel{width:min(1280px,100%)}
+.experience-v15 .energy-match-panel>h2,.experience-v15 .oracle-energy-panel>h2,.experience-v15 .ritual-match-panel>h2,.experience-v15 .oracle-ritual-panel>h2{font-size:clamp(45px,5vw,70px);text-align:left;max-width:13ch}
+.experience-v15 .energy-match-panel>.stage-intro,.experience-v15 .oracle-energy-panel>.stage-intro,.experience-v15 .ritual-match-panel>.stage-intro,.experience-v15 .oracle-ritual-panel>.stage-intro{text-align:left;max-width:56ch;font-size:18px;line-height:1.75;margin:20px 0 45px}
+.experience-v15 .energy-match-profile,.experience-v15 .oracle-energy-profile{max-width:780px;margin:0 0 28px}
+.experience-v15 .energy-profile-card{padding:0;background:transparent;border:0}
+.experience-v15 .energy-profile-card>h2{font-size:clamp(31px,3vw,45px)}
+.experience-v15 .energy-profile-card>p{font-size:17px;line-height:1.75}
+.experience-v15 .energy-primary-product .matched-product.hero,.experience-v15 .oracle-primary-product .matched-product.hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(330px,.8fr);gap:clamp(36px,6vw,90px);align-items:center;margin:45px 0 0;padding:0;border:0;background:transparent}
+.experience-v15 .energy-primary-product .catalog-image,.experience-v15 .oracle-primary-product .catalog-image{aspect-ratio:4/3;min-height:430px}
+.experience-v15 .matched-product.hero>div>small{font-size:12px;letter-spacing:.11em;color:#c9a66f}
+.experience-v15 .matched-product.hero .catalog-title{font-size:clamp(38px,4vw,60px);color:#f1e6d4;margin:15px 0 13px}
+.experience-v15 .matched-product.hero>div>p{font:21px/1.66 var(--serif);color:#dfd1bc}
+.experience-v15 .object-use{margin-top:28px;padding-top:22px;border-top:1px solid rgba(214,190,151,.28)}
+.experience-v15 .object-use>span{font:11px/1.5 var(--sans);letter-spacing:.12em;color:#caa873}
+.experience-v15 .object-use p{font-size:16px!important;line-height:1.72!important;color:#ded0ba!important;margin:10px 0 0!important}
+.experience-v15 .stage-navigation{margin-top:46px}
+.experience-v15 .ritual-story{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(380px,.92fr);gap:clamp(40px,6vw,90px);align-items:stretch}
+.experience-v15 .ritual-story>figure{margin:0;min-height:620px;overflow:hidden}
+.experience-v15 .ritual-story>figure img{width:100%;height:100%;object-fit:cover}
+.experience-v15 .ritual-story-copy{display:flex;flex-direction:column;justify-content:center}
+.experience-v15 .ritual-story-copy>h2{font-size:clamp(38px,4vw,58px);margin:13px 0 14px}
+.experience-v15 .ritual-setting{font:14px/1.7 var(--sans)!important;color:#c5a875!important}
+.experience-v15 .ritual-steps{display:grid;grid-template-columns:1fr;gap:0;margin-top:26px}
+.experience-v15 .ritual-step{display:grid;grid-template-columns:45px 1fr;gap:18px;padding:22px 0;border-top:1px solid rgba(214,190,151,.26)}
+.experience-v15 .ritual-step>span{font-size:13px;color:#bc9864}
+.experience-v15 .ritual-step small{font-size:11px;letter-spacing:.08em}
+.experience-v15 .ritual-step p{font-size:16px;line-height:1.74;margin:8px 0 0}
+.experience-v15 .matched-products{margin-top:45px}
+.experience-v15 .matched-products .matched-product-grid{grid-template-columns:minmax(0,1fr)}
+.experience-v15 .matched-products .matched-product.support{display:none}
+.experience-v15 .matched-products .matched-product.hero{display:grid;grid-template-columns:190px 1fr;gap:26px;max-width:680px;padding:18px;border:1px solid rgba(214,190,151,.27)}
+.experience-v15 .matched-products .matched-product.hero .catalog-image{min-height:190px}
+.experience-v15 .matched-products .object-use{display:none}
+.experience-v15 .matched-product-actions{display:flex;align-items:center;gap:26px;margin-top:32px}
+
+/* Final page: reflection first, then a deliberate retention invitation. */
+.experience-v15 #s7 .panel,.experience-v15 #o7 .panel{width:min(980px,100%)}
+.experience-v15 .final-reflection{margin:40px 0 50px;padding:32px 0;border-top:1px solid rgba(214,190,151,.25);border-bottom:1px solid rgba(214,190,151,.25)}
+.experience-v15 .final-reflection label{font:12px/1.5 var(--sans);letter-spacing:.11em;color:#c6a46d;text-transform:uppercase}
+.experience-v15 .final-reflection textarea{min-height:100px;font-size:23px}
+.experience-v15 .circle-invitation{margin:52px 0 38px;padding:clamp(28px,4vw,52px);background:#eadfce;color:#2a2b23}
+.experience-v15 .circle-invitation>small{color:#775a36;letter-spacing:.12em}
+.experience-v15 .circle-invitation h3{font:clamp(31px,3.4vw,47px)/1.2 var(--serif);margin:14px 0}
+.experience-v15 .circle-invitation p{font-size:17px;line-height:1.7;max-width:56ch}
+.experience-v15 .circle-invitation form{display:grid;grid-template-columns:1fr auto;gap:12px;margin-top:26px}
+.experience-v15 .circle-invitation input{min-width:0;border:0;border-bottom:1px solid #826746;background:transparent;padding:15px 4px;font:17px/1.5 var(--sans);color:#2a2b23}
+.experience-v15 .circle-invitation .primary{background:#173028;color:#f6ebda;border-color:#173028}
+
+@media(max-width:1080px){
+  .experience-v15 .experience-case-grid{grid-template-columns:1fr 1fr}.experience-v15 .experience-case:last-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.experience-v15 .experience-case:last-child figure{height:100%;aspect-ratio:auto}
+  .experience-v15 .home-product-grid{grid-template-columns:1fr 1fr}
+  .experience-v15 .interpretation-editorial-grid,.experience-v15 .energy-primary-product .matched-product.hero,.experience-v15 .oracle-primary-product .matched-product.hero,.experience-v15 .ritual-story{grid-template-columns:1fr}
+  .experience-v15 .interpretation-hero{max-height:620px}.experience-v15 .energy-primary-product .catalog-image,.experience-v15 .oracle-primary-product .catalog-image{min-height:0}
+  .experience-v15 .ritual-story>figure{min-height:0;aspect-ratio:3/2}
+  .experience-v15 .interpretation-chapters{grid-template-columns:1fr!important}
+  .experience-v15 .tarot-fan>.oracle-card{left:calc(50% + (var(--fan-offset) * 20px));width:130px;height:208px;min-height:208px}
+}
+@media(max-width:720px){
+  .experience-v15{font-size:16px}.experience-v15 .discovery-section{padding:72px 6vw}
+  .experience-v15 .section-heading{grid-template-columns:1fr;gap:24px;margin-bottom:45px}.experience-v15 .discovery-section h2{font-size:40px}
+  .experience-v15 .experience-case-grid{grid-template-columns:1fr}.experience-v15 .experience-case:last-child{grid-column:auto;display:flex}.experience-v15 .experience-case:last-child figure{aspect-ratio:3/2}
+  .experience-v15 .collection-world-image{grid-template-columns:1fr;min-height:0}.experience-v15 .collection-world-image>img{min-height:0;aspect-ratio:3/2}.experience-v15 .collection-world-image figcaption{padding:28px}
+  .experience-v15 .home-product-grid{grid-template-columns:1fr}
+  .experience-v15 .stage{padding:46px 6vw}.experience-v15 .journey-step{margin-bottom:30px}.experience-v15 #s0 h2,.experience-v15 #s1 h2,.experience-v15 #o0 h2,.experience-v15 #o1 h2{font-size:38px;max-width:none}
+  .experience-v15 .reading-onboarding,.experience-v15 .oracle-onboarding,.experience-v15 .mode-guidance{font-size:18px;margin-bottom:32px}.experience-v15 .stage textarea{font-size:22px;min-height:130px}
+  .experience-v15 .guided-need-options{grid-template-columns:1fr}.experience-v15 .guided-need{min-height:145px}
+  .experience-v15 .oracle-draw-area{min-height:440px}.experience-v15 .tarot-vault{width:92vw}.experience-v15 .oracle-card-spread.is-draw-grid.tarot-fan{height:315px;transform:scale(.82);transform-origin:50% 80%}
+  .experience-v15 .tarot-fan>.oracle-card{left:calc(50% + (var(--fan-offset) * 10px));width:104px;height:166px;min-height:166px}
+  .experience-v15 .tarot-selected-positions span{min-width:0;padding:10px 5px;flex:1;font-size:9px}
+  .experience-v15 .oracle-card-spread.is-reveal-spread>.oracle-card{width:min(300px,86vw);min-height:430px}
+  .experience-v15 .interpretation-editorial-grid{gap:35px;margin-bottom:58px}.experience-v15 .interpretation-hero{aspect-ratio:4/3}.experience-v15 .core-answer>p,.experience-v15 .interpretation-direct>p{font-size:25px!important}
+  .experience-v15 .story-chapter{grid-template-columns:32px 1fr!important}.experience-v15 .interpretation-thread{font-size:25px}
+  .experience-v15 .ritual-story-copy>h2{font-size:36px}.experience-v15 .matched-products .matched-product.hero{grid-template-columns:110px 1fr}.experience-v15 .matched-products .matched-product.hero .catalog-image{min-height:130px}
+  .experience-v15 .matched-product-actions{align-items:stretch;flex-direction:column}.experience-v15 .circle-invitation form{grid-template-columns:1fr}.experience-v15 #s7 .entry-actions,.experience-v15 #o7 .entry-actions{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  .experience-v15 .stage.active .panel,.experience-v15 .oracle-card-scene.is-flipped .oracle-card-inner,.experience-v15 .oracle-coin.is-casting,.experience-v15 .oracle-line-rule>i,.experience-v15 .tarot-vault:after{animation:none!important}
+  .experience-v15 .experience-case,.experience-v15 .experience-case img,.experience-v15 .tarot-fan>.oracle-card{transition:none!important}
+}
