@@ -17,7 +17,7 @@ test('rejects mutable references before any file or network access', async () =>
 
 test('reuses all valid release assets without making a network request', async () => {
   const result = await fetchReleaseAssets({ root, commit, fetchImpl() { throw new Error('Unexpected network request'); } });
-  assert.equal(result.verifiedLocal, 106);
+  assert.equal(result.verifiedLocal, 184);
   assert.equal(result.downloaded, 0);
   assert.equal(result.receivedBytes, 0);
 });
@@ -39,7 +39,7 @@ test('rejects tampered download and leaves existing file intact', async () => {
     await fs.mkdir(path.join(temporary, 'assets'));
     const good = Buffer.from('verified-image');
     const bad = Buffer.from('tampered-image');
-    const manifest = { assets: Array.from({ length: 105 }, (_, i) => ({
+    const manifest = { assets: Array.from({ length: 183 }, (_, i) => ({
       file: `assets/test-${i}.webp`, bytes: good.length,
       sha256: crypto.createHash('sha256').update(good).digest('hex')
     })) };

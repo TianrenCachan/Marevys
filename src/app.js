@@ -86,6 +86,7 @@
     // The global home/navigation actions bypass each overlay's close button, so
     // explicitly stop any hidden Oracle countdown or obsolete AI response.
     window.MarevysOracle?.cancelPendingOracleWork?.();
+    window.MarevysStudio?.pause?.();
     // Leave every overlay without reloading or changing the user's saved/session data.
     for(const layer of layers.splice(0)){
       layer.el.classList.remove('open');layer.el.removeAttribute('aria-modal');layer.el.inert=false;
@@ -141,6 +142,7 @@
     if($('#accountMsg')?.dataset.message)set('#accountMsg',t($('#accountMsg').dataset.message));
     if($('#newsletterMsg')?.dataset.message)set('#newsletterMsg',t($('#newsletterMsg').dataset.message));
     window.MarevysOracle?.applyLanguage?.(state.lang);
+    window.MarevysStudio?.applyLanguage?.(state.lang);
     $('#toast').classList.remove('visible');
   }
   function rune(index){
@@ -748,7 +750,7 @@
     }else $$('.reveal-on-scroll').forEach(el=>el.classList.add('in-view'));
     document.addEventListener('keydown',event=>{
       if(event.key==='Escape'){
-        const top=layers.at(-1);if(top){const closers={reading:closeReading,oracleReading:()=>window.closeOracleReading?.(),pathDrawer:closePath,maisonDrawer:closeMaison,productModal:closeProduct,bagModal:closeBag,accountModal:closeAccount,legalDrawer:closeLegal,strategyOverlay:closeStrategy};closers[top.el.id]?.();}
+        const top=layers.at(-1);if(top){const closers={reading:closeReading,oracleReading:()=>window.closeOracleReading?.(),pathDrawer:closePath,maisonDrawer:closeMaison,productModal:closeProduct,bagModal:closeBag,accountModal:closeAccount,legalDrawer:closeLegal,strategyOverlay:closeStrategy,readingStudio:()=>window.MarevysStudio?.close()};closers[top.el.id]?.();}
         else if($('#mobileMenu').classList.contains('open'))toggleMenu();
       }
       if(event.key==='Enter'||event.key===' '){const el=event.target.closest?.('[role="button"]');if(el&&el===event.target){event.preventDefault();el.click();}}

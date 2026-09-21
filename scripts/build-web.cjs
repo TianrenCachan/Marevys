@@ -12,12 +12,32 @@ const SCRIPT_SOURCES = [
   'data.js', 'experience-data.js', 'oracle-data.js', 'i18n.js',
   'i18n-runes.js', 'i18n-house.js', 'i18n-flow.js', 'i18n-experience.js',
   'i18n-oracles.js', 'i18n-rc15.js', 'i18n-rc16-gate.js', 'i18n-rc16.js',
-  'i18n-rc17.js', 'i18n-rc18.js', 'i18n-rc19.js', 'core.js', 'oracle.js', 'app.js'
+  'i18n-rc17.js', 'i18n-rc18.js', 'i18n-rc19.js', 'core.js', 'oracle.js', 'app.js',
+  'astrology-studio.js', 'reading-studio.js'
 ];
 const STYLE_SOURCES = [
   'base.css', 'refinement.css', 'experience.css', 'oracle.css', 'rc15.css',
-  'rc16-gate.css', 'rc16.css', 'rc17.css', 'rc18.css', 'rc19.css'
+  'rc16-gate.css', 'rc16.css', 'rc17.css', 'rc18.css', 'rc19.css',
+  'astrology-studio.css', 'reading-studio.css'
 ];
+
+function readPublicTarotCards() {
+  const cards=JSON.parse(fs.readFileSync(path.join(ROOT,'server','tarot-cards.json'),'utf8'));
+  if (!Array.isArray(cards)||cards.length!==78) throw new Error('Expected the complete 78-card tarot catalogue');
+  const localized=value=>Object.fromEntries(['en','fr','zh'].map(locale=>{
+    if (!value||typeof value[locale]!=='string'||!value[locale].trim()||value[locale].length>3000) throw new Error('Invalid public tarot translation');
+    return [locale,value[locale]];
+  }));
+  // Deliberate allowlist: book excerpts, private corpus chunks, source paths and
+  // internal review metadata must never enter the public application bundle.
+  return cards.map((card,index)=>{
+    if(card.id!==`TAROT_${String(index).padStart(2,'0')}`||card.number!==index||card.imageKey!==`tarotClassic${String(index).padStart(2,'0')}`)throw new Error('Tarot image/card ordering mismatch');
+    return {id:card.id,number:card.number,suit:card.suit,rank:card.rank,name:localized(card.name),upright:localized(card.upright),reversed:localized(card.reversed),imageKey:card.imageKey};
+  });
+}
+function serializePublicJson(value) {
+  return JSON.stringify(value).replace(/</g,'\\u003c').replace(/>/g,'\\u003e').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
+}
 
 function digest(bytes) {
   return crypto.createHash('sha256').update(bytes).digest('hex');
@@ -60,7 +80,11 @@ function buildWeb({ outputDir = path.join(ROOT, 'dist') } = {}) {
       assetMap[asset.key] = writeAsset(path.basename(asset.file), bytes);
       dimensions.set(asset.key, asset);
     }
-    if (Object.keys(assetMap).length !== 105) throw new Error('Expected the approved 105 canonical images');
+    if (Object.keys(assetMap).length !== 183) throw new Error('Expected 105 preserved images plus 78 classic tarot faces');
+
+    const artCreditsUrl=writeAsset('RWS_1909_ATTRIBUTION.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','RWS_1909_ATTRIBUTION.md')));
+    const artProvenanceUrl=writeAsset('RWS_1909_PROVENANCE.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','RWS_1909_PROVENANCE.json')));
+    const astronomyLicenseUrl=writeAsset('Astronomy_Engine_MIT.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','Astronomy_Engine_MIT.txt')));
 
     const fontUrl = writeAsset('noto-sans-runic-runic-400-normal.woff2',
       fs.readFileSync(path.join(ROOT, 'assets', 'noto-sans-runic-runic-400-normal.woff2')));
@@ -89,7 +113,7 @@ function buildWeb({ outputDir = path.join(ROOT, 'dist') } = {}) {
       return source;
     }).join('\n');
     new vm.Script(scripts, { filename: 'marevys-online.js' });
-    const bootstrap = `window.MAREVYS_ASSETS = ${JSON.stringify(assetMap)};\nwindow.MAREVYS_AI_ENDPOINT = '/api/reading';\n`;
+    const bootstrap = `window.MAREVYS_ASSETS = ${serializePublicJson(assetMap)};\nwindow.MAREVYS_TAROT_CARDS = ${serializePublicJson(readPublicTarotCards())};\nwindow.MAREVYS_BUILD_VERSION = 'RC21';\nwindow.MAREVYS_AI_ENDPOINT = '/api/reading';\nwindow.MAREVYS_CREDITS = ${serializePublicJson({artCreditsUrl,artProvenanceUrl,astronomyLicenseUrl})};\n`;
     const bootstrapUrl = writeAsset('marevys-runtime.js', bootstrap);
     const scriptUrl = writeAsset('marevys-app.js', scripts);
     let html = fs.readFileSync(path.join(ROOT, 'src', 'template.html'), 'utf8');
@@ -118,7 +142,8 @@ function buildWeb({ outputDir = path.join(ROOT, 'dist') } = {}) {
       applicationBytes: Buffer.byteLength(scripts), runtimeBytes: Buffer.byteLength(bootstrap),
       totalFiles: emitted.size + 1,
       totalBytes: Buffer.byteLength(html) + [...emitted.values()].reduce((sum, size) => sum + size, 0),
-      assetMap, cssUrl, bootstrapUrl, scriptUrl, fontUrl, fontLicenseUrl
+      assetMap, cssUrl, bootstrapUrl, scriptUrl, fontUrl, fontLicenseUrl,
+      artCreditsUrl, artProvenanceUrl, astronomyLicenseUrl
     };
   } catch (error) {
     fs.rmSync(stageDir, { recursive: true, force: true });
@@ -131,4 +156,4 @@ if (require.main === module) {
   console.log(JSON.stringify(summary, null, 2));
 }
 
-module.exports = { buildWeb, SCRIPT_SOURCES, STYLE_SOURCES };
+module.exports = { buildWeb, SCRIPT_SOURCES, STYLE_SOURCES, readPublicTarotCards, serializePublicJson };

@@ -3,14 +3,15 @@ const http=require('node:http');
 const fs=require('node:fs');
 const path=require('node:path');
 const reading=require('../api/reading.js');
+const handlers={'/api/reading':reading,'/api/tarot':require('../api/tarot.js'),'/api/astrology':require('../api/astrology.js'),'/api/locations':require('../api/locations.js')};
 const root=path.resolve(__dirname,'../dist');
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2'};
 const server=http.createServer(async(req,res)=>{
   const pathname=new URL(req.url,'http://localhost').pathname;
-  if(pathname==='/api/reading'){
+  if(Object.hasOwn(handlers,pathname)){
     res.status=n=>{res.statusCode=n;return res;};
     res.json=value=>{res.setHeader('Content-Type','application/json');res.end(JSON.stringify(value));return res;};
-    try{await reading(req,res);}catch{if(!res.writableEnded){res.statusCode=500;res.end('{"error":"internal_error"}');}}
+    try{await handlers[pathname](req,res);}catch{if(!res.writableEnded){res.statusCode=500;res.end('{"error":"internal_error"}');}}
     return;
   }
   if(!['GET','HEAD'].includes(req.method)){res.writeHead(405,{Allow:'GET, HEAD'});res.end();return;}

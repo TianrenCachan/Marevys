@@ -38,7 +38,15 @@ test('online build preserves approved content, assets and dependency order witho
   const context = { window: {} };
   vm.runInNewContext(runtime, context);
   assert.equal(context.window.MAREVYS_AI_ENDPOINT, '/api/reading');
-  assert.equal(Object.keys(context.window.MAREVYS_ASSETS).length, 105);
+  assert.equal(Object.keys(context.window.MAREVYS_ASSETS).length, 183);
+  assert.equal(context.window.MAREVYS_BUILD_VERSION, 'RC21');
+  assert.equal(context.window.MAREVYS_TAROT_CARDS.length, 78);
+  for(const card of context.window.MAREVYS_TAROT_CARDS){
+    assert.ok(context.window.MAREVYS_ASSETS[card.imageKey]);
+    assert.deepEqual(Object.keys(card).sort(),['id','imageKey','name','number','rank','reversed','suit','upright']);
+    for(const lang of ['en','fr','zh'])assert.ok(card.name[lang]&&card.upright[lang]&&card.reversed[lang]);
+  }
+  assert.doesNotMatch(runtime, /"(?:sourceRefs|editorialStatus|chunks|fullText|pageText)"\s*:/);
 
   const manifest = JSON.parse(fs.readFileSync(path.join(root, 'ASSET_MANIFEST.json'), 'utf8'));
   for (const asset of manifest.assets) {
@@ -54,6 +62,9 @@ test('online build preserves approved content, assets and dependency order witho
   assert.match(css, /font-family:'Marevys Runic'/);
   assert.ok(read(result.fontUrl).length > 1000);
   assert.match(read(result.fontLicenseUrl).toString(), /SIL OPEN FONT LICENSE/);
+  assert.match(read(result.artCreditsUrl).toString(), /Pamela Colman Smith/);
+  assert.equal(JSON.parse(read(result.artProvenanceUrl).toString()).cardCount,78);
+  assert.match(read(result.astronomyLicenseUrl).toString(), /MIT License/);
   assert.doesNotMatch(html + css + runtime, /data:(?:image|font)\/|source-images\//i);
   assert.ok(result.htmlBytes < 60000, 'the online entry point stays small');
   assert.deepEqual(fs.readdirSync(result.outputDir).sort(), ['assets', 'index.html']);

@@ -2,6 +2,7 @@
 const { randomUUID } = require('node:crypto');
 const { ReadingError, normalizeRequest, responseSchema, validateResponse, INSTRUCTIONS } = require('../server/reading.cjs');
 const { reserve } = require('../server/rate-limit.cjs');
+const { normalizeDeepRequest, requestDeepReading } = require('../server/deep-reading.cjs');
 const MAX_BODY = 32 * 1024;
 const REQUIRED = ['OPENAI_API_KEY', 'OPENAI_MODEL', 'UPSTASH_REDIS_REST_URL', 'UPSTASH_REDIS_REST_TOKEN', 'RATE_LIMIT_SALT'];
 
@@ -90,7 +91,7 @@ async function requestOpenAI(fetchImpl, input, config, identity, timeoutMs) {
   } finally { clearTimeout(timer); }
 }
 
-function createHandler({ env = process.env, fetchImpl = globalThis.fetch, now = Date.now, aiTimeoutMs = 30000 } = {}) {
+function createHandler({ env = process.env, fetchImpl = globalThis.fetch, now = Date.now, aiTimeoutMs } = {}) {
   return async function reading(req, res) {
     const requestId = randomUUID();
     res.setHeader('Cache-Control', 'no-store');
@@ -102,10 +103,13 @@ function createHandler({ env = process.env, fetchImpl = globalThis.fetch, now = 
     try {
       if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); throw new ReadingError(405, 'METHOD_NOT_ALLOWED'); }
       checkOrigin(req, env);
-      const input = normalizeRequest(await readBody(req));
+      const body = await readBody(req);
+      const deep = body?.schemaVersion === 2;
+      const input = deep ? normalizeDeepRequest(body, env, now()) : normalizeRequest(body);
       const config = configuration(env);
       reservation = await reserve(fetchImpl, req, config, now());
-      const value = await requestOpenAI(fetchImpl, input, config, reservation.identity, aiTimeoutMs);
+      const timeout = aiTimeoutMs === undefined ? (deep ? 45000 : 30000) : aiTimeoutMs;
+      const value = await (deep ? requestDeepReading : requestOpenAI)(fetchImpl, input, config, reservation.identity, timeout);
       send(200, value);
     } catch (error) {
       const safe = error instanceof ReadingError ? error : new ReadingError(502, 'AI_UNAVAILABLE');

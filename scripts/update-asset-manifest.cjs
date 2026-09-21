@@ -6,6 +6,9 @@ const {execFileSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..');
 const previous=JSON.parse(fs.readFileSync(path.join(root,'ASSET_MANIFEST.json'),'utf8'));
 const previousByKey=new Map(previous.assets.map(asset=>[asset.key,asset]));
+const classicProvenance=JSON.parse(fs.readFileSync(path.join(root,'THIRD_PARTY_LICENSES','RWS_1909_PROVENANCE.json'),'utf8'));
+if(classicProvenance.cards.length!==78)throw new Error('Expected 78 provenance records for the complete classic tarot deck');
+const classicByKey=new Map(classicProvenance.cards.map(card=>['tarotClassic'+String(card.index).padStart(2,'0'),card]));
 const files={
   hero:'hero-water.webp',logo:'marevys-mark-approved.png',parfum:'parfum-minimal-label.webp',runes:'runes.webp',tea:'tea.webp',path:'path.webp',oracle:'oracle.webp',ritual:'ritual-small-label.webp',journal:'journal-subtle.webp',object:'object-branded.webp',yi:'yi.webp',ichingReading:'i-ching-interpretation-v2.webp',ritualObjects:'ritual-objects.webp',ritualEveryday:'ritual-everyday.webp',aboutHouse:'about-house.webp',productStone24:'product-stone24.webp',productPulse01:'product-pulse01.webp',productMedallion01:'product-medallion01.webp',productEmber01:'product-ember01.webp',productCloth01:'product-cloth01.webp',productArcana22:'product-arcana22.webp',productCoin64:'product-coin64.webp',ritualGround:'ritual-ground.webp',ritualOpen:'ritual-open.webp',ritualProsper:'ritual-prosper.webp',ritualClear:'ritual-clear.webp',ritualMove:'ritual-move.webp',ritualRest:'ritual-rest.webp',ritualProtect:'ritual-protect.webp',ritualCreate:'ritual-create.webp',
   runeStoneBack1:'rune-stone-back-01.webp',runeStoneBack2:'rune-stone-back-02.webp',runeStoneBack3:'rune-stone-back-03.webp',runeStoneBack4:'rune-stone-back-04.webp',tarotBack:'tarot-card-back-arcana22.webp',runeReadingSurface:'reading-surface-rune-v2.webp',tarotReadingSurface:'reading-surface-tarot-v2.webp',ichingReadingSurface:'reading-surface-iching.webp',readingRecordReturn01:'reading-record-return01.webp',
@@ -14,6 +17,7 @@ const files={
 };
 for(let number=5;number<=24;number++)files['runeStoneBack'+number]='rune-stone-back-'+String(number).padStart(2,'0')+'.webp';
 for(let number=0;number<=21;number++)files['tarot'+String(number).padStart(2,'0')]='tarot-'+String(number).padStart(2,'0')+'.webp';
+for(let number=0;number<=77;number++)files['tarotClassic'+String(number).padStart(2,'0')]='tarotClassic'+String(number).padStart(2,'0')+'.webp';
 
 const descriptions={
   ichingReading:'Indoor still life with exactly three square-hole bronze coins, blank handmade xuan paper, inkstone and brush; no fixed hexagram, text, seal or logo',
@@ -56,8 +60,10 @@ const descriptions={
 };
 for(let number=5;number<=24;number++)descriptions['runeStoneBack'+number]='Independent blank natural basalt stone '+String(number).padStart(2,'0')+' used once in the 24-stone blind selection; no glyph, text or logo';
 for(let number=0;number<=21;number++)descriptions['tarot'+String(number).padStart(2,'0')]=`Independent Major Arcana face ${String(number).padStart(2,'0')} in the MARÉVYS mineral-watercolour product language; no title, numeral or logo`;
+for(const [key,card] of classicByKey)descriptions[key]=`Complete original 1909 Rider–Waite–Smith card face: ${card.name}; Pamela Colman Smith artwork, original English lettering preserved; no added logo`;
 
 function masterFor(key,file){
+  if(classicByKey.has(key))return undefined;
   if(key==='productArcana22')return 'source-images/product-arcana22-exact.png';
   const direct=`source-images/${file.replace('.webp','.png')}`;
   if(fs.existsSync(path.join(root,direct)))return direct;
@@ -72,6 +78,7 @@ function inspect(key,file){
   const prior=previousByKey.get(key)||{};
   const master=masterFor(key,file);
   const asset={
+    ...prior,
     key,
     file:`assets/${file}`,
     width:Number(width),
@@ -84,6 +91,16 @@ function inspect(key,file){
     embedded:true,
     sourcePreserved:Boolean(master||prior.sourcePreserved)
   };
+  if(classicByKey.has(key)){
+    const source=classicByKey.get(key);
+    if(asset.sha256!==source.sha256||asset.bytes!==source.bytes)throw new Error(`Classic tarot art differs from its verified provenance: ${file}`);
+    delete asset.master;
+    asset.sourcePreserved=false;
+    asset.sourceRecorded=true;
+    asset.provenance={artist:source.artist,sourceYear:source.sourceYear,sourcePage:source.sourcePage,sourceSha1:source.sourceSha1,downloadedSha256:source.downloadedSha256,license:source.license,licenseUrl:source.licenseUrl,manifest:'THIRD_PARTY_LICENSES/RWS_1909_PROVENANCE.json'};
+    asset.encoding='WebP quality 82 from original-edition scan, proportionally resized to 500 pixels wide; no cropping or recolouring';
+    return asset;
+  }
   if(master)asset.master=master;
   if(['parfum','ritual','object','journal','tea','productStone24','productPulse01','productMedallion01','productEmber01','productCloth01','productCoin64'].includes(key))asset.encoding='WebP quality 90, normalized to one 4:5 catalogue composition';
   else if(key==='productArcana22')asset.encoding='WebP quality 90 from a 4:5 product composition using the exact official card faces and card back';
@@ -92,8 +109,8 @@ function inspect(key,file){
 }
 
 const manifest={
-  version:'RC19',
-  assetBaseline:'RC19 embeds 104 assigned content images plus one approved transparent global logo. Every one of the 24 blind-selection rune stones has its own independently generated basalt photograph; the bundle also includes twelve independent 4:5 private-match portraits, twelve independent 2:3 ritual-bookmark photographs, a dedicated RETURN 01 record surface, refined reading materials and a realistic indoor I Ching still life.',
+  version:'RC21',
+  assetBaseline:'RC21 preserves the 105 existing brand, product and archived-reading images and adds 78 complete, independently sourced public-domain Rider–Waite–Smith card faces from the original 1909 Roses & Lilies edition. The active reading experience focuses on tarot and natal astrology; legacy rune and I Ching assets remain available for old records.',
   experienceArchitecture:'EXPERIENCE_ARCHITECTURE.json',
   languages:['en','fr','zh-Hans'],
   completeHtml:'index.html',
@@ -102,8 +119,9 @@ const manifest={
   decisions:{
     ...previous.decisions,
     runeInterpretation:'The former photographic rune inset is removed. The selected rune and full interpretation are rendered as crisp incised type on one CSS-built basalt tablet.',
-    tarotFaces:'All 22 Major Arcana have independent complete 2:3 illustrations; the catalogue deck uses a separate full product composition in the same material and colour language.',
-    tarotProductConsistency:'The blind draw, reveal animation and ARCANA 22 catalogue composition use the same official lunar back; every visible catalogue face is composited from the exact 22-card artwork set.',
+    tarotFaces:'The active tarot experience uses all 78 original 1909 Rider–Waite–Smith faces with documented provenance, contained at their native ratio. The earlier 22 mineral-watercolour faces remain preserved for legacy records and catalogue compositions.',
+    tarotProductConsistency:'The active 78-card online reading uses classic Rider–Waite–Smith faces. ARCANA 22 catalogue photography retains its earlier 22-card product design; it must not be described as the same complete deck.',
+    tarotProvenance:'Original 1909 illustrations by Pamela Colman Smith, scans by Saskia Jansen, Wikimedia Commons public-domain metadata; complete source URLs and hashes in THIRD_PARTY_LICENSES/RWS_1909_PROVENANCE.json.',
     catalogueFormat:'All twelve single-product catalogue photographs are delivered at the same 1024 × 1280 (4:5) format and fill the same image frame.',
     readingMaterials:'Rune interpretation uses crisp incised basalt, Tarot uses fine navy-gold card stock and I Ching uses warm xuan paper; none stretches a landscape photograph over a long page.',
     iching:'The reading scene uses exactly three square-hole bronze coins beside blank xuan paper so it never contradicts the dynamically cast hexagram; the catalogue uses a separate three-coin product composition.',

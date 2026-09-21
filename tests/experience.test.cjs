@@ -1,5 +1,8 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
-const {createHarness}=require('./dom-harness.cjs');
+const {createHarness:createDOMHarness}=require('./dom-harness.cjs');
+// Archived rune/oracle behavior remains tested against its editable compatibility
+// modules. RC21 studio boot and membership-free notebook are exercised explicitly.
+const createHarness=options=>createDOMHarness({bundle:false,...options});
 const root=path.join(__dirname,'..'),template=fs.readFileSync(path.join(root,'src/template.html'),'utf8');
 const plain=value=>JSON.parse(JSON.stringify(value));
 let count=0,chain=Promise.resolve();
@@ -18,14 +21,15 @@ function unlockArchive(h,mode='join'){
 }
 test('The delivered bundle initializes in all three languages without a network or account',()=>{
  for(const language of ['en','fr','zh']){
-  const h=createHarness({language});assert.equal(h.document.documentElement.lang,language==='zh'?'zh-Hans':language);
-  assert.equal(h.get('#homeCollection'),null);assert.equal(h.get('#how-it-works'),null);assert.equal(h.all('#reading-systems .reading-entry').length,3);
+  const h=createHarness({language,bundle:true});assert.equal(h.document.documentElement.lang,language==='zh'?'zh-Hans':language);
+  assert.equal(h.get('#homeCollection'),null);assert.equal(h.get('#how-it-works'),null);assert.equal(h.all('#reading-systems .reading-entry').length,2);
   assert.equal(h.hooks.state.lang,language);assert.equal(h.hooks.layers.length,0);
-  assert.equal(h.get('#pathSummary').hidden,true);assert.equal(h.document.title,'MARÉVYS PARIS — '+tr.t('Symbolic Readings & Everyday Rituals',language));
+  assert.equal(h.get('#pathSummary').hidden,true);assert.equal(h.document.title,'MARÉVYS PARIS — '+({en:'Tarot & Astrology',fr:'Tarot & Astrologie',zh:'塔罗 & 星盘'}[language]));
+  assert(h.window.MarevysStudio);h.window.openPath();assert(h.get('#readingStudio').classList.contains('open'));assert(!h.get('#accountModal').classList.contains('open'));
   for(const image of h.all('[data-image]'))assert(image.src.startsWith('data:image/'));
  }
 });
-test('Editable sources initialize with the same page state as the delivered bundle',()=>{
+test('Archived editable sources preserve their compatibility state with the current page markup',()=>{
  const source=createHarness({bundle:false});
  assert.equal(source.get('#reading-systems').textContent,reference.get('#reading-systems').textContent);
  assert.equal(source.get('#collections').textContent,reference.get('#collections').textContent);
@@ -34,9 +38,9 @@ test('Editable sources initialize with the same page state as the delivered bund
 test('Homepage presents one compact 01 chooser before any product reveal',()=>{
  const sections=['reading-systems','collections','everyday-ritual','my-readings','about','questions'];let previous=0;
  for(const id of sections){const at=template.indexOf('id="'+id+'"');assert(at>previous,id);previous=at;}
- const hero=reference.get('.hero');assert.equal(hero.querySelectorAll('.entry-actions button').length,1);
- assert(hero.textContent.includes('What lies beneath.'));assert.equal(hero.querySelector('.hero-intro'),null);assert(!hero.querySelector('img[data-image="logo"]'));
- assert.equal(reference.all('#reading-systems .reading-entry').length,3);assert(template.includes('01 / CHOOSE YOUR READING'));assert(!template.includes('01–02'));assert(!template.includes('id="how-it-works"'));
+ const hero=reference.get('.hero');assert.equal(hero.querySelectorAll('.entry-actions button').length,2);
+ assert(hero.textContent.includes('Make room for clarity.'));assert.equal(hero.querySelector('.hero-intro'),null);assert(!hero.querySelector('img[data-image="logo"]'));
+ assert.equal(reference.all('#reading-systems .reading-entry').length,2);assert(template.includes('01 / TWO WAYS IN'));assert(!template.includes('01–02'));assert(!template.includes('id="how-it-works"'));
  assert.equal(reference.get('#reading-systems .availability-strip'),null);assert(!template.includes('IN DEVELOPMENT'));
  const chooserCopy=reference.get('#reading-systems').textContent;for(const product of E.products)assert(!chooserCopy.includes(product.name),product.name);
 });
@@ -54,13 +58,11 @@ test('My readings uses an honest member preview gate without exposing or uploadi
  assert.equal(h.hooks.state.memberAccess,true);assert(h.get('#timeline').textContent.includes(secret));assert(![...h.backing.values()].some(value=>String(value).includes('private@example.test')));
  h.window.endMemberPreview();assert.equal(h.hooks.state.memberAccess,false);assert(!h.get('#homePath').textContent.includes(secret));assert.equal(JSON.parse(h.backing.get('marevys.path.v1')).length,1);
 });
-test('FAQ explains all three methods, blind drawing, storage and commerce',()=>{
- assert.equal(reference.all('#questions details').length,10);
- assert(reference.get('#questions').textContent.includes('not final offers for sale'));
- assert(reference.get('#questions').textContent.includes('remain only in this browser on this device'));
- assert(reference.get('#questions').textContent.includes('22 Major Arcana'));
- assert(reference.get('#questions').textContent.includes('bottom to top'));
- assert.equal(reference.all('#reading-systems .reading-entry').length,3);assert(reference.get('#questions').textContent.includes('four sensory objects'));assert(!reference.get('#questions').textContent.includes('three-step ritual'));
+test('RC21 FAQ explains tarot reversals, clarification, birth-time uncertainty, local records and no paid membership',()=>{
+ assert.equal(reference.all('#questions details').length,7);
+ const copy=reference.get('#questions').textContent;
+ for(const phrase of ['Reversed does not mean bad','one clarification card','leave out the Ascendant and houses','without a paid membership','Saved readings stay in this browser','No object changes or cancels a reading'])assert(copy.includes(phrase),phrase);
+ assert.equal(reference.all('#reading-systems .reading-entry').length,2);assert(!copy.includes('22 Major Arcana'));assert(!copy.includes('bottom to top'));
 });
 test('Every product, interpretation stage, matching stage and ritual action is localized',()=>{
  for(const c of E.categories)assert(tr.has(c.label),c.label);
@@ -113,10 +115,11 @@ test('Local structured interpretation visibly connects the actual question, cont
  const payload=h.window.buildReadingPayload(),x=plain(h.window.buildLocalInterpretation(payload)),joined=Object.values(x).flat(3).map(value=>typeof value==='object'?JSON.stringify(value):String(value)).join(' ');
  assert(x.questionRestatement.includes(payload.question));assert(/work/i.test(x.coreAnswer));assert(x.headline.includes('Take the next real step'));assert(joined.includes('ANSUZ'));assert(joined.includes(payload.runes[0].meaning));assert.equal(x.runeConnections.length,1);assert.equal(x.energyTags.length,2);
 });
-test('The single 01 chooser presents one private-result example and one action for each system',()=>{
- const h=createHarness();const cases=h.all('#reading-systems .reading-entry');assert.equal(cases.length,3);
- assert.deepEqual(cases.map(card=>card.querySelector('button').textContent),['Begin my Rune reading','Begin my Tarot reading','Begin my I Ching reading']);
- for(const card of cases){assert(card.querySelector('img'));assert(card.querySelector('.entry-promise'));assert(card.querySelector('.entry-purpose'));assert(card.querySelector('.entry-case strong'));assert(card.querySelector('.entry-case p'));assert.equal(card.querySelector('.entry-case span'),null);assert.equal(card.querySelectorAll('button').length,1);}
+test('RC21 chooser presents tarot and astrology with one action for each system',()=>{
+ const h=createHarness();const cases=h.all('#reading-systems .reading-entry');assert.equal(cases.length,2);
+ assert.deepEqual(cases.map(card=>card.querySelector('button').textContent),['Draw my cards','Explore my birth chart']);
+ assert(cases[0].querySelector('img'));assert(cases[1].querySelector('.natal-preview'));
+ for(const card of cases){assert(card.querySelector('.entry-promise'));assert(card.querySelector('.entry-purpose'));assert.equal(card.querySelector('.entry-case'),null);assert.equal(card.querySelectorAll('button').length,1);}
 });
 test('Every collection filter works without starting a reading, in EN, FR and ZH',()=>{
  for(const language of ['en','fr','zh']){
@@ -356,13 +359,15 @@ test('Section navigation exits all dialogs and mobile navigation without losing 
  assert.equal(h.document.activeElement,h.get('#about'));assert.equal(h.document.scrolls.at(-1).id,'about');assert.equal(h.get('#mobileMenu').classList.contains('open'),false);
  assert.equal(h.get('#question').value,'My draft');assert.deepEqual(plain(h.hooks.state.bag),['EAU 01']);
 });
-test('Tarot and I Ching are active reading entrances rather than future-project previews',()=>{
+test('Archived Tarot and I Ching modules remain callable for compatibility',()=>{
  const h=createHarness();assert.equal(h.get('#future-readings'),null);assert(!template.includes('About this future project'));
  h.window.startTarot();assert.equal(h.window.MarevysOracle.getState().system,'TAROT');assert.equal(h.hooks.layers.at(-1).el.id,'oracleReading');h.window.closeOracleReading();
  h.window.startIChing();assert.equal(h.window.MarevysOracle.getState().system,'ICHING');assert.equal(h.hooks.layers.at(-1).el.id,'oracleReading');h.window.closeOracleReading();
 });
-test('Homepage ritual guidance leads into the matched reading journey instead of a choice grid',()=>{
- const h=createHarness(),cta=h.get('#everyday-ritual .text-link');assert(cta.getAttribute('onclick').includes("'reading-systems'"));assert.equal(h.all('#everyday-ritual .practice-option').length,0);assert.equal(h.all('#everyday-ritual li').length,4);
+test('Homepage ritual is an optional example and opens the collection without requiring a reading',()=>{
+ const h=createHarness(),cta=h.get('#everyday-ritual .text-link');assert.equal(cta.getAttribute('onclick'),"openCollection('ALL')");assert.equal(h.all('#everyday-ritual .practice-option').length,0);assert.equal(h.all('#everyday-ritual li').length,4);
+ const copy=h.get('#everyday-ritual').textContent;assert(copy.includes('one optional example'));assert(copy.includes('no purchase is needed'));
+ cta.click();assert.equal(h.hooks.state.maison,'ALL');assert.equal(h.hooks.state.picked.length,0);assert.equal(h.hooks.layers.at(-1).el.id,'maisonDrawer');
 });
 test('House notes are distinct from the filtered product collection',()=>{
  const h=createHarness();h.window.openMaison('JOURNAL');assert.equal(h.get('#collectionFilters').hidden,true);assert.equal(h.get('#collectionNotice').hidden,true);assert.equal(h.all('#maisonBody .journal-note').length,4);
@@ -370,7 +375,7 @@ test('House notes are distinct from the filtered product collection',()=>{
 });
 test('Both visible language controls are wired to update the complete interface',()=>{
  const h=createHarness();const header=h.get('nav [data-language]');header.value='fr';header.dispatchEvent({type:'change'});
- assert.equal(h.hooks.state.lang,'fr');assert.equal(h.get('.hero .primary').textContent,'Choisir une lecture');
+ assert.equal(h.hooks.state.lang,'fr');assert.equal(h.get('nav .links button').textContent,'Choisir une lecture');
  h.window.openBag();const overlay=h.get('.overlay-language select');overlay.value='zh';overlay.dispatchEvent({type:'change'});
  assert.equal(h.hooks.state.lang,'zh');assert.equal(h.get('#wishlistTitle').textContent,'你的心愿单。');assert.equal(header.value,'zh');
 });
@@ -428,4 +433,4 @@ test('Saved readings contain no invented upright or reversed orientation',()=>{
  const h=createHarness();draw(h);h.window.saveReading();const record=JSON.parse(h.backing.get('marevys.path.v1'))[0];assert.equal('orientation' in record,false);assert.equal('reversed' in record,false);
  assert.equal('orientation' in record.runes[0],false);assert.equal('reversed' in record.runes[0],false);assert(h.get('#readBody').textContent.includes('WARNING SIGNS · NEXT 7 DAYS'));assert(h.get('#readBody').textContent.includes('KEEP THIS CONDITION IN VIEW'));
 });
-chain.then(()=>console.log('\n'+count+' RC19 experience checks passed (DOM doubles, not browser rendering).')).catch(error=>{console.error(error);process.exitCode=1;});
+chain.then(()=>console.log('\n'+count+' archived compatibility and RC21 homepage checks passed (DOM doubles, not browser rendering).')).catch(error=>{console.error(error);process.exitCode=1;});

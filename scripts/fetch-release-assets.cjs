@@ -17,8 +17,8 @@ const FONT = Object.freeze({
 const sha256 = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 
 function validateManifest(manifest) {
-  if (!Array.isArray(manifest.assets) || manifest.assets.length !== 105) {
-    throw new Error('Expected exactly 105 canonical image assets');
+  if (!Array.isArray(manifest.assets) || manifest.assets.length !== 183) {
+    throw new Error('Expected exactly 183 canonical image assets');
   }
   const seen = new Set();
   const assets = manifest.assets.map(asset => {

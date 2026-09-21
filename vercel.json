@@ -4,7 +4,10 @@
   "buildCommand": "npm run build:web",
   "outputDirectory": "dist",
   "functions": {
-    "api/reading.js": { "maxDuration": 60, "includeFiles": "server/**" }
+    "api/reading.js": { "maxDuration": 60, "includeFiles": "server/**" },
+    "api/tarot.js": { "maxDuration": 15, "includeFiles": "server/**" },
+    "api/astrology.js": { "maxDuration": 15, "includeFiles": "server/**" },
+    "api/locations.js": { "maxDuration": 10, "includeFiles": "server/astrology-locations.cjs" }
   },
   "headers": [
     { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },

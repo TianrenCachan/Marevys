@@ -2,10 +2,11 @@ const fs=require('node:fs');
 const path=require('node:path');
 const vm=require('node:vm');
 const root=__dirname;
-const sources=['data.js','experience-data.js','oracle-data.js','i18n.js','i18n-runes.js','i18n-house.js','i18n-flow.js','i18n-experience.js','i18n-oracles.js','i18n-rc15.js','i18n-rc16-gate.js','i18n-rc16.js','i18n-rc17.js','i18n-rc18.js','i18n-rc19.js','core.js','oracle.js','app.js'];
+const {readPublicTarotCards,serializePublicJson}=require('./scripts/build-web.cjs');
+const sources=['data.js','experience-data.js','oracle-data.js','i18n.js','i18n-runes.js','i18n-house.js','i18n-flow.js','i18n-experience.js','i18n-oracles.js','i18n-rc15.js','i18n-rc16-gate.js','i18n-rc16.js','i18n-rc17.js','i18n-rc18.js','i18n-rc19.js','core.js','oracle.js','app.js','astrology-studio.js','reading-studio.js'];
 const runicFont=fs.readFileSync(path.join(root,'assets','noto-sans-runic-runic-400-normal.woff2')).toString('base64');
 const runicFontFace=`@font-face{font-family:'Marevys Runic';font-style:normal;font-weight:400;font-display:block;src:url(data:font/woff2;base64,${runicFont}) format('woff2');unicode-range:U+16A0-16FF}`;
-const css=[runicFontFace,...['base.css','refinement.css','experience.css','oracle.css','rc15.css','rc16-gate.css','rc16.css','rc17.css','rc18.css','rc19.css'].map(f=>fs.readFileSync(path.join(root,'src',f),'utf8'))].join('\n');
+const css=[runicFontFace,...['base.css','refinement.css','experience.css','oracle.css','rc15.css','rc16-gate.css','rc16.css','rc17.css','rc18.css','rc19.css','astrology-studio.css','reading-studio.css'].map(f=>fs.readFileSync(path.join(root,'src',f),'utf8'))].join('\n');
 const scripts=sources.map(f=>{
  const text=fs.readFileSync(path.join(root,'src',f),'utf8');
  new vm.Script(text,{filename:f});
@@ -21,6 +22,7 @@ const files={
 };
 for(let number=5;number<=24;number++)files['runeStoneBack'+number]='rune-stone-back-'+String(number).padStart(2,'0')+'.webp';
 for(let number=0;number<=21;number++)files['tarot'+String(number).padStart(2,'0')]='tarot-'+String(number).padStart(2,'0')+'.webp';
+for(let number=0;number<=77;number++)files['tarotClassic'+String(number).padStart(2,'0')]='tarotClassic'+String(number).padStart(2,'0')+'.webp';
 const embedded={};
 const mime={'.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png'};
 for(const [key,file] of Object.entries(files)){
@@ -31,7 +33,7 @@ for(const [key,file] of Object.entries(files)){
 }
 for(const [,key] of template.matchAll(/data-image="([^"]+)"/g))if(!files[key])throw new Error('Unknown image '+key);
 function build(map){
- const assets='window.MAREVYS_ASSETS = '+JSON.stringify(map)+';';
+ const assets='window.MAREVYS_ASSETS = '+serializePublicJson(map)+';\nwindow.MAREVYS_TAROT_CARDS = '+serializePublicJson(readPublicTarotCards())+';\nwindow.MAREVYS_BUILD_VERSION = \'RC21\';';
  // Callbacks insert code literally. Replacement strings would interpret $$, $&, etc.
  return template.replace('<!--STYLES-->',()=>'<style>\n'+css+'\n</style>').replace('<!--SCRIPTS-->',()=>'<script>\n'+assets+'\n'+scripts+'\n</script>');
 }
@@ -43,5 +45,5 @@ if(finalScripts.length!==1)throw new Error('Expected one complete inline applica
 finalScripts.forEach((match,i)=>new vm.Script(match[1],{filename:'generated-inline-'+i+'.js'}));
 if(!complete.includes(scripts))throw new Error('Source changed during HTML embedding');
 fs.writeFileSync(path.join(root,'index.html'),complete);
-fs.writeFileSync(path.join(root,'../MAREVYS_PARIS_RC19_Complete_Embedded.html'),complete);
-console.log(JSON.stringify({version:'RC19',languages:['en','fr','zh-Hans'],readingSystems:['runes','tarot-major-arcana','i-ching'],embeddedAssets:Object.keys(files).length,finalBundleSyntax:'passed',completeBytes:Buffer.byteLength(complete)}));
+fs.writeFileSync(path.join(root,'../MAREVYS_PARIS_RC21_Complete_Embedded.html'),complete);
+console.log(JSON.stringify({version:'RC21',languages:['en','fr','zh-Hans'],readingSystems:['tarot-78','natal-astrology'],archivedSystems:['runes','i-ching'],onlineApiRequired:true,embeddedAssets:Object.keys(files).length,finalBundleSyntax:'passed',completeBytes:Buffer.byteLength(complete)}));

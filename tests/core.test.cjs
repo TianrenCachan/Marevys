@@ -1,8 +1,8 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.join(__dirname,'..');
 const ctx={window:{}};vm.createContext(ctx);
-const sourceFiles=['data.js','experience-data.js','oracle-data.js','i18n.js','i18n-runes.js','i18n-house.js','i18n-flow.js','i18n-experience.js','i18n-oracles.js','i18n-rc15.js','i18n-rc16-gate.js','i18n-rc16.js','i18n-rc17.js','i18n-rc18.js','i18n-rc19.js','core.js','oracle.js','app.js'];
-for(const file of sourceFiles.slice(0,-2))vm.runInContext(fs.readFileSync(path.join(root,'src',file),'utf8'),ctx,{filename:file});
+const sourceFiles=['data.js','experience-data.js','oracle-data.js','i18n.js','i18n-runes.js','i18n-house.js','i18n-flow.js','i18n-experience.js','i18n-oracles.js','i18n-rc15.js','i18n-rc16-gate.js','i18n-rc16.js','i18n-rc17.js','i18n-rc18.js','i18n-rc19.js','core.js','oracle.js','app.js','astrology-studio.js','reading-studio.js'];
+for(const file of sourceFiles.slice(0,sourceFiles.indexOf('oracle.js')))vm.runInContext(fs.readFileSync(path.join(root,'src',file),'utf8'),ctx,{filename:file});
 const w=ctx.window,C=w.MarevysCore,D=w.MAREVYS_DATA,E=w.MAREVYS_EXPERIENCE,tr=C.makeTranslator(w.MAREVYS_TEXT);
 let count=0;function test(name,fn){fn();count++;console.log('PASS '+name);}
 test('Every translation row has English, French and Chinese',()=>{for(const row of w.MAREVYS_TEXT){assert.equal(row.length,3);for(const item of row)assert.equal(typeof item,'string');}});
@@ -46,22 +46,22 @@ test('Bundled JavaScript preserves every source byte including double-dollar sel
  const joined=sourceFiles.map(f=>fs.readFileSync(path.join(root,'src',f),'utf8').replace(/<\/script/gi,'<\\/script')).join('\n');
  assert(html.includes(joined),'HTML replacement modified JavaScript source');
 });
-test('Complete HTML contains one embedded copy of each RC19 asset and the Runic font',()=>{assert.equal((html.match(/data:image\/webp;base64,/g)||[]).length,104);assert.equal((html.match(/data:image\/png;base64,/g)||[]).length,1);assert.equal((html.match(/data:font\/woff2;base64,/g)||[]).length,1);});
+test('Complete HTML contains one embedded copy of each RC21 asset and the Runic font',()=>{assert.equal((html.match(/data:image\/webp;base64,/g)||[]).length,182);assert.equal((html.match(/data:image\/png;base64,/g)||[]).length,1);assert.equal((html.match(/data:font\/woff2;base64,/g)||[]).length,1);});
 const embeddedAssets=JSON.parse(html.match(/window\.MAREVYS_ASSETS = (\{[^\n]+\});/)[1]);
 test('RC19 style and source layers are present in the delivered bundle',()=>{
- assert.equal(Object.keys(embeddedAssets).length,105);assert(html.includes('/* RC19 — tactile reading surfaces, a clearer commerce reveal and one-action flow. */'));assert(html.includes("font-family:'Marevys Runic'"));
+ assert.equal(Object.keys(embeddedAssets).length,183);assert(html.includes('/* RC19 — tactile reading surfaces, a clearer commerce reveal and one-action flow. */'));assert(html.includes("font-family:'Marevys Runic'"));
  assert(html.includes('.experience-v19 #s4 .stone-inscription'));assert(html.includes('.experience-v19 .ritual-bookmarks'));assert(html.includes('var(--reading-record-image)'));
  assert(html.includes(fs.readFileSync(path.join(root,'src/rc19.css'),'utf8')));
  assert(html.includes(fs.readFileSync(path.join(root,'src/i18n-rc19.js'),'utf8')));
 });
-test('RC19 build targets a matching complete embedded output',()=>{
- const build=fs.readFileSync(path.join(root,'build.cjs'),'utf8'),output=path.join(root,'..','MAREVYS_PARIS_RC19_Complete_Embedded.html');
- assert(build.includes("version:'RC19'"));assert(build.includes("'../MAREVYS_PARIS_RC19_Complete_Embedded.html'"));
+test('RC21 build targets a matching complete embedded output',()=>{
+ const build=fs.readFileSync(path.join(root,'build.cjs'),'utf8'),output=path.join(root,'..','MAREVYS_PARIS_RC21_Complete_Embedded.html');
+ assert(build.includes("version:'RC21'"));assert(build.includes("'../MAREVYS_PARIS_RC21_Complete_Embedded.html'"));
  assert(fs.existsSync(output));assert(fs.readFileSync(output).equals(fs.readFileSync(path.join(root,'index.html'))));
 });
 test('All embedded image bytes match the delivered final assets',()=>{
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'ASSET_MANIFEST.json'),'utf8'));
- assert.equal(manifest.version,'RC19');assert.equal(manifest.assets.length,105);
+ assert.equal(manifest.version,'RC21');assert.equal(manifest.assets.length,183);
  assert.equal(Object.keys(embeddedAssets).length,manifest.assets.length);
  for(const asset of manifest.assets){
   const data=embeddedAssets[asset.key];assert(data,asset.key);
@@ -74,7 +74,7 @@ test('Every non-logo photograph has one semantic purpose and unique source bytes
  const template=fs.readFileSync(path.join(root,'src/template.html'),'utf8');
  const rc19=fs.readFileSync(path.join(root,'src/rc19.css'),'utf8');
  const staticKeys=[...template.matchAll(/data-image="([^"]+)"/g)].map(match=>match[1]).filter(key=>key!=='logo');
- assert.equal(staticKeys.length,7);assert.equal(new Set(staticKeys).size,staticKeys.length);
+ assert.equal(staticKeys.length,5);assert.equal(new Set(staticKeys).size,staticKeys.length);
  const productKeys=E.products.map(product=>product.image),ritualKeys=Object.values(E.ritualPlans).map(plan=>plan.image),matchKeys=E.products.map(product=>product.matchImage),bookmarkKeys=E.products.map(product=>product.ritualImage);
  assert.equal(productKeys.length,12);assert.equal(new Set(productKeys).size,12);assert(E.products.every(product=>!Object.hasOwn(product,'crop')));
  assert.equal(ritualKeys.length,8);assert.equal(new Set(ritualKeys).size,8);
@@ -82,13 +82,14 @@ test('Every non-logo photograph has one semantic purpose and unique source bytes
  assert.equal(bookmarkKeys.length,12);assert.equal(new Set(bookmarkKeys).size,12);assert.equal(bookmarkKeys.filter(key=>productKeys.includes(key)||ritualKeys.includes(key)).length,0);
  const tarotKeys=Array.from({length:22},(_,number)=>'tarot'+String(number).padStart(2,'0'));
  const physicalKeys=[...Array.from({length:24},(_,number)=>'runeStoneBack'+(number+1)),'tarotBack','runeReadingSurface','tarotReadingSurface','ichingReadingSurface'];
- const semantic=['hero','ichingReading',...tarotKeys,...staticKeys,...productKeys,...ritualKeys,...physicalKeys,'readingRecordReturn01',...matchKeys,...bookmarkKeys];
- assert.equal(semantic.length,104);assert.equal(new Set(semantic).size,104);
+ const classicKeys=Array.from({length:78},(_,number)=>'tarotClassic'+String(number).padStart(2,'0'));
+ const semantic=['hero','ichingReading','runes','yi',...classicKeys,...tarotKeys,...staticKeys,...productKeys,...ritualKeys,...physicalKeys,'readingRecordReturn01',...matchKeys,...bookmarkKeys];
+ assert.equal(semantic.length,182);assert.equal(new Set(semantic).size,182);
  assert(!Object.hasOwn(embeddedAssets,'tarotReading'));
  for(const key of tarotKeys)assert(embeddedAssets[key],key);
  assert.deepEqual([...new Set(semantic)].sort(),Object.keys(embeddedAssets).filter(key=>key!=='logo').sort());
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'ASSET_MANIFEST.json'),'utf8')),content=manifest.assets.filter(asset=>asset.key!=='logo');
- assert.equal(new Set(content.map(asset=>asset.sha256)).size,104,'no duplicated or renamed content image bytes');
+ assert.equal(new Set(content.map(asset=>asset.sha256)).size,182,'no duplicated or renamed content image bytes');
  for(const key of physicalKeys)assert(embeddedAssets[key],key);
  assert(rc19.includes('.experience-v19 .ritual-bookmark>img'));
  assert(rc19.includes("feTurbulence type='fractalNoise'"));assert(rc19.includes('var(--tarot-reading-surface)'));assert(rc19.includes('var(--reading-record-image)'));
@@ -115,23 +116,37 @@ test('HTML nesting and closing tags are balanced',()=>{assert.equal(inventory.er
 test('Every HTML ID is unique',()=>{assert.equal(new Set(inventory.ids).size,inventory.ids.length);});
 const productNames=new Set([...Object.keys(D.PRODUCTS),...Object.values(D.MAISON_DATA).flatMap(d=>(d.items||[]).map(i=>i[0])),...Object.values(D.PATH_COMMERCE).flatMap(items=>items.map(i=>i.name))]);
 const exempt=s=>!/[a-zA-Z]/.test(s)||/^MARÉVYS(?: PARIS)?$|^PARIS$|^©/.test(s)||productNames.has(s)||D.R.some(r=>r[1]===s);
-const missing=[...new Set([...inventory.text,...inventory.attributes].filter(s=>!exempt(s)&&!tr.has(s)))];
+const studioSource=fs.readFileSync(path.join(root,'src/reading-studio.js'),'utf8');
+const studioCopy=vm.runInNewContext('('+studioSource.match(/const L = (\{[\s\S]*?\n  \});/)[1]+')');
+const studioSourceStrings=new Set();
+const templateForTranslation=fs.readFileSync(path.join(root,'src/template.html'),'utf8');
+for(const [,tag,key,contents] of templateForTranslation.matchAll(/<([a-z][\w:-]*)\b[^>]*data-studio-copy="([^"]+)"[^>]*>([\s\S]*?)<\/\1>/gi)){
+ const row=studioCopy[key];assert(Array.isArray(row)&&row.length===3&&row.every(value=>typeof value==='string'&&value.trim()),`Missing studio translation: ${key}`);
+ const plain=contents.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();if(plain)studioSourceStrings.add(plain);
+}
+// The notebook section has a dedicated three-language block in applyLanguage.
+// Validate its parallel arrays, then include it in strict static text coverage.
+const notebook=studioSource.match(/const en=(\[[^;]+\]);const fr=(\[[^;]+\]);const zh=(\[[^;]+\]);/);
+const notebookRows=notebook?Array.from(vm.runInNewContext(notebook[1]),(text,index)=>[text,vm.runInNewContext(notebook[2])[index],vm.runInNewContext(notebook[3])[index]]):[];
+for(const row of [...Object.values(studioCopy),...notebookRows])assert(row.length===3&&row.every(value=>typeof value==='string'&&value.trim()),'Every studio translation has three complete language strings');
+const studioTranslator=C.makeTranslator([...w.MAREVYS_TEXT,...Object.values(studioCopy),...notebookRows]);
+const missing=[...new Set([...inventory.text,...inventory.attributes].filter(s=>!exempt(s)&&!studioTranslator.has(s)&&!studioSourceStrings.has(s)))];
 test('Every static visible string and descriptive attribute is translated',()=>assert.equal(missing.length,0,JSON.stringify(missing,null,2)));
 test('Every inline handler has an exported implementation',()=>{
- const handlersSource=['app.js','oracle.js'].map(file=>fs.readFileSync(path.join(root,'src',file),'utf8')).join('\n');
- const exports=[...handlersSource.matchAll(/Object.assign\(window,\{([\s\S]*?)\}\);/g)].map(match=>match[1]).join('\n');
+ const handlersSource=['app.js','oracle.js','astrology-studio.js','reading-studio.js'].map(file=>fs.readFileSync(path.join(root,'src',file),'utf8')).join('\n');
+ const exports=[...[...handlersSource.matchAll(/Object.assign\(window,\{([\s\S]*?)\}\);/g)].map(match=>match[1]),...[...handlersSource.matchAll(/window\.([a-zA-Z]+)\s*=/g)].map(match=>match[1]),...[...handlersSource.matchAll(/window\.[a-zA-Z]+\s*=\{([^}]+)\}/g)].map(match=>match[1])].join('\n');
  for(const h of inventory.handlers){for(const m of h.matchAll(/\b([a-zA-Z]+)\(/g)){if(['getElementById','scrollIntoView'].includes(m[1]))continue;assert(new RegExp('\\b'+m[1]+'\\b').test(exports),m[1]);}}
 });
 test('Every legal paragraph and heading is localized',()=>{for(const d of Object.values(D.LEGAL_COPY)){const parts=d.body.matchAll(/>([^<>]+)</g);for(const [,s] of parts)if(s.trim())assert(tr.has(s.trim()),s);}});
 test('No legacy runtime inference or undefined context map remains',()=>{const app=fs.readFileSync(path.join(root,'src/app.js'),'utf8');assert(!app.includes('CONTEXT_COPY'));assert(!app.includes('MutationObserver'));});
 const template=fs.readFileSync(path.join(root,'src/template.html'),'utf8');
 const appSource=fs.readFileSync(path.join(root,'src/app.js'),'utf8');
-test('Homepage explains all three readings and the collection without a large overlaid logo',()=>{
+test('Homepage introduces tarot and astrology and the collection without a large overlaid logo',()=>{
  const hero=template.match(/<section class="hero"[^>]*>([\s\S]*?)<\/section>/)[1];
  assert(!hero.includes('data-image="logo"'));assert(!html.includes('hero-seal'));assert(!html.includes('hero-brand-mark'));
- assert(hero.includes('What lies beneath.'));assert(hero.includes('Choose a reading'));assert(!hero.includes('Explore the collection'));assert(embeddedAssets.hero);
+ assert(hero.includes('Make room for clarity.'));assert(hero.includes('Draw my cards'));assert(hero.includes('Explore my birth chart'));assert(!hero.includes('Explore the collection'));assert(embeddedAssets.hero);
 });
-test('All five top-left brand marks are native home links',()=>{
+test('All top-left brand marks are native home links',()=>{
  const links=[...template.matchAll(/<a class="brand-identity brand-home"[^>]*>/g)];
  assert.equal(links.length,5);
  for(const [link] of links){assert(link.includes('href="#main-content"'));assert(link.includes('onclick="goHome(event)"'));assert(link.includes('aria-label="Return to home"'));}

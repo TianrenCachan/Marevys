@@ -1,0 +1,2434 @@
+{
+  "version": 2,
+  "status": "curated_draft_not_professionally_reviewed",
+  "tradition": "Rider-Waite-Smith",
+  "pageNumbering": "1-based physical PDF pages",
+  "editorialPolicy": {
+    "originalParaphrasesOnly": true,
+    "rawBooksIncluded": false,
+    "courtIdentity": "Roles and attitudes; never infer gender, age or physical appearance from a card.",
+    "prediction": "Symbolic reflection, not evidence of future events or another person's hidden actions.",
+    "sourceScope": "A source reference supports the interpretive theme. Product questions, limits and safeguards are editorial adaptations, not verbatim book claims.",
+    "review": "Not yet blind-tested or approved by a professional panel."
+  },
+  "sources": [
+    {
+      "id": "tarot_19_lessons",
+      "title": "塔罗入门十九堂课",
+      "pages": 66,
+      "scope": "Reading context, positions, combinations and narrative methods",
+      "activeInCuratedRetrieval": true
+    },
+    {
+      "id": "seventy_eight_degrees_yinghao",
+      "title": "78度的智慧（英豪译）",
+      "pages": 75,
+      "scope": "Supplied 75-page partial translation/commentary compilation; not a verified complete edition",
+      "activeInCuratedRetrieval": false
+    },
+    {
+      "id": "tarot_white_paper_xingxiu",
+      "title": "塔罗白皮书 - 星宿",
+      "pages": 176,
+      "scope": "Background source; differences retained for editorial review",
+      "activeInCuratedRetrieval": false
+    },
+    {
+      "id": "tarot_already",
+      "title": "其实你已经很塔罗了（图文版）",
+      "pages": 165,
+      "scope": "RWS card chapters and methods; selected original paraphrases only",
+      "activeInCuratedRetrieval": true
+    },
+    {
+      "id": "tarot_intuitive_mangala",
+      "title": "直觉式塔罗",
+      "pages": 100,
+      "scope": "Thoth tradition; methodology only, scanned pages not fully extracted; excluded from RWS card definitions",
+      "activeInCuratedRetrieval": false
+    },
+    {
+      "id": "tarot_complete_diya",
+      "title": "塔罗全书",
+      "pages": 404,
+      "scope": "Selected spread methodology; supplied edition only",
+      "activeInCuratedRetrieval": true
+    },
+    {
+      "id": "tarot_reversals_daniel",
+      "title": "塔罗逆位精解",
+      "pages": 95,
+      "scope": "Daniel reversal methods; selected original paraphrases",
+      "activeInCuratedRetrieval": true
+    },
+    {
+      "id": "qimen_magic_gate_zhang",
+      "title": "神奇之门 - 张志春",
+      "pages": 392,
+      "scope": "Qimen Dunjia; excluded from tarot and Western natal astrology retrieval",
+      "activeInCuratedRetrieval": false
+    },
+    {
+      "id": "pictorial_key_waite_bilingual",
+      "title": "塔罗图钥",
+      "pages": 208,
+      "scope": "RWS background; English layer readable, Chinese extraction corrupted; no raw quotations served",
+      "activeInCuratedRetrieval": false
+    }
+  ],
+  "methods": [
+    {
+      "id": "question_context",
+      "title": {
+        "en": "A question with a clear frame",
+        "fr": "Une question bien située",
+        "zh": "先明确问题与背景"
+      },
+      "summary": {
+        "en": "Interpret the exact question, its timeframe and the background the person actually provides. Prefer an open question about understanding or possible action. When an essential detail is missing, ask rather than invent a biography or impose a seven-day prediction.",
+        "fr": "Interprétez la question précise, sa période et les éléments réellement donnés. Privilégiez une question ouverte sur la compréhension ou l’action possible. S’il manque un élément essentiel, demandez-le au lieu d’inventer un vécu ou d’imposer une prévision sur sept jours.",
+        "zh": "解读应围绕用户实际提出的问题、时间范围与已提供背景。优先讨论如何理解处境或可以采取什么行动；缺少关键信息时先询问，不能编造个人经历或强行套用七日预测。"
+      },
+      "tags": [
+        "question",
+        "context",
+        "background",
+        "问题",
+        "背景",
+        "期限",
+        "contexte",
+        "questionnement"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 31
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 32
+        },
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 40
+        }
+      ],
+      "editorialStatus": "source_paraphrase"
+    },
+    {
+      "id": "position_context",
+      "title": {
+        "en": "The position changes the question",
+        "fr": "La position précise la lecture",
+        "zh": "牌位决定解释角度"
+      },
+      "summary": {
+        "en": "A card’s symbolic range, its assigned position and the person’s situation must be considered together. A card in hopes or fears is not a forecast; a card in support is not automatically an obstacle. Keep the position fixed after the draw and explain why one candidate meaning fits it.",
+        "fr": "Le sens symbolique, la position attribuée et la situation doivent être rapprochés. Une carte dans les espoirs ou les peurs n’annonce pas un événement ; une carte de soutien n’est pas forcément un obstacle. Gardez les positions fixées et expliquez le choix d’interprétation.",
+        "zh": "将牌的象征范围、预先确定的牌位与现实背景结合。处于“希望与害怕”的牌不等于事件预告，处于“支持”的牌也不能直接当成阻碍。抽牌后不改牌位，并说明为什么采用某个候选含义。"
+      },
+      "tags": [
+        "position",
+        "context",
+        "牌位",
+        "背景",
+        "位置",
+        "place",
+        "contexte"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 40
+        },
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 44
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 159
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 160
+        }
+      ],
+      "editorialStatus": "source_paraphrase"
+    },
+    {
+      "id": "combination_synthesis",
+      "title": {
+        "en": "Read the connections",
+        "fr": "Lire les liens entre les cartes",
+        "zh": "把牌之间的关系讲清楚"
+      },
+      "summary": {
+        "en": "After reading each card in its position, compare cards for reinforcement, contrast and development. The same pair may describe two needs within one person or an interaction between people; context determines which is useful. Explain a small number of concrete connections instead of reciting independent keywords.",
+        "fr": "Après chaque lecture en position, comparez les cartes : renforcement, contraste ou évolution. Une paire peut évoquer deux besoins d’une même personne ou une relation entre personnes ; le contexte permet de choisir. Expliquez quelques liens précis plutôt qu’une suite de mots-clés.",
+        "zh": "逐张结合牌位后，再比较相互加强、相互冲突和发展变化。同一组牌可能对应一个人的不同需求，也可能对应人与人的互动，需要根据背景判断。应讲清少量具体联系，而不是堆叠独立牌义。"
+      },
+      "tags": [
+        "combination",
+        "synthesis",
+        "relationships",
+        "work",
+        "组合",
+        "综合",
+        "关系",
+        "工作",
+        "liens",
+        "relation",
+        "travail"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 57
+        },
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 58
+        }
+      ],
+      "editorialStatus": "source_paraphrase"
+    },
+    {
+      "id": "narrative_synthesis",
+      "title": {
+        "en": "A coherent reading with room for uncertainty",
+        "fr": "Une lecture cohérente qui laisse place au doute",
+        "zh": "形成连贯解读并保留未知"
+      },
+      "summary": {
+        "en": "Use the spread’s structure to organise the reading into a coherent account connected to the original question. Some cards may remain ambiguous. Explain an unresolved tension as a question to explore rather than forcing every detail into a complete story.",
+        "fr": "Appuyez-vous sur la structure du tirage pour construire une lecture reliée à la question. Certaines cartes peuvent rester ambiguës. Présentez une tension non résolue comme une piste à explorer au lieu de forcer tous les détails dans un récit parfait.",
+        "zh": "利用牌阵结构组织连贯内容，并持续回应原问题。有些牌暂时不明确是可以接受的；把无法解释的矛盾转化为待探索的问题，不为追求完整故事而硬凑细节。"
+      },
+      "tags": [
+        "narrative",
+        "synthesis",
+        "question",
+        "故事",
+        "综合",
+        "矛盾",
+        "récit",
+        "synthèse"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 63
+        },
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 64
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 158
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 160
+        }
+      ],
+      "editorialStatus": "source_paraphrase"
+    },
+    {
+      "id": "reversal_methods",
+      "title": {
+        "en": "Reversal is not one universal opposite",
+        "fr": "Une carte renversée ne signifie pas toujours le contraire",
+        "zh": "逆位不只有一种解释"
+      },
+      "summary": {
+        "en": "Reversal traditions include excess or deficit, diminished expression, blocked development and an alternative viewpoint. Daniel surveys competing methods and warns against using them all at once. Select a card-specific possibility that fits the question, position and nearby cards; do not label every reversal as bad.",
+        "fr": "Les traditions évoquent l’excès, le manque, une expression affaiblie, un développement entravé ou un autre point de vue. Daniel présente des méthodes concurrentes et déconseille de toutes les cumuler. Choisissez une possibilité adaptée à la carte, à sa place et au contexte.",
+        "zh": "逆位解释包含过度或不足、表达减弱、发展受阻及不同视角等传统。丹尼尔比较多种方法，并提醒不能每次全部叠加。应结合具体牌、牌位、问题与相邻牌选择适用解释，不能把所有逆位统一判为负面。"
+      },
+      "tags": [
+        "reversal",
+        "reversed",
+        "逆位",
+        "倒立",
+        "renversée",
+        "inversée"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_reversals_daniel",
+          "pdfPage": 6
+        },
+        {
+          "sourceId": "tarot_reversals_daniel",
+          "pdfPage": 7
+        },
+        {
+          "sourceId": "tarot_reversals_daniel",
+          "pdfPage": 8
+        },
+        {
+          "sourceId": "tarot_reversals_daniel",
+          "pdfPage": 94
+        }
+      ],
+      "editorialStatus": "source_paraphrase"
+    },
+    {
+      "id": "reversal_consistency",
+      "title": {
+        "en": "Keep the chosen reversal approach consistent",
+        "fr": "Garder une méthode cohérente",
+        "zh": "抽牌前确定正逆位规则"
+      },
+      "summary": {
+        "en": "Decide whether reversals are included before drawing and preserve the resulting orientation. Different schools can legitimately offer different readings; changing methods merely to obtain a preferred conclusion makes the interpretation inconsistent. The card summaries are candidate readings, not exclusive definitions.",
+        "fr": "Décidez avant le tirage si les cartes renversées sont incluses et conservez leur orientation. Les écoles proposent des lectures différentes ; changer de méthode pour obtenir une conclusion souhaitée rend la lecture incohérente. Les résumés sont des possibilités, pas des définitions exclusives.",
+        "zh": "在抽牌之前确定是否使用逆位，抽出后保持朝向不变。不同体系可以有不同解释，但不能为了得到想要的结论而随意切换规则。资料中的单牌概述是候选读法，不是唯一标准答案。"
+      },
+      "tags": [
+        "reversal",
+        "reversed",
+        "逆位",
+        "正位",
+        "renversée",
+        "méthode"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 61
+        },
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 62
+        },
+        {
+          "sourceId": "tarot_reversals_daniel",
+          "pdfPage": 94
+        }
+      ],
+      "editorialStatus": "source_paraphrase"
+    },
+    {
+      "id": "clarification",
+      "title": {
+        "en": "Clarify without replacing the original card",
+        "fr": "Préciser sans remplacer la carte initiale",
+        "zh": "补充线索，不覆盖原牌"
+      },
+      "summary": {
+        "en": "The one-card method in this source allows an additional card when the connection with the question remains unclear. For this product, first name the unclear point, then add one card from the remaining deck beside its related original card. Retain both; the one-clarifier limit is an editorial product rule, not a universal tarot rule.",
+        "fr": "La méthode à une carte autorise une carte supplémentaire si son lien avec la question reste flou. Dans ce produit, formulez d’abord le point à préciser, puis ajoutez une carte du paquet restant à côté de la carte concernée. Conservez les deux ; la limite d’un complément est un choix du produit.",
+        "zh": "本书的单牌方法允许在无法联系问题时再翻一张获取信息。本产品先明确需要澄清的点，再从剩余牌中补一张，放在相关原牌旁并保留两者。每次最多补一张属于产品规则，不是所有塔罗传统的共同要求。"
+      },
+      "tags": [
+        "clarification",
+        "clarifier",
+        "补牌",
+        "澄清",
+        "précision",
+        "préciser"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 31
+        }
+      ],
+      "editorialStatus": "source_paraphrase",
+      "productRule": "One clarifier at most; no replacement or covering of an unwanted draw."
+    },
+    {
+      "id": "spread_three",
+      "title": {
+        "en": "Three cards for a focused question",
+        "fr": "Trois cartes pour une question précise",
+        "zh": "三张牌回应明确问题"
+      },
+      "summary": {
+        "en": "A small spread can make the links between question, position and card easier to follow. The product uses situation, key obstacle and possible action. These three positions are an editorial preset; they are not claimed as a verbatim spread from a book or a proven popularity ranking.",
+        "fr": "Un petit tirage rend les liens entre question, place et carte plus faciles à suivre. Le produit propose situation, obstacle principal et action possible. Ces positions sont un choix éditorial, pas la reproduction d’un tirage précis ni un classement de popularité démontré.",
+        "zh": "较小的牌阵有助于看清问题、牌位与牌的联系。本产品采用“现状、关键阻碍、可采取的行动”；这些位置是编辑设计，不能宣称是某本书的原样牌阵，也不能据此声称大众最喜欢。"
+      },
+      "tags": [
+        "three",
+        "3",
+        "三张",
+        "简单",
+        "trois",
+        "débutant"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 21
+        },
+        {
+          "sourceId": "tarot_complete_diya",
+          "pdfPage": 17
+        }
+      ],
+      "editorialStatus": "source_paraphrase",
+      "productRule": "Positions: situation; obstacle; action."
+    },
+    {
+      "id": "spread_five",
+      "title": {
+        "en": "Five cards to explore a situation",
+        "fr": "Cinq cartes pour approfondir une situation",
+        "zh": "五张课题牌阵"
+      },
+      "summary": {
+        "en": "The source’s five-card lesson spread names the immediate lesson, obstacle, opportunity, supporting resources and wider lesson. Use those positions to connect the problem with both constraints and available support. Translate the wider lesson into a relevant question rather than a statement of destiny.",
+        "fr": "Le tirage à cinq cartes présente l’enjeu immédiat, l’obstacle, l’occasion, les ressources et l’enjeu plus large. Reliez ainsi le problème aux contraintes et aux soutiens disponibles. Présentez l’enjeu global comme une question pertinente, pas comme un destin.",
+        "zh": "本书的五张课题牌阵依次为：眼前课题、学习障碍、衍生机会、支持资源及更大课题。将问题同时联系限制与支持；更大课题应转化为有现实关联的探索，而不是对命运作确定断言。"
+      },
+      "tags": [
+        "five",
+        "5",
+        "五张",
+        "深入",
+        "cinq",
+        "approfondir"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 160
+        }
+      ],
+      "editorialStatus": "source_paraphrase"
+    },
+    {
+      "id": "court_context",
+      "title": {
+        "en": "Court cards can describe ways of relating",
+        "fr": "Les figures peuvent décrire une manière d’agir",
+        "zh": "宫廷牌可以描述行为方式"
+      },
+      "summary": {
+        "en": "Compare court cards as different attitudes or roles before deciding they represent separate people. The source illustrates two court cards describing one person in different settings. The product treats gender, age and appearance as undetermined unless supplied by the user; this is an editorial adaptation of older descriptions.",
+        "fr": "Comparez les figures comme des attitudes ou des rôles avant d’en faire des personnes distinctes. La source montre deux figures décrivant une même personne selon le contexte. Le produit ne déduit ni genre, ni âge, ni apparence : il adapte ainsi les descriptions anciennes.",
+        "zh": "先把宫廷牌当作不同态度或角色来比较，再考虑是否对应不同人物。本书举例说明两张宫廷牌也可以描述同一人在不同场景中的特点。本产品不会从牌推断性别、年龄或外貌，这是对旧式描述的编辑调整。"
+      },
+      "tags": [
+        "court",
+        "page",
+        "knight",
+        "queen",
+        "king",
+        "关系",
+        "人物",
+        "宫廷",
+        "relationship",
+        "relation",
+        "personne"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 30
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 31
+        },
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 58
+        }
+      ],
+      "editorialStatus": "source_paraphrase"
+    },
+    {
+      "id": "source_differences",
+      "title": {
+        "en": "Keep source traditions visible",
+        "fr": "Préserver les différences entre traditions",
+        "zh": "保留不同来源的分歧"
+      },
+      "summary": {
+        "en": "This card catalogue mainly paraphrases the RWS-oriented chapters in You Are Already Tarot. Its previous-card lesson approach is one school, not a requirement to apply mechanically. Daniel distinguishes this approach from other reversal methods. If an alternative is introduced, name the interpretive choice and do not merge contradictory meanings into one certainty.",
+        "fr": "Ce catalogue s’appuie surtout sur les chapitres RWS de You Are Already Tarot. Le retour à la leçon de la carte précédente est une école, pas une règle mécanique. Daniel le distingue d’autres méthodes. Si une autre lecture est proposée, explicitez ce choix sans fusionner des sens contradictoires.",
+        "zh": "单牌目录主要依据《其实你已经很塔罗了》的RWS章节作原创转述。其“回看前一张牌课题”属于一种流派，不是必须机械执行的规则。《逆位精解》将它与其他方法区分。引入不同解释时应说明取舍，不把冲突观点混成确定结论。"
+      },
+      "tags": [
+        "tradition",
+        "source",
+        "reverse",
+        "流派",
+        "来源",
+        "分歧",
+        "méthodes"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 32
+        },
+        {
+          "sourceId": "tarot_reversals_daniel",
+          "pdfPage": 7
+        },
+        {
+          "sourceId": "tarot_reversals_daniel",
+          "pdfPage": 8
+        },
+        {
+          "sourceId": "tarot_reversals_daniel",
+          "pdfPage": 94
+        }
+      ],
+      "editorialStatus": "source_paraphrase"
+    },
+    {
+      "id": "work_context",
+      "title": {
+        "en": "Read work questions through the actual role",
+        "fr": "Relier le travail à la situation concrète",
+        "zh": "工作问题要连接实际职责"
+      },
+      "summary": {
+        "en": "For a work question, translate the symbolism into the actual decision, responsibilities, cooperation or learning described by the user. The combination of card meaning, position and lived setting matters more than a generic keyword such as success. Do not use the draw to guarantee a job, income or business result.",
+        "fr": "Pour une question professionnelle, reliez les symboles à la décision, aux responsabilités, à la coopération ou à l’apprentissage décrits. Le sens, la position et le contexte comptent davantage qu’un mot comme réussite. Le tirage ne garantit pas un emploi, un revenu ou un résultat.",
+        "zh": "工作问题应联系用户描述的决定、职责、合作或学习需要。单牌含义、牌位和现实背景的结合，比简单写“成功”更重要。抽牌不能保证拿到职位、收入或某个商业结果。"
+      },
+      "tags": [
+        "work",
+        "career",
+        "job",
+        "工作",
+        "事业",
+        "合作",
+        "travail",
+        "emploi",
+        "carrière"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 40
+        },
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 41
+        },
+        {
+          "sourceId": "tarot_19_lessons",
+          "pdfPage": 44
+        }
+      ],
+      "editorialStatus": "source_paraphrase"
+    }
+  ],
+  "cards": [
+    {
+      "cardId": "TAROT_00",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 112
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 113
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 114
+        }
+      ],
+      "summary": {
+        "en": "An unfamiliar path invites curiosity and a first experiment. Notice what can be learned by beginning, while keeping practical support within reach.",
+        "fr": "Un chemin nouveau invite à la curiosité et à un premier essai. Commencer permet d'apprendre, tout en gardant des appuis concrets.",
+        "zh": "面对陌生方向，可以先迈出一步获取经验。开放并不等于毫无准备，仍要看清自己能够承担的责任。"
+      },
+      "reversedSummary": {
+        "en": "The desire to escape a commitment can disguise itself as freedom. Distinguish a useful fresh start from abandoning something that still needs attention.",
+        "fr": "Le désir d'échapper à un engagement peut prendre l'apparence de la liberté. Distinguez un nouveau départ utile d'une responsabilité laissée en suspens.",
+        "zh": "想摆脱责任的冲动可能被理解成追求自由。先区分值得尝试的新开始，以及尚未处理就想离开的旧问题。"
+      }
+    },
+    {
+      "cardId": "TAROT_01",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 114
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 115
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 116
+        }
+      ],
+      "summary": {
+        "en": "A clear intention becomes workable when skills and resources are brought together. Look for what you can actually demonstrate or put into practice.",
+        "fr": "Une intention claire devient réalisable quand les compétences et les moyens se rejoignent. Regardez ce que vous pouvez concrètement mettre en œuvre.",
+        "zh": "目标需要和手中的能力、资源结合，才会变成可行的行动。重点在于已经能够实施什么，而不只是表达得多动听。"
+      },
+      "reversedSummary": {
+        "en": "Talent may be scattered, unused, or directed toward controlling the impression others receive. Check whether promises are matched by verifiable action.",
+        "fr": "Les capacités peuvent être dispersées, inutilisées ou employées pour maîtriser l'image donnée aux autres. Vérifiez si les promesses se traduisent en actes.",
+        "zh": "能力可能尚未发挥，也可能用在包装形象或控制他人的反应上。需要检验承诺是否有真实行动支持，不凭这张牌断定有人欺骗。"
+      }
+    },
+    {
+      "cardId": "TAROT_02",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 116
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 117
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 118
+        }
+      ],
+      "summary": {
+        "en": "Quiet observation and inner reflection can reveal an overlooked concern. Let what is not yet understood remain a question instead of forcing an immediate answer.",
+        "fr": "L'observation et le recul peuvent faire apparaître une préoccupation négligée. Laissez une place à l'inconnu au lieu d'imposer une réponse immédiate.",
+        "zh": "安静观察有助于察觉被忽略的感受与信息。暂时不知道的部分可以保留为问题，不必急着用猜测填满。"
+      },
+      "reversedSummary": {
+        "en": "Inner impressions may be ignored, or reflection may need to return to everyday experience. Test what you sense through conversation and observable facts.",
+        "fr": "Vos impressions peuvent être ignorées, ou la réflexion doit désormais retrouver la vie quotidienne. Confrontez votre ressenti au dialogue et aux faits observables.",
+        "zh": "可能忽略了自己的感受，也可能已经独处思考太久，需要回到现实验证。直觉是值得探索的线索，不能直接当成事实。"
+      }
+    },
+    {
+      "cardId": "TAROT_03",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 118
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 119
+        }
+      ],
+      "summary": {
+        "en": "Care, pleasure and sustained attention create conditions for growth. A relationship or project needs regular nourishment rather than an ideal image alone.",
+        "fr": "Le soin, le plaisir et une attention régulière favorisent la croissance. Une relation ou un projet demande des gestes durables, au-delà de l'idéal imaginé.",
+        "zh": "关系或项目的成长依赖持续照顾，也需要允许愉悦与创造力进入生活。想要的美好必须有日常投入来承接。"
+      },
+      "reversedSummary": {
+        "en": "The idea of caring may be stronger than the energy available to provide it. Examine unmet needs, strained support, or expectations that practical life cannot sustain.",
+        "fr": "L'envie de prendre soin peut dépasser les ressources disponibles. Examinez les besoins négligés, le soutien fragilisé ou des attentes difficiles à vivre au quotidien.",
+        "zh": "理想中的照顾与实际能够付出的力量可能不一致。检查被忽略的需求、紧张的支持关系，以及难以落地的期待。"
+      }
+    },
+    {
+      "cardId": "TAROT_04",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 119
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 120
+        }
+      ],
+      "summary": {
+        "en": "Clear responsibilities, boundaries and consistent effort can stabilise the situation. Useful authority creates a structure that people can rely on.",
+        "fr": "Des responsabilités claires, des limites et un effort régulier peuvent stabiliser la situation. Une autorité utile construit un cadre sur lequel chacun peut compter.",
+        "zh": "清晰责任、稳定边界与持续执行能让局势更有秩序。有效的权威应当提供可靠框架，而不是只有命令。"
+      },
+      "reversedSummary": {
+        "en": "A structure may lack follow-through, or authority may soften without clear responsibility. Identify the decision or routine that is being avoided.",
+        "fr": "Le cadre peut manquer de suivi, ou l'autorité s'assouplir sans responsabilité claire. Repérez la décision ou la discipline quotidienne qui est évitée.",
+        "zh": "框架可能缺乏执行，或规则放松后没有明确责任。应找出迟迟回避的决定和需要恢复的日常自律。"
+      }
+    },
+    {
+      "cardId": "TAROT_05",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 121
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 122
+        }
+      ],
+      "summary": {
+        "en": "A tradition, teacher or shared framework shapes what feels acceptable. Ask which guidance helps you and which expectations you have accepted without examining them.",
+        "fr": "Une tradition, un enseignant ou un cadre commun influence vos choix. Distinguez les repères qui vous aident des attentes acceptées sans les examiner.",
+        "zh": "传统、导师或共同规则正在影响选择。可以借助这些经验，也要辨别哪些期待真正适合自己，哪些只是习惯性服从。"
+      },
+      "reversedSummary": {
+        "en": "Questioning inherited rules can open a more personal path. Avoid replacing one unquestioned authority with another; take responsibility for what you choose to believe.",
+        "fr": "Remettre en question les règles reçues peut ouvrir une voie personnelle. Évitez de remplacer une autorité incontestée par une autre et assumez vos choix.",
+        "zh": "重新审视既有规则，可能帮助你建立自己的方向。但若只是换一个对象依赖，就仍未真正为自己的判断负责。"
+      }
+    },
+    {
+      "cardId": "TAROT_06",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 123
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 124
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 125
+        }
+      ],
+      "summary": {
+        "en": "A meaningful choice brings desire, values and commitment into the same conversation. In a relationship, attraction matters alongside the choices both people are willing to make.",
+        "fr": "Un choix important met en dialogue le désir, les valeurs et l'engagement. Dans une relation, l'attirance compte autant que les décisions réellement partagées.",
+        "zh": "重要选择涉及愿望、价值与承诺能否一致。用于关系时，不只看吸引力，还要看双方是否愿意共同作出相应决定。"
+      },
+      "reversedSummary": {
+        "en": "Expectations may outrun the reality of a relationship or decision. Examine conflicting values and unfinished commitments before assuming the next stage will solve the problem.",
+        "fr": "Les attentes peuvent dépasser la réalité d'une relation ou d'un choix. Examinez les valeurs contradictoires et les engagements inachevés avant de chercher une nouvelle étape.",
+        "zh": "对下一阶段的期待可能超过现实基础。先看价值冲突与尚未完成的承诺，不要假定换一个关系或身份就能解决问题。"
+      }
+    },
+    {
+      "cardId": "TAROT_07",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 125
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 126
+        }
+      ],
+      "summary": {
+        "en": "Progress asks for a direction that can hold competing needs together. Determination helps when it coordinates the situation rather than simply pushing harder.",
+        "fr": "Avancer demande une direction capable de réunir des besoins opposés. La détermination est utile lorsqu'elle organise les efforts au lieu de seulement forcer.",
+        "zh": "推进事情需要给相互拉扯的需求一个共同方向。意志力的价值在于协调，而不只是加速或强压情绪。"
+      },
+      "reversedSummary": {
+        "en": "Unresolved tensions can pull action in opposite directions. Slow down enough to name those tensions and choose a workable way of handling them.",
+        "fr": "Des tensions non résolues peuvent disperser l'action. Ralentissez pour les nommer et choisir une manière concrète de les traiter.",
+        "zh": "尚未处理的矛盾可能让行动失去方向。先辨认哪些情绪和目标互相冲突，再调整处理方式，而不是不断加大控制。"
+      }
+    },
+    {
+      "cardId": "TAROT_08",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 127
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 128
+        }
+      ],
+      "summary": {
+        "en": "Courage grows through patience with fear and instinct. A firm but gentle response can preserve both your boundaries and your ability to stay engaged.",
+        "fr": "Le courage se construit avec la patience envers la peur et l'instinct. Une réponse ferme et douce protège vos limites sans vous couper de la situation.",
+        "zh": "勇气并不是没有害怕，而是在理解害怕的同时仍能行动。温和且坚定的回应，可以兼顾边界与持续投入。"
+      },
+      "reversedSummary": {
+        "en": "Self-doubt or fear of losing control may make ordinary challenges feel overwhelming. Reduce the pressure and rebuild confidence through support and manageable steps.",
+        "fr": "Le doute ou la peur de perdre le contrôle peuvent rendre les difficultés écrasantes. Réduisez la pression et reconstruisez la confiance avec du soutien et de petites étapes.",
+        "zh": "自我怀疑或害怕失控，可能让挑战显得难以应付。需要降低压力、获得支持，并通过可以完成的小步骤恢复信心。"
+      }
+    },
+    {
+      "cardId": "TAROT_09",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 128
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 129
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 130
+        }
+      ],
+      "summary": {
+        "en": "A period of deliberate reflection can clarify what matters beyond immediate demands. Solitude or thoughtful guidance is useful when it helps you return with greater understanding.",
+        "fr": "Un temps de réflexion aide à discerner l'essentiel au-delà de l'urgence. La solitude ou un accompagnement réfléchi est utile s'il nourrit votre retour au quotidien.",
+        "zh": "主动反省可以帮助你理解真正重要的事。独处或寻求成熟的引导，应最终带来更清楚的认识，而不是无限延后生活。"
+      },
+      "reversedSummary": {
+        "en": "Busyness may hide loneliness, or withdrawal may have lasted longer than it helps. Notice whether you need genuine quiet or renewed contact with others.",
+        "fr": "L'activité peut masquer la solitude, ou le retrait durer au-delà de son utilité. Voyez si vous avez besoin d'un vrai recul ou de renouer le contact.",
+        "zh": "忙碌可能用来回避孤独，也可能已经退缩太久。区分自己需要的是有效独处，还是重新建立与他人的联系。"
+      }
+    },
+    {
+      "cardId": "TAROT_10",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 130
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 131
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 132
+        }
+      ],
+      "summary": {
+        "en": "Changing circumstances can open a different phase or opportunity. Notice what is moving and adjust your response without assuming you control the entire cycle.",
+        "fr": "L'évolution des circonstances peut ouvrir une nouvelle phase. Observez ce qui change et adaptez votre réponse sans chercher à maîtriser tout le cycle.",
+        "zh": "外部条件正在变化，可能带来新的阶段与机会。需要观察变化并调整回应，同时承认并非所有因素都在自己掌控之中。"
+      },
+      "reversedSummary": {
+        "en": "A difficult turn or repeating pattern asks for a different response. Separate what can be influenced from what needs adaptation; discomfort does not prove permanent bad luck.",
+        "fr": "Un tournant difficile ou un schéma répétitif appelle une autre réponse. Distinguez ce qui peut être influencé de ce qui demande une adaptation.",
+        "zh": "不顺利的转折或反复出现的模式，需要新的应对方式。分清可以影响的部分和必须适应的部分，不把暂时受阻等同于持续厄运。"
+      }
+    },
+    {
+      "cardId": "TAROT_11",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 132
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 133
+        }
+      ],
+      "summary": {
+        "en": "Consider the evidence, the commitments made and the consequences of each choice. Fairness includes taking responsibility for your part without inventing certainty about outcomes.",
+        "fr": "Examinez les faits, les engagements et les conséquences de chaque choix. L'équité demande d'assumer votre part sans prétendre connaître le résultat à l'avance.",
+        "zh": "需要回到事实、约定与选择的后果，厘清各方责任。公平不等于预设自己一定正确，也不代表能从牌面确定现实裁决。"
+      },
+      "reversedSummary": {
+        "en": "Unequal treatment, blame or incomplete information may distort a decision. Clarify the criteria and each person's responsibility before drawing conclusions.",
+        "fr": "Un traitement inégal, les reproches ou des informations incomplètes peuvent fausser la décision. Clarifiez les critères et les responsabilités avant de conclure.",
+        "zh": "不平等的对待、互相指责或信息缺失，可能影响判断。应先澄清标准与各方责任，避免把困难简单归为某个人的过错。"
+      }
+    },
+    {
+      "cardId": "TAROT_12",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 134
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 135
+        }
+      ],
+      "summary": {
+        "en": "A pause can change your understanding when more effort is not moving things forward. Let go of one assumed requirement and look at the situation from another position.",
+        "fr": "Une pause peut modifier votre regard quand l'effort ne fait plus avancer. Relâchez une exigence supposée indispensable et observez la situation autrement.",
+        "zh": "当用力也无法推进时，暂停可能带来新的理解。试着放下一项认定必须如此的要求，从不同位置看待处境。"
+      },
+      "reversedSummary": {
+        "en": "Waiting may have become resistance, or sacrifice may mainly serve other people's expectations. Ask what this pause is teaching and what would justify ending it.",
+        "fr": "L'attente peut devenir résistance, ou le sacrifice servir surtout les attentes d'autrui. Demandez ce que cette pause vous apprend et ce qui permettrait d'y mettre fin.",
+        "zh": "等待可能已经变成抗拒，也可能为了迎合期待而牺牲自己。需要明确暂停究竟带来什么认识，以及何时可以结束。"
+      }
+    },
+    {
+      "cardId": "TAROT_13",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 135
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 136
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 137
+        }
+      ],
+      "summary": {
+        "en": "An established form or chapter may need to end so something different can develop. Identify what is changing rather than treating the card as a prediction of physical death.",
+        "fr": "Une forme ou une étape peut devoir se terminer pour laisser place à autre chose. Identifiez ce qui change, sans lire la carte comme l'annonce d'un décès.",
+        "zh": "某种旧形式或阶段可能需要结束，为后续变化腾出空间。重点是辨认正在改变的部分，不能把这张牌理解为身体死亡的预告。"
+      },
+      "reversedSummary": {
+        "en": "Fear of change may keep an exhausted pattern in place. Name what you are protecting and what maintaining it is costing before choosing a gradual transition.",
+        "fr": "La peur du changement peut maintenir un schéma épuisé. Nommez ce que vous protégez et le coût de cette immobilité avant d'organiser une transition.",
+        "zh": "对改变的害怕可能维持着已经失去作用的模式。先理解自己在保护什么，以及维持现状的代价，再寻找能够承受的过渡方式。"
+      }
+    },
+    {
+      "cardId": "TAROT_14",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 138
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 139
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 140
+        }
+      ],
+      "summary": {
+        "en": "Balance emerges through practical adjustment between different needs. Combine experience and feeling gradually; integration is something to practise, not merely understand.",
+        "fr": "L'équilibre se construit en ajustant concrètement des besoins différents. Reliez l'expérience et le ressenti progressivement : l'harmonie se pratique au quotidien.",
+        "zh": "平衡来自不同需求之间的实际调整。理解与行动、感受与现实，需要通过反复尝试形成合适比例，而不只是概念上的和谐。"
+      },
+      "reversedSummary": {
+        "en": "Excess or incompatible rhythms may be pulling the situation apart. Return to a sustainable pace and test one adjustment instead of expecting an instant perfect balance.",
+        "fr": "Les excès ou des rythmes incompatibles peuvent déséquilibrer la situation. Retrouvez un rythme durable et essayez un ajustement plutôt qu'un équilibre parfait immédiat.",
+        "zh": "过度投入或不一致的节奏，可能破坏整体协调。先恢复可持续的节奏，每次调整一个环节，不要求立刻达到完美平衡。"
+      }
+    },
+    {
+      "cardId": "TAROT_15",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 140
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 141
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 142
+        }
+      ],
+      "summary": {
+        "en": "A compelling attachment or need for control can make alternatives hard to see. Examine the bargain you are accepting and where your freedom is still available.",
+        "fr": "Un attachement fort ou le besoin de contrôle peut masquer les alternatives. Examinez ce que vous acceptez en échange et la liberté dont vous disposez encore.",
+        "zh": "强烈依赖、欲望或控制需求，可能让人感觉没有其他选择。需要看清正在接受的交换，以及仍然拥有的自主空间。"
+      },
+      "reversedSummary": {
+        "en": "Recognising a limiting attachment can begin a process of release. Understanding the pattern comes before assuming the bond has already been broken.",
+        "fr": "Reconnaître un attachement limitant peut amorcer un détachement. Comprendre le mécanisme précède l'idée que le lien serait déjà rompu.",
+        "zh": "看见限制自己的依赖，是尝试松绑的开始。意识到问题并不等于已经摆脱，需要理解模式并逐步改变具体行为。"
+      }
+    },
+    {
+      "cardId": "TAROT_16",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 142
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 143
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 144
+        }
+      ],
+      "summary": {
+        "en": "A sudden insight or disruption exposes something that was less stable than it seemed. Focus on what remains sound and what needs rebuilding, without assuming a specific disaster.",
+        "fr": "Une prise de conscience ou une rupture révèle une fragilité jusque-là masquée. Repérez les appuis solides et ce qui doit être reconstruit, sans annoncer une catastrophe précise.",
+        "zh": "突发变化或清晰认识，可能暴露原来未察觉的不稳固。重点是找到可靠支点与重建方向，而不是从牌面推断具体灾难。"
+      },
+      "reversedSummary": {
+        "en": "A necessary change may be contained or resisted, leaving tension underneath. Consider which part can be adjusted deliberately before the strain grows.",
+        "fr": "Un changement nécessaire peut être contenu ou repoussé, laissant la tension intacte. Voyez ce qui peut être modifié volontairement avant qu'elle ne s'accentue.",
+        "zh": "必要的改变可能被压住或拖延，表面平静却仍有紧张。可以先主动调整能够处理的部分，减少继续维持脆弱结构的代价。"
+      }
+    },
+    {
+      "cardId": "TAROT_17",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 144
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 145
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 146
+        }
+      ],
+      "summary": {
+        "en": "Hope and creative trust can return after disruption. Give recovery a concrete form through rest, honest expression or a small project that reconnects you with possibility.",
+        "fr": "L'espoir et la confiance créative peuvent revenir après une rupture. Donnez-leur une forme concrète par le repos, l'expression sincère ou un petit projet.",
+        "zh": "经历动荡后，希望与创造力可能重新出现。通过休息、真诚表达或小项目，让这种恢复有具体落点，而不只是等待好运。"
+      },
+      "reversedSummary": {
+        "en": "Inspiration may feel distant, and discouragement can narrow what seems possible. Reconnect with supportive practices rather than demanding immediate optimism from yourself.",
+        "fr": "L'inspiration peut sembler lointaine et le découragement réduire l'horizon. Retrouvez des pratiques qui vous soutiennent, sans vous imposer un optimisme immédiat.",
+        "zh": "灵感可能暂时难以接近，失望也会缩小对可能性的感知。需要重新接触支持自己的活动与关系，不强迫自己马上乐观。"
+      }
+    },
+    {
+      "cardId": "TAROT_18",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 146
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 147
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 148
+        }
+      ],
+      "summary": {
+        "en": "Uncertainty, imagination and strong feelings may overlap. Explore the emotional meaning of what appears while distinguishing impressions from information that can be checked.",
+        "fr": "L'incertitude, l'imagination et les émotions peuvent se mêler. Explorez ce que cela évoque en distinguant les impressions des informations vérifiables.",
+        "zh": "不确定、想象与情绪可能交织在一起。可以探索这些感受的意义，同时区分可核实的信息与尚未证实的猜测。"
+      },
+      "reversedSummary": {
+        "en": "An unspoken fear may be pressing for attention or becoming easier to name. Bringing it into conversation can help, but it does not make every suspicion true.",
+        "fr": "Une peur jusque-là tue peut demander de l'attention ou devenir plus facile à nommer. En parler peut aider, sans rendre chaque soupçon exact.",
+        "zh": "之前难以表达的害怕可能浮现，或开始变得可以理解。说清楚有助于处理，但不意味着这些担心已经被现实证实。"
+      }
+    },
+    {
+      "cardId": "TAROT_19",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 148
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 149
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 150
+        }
+      ],
+      "summary": {
+        "en": "Clarity, enjoyment and open expression can strengthen the situation. Notice what is working and allow shared pleasure to support realistic progress.",
+        "fr": "La clarté, la joie et une expression ouverte peuvent renforcer la situation. Reconnaissez ce qui fonctionne et laissez le plaisir partagé soutenir vos progrès.",
+        "zh": "清晰表达、愉悦与坦诚互动有助于事情发展。看见已经有效的部分，让真实的快乐支持后续行动，不必夸大为必然成功。"
+      },
+      "reversedSummary": {
+        "en": "Positive possibilities remain, but doubt or comparison may make them harder to enjoy. Explore the fear of not having enough recognition, support or opportunity.",
+        "fr": "Les possibilités positives demeurent, mais le doute ou la comparaison peuvent les assombrir. Explorez la peur de manquer de reconnaissance, de soutien ou d'occasions.",
+        "zh": "积极可能仍然存在，但怀疑和比较会遮住满足感。可以检视对认可、支持或机会不足的担心，而不是否定已有进展。"
+      }
+    },
+    {
+      "cardId": "TAROT_20",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 150
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 151
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 152
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 153
+        }
+      ],
+      "summary": {
+        "en": "Reviewing past choices can bring a clearer sense of the next chapter. Acknowledge what you have learned and take responsibility for the response now available.",
+        "fr": "Revoir les choix passés peut éclairer la prochaine étape. Reconnaissez les apprentissages et assumez la réponse qui vous est désormais possible.",
+        "zh": "回顾过往决定，有助于看清下一阶段。需要承认已经学到的内容，并为此刻可以作出的回应承担责任。"
+      },
+      "reversedSummary": {
+        "en": "A meaningful decision or inner change may be postponed in order to preserve the familiar. Revisit the unresolved question without turning reflection into self-condemnation.",
+        "fr": "Une décision importante peut être reportée pour préserver le familier. Revenez à la question laissée ouverte, sans transformer la réflexion en condamnation de soi.",
+        "zh": "为了保留熟悉感，可能迟迟不回应已经意识到的改变。应重新面对悬而未决的问题，同时避免把反省变成持续责备自己。"
+      }
+    },
+    {
+      "cardId": "TAROT_21",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 153
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 154
+        }
+      ],
+      "summary": {
+        "en": "A cycle comes together through integration and completion. Recognise what has been achieved, how its parts connect, and what makes the result sustainable.",
+        "fr": "Un cycle s'accomplit par l'intégration de ses différentes parties. Reconnaissez le chemin parcouru et les conditions qui permettent au résultat de durer.",
+        "zh": "一个阶段可能进入整合与完成。除了确认成果，也要理解各部分如何形成整体，以及什么条件能让成果持续。"
+      },
+      "reversedSummary": {
+        "en": "An apparent completion may still lack integration or lasting support. Identify the unfinished element instead of dismissing the entire achievement or rushing into another cycle.",
+        "fr": "Un accomplissement apparent peut manquer d'intégration ou d'appuis durables. Repérez ce qui reste inachevé sans dévaloriser l'ensemble ni précipiter le prochain cycle.",
+        "zh": "看似完成的阶段，可能仍有尚未整合的部分或缺少持续支撑。找到具体缺口，不必否定全部成果，也不要匆忙转向下一个循环。"
+      }
+    },
+    {
+      "cardId": "TAROT_22",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 10
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 11
+        }
+      ],
+      "summary": {
+        "en": "A new idea brings the desire to act, create or explore. Give the initial spark a first practical outlet before spreading it across too many ambitions.",
+        "fr": "Une idée nouvelle donne envie d'agir, de créer ou d'explorer. Offrez un premier débouché concret à cet élan avant de multiplier les ambitions.",
+        "zh": "新的想法带来行动、创造或探索的热情。先让这股火花落实为一次尝试，再决定是否扩展更多目标。"
+      },
+      "reversedSummary": {
+        "en": "The impulse is present, but unfinished commitments or scattered effort can delay a start. Clear one obstacle and choose what can realistically receive your attention.",
+        "fr": "L'élan existe, mais les engagements inachevés ou la dispersion peuvent retarder le départ. Levez un obstacle et choisissez ce qui peut réellement recevoir votre attention.",
+        "zh": "想开始的动力仍在，但未完成的事务或分散的精力可能造成拖延。先处理一个阻碍，为新计划留出实际空间。"
+      }
+    },
+    {
+      "cardId": "TAROT_23",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 11
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 12
+        }
+      ],
+      "summary": {
+        "en": "A familiar position is being weighed against a wider possibility. Explore the choice beyond comfort, including what you would need to make it workable.",
+        "fr": "Une situation familière se mesure à une possibilité plus vaste. Examinez le choix au-delà du confort, ainsi que les moyens de le rendre réalisable.",
+        "zh": "正在衡量熟悉的安全感与更大的可能性。除了想去哪里，也要看清实现这个选择需要准备什么。"
+      },
+      "reversedSummary": {
+        "en": "Dissatisfaction can coexist with fear of leaving a secure position. Notice whether repeated evaluation has become a way of postponing a decision.",
+        "fr": "L'insatisfaction peut coexister avec la peur de quitter une position sûre. Voyez si l'évaluation répétée est devenue une manière de repousser la décision.",
+        "zh": "对现状不满，却又担心离开安全区域。需要辨别反复权衡是否已经成为拖延决定的方式。"
+      }
+    },
+    {
+      "cardId": "TAROT_24",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 13
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 14
+        }
+      ],
+      "summary": {
+        "en": "A plan has moved beyond its first decision and needs room to develop. Look outward, coordinate with others and allow time for the response to your efforts.",
+        "fr": "Un projet dépasse la première décision et demande de l'espace pour se développer. Ouvrez les perspectives et laissez aux efforts le temps de produire une réponse.",
+        "zh": "计划已经从选择走向发展，需要更长远的视野与协作。投入之后要观察反馈，也要给结果形成留出时间。"
+      },
+      "reversedSummary": {
+        "en": "Growth may be delayed because the original choice or method needs revision. Use new information to reassess the direction rather than only waiting harder.",
+        "fr": "Le développement peut ralentir parce que le choix initial ou la méthode doit être revu. Utilisez les nouvelles informations pour réexaminer la direction.",
+        "zh": "进展受阻可能提醒你重新审视最初的选择或方法。根据新信息调整，比单纯延长等待更有帮助。"
+      }
+    },
+    {
+      "cardId": "TAROT_25",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 14
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 15
+        }
+      ],
+      "summary": {
+        "en": "A welcoming base makes shared enjoyment and progress possible. Recognise a milestone and the people or routines that give it stability.",
+        "fr": "Un cadre accueillant favorise la joie partagée et le progrès. Reconnaissez une étape franchie ainsi que les personnes et habitudes qui la rendent stable.",
+        "zh": "稳定而接纳的环境，有助于共同庆祝与继续发展。看见已完成的阶段，以及支撑它的人和日常安排。"
+      },
+      "reversedSummary": {
+        "en": "The setting may be temporary, unsettled or difficult to feel part of. Clarify what belonging and stability would require before expecting the next stage.",
+        "fr": "Le cadre peut être provisoire, instable ou difficile à investir. Clarifiez ce qui permettrait de vous sentir à votre place avant d'attendre la suite.",
+        "zh": "环境可能暂时、不稳定，或让人难以产生归属感。先理解安定与参与需要哪些条件，再期待关系或项目继续成长。"
+      }
+    },
+    {
+      "cardId": "TAROT_26",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 15
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 16
+        }
+      ],
+      "summary": {
+        "en": "Different aims compete for attention, creating friction or internal conflict. A shared task needs clearer coordination so that disagreement becomes useful rather than exhausting.",
+        "fr": "Des objectifs différents se disputent l'attention et créent des tensions. Une tâche commune demande une meilleure coordination pour que le désaccord reste utile.",
+        "zh": "多个目标或意见正在争夺空间，可能形成团队摩擦或内在冲突。需要建立共同任务与协调方式，避免各自用力却互相消耗。"
+      },
+      "reversedSummary": {
+        "en": "Resistance to another viewpoint may begin to soften. Use that opening to understand the disagreement and change how people work together, rather than simply suppressing it.",
+        "fr": "La résistance à un autre point de vue peut s'assouplir. Profitez-en pour comprendre le désaccord et modifier la coopération, sans seulement faire taire la tension.",
+        "zh": "对不同看法的抵触可能开始松动。可以借机理解争执并改变合作方式，而不是只求表面不再争吵。"
+      }
+    },
+    {
+      "cardId": "TAROT_27",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 16
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 17
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 18
+        }
+      ],
+      "summary": {
+        "en": "Recognition or visible progress can strengthen confidence. Connect the achievement to the work and support behind it so that it can lead to a durable next step.",
+        "fr": "La reconnaissance ou un progrès visible peut renforcer la confiance. Reliez le résultat au travail et au soutien qui l'ont rendu possible.",
+        "zh": "被认可或取得可见进展，能够增强信心。需要记住成果背后的努力与支持，让这次进展成为后续发展的基础。"
+      },
+      "reversedSummary": {
+        "en": "Confidence may depend too heavily on approval, or pressure may make you abandon progress early. Check the evidence of your work before treating doubt as failure.",
+        "fr": "La confiance peut dépendre du regard extérieur, ou la pression pousser à abandonner trop tôt. Examinez les faits avant de confondre le doute avec l'échec.",
+        "zh": "自信可能过度依赖外界认可，也可能因压力而过早放弃。先看真实进展，不把怀疑和暂时缺少掌声直接当成失败。"
+      }
+    },
+    {
+      "cardId": "TAROT_28",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 18
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 19
+        }
+      ],
+      "summary": {
+        "en": "A position worth keeping may need active defence. Choose the challenge that matters and apply effort where it protects genuine progress.",
+        "fr": "Une position qui compte peut demander une défense active. Choisissez le défi essentiel et concentrez l'effort sur ce qui protège un progrès réel.",
+        "zh": "有价值的立场或成果可能需要主动维护。应选择真正重要的挑战，把力量用于保护实际进展。"
+      },
+      "reversedSummary": {
+        "en": "The present way of resisting may exceed your available energy. Reconsider an old stance or method so that defending your needs does not require fighting every challenge.",
+        "fr": "La manière actuelle de résister peut dépasser vos forces. Revoyez une position ou une méthode afin de défendre vos besoins sans répondre à chaque provocation.",
+        "zh": "目前的抗争方式可能超出可用精力。需要调整旧立场或方法，让维护需求不再等于应付所有挑战。"
+      }
+    },
+    {
+      "cardId": "TAROT_29",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 19
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 20
+        }
+      ],
+      "summary": {
+        "en": "Events, messages or plans can move quickly once the direction is clear. Respond promptly while keeping the practical destination in sight.",
+        "fr": "Les événements, les échanges ou les projets peuvent s'accélérer quand la direction est claire. Répondez avec réactivité en gardant l'objectif concret en vue.",
+        "zh": "方向明确后，消息、进程或行动可能明显加快。及时回应的同时，仍要保留清晰的实际目标。"
+      },
+      "reversedSummary": {
+        "en": "Enthusiasm may lack a practical landing point, or unresolved obstacles may interrupt momentum. Check timing, communication and unfinished work before pushing for speed.",
+        "fr": "L'enthousiasme peut manquer d'appui concret, ou des obstacles non résolus couper l'élan. Vérifiez le calendrier, les échanges et le travail restant avant d'accélérer.",
+        "zh": "热情可能缺少落地条件，未解决的障碍也会中断进展。先核对时间、沟通与剩余工作，再追求速度。"
+      }
+    },
+    {
+      "cardId": "TAROT_30",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 20
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 21
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 22
+        }
+      ],
+      "summary": {
+        "en": "Experience has built resilience, but it may also keep you on guard. Distinguish a boundary that still protects you from an expectation that every encounter will be a battle.",
+        "fr": "L'expérience a renforcé votre résistance, mais peut vous maintenir sur la défensive. Distinguez une limite utile de l'attente que chaque échange devienne un combat.",
+        "zh": "经验让人更有韧性，也可能让防备一直持续。需要区分仍有保护作用的边界，以及把每次接触都预想为争斗的习惯。"
+      },
+      "reversedSummary": {
+        "en": "Fear or exhaustion may make the old defensive response ineffective. Look for a different approach and support, rather than judging the need to change as weakness.",
+        "fr": "La peur ou l'épuisement peut rendre l'ancienne défense inefficace. Cherchez une autre approche et du soutien, sans assimiler l'adaptation à une faiblesse.",
+        "zh": "害怕或疲惫可能让旧有防御方式失去作用。可以寻求不同做法与支持，不把调整方式视作软弱。"
+      }
+    },
+    {
+      "cardId": "TAROT_31",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 22
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 23
+        }
+      ],
+      "summary": {
+        "en": "Too much responsibility can hide the direction you are trying to reach. Separate what is yours to carry from tasks that need sharing or delegation.",
+        "fr": "Un excès de responsabilités peut masquer la destination. Distinguez ce qui vous revient des tâches qui demandent à être partagées ou déléguées.",
+        "zh": "承担过多责任，可能让人只顾忙碌而看不见方向。需要分清自己的任务，以及应当分担或委派的部分。"
+      },
+      "reversedSummary": {
+        "en": "Overwork may be postponing an unresolved personal need. Releasing tasks helps only if you also understand why the load accumulated and change that pattern.",
+        "fr": "La surcharge peut repousser un besoin personnel non traité. Alléger les tâches aide si vous comprenez aussi comment cette charge s'est accumulée.",
+        "zh": "过度忙碌可能正在掩盖未处理的个人需求。除了减少任务，还要理解负担如何积累，否则容易再次接下同样的重量。"
+      }
+    },
+    {
+      "cardId": "TAROT_32",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 23
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 24
+        }
+      ],
+      "summary": {
+        "en": "Curiosity meets a possible message, project or direction. Treat enthusiasm as a reason to explore and learn, before claiming expertise or making large commitments.",
+        "fr": "La curiosité rencontre un message, un projet ou une direction possible. Faites de l'enthousiasme une invitation à explorer avant de promettre davantage.",
+        "zh": "新消息、项目或方向激发好奇心。适合探索和学习，但还需要经验与计划来承接热情。"
+      },
+      "reversedSummary": {
+        "en": "Planning or excitement may not be turning into action, and news may be delayed. Choose one small follow-through that shows whether the interest can last.",
+        "fr": "La préparation ou l'enthousiasme peut rester sans suite, et les nouvelles tarder. Choisissez un petit engagement concret pour éprouver la durée de cet intérêt.",
+        "zh": "构想或兴奋感可能尚未变成行动，也可能在等待迟来的消息。用一个小的落实步骤检验这份兴趣能否持续。"
+      }
+    },
+    {
+      "cardId": "TAROT_33",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 25
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 26
+        }
+      ],
+      "summary": {
+        "en": "Action, movement and appetite for experience are strong. The opportunity is to use that momentum while recognising what continuing the journey will require.",
+        "fr": "L'envie d'agir, de bouger et d'expérimenter est forte. Utilisez cet élan en reconnaissant ce qu'il faudra pour poursuivre l'aventure.",
+        "zh": "行动、变化与体验新事物的愿望强烈。可以利用这股动力，同时看清持续投入需要什么。"
+      },
+      "reversedSummary": {
+        "en": "Haste or the constant search for novelty can interrupt what has already begun. Let reflection catch up with action and make one commitment that can be kept.",
+        "fr": "La précipitation ou la recherche constante de nouveauté peut interrompre ce qui est commencé. Laissez la réflexion rejoindre l'action et prenez un engagement tenable.",
+        "zh": "急躁或不断追求新鲜感，可能让已开始的事情难以完成。让思考跟上行动，并选择一个能够兑现的承诺。"
+      }
+    },
+    {
+      "cardId": "TAROT_34",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 26
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 27
+        }
+      ],
+      "summary": {
+        "en": "Warm confidence and independence can bring people or resources together. Lead through an engaged presence that encourages others to find their own strength.",
+        "fr": "Une confiance chaleureuse et l'indépendance peuvent rassembler les personnes et les moyens. Encouragez les autres à reconnaître leur force sans agir à leur place.",
+        "zh": "温暖的自信与独立感，有助于凝聚人和资源。发挥影响力时，也要允许他人找到自己的力量。"
+      },
+      "reversedSummary": {
+        "en": "Self-doubt may appear as rivalry, forceful advice or a loss of enthusiasm. Rebuild your own confidence without needing to direct everyone around you.",
+        "fr": "Le doute peut se traduire par la rivalité, des conseils imposés ou une perte d'élan. Reconstruisez votre confiance sans devoir diriger tout votre entourage.",
+        "zh": "自我怀疑可能表现为竞争、强势建议或失去热情。需要恢复自身信心，不必通过控制周围的人来证明能力。"
+      }
+    },
+    {
+      "cardId": "TAROT_35",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 28
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 29
+        }
+      ],
+      "summary": {
+        "en": "Experienced initiative gives a vision practical direction. Leadership works when confidence is supported by self-discipline and a willingness to take responsibility.",
+        "fr": "L'initiative nourrie par l'expérience donne une direction concrète à la vision. La confiance devient utile lorsqu'elle s'appuie sur la discipline et la responsabilité.",
+        "zh": "经验与主动性能为愿景提供实际方向。领导力需要自律与承担责任，才能让自信转化为可靠行动。"
+      },
+      "reversedSummary": {
+        "en": "Future possibilities may distract from present obligations, or drive may outrun available energy. Reassess the promise you can sustain and the decision you are avoiding.",
+        "fr": "Les possibilités futures peuvent détourner des engagements présents, ou l'élan dépasser les forces disponibles. Réévaluez les promesses tenables et la décision évitée.",
+        "zh": "注意力可能过度投向未来机会，忽略眼前责任，或冲劲已经超过精力。需要重新评估能兑现的承诺与回避的决定。"
+      }
+    },
+    {
+      "cardId": "TAROT_36",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 35
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 36
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 37
+        }
+      ],
+      "summary": {
+        "en": "An emotional opening offers the possibility of connection, creativity or renewed feeling. Notice what you are ready to receive as well as what you want to offer.",
+        "fr": "Une ouverture affective rend possibles le lien, la créativité ou un nouvel élan sensible. Observez ce que vous êtes prêt à recevoir autant qu'à offrir.",
+        "zh": "情感上的开放，可能带来新的连接、创造或满足。除了愿意付出什么，也要看自己是否准备好接受。"
+      },
+      "reversedSummary": {
+        "en": "Emotional disappointment or depletion may make receiving difficult. Give your inner needs space before expecting a new connection to fill the whole absence.",
+        "fr": "La déception ou l'épuisement affectif peut rendre l'accueil difficile. Accordez une place à vos besoins avant d'attendre d'un nouveau lien qu'il comble tout le manque.",
+        "zh": "失望或情感消耗，可能让人难以接受新的连接。先照顾内在需要，不把填补全部空缺的任务交给一段新关系。"
+      }
+    },
+    {
+      "cardId": "TAROT_37",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 37
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 38
+        }
+      ],
+      "summary": {
+        "en": "Mutual recognition can support a relationship, friendship or partnership. Look for reciprocity: both sides contribute something and have room to be heard.",
+        "fr": "Une reconnaissance mutuelle peut soutenir une relation, une amitié ou un partenariat. Cherchez la réciprocité : chacun apporte quelque chose et peut être entendu.",
+        "zh": "彼此认可有助于关系、友谊或合作发展。关键是互惠：双方都能贡献，也都有被听见的空间。"
+      },
+      "reversedSummary": {
+        "en": "Fear, unequal investment or struggles for control may disturb connection. Examine the exchange between people without assuming the relationship must end.",
+        "fr": "La peur, un investissement inégal ou une lutte de contrôle peut fragiliser le lien. Examinez les échanges sans conclure que la relation doit se terminer.",
+        "zh": "害怕、不对等的投入或控制拉扯，可能干扰连接。需要看双方如何互动，不能仅凭这张牌认定关系必然结束。"
+      }
+    },
+    {
+      "cardId": "TAROT_38",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 39
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 40
+        }
+      ],
+      "summary": {
+        "en": "Shared joy and supportive company can mark an achievement or reunion. Consider who helps you celebrate and feel included beyond a single intense connection.",
+        "fr": "La joie partagée et l'entourage peuvent accompagner une réussite ou des retrouvailles. Regardez qui vous aide à célébrer et à vous sentir accueilli.",
+        "zh": "庆祝、重聚与支持性的同伴，有助于分享成果。也可以留意，除了某一段密切关系，还有谁让你感到被接纳。"
+      },
+      "reversedSummary": {
+        "en": "A group may not provide the support you expected, or shared enjoyment may be short-lived. Clarify inclusion and expectations; the card alone cannot establish infidelity.",
+        "fr": "Le groupe peut décevoir vos attentes, ou la joie partagée rester passagère. Clarifiez la place de chacun : la carte ne prouve pas une infidélité.",
+        "zh": "群体支持可能不如预期，或相聚的满足比较短暂。需要厘清参与和期待，不可把这张牌直接当作存在第三者的证据。"
+      }
+    },
+    {
+      "cardId": "TAROT_39",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 40
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 41
+        }
+      ],
+      "summary": {
+        "en": "Withdrawal or dissatisfaction can make existing offers hard to notice. Take time to understand what is missing, then look again at what is actually available.",
+        "fr": "Le retrait ou l'insatisfaction peut rendre les propositions difficiles à voir. Comprenez ce qui manque, puis regardez de nouveau ce qui est disponible.",
+        "zh": "退缩或不满足，可能让人忽略身边已经出现的机会。先理解缺少的究竟是什么，再重新观察现实中的选择。"
+      },
+      "reversedSummary": {
+        "en": "A reflective pause may be ending, making room for renewed participation. Seek a different source of engagement instead of waiting for familiar options to feel new.",
+        "fr": "Une pause intérieure peut s'achever et laisser place à une nouvelle participation. Cherchez une autre manière de vous engager au lieu d'attendre du familier qu'il change.",
+        "zh": "沉思的阶段可能接近结束，可以重新参与现实。与其期待旧选择自动带来新鲜感，不如探索不同的投入方式。"
+      }
+    },
+    {
+      "cardId": "TAROT_40",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 42
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 43
+        }
+      ],
+      "summary": {
+        "en": "A loss or disappointment deserves to be acknowledged. Attention may be fixed on what has gone, leaving remaining support and possible connections outside your view.",
+        "fr": "Une perte ou une déception mérite d'être reconnue. L'attention tournée vers ce qui manque peut masquer les appuis et les liens encore présents.",
+        "zh": "失落与失望需要被认真承认。过度注视已经失去的部分时，可能暂时看不见仍然存在的支持与联系。"
+      },
+      "reversedSummary": {
+        "en": "You may be becoming more willing to receive support and loosen the hold of a past loss. Recovery can be gradual without requiring you to deny what mattered.",
+        "fr": "Vous pouvez devenir plus disponible au soutien et moins retenu par une perte passée. Ce mouvement peut rester progressif sans effacer ce qui a compté.",
+        "zh": "可能开始愿意接受支持，并逐渐松开过去失落的影响。恢复可以缓慢进行，不必否认那段经历曾经重要。"
+      }
+    },
+    {
+      "cardId": "TAROT_41",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 43
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 44
+        }
+      ],
+      "summary": {
+        "en": "Familiar people, memories or routines can provide warmth and safety. Notice when that comfort nourishes the present and when it limits further growth.",
+        "fr": "Les souvenirs, les personnes familières ou les habitudes apportent du réconfort. Observez quand cette sécurité nourrit le présent et quand elle limite l'évolution.",
+        "zh": "熟悉的人、记忆与习惯可以带来温暖和安全感。也要分辨，这种舒适是在滋养当下，还是限制进一步成长。"
+      },
+      "reversedSummary": {
+        "en": "Moving beyond an old pattern may require less reliance on familiar security. Review the past so that it informs the next step without deciding it for you.",
+        "fr": "Dépasser un ancien schéma peut demander de moins s'appuyer sur la sécurité connue. Revisitez le passé pour qu'il éclaire la suite sans la décider à votre place.",
+        "zh": "走出旧模式，可能需要减少对熟悉安全感的依赖。回顾过去是为了理解自己，不是让过去替现在作决定。"
+      }
+    },
+    {
+      "cardId": "TAROT_42",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 45
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 46
+        }
+      ],
+      "summary": {
+        "en": "Many attractive possibilities may conceal different underlying needs. Distinguish the image of what you want from what would genuinely make the situation more satisfying.",
+        "fr": "Plusieurs possibilités séduisantes peuvent cacher des besoins différents. Distinguez l'image désirée de ce qui rendrait réellement la situation plus satisfaisante.",
+        "zh": "许多诱人的可能性背后，可能对应不同的真实需求。需要区分理想画面与真正能够带来满足的条件。"
+      },
+      "reversedSummary": {
+        "en": "A decision can turn one imagined possibility into action. Check that practical achievement serves a meaningful need rather than becoming another way to avoid it.",
+        "fr": "Une décision peut transformer une possibilité imaginée en action. Vérifiez que la réussite concrète répond à un besoin important plutôt que de l'éviter.",
+        "zh": "可以开始把某个设想变成行动。但也要确认，追求实际成果是在回应重要需求，而不是继续绕开它。"
+      }
+    },
+    {
+      "cardId": "TAROT_43",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 46
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 47
+        }
+      ],
+      "summary": {
+        "en": "Something can be stable yet no longer feel sufficient. Explore what greater meaning would require, including whether leaving or changing your involvement is appropriate.",
+        "fr": "Une situation peut être stable sans sembler suffisante. Explorez ce qui donnerait davantage de sens, y compris un départ ou une autre manière de vous engager.",
+        "zh": "某种状态可能稳定，却不再足以满足内在需要。可以探索更深的意义来自哪里，以及是否需要离开或改变参与方式。"
+      },
+      "reversedSummary": {
+        "en": "The difficulty may be staying from fear, or leaving before addressing what is workable. Context decides which reading fits; examine what you are moving toward and away from.",
+        "fr": "La difficulté peut être de rester par peur ou de partir avant d'avoir traité ce qui peut l'être. Le contexte permet de distinguer ces deux lectures.",
+        "zh": "可能因为害怕而留下，也可能尚未处理可改善之处就急着离开。要结合背景辨别：你正在靠近什么，又在逃离什么。"
+      }
+    },
+    {
+      "cardId": "TAROT_44",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 48
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 49
+        }
+      ],
+      "summary": {
+        "en": "Personal satisfaction allows you to enjoy what has already been achieved. Recognise the needs that are met without making fulfilment depend entirely on another person.",
+        "fr": "La satisfaction personnelle permet de savourer ce qui est accompli. Reconnaissez les besoins comblés sans faire dépendre tout votre bien-être d'autrui.",
+        "zh": "对自己的认可，让人能够享受已经取得的满足。看见哪些需要得到回应，也不把全部幸福交给他人提供。"
+      },
+      "reversedSummary": {
+        "en": "An outwardly pleasing result may leave an inner need unmet. Ask what satisfaction means to you before seeking more praise, possessions or immediate pleasure.",
+        "fr": "Un résultat agréable en apparence peut laisser un besoin intérieur sans réponse. Définissez votre satisfaction avant de chercher davantage d'approbation ou de plaisir immédiat.",
+        "zh": "外表令人满意的结果，可能没有回应内在需求。需要先理解自己的满足来自哪里，再继续追求认可、拥有或即时享受。"
+      }
+    },
+    {
+      "cardId": "TAROT_45",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 49
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 50
+        }
+      ],
+      "summary": {
+        "en": "Shared well-being grows when people can both give and receive. A supportive group or family climate depends on participation rather than a perfect appearance.",
+        "fr": "Le bien-être partagé grandit quand chacun peut donner et recevoir. Un groupe ou une famille se construit par la participation, au-delà d'une image idéale.",
+        "zh": "共同的幸福来自成员之间愿意付出与接受。支持性的家庭或团队，需要实际参与，不能只维持和谐的外观。"
+      },
+      "reversedSummary": {
+        "en": "Distance or competition may weaken an otherwise important sense of belonging. Explore how individual needs and shared responsibilities can be expressed more honestly.",
+        "fr": "La distance ou la compétition peut fragiliser le sentiment d'appartenance. Explorez une expression plus honnête des besoins personnels et des responsabilités communes.",
+        "zh": "疏离或竞争可能削弱原本重要的归属感。需要更诚实地表达个人需求，也重新协商共同责任。"
+      }
+    },
+    {
+      "cardId": "TAROT_46",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 50
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 51
+        }
+      ],
+      "summary": {
+        "en": "A tender message, creative interest or new connection invites openness. Let curiosity develop while allowing feelings to take shape at their own pace.",
+        "fr": "Un message sensible, un intérêt créatif ou un nouveau lien invite à l'ouverture. Laissez la curiosité et les sentiments se préciser à leur rythme.",
+        "zh": "温柔的消息、创作兴趣或新的连接，可能邀请你敞开感受。可以保持好奇，让情绪逐渐形成清楚表达。"
+      },
+      "reversedSummary": {
+        "en": "A hoped-for message may disappoint or arrive late, leaving feelings unsettled. Gather what is known before making a commitment around an imagined response.",
+        "fr": "Une nouvelle attendue peut décevoir ou tarder et rendre les sentiments incertains. Rassemblez les faits avant de vous engager sur une réponse imaginée.",
+        "zh": "期待的消息可能迟到或不如预期，让感受难以稳定。先收集已知信息，不围绕想象中的回应作出承诺。"
+      }
+    },
+    {
+      "cardId": "TAROT_47",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 52
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 53
+        }
+      ],
+      "summary": {
+        "en": "An invitation or heartfelt offer asks whether you want to move closer. Appreciate its emotional meaning while considering how the offer could take practical form.",
+        "fr": "Une invitation ou une proposition sincère invite à vous rapprocher. Accueillez sa portée affective tout en regardant comment elle peut devenir concrète.",
+        "zh": "邀约或带着情感的提议，可能让关系更进一步。除了感受其吸引力，也要看这份提议如何落实。"
+      },
+      "reversedSummary": {
+        "en": "An idealised offer may lack follow-through or clear commitment. Distinguish what has been expressed beautifully from what the person is ready to sustain.",
+        "fr": "Une proposition idéalisée peut manquer de suite ou d'engagement clair. Distinguez les belles paroles de ce que la personne est prête à maintenir.",
+        "zh": "动人的提议可能缺少持续行动或明确承诺。需要区分表达得很美好的部分，以及对方真正能够持续承担的部分。"
+      }
+    },
+    {
+      "cardId": "TAROT_48",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 53
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 54
+        }
+      ],
+      "summary": {
+        "en": "Attentive listening and emotional imagination help you understand a situation. Sensitivity is most useful when it leaves room for both your feelings and another person's account.",
+        "fr": "L'écoute et l'imagination affective aident à comprendre la situation. La sensibilité est utile lorsqu'elle accueille votre ressenti autant que la parole de l'autre.",
+        "zh": "细致倾听与情感想象力，有助于理解处境。敏感需要同时容纳自己的感受和对方的真实表达。"
+      },
+      "reversedSummary": {
+        "en": "Past hurt or disconnection from support may colour present feelings. Re-establish emotional boundaries and reliable contact before interpreting every reaction as a complete picture.",
+        "fr": "Une blessure passée ou un soutien perdu peut colorer les émotions présentes. Retrouvez des limites et des liens fiables avant de prendre chaque réaction pour toute la réalité.",
+        "zh": "过去的受伤或支持中断，可能影响当下感受。需要恢复情感边界与可靠联系，不把每次情绪反应都当作完整事实。"
+      }
+    },
+    {
+      "cardId": "TAROT_49",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 55
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 56
+        }
+      ],
+      "summary": {
+        "en": "Emotional steadiness can hold strong feelings without losing practical direction. Combine empathy and creative understanding with a response you can consistently maintain.",
+        "fr": "Une stabilité affective peut accueillir des émotions fortes sans perdre la direction. Associez l'empathie à une réponse concrète que vous pouvez maintenir.",
+        "zh": "成熟的情绪处理，能容纳强烈感受而不失去实际方向。需要把理解与共情转化为稳定可持续的回应。"
+      },
+      "reversedSummary": {
+        "en": "Fear or unresolved hurt may appear through emotional control, withdrawal or indirect influence. Examine the behaviour itself rather than assigning a fixed character to someone.",
+        "fr": "La peur ou une blessure peut se traduire par le contrôle affectif, le retrait ou une influence indirecte. Examinez les comportements sans enfermer quelqu'un dans un portrait.",
+        "zh": "害怕或未处理的受伤，可能表现为情绪控制、退缩或间接施压。应观察具体行为，而不凭牌面给某个人定性。"
+      }
+    },
+    {
+      "cardId": "TAROT_50",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 60
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 61
+        }
+      ],
+      "summary": {
+        "en": "A clear distinction, idea or decision can cut through confusion. Define the question precisely and connect the insight to a plan that can be tested.",
+        "fr": "Une distinction, une idée ou une décision claire peut dissiper la confusion. Formulez précisément la question et reliez l'intuition à un plan vérifiable.",
+        "zh": "清晰的判断或新认识，有助于分开混乱的信息。把问题说准确，再让这个认识对应一项可以检验的计划。"
+      },
+      "reversedSummary": {
+        "en": "Ideas may be confused, unrealistic or missing a clear objective. Review assumptions and available information before presenting one interpretation as certain.",
+        "fr": "Les idées peuvent être confuses, irréalistes ou sans objectif clair. Revoyez les hypothèses et les informations disponibles avant de conclure avec certitude.",
+        "zh": "想法可能混乱、脱离现实，或缺少明确目标。作出确定判断前，需要重新检查前提与已经掌握的信息。"
+      }
+    },
+    {
+      "cardId": "TAROT_51",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 62
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 63
+        }
+      ],
+      "summary": {
+        "en": "A decision is suspended while competing positions are held apart. Make room for the feelings and missing information that a purely mental balance may be excluding.",
+        "fr": "Une décision reste suspendue entre deux positions. Accordez une place aux émotions et aux informations qu'un équilibre seulement intellectuel peut laisser de côté.",
+        "zh": "决定悬在不同立场之间，表面的平衡可能排除了感受或重要信息。需要把这些被隔开的部分重新纳入判断。"
+      },
+      "reversedSummary": {
+        "en": "Suppressed feelings or fear may make choosing more difficult. Name what you are trying not to feel before adding more options or arguments.",
+        "fr": "Les émotions contenues ou la peur peuvent compliquer le choix. Nommez ce que vous évitez de ressentir avant d'ajouter des options et des arguments.",
+        "zh": "被压住的情绪或害怕，可能让选择更加困难。与其不断增加分析，不如先承认自己一直不愿面对的感受。"
+      }
+    },
+    {
+      "cardId": "TAROT_52",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 63
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 64
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 65
+        }
+      ],
+      "summary": {
+        "en": "Painful recognition, disappointment or separation needs honest acknowledgement. Give the experience words without assuming it defines every relationship or what will happen next.",
+        "fr": "Une prise de conscience douloureuse, une déception ou une séparation demande à être reconnue. Mettez des mots sur l'expérience sans en faire tout votre avenir.",
+        "zh": "痛苦的认识、失望或分离，需要诚实承认。可以把经历说清楚，但不必用它定义所有关系与未来。"
+      },
+      "reversedSummary": {
+        "en": "Unexpressed hurt may continue to consume attention and colour the present. Acknowledge what has been held back and consider a safe way of sharing it.",
+        "fr": "Une douleur non exprimée peut continuer à peser sur le présent. Reconnaissez ce qui a été retenu et cherchez une manière sûre de le partager.",
+        "zh": "尚未表达的伤痛可能持续占用精力，并影响当下。需要承认压住的感受，寻找可以安全表达的方式。"
+      }
+    },
+    {
+      "cardId": "TAROT_53",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 65
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 66
+        }
+      ],
+      "summary": {
+        "en": "A deliberate pause allows distance from conflict or pressure. Rest and reflection are useful when they help you understand the next step rather than merely disappear from it.",
+        "fr": "Une pause choisie permet de prendre du recul sur le conflit ou la pression. Le repos et la réflexion servent à préparer la suite, au-delà du simple retrait.",
+        "zh": "有意识地暂停，可以从冲突或压力中获得距离。休息与反省应帮助理解下一步，而不只是暂时消失。"
+      },
+      "reversedSummary": {
+        "en": "A period of withdrawal may be ending, with room to re-enter daily activity. Put what you learned during the pause into practice at a sustainable pace.",
+        "fr": "Une période de retrait peut s'achever et permettre un retour au quotidien. Mettez les apprentissages de cette pause en pratique à un rythme tenable.",
+        "zh": "退隐阶段可能接近结束，可以逐渐回到日常行动。把暂停期间获得的理解，以可持续的节奏应用出来。"
+      }
+    },
+    {
+      "cardId": "TAROT_54",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 66
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 67
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 68
+        }
+      ],
+      "summary": {
+        "en": "A conflict may produce a winner while damaging trust or cooperation. Examine the cost of being right and whether the way the dispute is conducted serves the real goal.",
+        "fr": "Un conflit peut désigner un gagnant tout en abîmant la confiance. Examinez le prix d'avoir raison et la manière dont la dispute sert votre objectif réel.",
+        "zh": "争执可能分出输赢，却损害信任与合作。需要衡量证明自己正确的代价，以及争论方式是否有助于真正目标。"
+      },
+      "reversedSummary": {
+        "en": "After conflict, there may be more openness to reviewing what each person contributed. Dialogue becomes useful when it addresses the pattern, not only the latest accusation.",
+        "fr": "Après le conflit, chacun peut être plus disponible pour examiner sa part. Le dialogue aide s'il traite le mécanisme plutôt que la dernière accusation.",
+        "zh": "冲突之后，可能更愿意反省各自的参与方式。有效沟通需要触及重复模式，而不只围绕最近一次指责。"
+      }
+    },
+    {
+      "cardId": "TAROT_55",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 68
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 69
+        }
+      ],
+      "summary": {
+        "en": "A transition can create distance from a difficult situation even before everything is resolved. Accept help and notice which concerns you are still carrying into the next stage.",
+        "fr": "Une transition peut éloigner d'une difficulté avant qu'elle soit entièrement résolue. Acceptez l'aide et observez ce que vous emportez encore dans la nouvelle étape.",
+        "zh": "即使问题未完全解决，过渡也能带来一些距离。可以接受帮助，同时看清哪些担忧仍被带入下一个阶段。"
+      },
+      "reversedSummary": {
+        "en": "Changing circumstances may reopen something that still needs to be addressed. A difficult conversation can be part of moving forward when avoidance has kept the issue alive.",
+        "fr": "Un changement peut rouvrir une question non réglée. Une conversation difficile peut faire avancer lorsque l'évitement a maintenu le problème.",
+        "zh": "变化可能重新触及尚未处理的问题。若回避一直维持着困扰，一次困难但必要的沟通，也可能是前进的一部分。"
+      }
+    },
+    {
+      "cardId": "TAROT_56",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 69
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 70
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 71
+        }
+      ],
+      "summary": {
+        "en": "An indirect strategy or preference for working alone may be shaping the situation. Examine what is being avoided, what needs discretion and what should be discussed openly.",
+        "fr": "Une stratégie indirecte ou le choix d'agir seul peut structurer la situation. Examinez ce qui demande de la discrétion et ce qui mérite d'être discuté ouvertement.",
+        "zh": "间接策略或独自处理的倾向，可能影响局势。需要区分哪些部分适合谨慎保留，哪些回避应当通过坦诚沟通解决。"
+      },
+      "reversedSummary": {
+        "en": "A familiar tactic may no longer work, especially if it protects an uncomfortable assumption. Seek another perspective and test the explanation you have been relying on.",
+        "fr": "Une tactique habituelle peut ne plus fonctionner, surtout si elle protège une hypothèse inconfortable. Cherchez un autre regard et vérifiez votre explication.",
+        "zh": "惯用的方法可能已经失效，尤其当它维持着不愿面对的假设时。可以听取不同意见，检验一直依赖的解释。"
+      }
+    },
+    {
+      "cardId": "TAROT_57",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 71
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 72
+        }
+      ],
+      "summary": {
+        "en": "A situation can feel closed when fear or established beliefs narrow the visible choices. Separate real constraints from conclusions that have not yet been tested.",
+        "fr": "La situation peut sembler fermée lorsque la peur ou des croyances limitent les choix visibles. Distinguez les contraintes réelles des conclusions encore non vérifiées.",
+        "zh": "害怕或既有信念，可能让选择显得比实际更少。需要分清客观限制，以及尚未验证就认为不可能的部分。"
+      },
+      "reversedSummary": {
+        "en": "A limiting belief may be loosening, allowing a more realistic view of your options. Turn that recognition into one feasible choice rather than expecting every barrier to vanish.",
+        "fr": "Une croyance limitante peut se relâcher et rendre les options plus visibles. Traduisez cette compréhension en un choix possible, sans attendre la disparition de tous les obstacles.",
+        "zh": "限制自己的信念可能开始松动，让选择更清楚。将新的认识落实为一个可行决定，不要求所有障碍立刻消失。"
+      }
+    },
+    {
+      "cardId": "TAROT_58",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 72
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 73
+        }
+      ],
+      "summary": {
+        "en": "Worry can repeat until it becomes difficult to distinguish the feared scenario from what is known. Give the concern a name and check what evidence or support is available.",
+        "fr": "L'inquiétude peut se répéter jusqu'à brouiller la différence entre scénario redouté et faits connus. Nommez la préoccupation et cherchez les informations ou le soutien disponibles.",
+        "zh": "反复担心可能模糊想象中的情景与已知事实之间的界限。先把担忧说清楚，再寻找证据和可获得的支持。"
+      },
+      "reversedSummary": {
+        "en": "Hidden fears may be becoming easier to recognise and discuss. Treat dreams or recurring thoughts as material for reflection, not evidence that an event will occur.",
+        "fr": "Des peurs cachées peuvent devenir plus faciles à reconnaître et à partager. Les rêves ou les pensées récurrentes offrent des pistes de réflexion, pas des preuves de l'avenir.",
+        "zh": "隐藏的害怕可能变得可以辨认和表达。梦境或反复出现的念头可以帮助反思，但不是某个事件必然发生的证据。"
+      }
+    },
+    {
+      "cardId": "TAROT_59",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 73
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 74
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 75
+        }
+      ],
+      "summary": {
+        "en": "An approach or chapter may have reached its limit, leaving a sense of finality. Acknowledge the ending and distinguish what is over from what remains possible.",
+        "fr": "Une manière d'agir ou une étape peut avoir atteint sa limite. Reconnaissez ce qui se termine et distinguez-le des possibilités encore ouvertes.",
+        "zh": "某种做法或阶段可能已经到达极限，带来强烈的结束感。需要承认结束，也要分清仍然开放的可能性。"
+      },
+      "reversedSummary": {
+        "en": "A reprieve after difficulty creates room for a different direction. Use the opening to change the underlying pattern instead of assuming relief alone will make it last.",
+        "fr": "Un répit après une difficulté ouvre une autre direction. Profitez-en pour modifier le mécanisme sous-jacent plutôt que de compter seulement sur le soulagement.",
+        "zh": "困难后的喘息提供了调整方向的空间。需要趁机改变原有模式，而不假定一时缓解会自动持续。"
+      }
+    },
+    {
+      "cardId": "TAROT_60",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 75
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 76
+        }
+      ],
+      "summary": {
+        "en": "Curiosity and alertness encourage questions, observation and new information. Develop the idea carefully before treating a first impression as a finished conclusion.",
+        "fr": "La curiosité et la vigilance invitent à questionner et à recueillir des informations. Développez l'idée avant de prendre une première impression pour une conclusion.",
+        "zh": "好奇与警觉有助于提问、观察并获取信息。初步想法仍需完善，不宜把第一印象直接当成结论。"
+      },
+      "reversedSummary": {
+        "en": "News may be late, poorly checked or repeated beyond its proper context. Verify the message and connect thinking with action before spreading an interpretation.",
+        "fr": "Une nouvelle peut tarder, être mal vérifiée ou circuler hors contexte. Vérifiez le message et reliez la réflexion aux actes avant de diffuser une interprétation.",
+        "zh": "消息可能迟到、缺少核实或被脱离背景传播。应先验证信息，并让思考对应行动，再转述某种判断。"
+      }
+    },
+    {
+      "cardId": "TAROT_61",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 76
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 77
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 78
+        }
+      ],
+      "summary": {
+        "en": "A forceful idea can drive rapid action and direct communication. Use decisiveness while leaving enough room to hear what your momentum might overlook.",
+        "fr": "Une idée forte peut entraîner une action rapide et une parole directe. Soyez décidé tout en laissant une place à ce que votre élan pourrait négliger.",
+        "zh": "明确想法能够带来快速行动和直接沟通。保持果断的同时，也要给被速度忽略的信息留下空间。"
+      },
+      "reversedSummary": {
+        "en": "Impatience or scattered thinking can produce movement without useful progress. Review the plan and its consequences before trying to recover time through greater speed.",
+        "fr": "L'impatience ou la dispersion peut produire beaucoup d'action sans progrès utile. Revoyez le plan et ses conséquences avant de vouloir rattraper le temps en accélérant.",
+        "zh": "急躁或思路散乱，可能造成大量行动却没有有效进展。应先复核计划与后果，不靠继续加速来弥补焦虑。"
+      }
+    },
+    {
+      "cardId": "TAROT_62",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 78
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 79
+        }
+      ],
+      "summary": {
+        "en": "Clear judgement and direct boundaries can emerge from experience. Speak precisely while allowing new information to refine what you think you understand.",
+        "fr": "L'expérience peut nourrir un jugement clair et des limites directes. Parlez avec précision tout en permettant aux faits nouveaux de nuancer votre compréhension.",
+        "zh": "经验有助于形成清晰判断与明确边界。表达可以直接准确，同时仍允许新信息修正已有认识。"
+      },
+      "reversedSummary": {
+        "en": "Old hurt can sharpen judgement into suspicion, coldness or impossible standards. Distinguish necessary discernment from using criticism to keep all vulnerability away.",
+        "fr": "Une ancienne blessure peut transformer le discernement en méfiance ou en exigences impossibles. Distinguez une limite utile d'une critique qui écarte toute vulnérabilité.",
+        "zh": "旧伤可能让敏锐判断变成怀疑、冷淡或无法达到的标准。要区分必要辨别，以及用批评阻止一切亲近的防御。"
+      }
+    },
+    {
+      "cardId": "TAROT_63",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 79
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 80
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 81
+        }
+      ],
+      "summary": {
+        "en": "Reasoned authority brings structure through clear thinking and consistent standards. A decision is stronger when its criteria can be explained and examined.",
+        "fr": "Une autorité réfléchie apporte un cadre par la clarté et la cohérence des critères. Une décision gagne en solidité lorsqu'elle peut être expliquée et examinée.",
+        "zh": "理性的权威通过清晰思考与一致标准建立秩序。判断的依据能够被说明和检验时，决定才更可靠。"
+      },
+      "reversedSummary": {
+        "en": "Intellectual confidence may conceal inconsistent reasoning, harsh control or ideas without follow-through. Ask for clear evidence and behaviour that matches the stated standard.",
+        "fr": "L'assurance intellectuelle peut masquer un raisonnement incohérent, un contrôle dur ou des idées sans suite. Demandez des faits et des actes conformes aux critères annoncés.",
+        "zh": "思维上的自信可能掩盖推理不一致、严厉控制或缺乏落实。需要明确证据，以及符合宣称标准的实际行为。"
+      }
+    },
+    {
+      "cardId": "TAROT_64",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 86
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 87
+        }
+      ],
+      "summary": {
+        "en": "A concrete opportunity offers a foundation for growth. Consider the time, skills or resources that would turn a promising opening into something durable.",
+        "fr": "Une occasion concrète offre une base de développement. Examinez le temps, les compétences ou les moyens qui permettraient de rendre cette ouverture durable.",
+        "zh": "现实中的机会提供了发展的基础。需要考虑时间、技能与资源如何投入，才能让潜力变成稳定成果。"
+      },
+      "reversedSummary": {
+        "en": "A useful opening may be slipping away because the practical conditions are incomplete. Review resources and readiness before treating enthusiasm as sufficient preparation.",
+        "fr": "Une occasion peut échapper faute de conditions concrètes réunies. Revoyez les moyens et la préparation avant de compter seulement sur l'envie de commencer.",
+        "zh": "有价值的机会可能因实际条件不足而难以把握。需要复核资源与准备程度，不把愿望本身当作已经具备条件。"
+      }
+    },
+    {
+      "cardId": "TAROT_65",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 87
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 88
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 89
+        }
+      ],
+      "summary": {
+        "en": "Several responsibilities or changing demands require flexible coordination. Keep the rhythm workable by seeing the whole picture rather than reacting to each demand alone.",
+        "fr": "Plusieurs responsabilités ou demandes changeantes exigent de la souplesse. Gardez une vue d'ensemble pour maintenir un rythme vivable au lieu de seulement réagir.",
+        "zh": "多项责任或不断变化的要求，需要灵活协调。看清整体安排，才能避免只对每一项催促作出反应。"
+      },
+      "reversedSummary": {
+        "en": "There may no longer be room to keep every commitment active. Choose what to reduce or release so that effort can produce a meaningful result.",
+        "fr": "Il peut ne plus être possible de maintenir tous les engagements. Choisissez ce qui doit être réduit ou laissé de côté pour rendre l'effort utile.",
+        "zh": "可能已经无法同时维持所有承诺。需要决定减少或放下什么，让有限投入能够产生有效结果。"
+      }
+    },
+    {
+      "cardId": "TAROT_66",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 89
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 90
+        }
+      ],
+      "summary": {
+        "en": "Skill develops through practice, learning and work that others can assess. Collaboration is useful when the contribution and standard expected from each person are clear.",
+        "fr": "Le savoir-faire se construit par l'apprentissage et un travail qui peut être évalué. La coopération aide lorsque la contribution et les critères attendus sont clairs.",
+        "zh": "能力通过学习、实践与可评估的工作逐步形成。合作需要明确各自贡献与完成标准，才能让经验真正积累。"
+      },
+      "reversedSummary": {
+        "en": "A learning opportunity may be neglected, or effort may stop before skill develops. Identify the missing preparation, feedback or commitment instead of assuming talent alone is enough.",
+        "fr": "Une occasion d'apprendre peut être négligée ou l'effort interrompu trop tôt. Repérez la préparation, le retour ou l'engagement qui manque.",
+        "zh": "学习机会可能被忽略，或努力在能力形成前就中断。需要找到缺少的准备、反馈与持续投入，而不只依靠天赋。"
+      }
+    },
+    {
+      "cardId": "TAROT_67",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 90
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 91
+        }
+      ],
+      "summary": {
+        "en": "Holding resources or boundaries tightly can create security, but also restrict movement. Ask what is genuinely protected and what growth is being prevented.",
+        "fr": "Garder fermement ses ressources ou ses limites peut rassurer, mais aussi freiner. Demandez ce qui est réellement protégé et quelle évolution est empêchée.",
+        "zh": "紧握资源或边界可以带来安全感，也可能限制流动。需要分辨正在保护什么，以及因此阻止了哪些成长。"
+      },
+      "reversedSummary": {
+        "en": "Control may be loosening through generosity or through a loss of structure. Context determines whether release is freeing or leaving important needs unsupported.",
+        "fr": "Le contrôle peut se relâcher par générosité ou par manque de cadre. Le contexte indique si cette ouverture libère ou laisse des besoins essentiels sans appui.",
+        "zh": "控制可能通过慷慨而松开，也可能是原有结构正在失去稳定。要结合背景区分：这种放手是在释放空间，还是让重要需求失去支撑。"
+      }
+    },
+    {
+      "cardId": "TAROT_68",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 91
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 92
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 93
+        }
+      ],
+      "summary": {
+        "en": "Feeling excluded or short of support can narrow the view of available help. Name the concrete need and notice where asking or connecting is still possible.",
+        "fr": "Le sentiment d'exclusion ou de manque peut masquer l'aide disponible. Nommez le besoin concret et regardez où demander ou renouer un lien reste possible.",
+        "zh": "缺乏支持或被排除的感受，可能让求助渠道变得不明显。先明确实际需要，再看哪里仍能建立联系或获得帮助。"
+      },
+      "reversedSummary": {
+        "en": "An opening for support or change may emerge as an old constraint loosens. Accepting a different approach can matter more than proving you can manage everything alone.",
+        "fr": "Une possibilité de soutien ou de changement peut apparaître lorsqu'une contrainte se relâche. Accueillir une autre approche peut compter davantage que tout porter seul.",
+        "zh": "限制松动后，可能出现新的支持与选择。接受不同做法，可能比证明自己能够独自承担一切更有帮助。"
+      }
+    },
+    {
+      "cardId": "TAROT_69",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 93
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 94
+        }
+      ],
+      "summary": {
+        "en": "Giving and receiving bring attention to the terms of an exchange. Consider who holds resources or influence and whether support allows the other person dignity and choice.",
+        "fr": "Donner et recevoir invite à regarder les conditions de l'échange. Examinez qui détient les moyens et si l'aide préserve la dignité et le choix de chacun.",
+        "zh": "付出与接受提醒你审视交换的条件。需要看谁掌握资源与影响力，以及支持是否保留了接受者的尊严和选择。"
+      },
+      "reversedSummary": {
+        "en": "An uneven exchange or unstable arrangement may leave one side with greater control. Revisit expectations and limits before continuing to give beyond what is sustainable.",
+        "fr": "Un échange déséquilibré peut donner davantage de contrôle à l'un des côtés. Revoyez les attentes et les limites avant de donner au-delà de vos possibilités.",
+        "zh": "失衡的交换或不稳定的安排，可能让一方拥有更多控制。需要重新讨论期待与边界，避免持续超出能力地付出。"
+      }
+    },
+    {
+      "cardId": "TAROT_70",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 94
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 95
+        }
+      ],
+      "summary": {
+        "en": "A pause in effort allows you to assess what has grown and what has not. Compare the current method with the longer purpose before deciding where to continue investing attention.",
+        "fr": "Une pause permet d'évaluer ce qui a avancé et ce qui n'a pas évolué. Comparez la méthode au but à long terme avant de poursuivre l'effort.",
+        "zh": "适时停下来，可以评估哪些投入已经产生进展，哪些没有。将当前方法与长远目的比较，再决定继续把精力放在哪里。"
+      },
+      "reversedSummary": {
+        "en": "Dissatisfaction may persist because activity has replaced evaluation, or reflection has become delay. Identify which is happening and choose a clear point for reassessment or action.",
+        "fr": "L'insatisfaction peut durer parce que l'activité remplace l'évaluation, ou que la réflexion devient attente. Identifiez le cas et fixez un point de réexamen ou d'action.",
+        "zh": "不满可能来自忙碌挤掉评估，也可能因为思考太久未再行动。先辨别属于哪种情况，再明确复盘或落实的节点。"
+      }
+    },
+    {
+      "cardId": "TAROT_71",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 95
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 96
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 97
+        }
+      ],
+      "summary": {
+        "en": "Patient, repeated practice develops something dependable. Attention to the task itself matters alongside the result you hope it will eventually bring.",
+        "fr": "Une pratique patiente et répétée construit un savoir-faire fiable. L'attention portée au travail compte autant que le résultat espéré.",
+        "zh": "耐心而反复的练习能够形成可靠能力。除了期待最后成果，也要真正关注眼前工作与细节。"
+      },
+      "reversedSummary": {
+        "en": "Effort may lack skill, consistency or interest in the work itself. Review what needs learning and whether the task still serves a purpose you can commit to.",
+        "fr": "L'effort peut manquer de compétence, de régularité ou d'intérêt pour le travail. Revoyez ce qui doit être appris et le sens auquel vous pouvez vous engager.",
+        "zh": "投入可能缺少技能、持续性，或对工作本身已经没有兴趣。需要重新确认应学习什么，以及目标是否仍值得承诺。"
+      }
+    },
+    {
+      "cardId": "TAROT_72",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 97
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 98
+        }
+      ],
+      "summary": {
+        "en": "Independence and enjoyment reflect sustained cultivation of your abilities and resources. Recognise the discipline behind comfort and allow yourself to appreciate its results.",
+        "fr": "L'indépendance et le plaisir reflètent un travail durable sur vos capacités et vos moyens. Reconnaissez la discipline derrière ce confort et appréciez-en les fruits.",
+        "zh": "独立与生活中的从容，通常有持续培养能力和资源作为基础。看见背后的自律，也允许自己享受已经取得的成果。"
+      },
+      "reversedSummary": {
+        "en": "Effort may be going into the wrong priority, leaving little room to enjoy what matters. Revisit the relationship between your daily work and the life you are trying to build.",
+        "fr": "L'effort peut aller vers une priorité qui laisse peu de place à l'essentiel. Revoyez le lien entre le travail quotidien et la vie que vous cherchez à construire.",
+        "zh": "精力可能投入在不合适的重点上，让真正重视的生活没有空间。需要重新连接每天的工作与希望建立的生活方式。"
+      }
+    },
+    {
+      "cardId": "TAROT_73",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 98
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 99
+        }
+      ],
+      "summary": {
+        "en": "Long-term stability is supported by structures that outlast an individual effort. Consider shared resources, continuity and the practical foundation of a family or organisation.",
+        "fr": "La stabilité à long terme repose sur des structures qui dépassent un effort individuel. Examinez les ressources partagées et les bases concrètes d'une famille ou d'une organisation.",
+        "zh": "长期稳定需要能够超越个人一时努力的结构。可以关注共同资源、延续性，以及家庭或组织的实际基础。"
+      },
+      "reversedSummary": {
+        "en": "An apparently established arrangement may lack a dependable foundation. Check its continuity and shared commitments before relying on its appearance of permanence.",
+        "fr": "Un cadre apparemment établi peut manquer de bases fiables. Vérifiez sa continuité et les engagements partagés avant de compter sur son apparente solidité.",
+        "zh": "看似成熟稳定的安排，可能缺乏真正可靠的基础。需要核实持续性与共同承诺，不只依靠外表上的稳固感。"
+      }
+    },
+    {
+      "cardId": "TAROT_74",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 100
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 101
+        }
+      ],
+      "summary": {
+        "en": "A practical subject invites study, planning and a beginner's concentration. Progress comes from giving the idea enough consistent attention to become usable knowledge.",
+        "fr": "Un sujet concret invite à l'étude et à la concentration du débutant. L'idée progresse grâce à une attention régulière qui la transforme en connaissance utilisable.",
+        "zh": "现实课题适合认真学习、规划并保持初学者的专注。持续投入，才能让想法成为真正可用的知识。"
+      },
+      "reversedSummary": {
+        "en": "Frequent changes of direction or distraction may weaken a learning commitment. Return to one achievable task and decide whether you genuinely want to continue this path.",
+        "fr": "Les changements de direction ou la distraction peuvent fragiliser l'apprentissage. Revenez à une tâche réalisable et choisissez si vous souhaitez poursuivre cette voie.",
+        "zh": "反复换方向或注意力分散，可能削弱学习承诺。先回到一项能够完成的任务，再决定是否真正愿意继续这条路。"
+      }
+    },
+    {
+      "cardId": "TAROT_75",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 101
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 102
+        }
+      ],
+      "summary": {
+        "en": "Steady, organised work turns an intention into a dependable routine. Reliability grows through modest actions that can be repeated, even when they attract little attention.",
+        "fr": "Un travail régulier et organisé transforme l'intention en habitudes fiables. La solidité se construit par des gestes modestes qui peuvent être répétés.",
+        "zh": "有组织且稳定的努力，能够让意图变成可靠习惯。即使不显眼，也可以通过反复落实的小行动逐步建立信任。"
+      },
+      "reversedSummary": {
+        "en": "Commitment may have become narrow, disengaged or difficult to sustain. Examine whether routine supports your purpose or substitutes for a sense of value beyond achievement.",
+        "fr": "L'engagement peut devenir étroit, distant ou difficile à tenir. Voyez si la routine soutient votre but ou remplace une valeur personnelle réduite aux résultats.",
+        "zh": "投入可能变得狭窄、疏离或难以持续。需要检视日常惯例是否仍服务于目标，以及是否把自我价值完全绑定在成就上。"
+      }
+    },
+    {
+      "cardId": "TAROT_76",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 103
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 104
+        }
+      ],
+      "summary": {
+        "en": "Practical care joins comfort, resourcefulness and attention to the living environment. Support becomes meaningful through ordinary conditions that help people thrive.",
+        "fr": "Le soin concret associe le confort, l'ingéniosité et l'attention au cadre de vie. Le soutien prend forme dans les conditions quotidiennes qui permettent de s'épanouir.",
+        "zh": "实际照顾结合了舒适、资源安排与对生活环境的关注。真正的支持，体现在让人能够安稳发展的日常条件中。"
+      },
+      "reversedSummary": {
+        "en": "Insecurity may turn attention toward status or possessions while everyday needs are neglected. Reconnect with concrete care and the conditions that help you feel grounded.",
+        "fr": "L'insécurité peut orienter vers le statut ou les biens au détriment des besoins quotidiens. Revenez aux gestes de soin et aux conditions qui vous stabilisent.",
+        "zh": "缺乏安全感可能让注意力过度转向地位或拥有，却忽略日常需求。需要回到具体照顾与让自己安定的生活条件。"
+      }
+    },
+    {
+      "cardId": "TAROT_77",
+      "sourceRefs": [
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 104
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 105
+        },
+        {
+          "sourceId": "tarot_already",
+          "pdfPage": 106
+        }
+      ],
+      "summary": {
+        "en": "Patient stewardship and practical judgement can make a result durable. Use experience to organise resources responsibly and create conditions that others can rely on.",
+        "fr": "Une gestion patiente et un jugement concret peuvent rendre le résultat durable. Utilisez l'expérience pour organiser les moyens et créer des appuis fiables.",
+        "zh": "耐心管理与务实判断，有助于让成果持续。可以运用经验负责任地安排资源，并建立他人也能依靠的条件。"
+      },
+      "reversedSummary": {
+        "en": "A desire for comfort, influence or quick results may outrun sound judgement. Examine the terms, effort and accountability behind an attractive promise.",
+        "fr": "Le désir de confort, d'influence ou de résultats rapides peut dépasser le bon sens. Examinez les conditions, l'effort et la responsabilité derrière une promesse séduisante.",
+        "zh": "对舒适、影响力或快速成果的追求，可能超过务实判断。需要查看诱人承诺背后的条件、真实投入与责任安排。"
+      }
+    }
+  ]
+}

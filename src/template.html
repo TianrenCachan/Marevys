@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="MARÉVYS PARIS — Rune, Tarot and I Ching readings, paired with fragrance and objects for everyday rituals.">
+<meta name="description" content="MARÉVYS PARIS — Tarot and natal astrology, with room for your own questions.">
 <meta name="theme-color" content="#102524">
 <title>MARÉVYS PARIS — Symbolic Readings & Everyday Rituals</title>
 <!--STYLES-->
 </head>
-<body class="experience-v11 experience-v15 experience-v16 experience-v17 experience-v18 experience-v19">
+<body class="experience-v11 experience-v15 experience-v16 experience-v17 experience-v18 experience-v19 experience-v21">
 <a class="skip-link" href="#main-content">Skip to content</a>
-<div class="announcement">RUNE · TAROT · I CHING READINGS OPEN TO EXPLORE · PRODUCT COLLECTION NOT YET FOR SALE</div>
+<div class="announcement" data-studio-copy="announcement">TAROT & ASTROLOGY · A MOMENT FOR YOURSELF</div>
 <nav aria-label="Main navigation">
   <a class="brand-identity brand-home" href="#main-content" onclick="goHome(event)" aria-label="Return to home"><img data-image="logo" alt="MARÉVYS"><span class="logo">MARÉVYS<small>PARIS</small></span></a>
   <div class="links">
@@ -26,9 +26,8 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button type="button" onclick="navigateSection(event,'reading-systems')">Choose a reading</button>
-  <button type="button" onclick="start()">Rune reading</button>
   <button type="button" onclick="startTarot()">Tarot reading</button>
-  <button type="button" onclick="startIChing()">I Ching reading</button>
+  <button type="button" onclick="startAstrology()" data-studio-copy="astrology">Astrology</button>
   <button type="button" onclick="openCollection('ALL')">The collection</button>
   <button type="button" onclick="openPath()">My readings</button>
   <button type="button" onclick="navigateSection(event,'about')">About MARÉVYS</button>
@@ -38,31 +37,18 @@
 <main id="main-content" tabindex="-1">
 <section class="hero" aria-labelledby="homeHeading">
   <div class="hero-copy">
-    <h1 id="homeHeading">What lies beneath.</h1>
+    <p class="hero-kicker" data-studio-copy="heroKicker">MARÉVYS PARIS</p><h1 id="homeHeading" data-studio-copy="heroTitle">Make room for clarity.</h1><p class="hero-subtitle" data-studio-copy="heroSubtitle">A question, a few cards. Another way to see what matters to you.</p>
     <div class="entry-actions">
-      <button type="button" class="primary" onclick="navigateSection(event,'reading-systems')">Choose a reading</button>
+      <button type="button" class="primary" onclick="startTarot()" data-studio-copy="beginTarot">Draw my cards</button><button type="button" class="hero-secondary" onclick="startAstrology()" data-studio-copy="beginAstrology">Explore my birth chart</button>
     </div>
   </div>
 </section>
 
 <section class="discovery-section reading-systems reading-experience-merged reveal-on-scroll" id="reading-systems" aria-labelledby="systemsHeading">
-  <div class="section-heading systems-heading">
-    <div><div class="eyebrow">01 / CHOOSE YOUR READING</div><h2 id="systemsHeading">Choose by<br>what you need to know.</h2></div>
-    <p>Runes isolate one priority. Tarot shows the forces shaping your week. The I Ching reads the structure and timing of a larger change. Choose the horizon that fits your question.</p>
-  </div>
-  <div class="reading-entry-list">
-    <article class="reading-entry system-rune" aria-label="Rune reading and example">
-      <figure class="system-image"><img data-image="runes" alt="Natural dark rune stones"><figcaption>24 · ELDER FUTHARK</figcaption></figure>
-      <div class="reading-entry-copy"><div class="system-meta"><span>7-DAY FOCUS</span><small>ONE BLIND DRAW</small></div><h3>Runes</h3><p class="entry-promise">Find the one thing that matters this week.</p><p class="entry-purpose">One symbol narrows a crowded question into a supporting force, a central friction and one action within your control.</p><blockquote class="entry-case"><small>EXAMPLE · WORK</small><strong>Should I accept this change in my work?</strong><p>Move toward the opportunity only after the role, resources and decision boundary are stated in writing. This week, ambiguity is the risk to watch.</p></blockquote><button type="button" class="primary dark-primary" onclick="start()">Begin my Rune reading</button></div>
-    </article>
-    <article class="reading-entry system-tarot" aria-label="Tarot reading and example">
-      <figure class="system-image"><img data-image="oracle" alt="Unbranded symbolic cards"><figcaption>XXII · MAJOR ARCANA</figcaption></figure>
-      <div class="reading-entry-copy"><div class="system-meta"><span>7-DAY OUTLOOK</span><small>THREE-CARD SPREAD</small></div><h3>Tarot</h3><p class="entry-promise">See the full pattern of your week.</p><p class="entry-purpose">Three illustrated cards show the week’s theme, its opening and its main friction across the parts of life relevant to your question.</p><blockquote class="entry-case"><small>EXAMPLE · RELATIONSHIP</small><strong>Why does this relationship feel unable to move?</strong><p>The pattern points to unequal responsibility. Watch for vague promises and repeated postponement; one clear boundary will reveal more than another attempt to keep the peace.</p></blockquote><button type="button" class="primary dark-primary" onclick="startTarot()">Begin my Tarot reading</button></div>
-    </article>
-    <article class="reading-entry system-iching" aria-label="I Ching reading and example">
-      <figure class="system-image"><img data-image="yi" alt="An unbranded I Ching book and coins"><figcaption>64 · SIX-LINE CAST</figcaption></figure>
-      <div class="reading-entry-copy"><div class="system-meta"><span>3–12 MONTH HORIZON</span><small>STRUCTURE & TIMING</small></div><h3>I Ching</h3><p class="entry-promise">Know when to advance, hold or change.</p><p class="entry-purpose">The primary hexagram maps the present field, changing lines locate the turning point and the relating hexagram shows a conditional direction.</p><blockquote class="entry-case"><small>EXAMPLE · PROJECT</small><strong>Should this project begin now, or wait?</strong><p>Build the foundation now, but delay the public launch. The next phase depends on confirming the people, materials and proof that can sustain a longer commitment.</p></blockquote><button type="button" class="primary dark-primary" onclick="startIChing()">Begin my I Ching reading</button></div>
-    </article>
+  <div class="section-heading systems-heading"><div><div class="eyebrow" data-studio-copy="twoPaths">01 / TWO WAYS IN</div><h2 id="systemsHeading" data-studio-copy="systemsTitle">Start with what is on your mind.</h2></div><p data-studio-copy="systemsIntro">Explore a situation through Tarot, or return to the patterns of your birth chart.</p></div>
+  <div class="reading-entry-list studio-entry-grid">
+    <article class="reading-entry system-tarot"><figure class="system-image"><img data-image="oracle" data-studio-alt="tarotImageAlt" alt="Tarot cards on a quiet reading table"><figcaption data-studio-copy="tarotCaption">ARCANA / TAROT</figcaption></figure><div class="reading-entry-copy"><div class="system-meta"><span data-studio-copy="fullDeck">78 CARDS · UPRIGHT & REVERSED</span></div><h3 data-studio-copy="tarot">Tarot</h3><p class="entry-promise" data-studio-copy="tarotPromise">Look at your question from another angle.</p><p class="entry-purpose" data-studio-copy="tarotPurpose">Share what is happening. Choose three cards for a clear view, or five to go a little deeper.</p><button type="button" class="primary dark-primary" onclick="startTarot()" data-studio-copy="beginTarot">Draw my cards</button></div></article>
+    <article class="reading-entry system-astrology"><figure class="system-image astrology-entry-image"><div class="natal-preview" aria-hidden="true" id="natalPreview"></div><figcaption data-studio-copy="astroCaption">ASTRA / ASTROLOGY</figcaption></figure><div class="reading-entry-copy"><div class="system-meta"><span data-studio-copy="natalFocus">YOUR BIRTH CHART · YOUR OWN QUESTION</span></div><h3 data-studio-copy="astrology">Astrology</h3><p class="entry-promise" data-studio-copy="astroPromise">Get to know your own patterns.</p><p class="entry-purpose" data-studio-copy="astroPurpose">Explore your birth chart through the themes of relationships, work or your inner life. An unknown birth time is welcome too.</p><button type="button" class="primary dark-primary" onclick="startAstrology()" data-studio-copy="beginAstrology">Explore my birth chart</button></div></article>
   </div>
 </section>
 
@@ -79,18 +65,18 @@
   <figure class="ritual-photograph"><img data-image="ritualEveryday" alt="A quiet everyday ritual with linen, candlelight, tea and writing"><figcaption>SMALL GESTURES. YOUR OWN PACE.</figcaption></figure>
   <div class="ritual-explainer">
     <div class="eyebrow">03 / INTO EVERYDAY LIFE</div><h2 id="ritualHeading">From a reading to<br>a real ritual.</h2>
-    <p>After your interpretation, four objects form one practical sequence. Complementary cues of material, temperature, scent, light or writing help shift the atmosphere without forcing every set into the same formula.</p>
+    <p data-studio-copy="ritualIntro">After a reading, a simple gesture can make room for reflection: write a few lines, prepare tea or set aside a quiet moment.</p>
     <div class="practice-example"><span>REST · EXAMPLE RITUAL SET</span><h3>Fifteen quiet minutes. One clear ending.</h3><ol><li>Unfold CLOTH 01 and leave the phone outside its edge.</li><li>Light VEIL 01 to create a contained interval.</li><li>Brew GROUND 01 and let warmth slow the pace.</li><li>Close with one sentence in RETURN 01.</li></ol></div>
-    <p class="quiet-note">The complete set is selected from your question and reading. You will see exactly what each object contributes before choosing it.</p>
-    <button type="button" class="text-link" onclick="navigateSection(event,'reading-systems')">Receive my matched ritual →</button>
+    <p class="quiet-note" data-studio-copy="ritualOptional">This is one optional example. Use what you already have; no purchase is needed to continue your reflection.</p>
+    <button type="button" class="text-link" onclick="openCollection('ALL')" data-studio-copy="collection">Explore the collection</button>
   </div>
 </section>
 
 <section class="discovery-section record-discovery reveal-on-scroll" id="my-readings" aria-labelledby="recordHeading">
   <div class="record-landscape"><img data-image="path" alt="A quiet stone path beside water"></div>
   <div class="record-content">
-    <div><div class="eyebrow">04 / THE CERCLE ARCHIVE</div><h2 id="recordHeading">Return to<br>what you noticed.</h2><p>Your readings are kept on this device. Sign in or join MARÉVYS CERCLE to reopen the symbols, questions and rituals you chose to keep.</p><p class="quiet-note">The account gate is an interactive preview. It does not create an account, transmit an email address or synchronize your records.</p><button type="button" class="primary dark-primary" onclick="openPath()">Unlock my archive</button></div>
-    <div class="record-preview is-member-locked"><small>CERCLE MEMBER ARCHIVE</small><div class="path-preview" id="homePath"></div><button type="button" class="text-link" onclick="navigateSection(event,'reading-systems')">Begin a new reading →</button></div>
+    <div><div class="eyebrow">04 / MY NOTEBOOK</div><h2 id="recordHeading">Return to<br>what you noticed.</h2><p>Keep your readings and your own notes together. Return whenever you need a little perspective.</p><p class="quiet-note">Saved only in this browser. No account or subscription is needed.</p><button type="button" class="primary dark-primary" onclick="openPath()">Open my notebook</button></div>
+    <div class="record-preview"><small data-studio-copy="privateNotebook">YOUR PRIVATE NOTEBOOK</small><div class="path-preview" id="homePath"></div><button type="button" class="text-link" onclick="navigateSection(event,'reading-systems')">Begin a new reading →</button></div>
   </div>
 </section>
 
@@ -98,7 +84,7 @@
   <figure class="about-manifesto-image"><img data-image="aboutHouse" alt="A cultural ritual atelier with paper, mineral pigment, linen and bronze tools"><figcaption>REVEALED BY LIGHT</figcaption></figure>
   <div class="about-statement">
     <div><div class="eyebrow">05 / ABOUT MARÉVYS</div><h2 id="aboutHeading">Symbols begin the reading.<br>Objects bring it into life.</h2></div>
-    <p>MARÉVYS is a cultural ritual house. Runes, Tarot and the I Ching offer distinct ways to see a real question; fragrance, touch, light and writing translate that insight into something you can actually do.</p>
+    <p data-studio-copy="aboutStudio">MARÉVYS brings Tarot, astrology and everyday rituals together. A place to reflect, to make connections, and to return to your own judgment.</p>
   </div>
   <ol class="house-method">
     <li><span>01</span><strong>READ</strong><p>Let one symbolic tradition respond to the question you actually brought.</p></li>
@@ -111,16 +97,13 @@
 <section class="discovery-section faq-discovery reveal-on-scroll" id="questions" aria-labelledby="faqHeading">
   <div><div class="eyebrow">BEFORE YOU BEGIN</div><h2 id="faqHeading">A few clear answers.</h2><p>What is available, what is saved, and what this experience can offer.</p></div>
   <div class="faq-list">
-    <details><summary>Which reading should I choose?</summary><p>Choose Runes to isolate one priority for the next seven days, Tarot to see a three-part weekly pattern, or the I Ching to examine structure and timing across a larger 3–12 month change.</p></details>
-    <details><summary>What is a rune reading?</summary><p>You blind-draw one of the 24 Elder Futhark characters. MARÉVYS places its historical identity inside a modern seven-day framework: supporting force, blocked or excessive expression, warning signs and one controlled action.</p></details>
-    <details><summary>Are the stones drawn blind? Do runes have upright and reversed positions?</summary><p>Yes. The rune experience reshuffles all 24 stones and asks you to blind-draw one. MARÉVYS does not assign upright or reversed positions: every rune is considered through both its central meaning and its shadow edge.</p></details>
-    <details><summary>Is the reading free? Do I need an account?</summary><p>The current reading preview is free and needs no account to begin. The personal archive demonstrates a future member feature: sign in or join CERCLE to reopen past readings.</p></details>
-    <details><summary>Are Tarot cards selected blind? Are reversed cards used?</summary><p>Yes. The 22 Major Arcana remain face down until you select them. This edition does not use reversed cards; each card is read through both its central expression and its shadow or caution.</p></details>
-    <details><summary>How is an I Ching hexagram formed?</summary><p>You cast three virtual coins six times, placing the lines from bottom to top. The primary hexagram shows the present structure; changing lines locate the turning conditions; the relating hexagram shows a conditional direction rather than a fixed final outcome.</p></details>
-    <details><summary>Can I buy the products?</summary><p>Not in this preview. The collection shows product concepts, not final offers for sale. You can browse details and save a wishlist; ordering, payment and delivery are not available.</p></details>
-    <details><summary>Where are my readings and wishlist saved?</summary><p>In this preview they remain only in this browser on this device. The member gate demonstrates future access but does not create a cloud account or synchronization. Clearing browser data or using a private session may remove them.</p></details>
-    <details><summary>How does energy matching work?</summary><p>MARÉVYS connects the context of your question with the themes in your chosen symbolic system, then composes four sensory objects into one practical ritual. For the full explanation, see the Reading notice.</p></details>
-    <details><summary>Can I save Tarot and I Ching readings?</summary><p>Yes. Completed readings from all three systems can be saved on this device with your reflection. Reopening the archive passes through the CERCLE member preview.</p></details>
+    <details><summary data-studio-copy="faqChoose">Which reading should I choose?</summary><p data-studio-copy="faqChooseAnswer">Tarot explores a specific situation. Astrology explores themes in your birth chart. You can begin with either.</p></details>
+    <details><summary data-studio-copy="faqReverse">What do reversed cards mean?</summary><p data-studio-copy="faqReverseAnswer">Reversed does not mean bad. It can suggest a theme that is blocked, quieter or changing. Choose whether to include reversals before shuffling.</p></details>
+    <details><summary data-studio-copy="faqClarify">Can I draw another card?</summary><p data-studio-copy="faqClarifyAnswer">You can add one clarification card for a specific question. It adds context and keeps the original cards in place.</p></details>
+    <details><summary data-studio-copy="faqTime">What if I do not know my birth time?</summary><p data-studio-copy="faqTimeAnswer">Select “I do not know”. We show the planetary themes we can establish, explain uncertainties, and leave out the Ascendant and houses.</p></details>
+    <details><summary data-studio-copy="faqFree">Do I need a subscription?</summary><p data-studio-copy="faqFreeAnswer">No. Readings and your notebook are available without a paid membership. AI readings may have usage limits.</p></details>
+    <details><summary data-studio-copy="faqPrivate">Where are my readings saved?</summary><p data-studio-copy="faqPrivateAnswer">Saved readings stay in this browser. When you request an AI reading, your question and relevant information are processed online. Clearing browser data removes local records.</p></details>
+    <details><summary data-studio-copy="faqObjects">Do I need to buy anything?</summary><p data-studio-copy="faqObjectsAnswer">No. The collection is optional and is currently a preview. No object changes or cancels a reading.</p></details>
   </div>
 </section>
 
@@ -130,10 +113,10 @@
 </section>
 </main>
 <footer class="site-footer">
-  <div class="footer-brand"><div class="brand-identity"><img data-image="logo" alt="MARÉVYS"><div class="logo">MARÉVYS<small>PARIS</small></div></div><p>Runes, Tarot, the I Ching and objects for everyday rituals.</p></div>
-  <div class="footer-col"><small>READINGS</small><button type="button" onclick="start()">Runes</button><button type="button" onclick="startTarot()">Tarot</button><button type="button" onclick="startIChing()">I Ching</button><button type="button" onclick="openPath()">My readings</button></div>
+  <div class="footer-brand"><div class="brand-identity"><img data-image="logo" alt="MARÉVYS"><div class="logo">MARÉVYS<small>PARIS</small></div></div><p data-studio-copy="footerStudio">Tarot, astrology and objects for everyday rituals.</p></div>
+  <div class="footer-col"><small>READINGS</small><button type="button" onclick="startTarot()">Tarot</button><button type="button" onclick="startAstrology()" data-studio-copy="astrology">Astrology</button><button type="button" onclick="openPath()">My readings</button></div>
   <div class="footer-col"><small>EXPLORE</small><button type="button" onclick="openCollection('ALL')">The collection</button><button type="button" onclick="openBag()">Wishlist</button><button type="button" onclick="navigateSection(event,'about')">About MARÉVYS</button><button type="button" onclick="openMaison('JOURNAL')">House notes</button></div>
-  <div class="footer-col"><small>INFORMATION</small><button type="button" onclick="navigateSection(event,'questions')">Questions & answers</button><button type="button" onclick="openLegal('privacy')">Privacy</button><button type="button" onclick="openLegal('terms')">Terms</button><button type="button" onclick="openLegal('reading')">Reading notice</button></div>
+  <div class="footer-col"><small>INFORMATION</small><button type="button" onclick="navigateSection(event,'questions')">Questions & answers</button><button type="button" onclick="openLegal('privacy')">Privacy</button><button type="button" onclick="openLegal('terms')">Terms</button><button type="button" onclick="openLegal('reading')">Reading notice</button><a id="tarotArtCredits" data-studio-copy="cardCredits" href="https://commons.wikimedia.org/wiki/Category:Rider-Waite_tarot_deck_(Roses_%26_Lilies)" target="_blank" rel="noopener">Card artwork credits</a></div>
   <div class="footer-bottom"><span>© 2026 MARÉVYS PARIS</span><span>INTERACTIVE PREVIEW · NO ORDERS OR PAYMENTS</span></div>
 </footer>
 
@@ -355,10 +338,14 @@
 </div>
 
 <div class="consent" id="consentBar">
-  <p class="serif">Your saved readings and wishlist stay in this browser. Member access is simulated in this preview.</p>
+  <p class="serif" data-studio-copy="browserNotice">Saved readings and your wishlist stay in this browser. Online readings process the information you choose to share.</p>
   <div><button type="button" onclick="acceptConsent()">Got it</button><button onclick="openLegal('privacy')">LEARN MORE</button></div>
 </div>
 
 <div class="overlay-language" hidden><select data-language aria-label="Language"><option value="en" lang="en">EN</option><option value="fr" lang="fr">FR</option><option value="zh" lang="zh-Hans">中文</option></select></div><div id="toast" role="status" aria-live="polite"></div>
+<div class="overlay studio-overlay" id="readingStudio" aria-labelledby="studioTitle">
+  <div class="readnav studio-nav"><a class="brand-home studio-brand" href="#main-content" onclick="goHome(event)">MARÉVYS <small>PARIS</small></a><div id="studioProgress" class="studio-progress" aria-live="polite"></div><button type="button" class="close studio-close" onclick="MarevysStudio.close()" aria-label="Close">×</button></div>
+  <div id="studioContent" class="studio-content" data-user-content></div>
+</div>
 <!--SCRIPTS-->
 </body></html>
