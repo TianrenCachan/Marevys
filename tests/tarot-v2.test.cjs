@@ -128,6 +128,17 @@ test('Knowledge retrieval binds exact cards/orientations and verified source cit
   assert.throws(() => normalizeDeepRequest(payload(original, { locale: 'de' }), env, fixedNow), /INVALID_LOCALE/);
   const followup = normalizeDeepRequest(payload(original, { followupQuestion: '怎样向对方提问比较好？' }), env, fixedNow);
   assert.equal(followup.readingId, normalized.readingId); assert.deepEqual(followup.reference.cards, normalized.reference.cards); assert.equal(followup.followup, true);
+  const five = session({ spreadId: 'five' });
+  five.indices = [64, 65, 50, 51, 1];
+  five.deck.forEach(card => { card.orientation = 'reversed'; });
+  const counted = normalizeDeepRequest(payload(five), env, fixedNow).reference.patternSummary;
+  assert.equal(counted.totalCards, 5); assert.deepEqual(counted.orientationCounts, { upright: 0, reversed: 5 });
+  assert.deepEqual(counted.suitCounts, { wands: 0, cups: 0, swords: 2, pentacles: 2 });
+  assert.equal(counted.majorCount, 1); assert.equal(counted.courtCount, 0); assert.equal(counted.clarifier, null);
+  const extra = normalizeDeepRequest(payload(clarifySession(five, '怎样进一步明确合作？')), env, fixedNow).reference.patternSummary;
+  assert.equal(extra.totalCards, 6); assert.equal(extra.orientationCounts.reversed, 6);
+  assert.deepEqual(extra.baseSpread, counted.baseSpread); assert.equal(extra.baseSpread.totalCards, 5);
+  assert.equal(extra.clarifier.cardId, 'TAROT_00');
 });
 test('Strict deep schema rejects fabricated cards, reordered positions, invented pages, duplicate citations and extra fields', () => {
   const input = normalizeDeepRequest(payload(), env, fixedNow), valid = answer(input);

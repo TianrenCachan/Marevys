@@ -9,7 +9,7 @@
   const BODY_IDS=['Sun','Moon','Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune','Pluto'];
   const BODY_NAMES={fr:['Soleil','Lune','Mercure','Vénus','Mars','Jupiter','Saturne','Uranus','Neptune','Pluton'],zh:['太阳','月亮','水星','金星','火星','木星','土星','天王星','海王星','冥王星'],en:BODY_IDS};
   const GLYPHS=['☉','☽','☿','♀','♂','♃','♄','♅','♆','♇'];
-  const SIGN_GLYPHS=['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
+  const SIGN_GLYPHS=['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'].map(symbol=>symbol+'\uFE0E');
   const ASPECTS={fr:{conjunction:'Conjonction',sextile:'Sextile',square:'Carré',trine:'Trigone',opposition:'Opposition'},zh:{conjunction:'合相',sextile:'六分相',square:'四分相',trine:'三分相',opposition:'对分相'},en:{conjunction:'Conjunction',sextile:'Sextile',square:'Square',trine:'Trine',opposition:'Opposition'}};
   const mod=x=>((x%360)+360)%360;
   const finite=x=>typeof x==='number'&&Number.isFinite(x);
