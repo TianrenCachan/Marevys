@@ -1,0 +1,479 @@
+{
+  "version": "RC22",
+  "cardCount": 78,
+  "majorArtwork": "22 unchanged original MARÉVYS assets from prior release",
+  "minorArtwork": "56 original AI-generated website illustrations",
+  "minorSourceSheets": 4,
+  "printReady": false,
+  "productionNotes": "Digital previews only. Individual print-size masters, exact suit-object counts and trim/bleed proofing remain to be completed before manufacture.",
+  "cards": [
+    {
+      "id": "TAROT_00",
+      "file": "assets/tarot-00.webp",
+      "sha256": "ac2f62215193ba3d1781d74644241ef744b68e21e9c10aef70b905c7813621b3",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_01",
+      "file": "assets/tarot-01.webp",
+      "sha256": "e2287d7a8be2fe924fd9c91896b1ba88fa70892ab97109a9f9bda60063777a5e",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_02",
+      "file": "assets/tarot-02.webp",
+      "sha256": "6f14756e4241b9928f816f2b618594f47ebbc95bf808a9dfb2b6fcc38d2c1333",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_03",
+      "file": "assets/tarot-03.webp",
+      "sha256": "4923a94780bb52fd4dcc301141ab3b538b676f2d9040e003642095ee6a8d87e9",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_04",
+      "file": "assets/tarot-04.webp",
+      "sha256": "38336461b374c45ba5ed10b139b29b7785c554fdc9c07edb0ecf47e7fef15951",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_05",
+      "file": "assets/tarot-05.webp",
+      "sha256": "d2e0d7efa813e79b172dd48506764d06e50173c84175f1305271b4ec8e9534cb",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_06",
+      "file": "assets/tarot-06.webp",
+      "sha256": "80336f8fd78603640d5964414b573c10edcbaee9d206b9c7e9ddfb9fb51f3983",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_07",
+      "file": "assets/tarot-07.webp",
+      "sha256": "1d6935a188d3b8e46069d9c1c3aa25e2e165eea4b9c69c4ea9efb85cd765e819",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_08",
+      "file": "assets/tarot-08.webp",
+      "sha256": "5d080c10a1d2f03e8ce516f4d1e1f5085fa12add3df07db934466e90f8861576",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_09",
+      "file": "assets/tarot-09.webp",
+      "sha256": "d2282fd1859bdf3fc9e2352b00ad84f4b50037ab2d487ed9cc65a72e4b8e7d22",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_10",
+      "file": "assets/tarot-10.webp",
+      "sha256": "d42ee3d14ebee43bccc4659c237bb40aedebf2dfb8dcd8994080d3bf059fa07e",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_11",
+      "file": "assets/tarot-11.webp",
+      "sha256": "1e9bb4619beef8c9e51e4b1c6122a9f9197ed9a4e42de81e7285730fee25ccae",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_12",
+      "file": "assets/tarot-12.webp",
+      "sha256": "42b98cf92a488054e9af553f987c5e93763b84493be7fec8415b8fd2ab0787a1",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_13",
+      "file": "assets/tarot-13.webp",
+      "sha256": "47039329f4ce6e179af63e81b8e1fa2c41a7882ddcce2146d347dbb98ada8192",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_14",
+      "file": "assets/tarot-14.webp",
+      "sha256": "c3817ac3246dee61ece479aebefde4e4caf6887c327a906205ef5d9e3089ad1e",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_15",
+      "file": "assets/tarot-15.webp",
+      "sha256": "b2a6720d9697cf04fb20e038edfadebfd8b6e82ba9bf1ec0217addd96c5ca878",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_16",
+      "file": "assets/tarot-16.webp",
+      "sha256": "8a48e62c2f376b3ab99fac61f1be7aee3c7be06ee4692dab633e59b769fb59ee",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_17",
+      "file": "assets/tarot-17.webp",
+      "sha256": "aae79f6fdd33e3811c74e5e2e060ba2267ebdb374b9106975e2b7cbde8e47fd2",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_18",
+      "file": "assets/tarot-18.webp",
+      "sha256": "eb6e044ed6e3a174669bf0df01bfbadc2c99a615bb31ebc7f516c414bdb89a4c",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_19",
+      "file": "assets/tarot-19.webp",
+      "sha256": "d35bb6bdf3fbbe6c6bc9a4edc6930dd8bef1edd5b21be0ee3cdaef9a2f4d9274",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_20",
+      "file": "assets/tarot-20.webp",
+      "sha256": "db7e4c3ce5079d0dc0b8b08ca9dc7a95c1b5b860103d2214ab8baeb653ffb4ac",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_21",
+      "file": "assets/tarot-21.webp",
+      "sha256": "9ab7248720b8160c5f012b5e5c010ffc512671373a4755836c71f71960a3eaf5",
+      "source": "preserved-original-major"
+    },
+    {
+      "id": "TAROT_22",
+      "file": "assets/tarot-original-22.webp",
+      "sha256": "403fd764ec48c212883c33022713ffec58d80afb1177d409b1f8dfdcd21ad1aa",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_23",
+      "file": "assets/tarot-original-23.webp",
+      "sha256": "371df4862abc8c57b190f0f17d48cbd9d0b0e4a0d7103dc152a298bf7678c43e",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_24",
+      "file": "assets/tarot-original-24.webp",
+      "sha256": "ccae9ce3853189ac65dfcfc6604640a54119d4f0e32a3977537d2eb8a3911dfd",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_25",
+      "file": "assets/tarot-original-25.webp",
+      "sha256": "73645b0ba622d047ca03919148857ccf86d27cead581125bd0f3d0ab89b4806c",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_26",
+      "file": "assets/tarot-original-26.webp",
+      "sha256": "d194cedb8c5b52421d214c1e2c1f2c5a1c4e05ca9d121851bb74df2a434cef67",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_27",
+      "file": "assets/tarot-original-27.webp",
+      "sha256": "6697b45fa51a8e20b2e5e0d86d34f2196e39cea3d6bac7747a881352f31630c8",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_28",
+      "file": "assets/tarot-original-28.webp",
+      "sha256": "1cd4d143312ee8e5f6a80d6100d82456943793f2470015c25067f2966034c9bf",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_29",
+      "file": "assets/tarot-original-29.webp",
+      "sha256": "5f2b5dc63bd3595540f67af8c624593e81bb049c4d1c92022703e2b21f95fc1a",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_30",
+      "file": "assets/tarot-original-30.webp",
+      "sha256": "78489a99f417c342a119c0a32e41f2152cfa8661481a0740f7a828b558f04685",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_31",
+      "file": "assets/tarot-original-31.webp",
+      "sha256": "8412efbe23f07713895db26bf01358d3a999a2d43e6aa48e7c3a6ffc1349bc03",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_32",
+      "file": "assets/tarot-original-32.webp",
+      "sha256": "20247deb9d6b1b5d216f0b5ccbc32c7bd3946aed41865170ab027ef8e58dccdb",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_33",
+      "file": "assets/tarot-original-33.webp",
+      "sha256": "d938e9d25afbbd5ebd5de5e3b3e073f0d34c7ad209deeb7c35f6fe168a40725f",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_34",
+      "file": "assets/tarot-original-34.webp",
+      "sha256": "4ddd85f4bef0755adbb780d871f7ee58b971d48769d7f5768463ab394e027a97",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_35",
+      "file": "assets/tarot-original-35.webp",
+      "sha256": "7e00d84aa306600b67c90d6f66539359fa4a290ddaa02f2a8c19f5b02108d276",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_36",
+      "file": "assets/tarot-original-36.webp",
+      "sha256": "4f2b9e3758a4b06feb47b5b8c21b88209614d834f02ec077a397b83e02fed019",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_37",
+      "file": "assets/tarot-original-37.webp",
+      "sha256": "7135d9a9ac616fb2b519e5b94854aecd0cc4ef70be979d66282be0afc876c6e2",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_38",
+      "file": "assets/tarot-original-38.webp",
+      "sha256": "7dae3345b58fbea07801c8d561acdab15604057f1f439ad34ec45e6a5b0bfb7f",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_39",
+      "file": "assets/tarot-original-39.webp",
+      "sha256": "6ce7295086a63e7f89bb90a95027e112ad3282beb007949aea92da7f5978238e",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_40",
+      "file": "assets/tarot-original-40.webp",
+      "sha256": "6bce57ab61739319d2e350adaf4db65e0c5c063b7c079332f210cc54346d6e69",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_41",
+      "file": "assets/tarot-original-41.webp",
+      "sha256": "790268cc48382d3c0a7472167e0cf6d3667ebc14fe4623af1815d84a57a92603",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_42",
+      "file": "assets/tarot-original-42.webp",
+      "sha256": "a20941d690379d54036aef28f1304c32be4b147abde4d00687be84933dd77809",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_43",
+      "file": "assets/tarot-original-43.webp",
+      "sha256": "2495dfb8892dcdeccae0b35b5eed9d55bfa3f5c76c55a60ff8639dae281eb614",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_44",
+      "file": "assets/tarot-original-44.webp",
+      "sha256": "12571dfa39628130a5dbeffd3fce464b7ea8d91010e168e619ea105c899caac3",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_45",
+      "file": "assets/tarot-original-45.webp",
+      "sha256": "79e781ce716377faaf7af41e1a324e171015c9a59f5b598ffd808ebfb649fe3f",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_46",
+      "file": "assets/tarot-original-46.webp",
+      "sha256": "194857b0718676df946f017f4b5747f8ce7d94f7b8c6f4e623508f6a0a53c7d8",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_47",
+      "file": "assets/tarot-original-47.webp",
+      "sha256": "151cdd20701b358bb634b2927bdf27e234af11abb558732a16d43304690dac46",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_48",
+      "file": "assets/tarot-original-48.webp",
+      "sha256": "ad383400d7d128d5344c214e5ab0afb80b7139919ab4f8f5068a71eb810a78ea",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_49",
+      "file": "assets/tarot-original-49.webp",
+      "sha256": "030dd4255711404ba9d929f619dfbbffedaba78891d8a4e84837391d5a2a71a1",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_50",
+      "file": "assets/tarot-original-50.webp",
+      "sha256": "bed5d7b6396b75efedc338143199d0e850feaf4f264f29c1ba121e5380182356",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_51",
+      "file": "assets/tarot-original-51.webp",
+      "sha256": "4949654beec463139623511a4a3b5da18b7dbc0389c99603c5a98b2c0cb79f05",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_52",
+      "file": "assets/tarot-original-52.webp",
+      "sha256": "a961fde0035bc2d0e5fc8baed59951e681adec4eb74a1fb8a2be7d14361e3529",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_53",
+      "file": "assets/tarot-original-53.webp",
+      "sha256": "d67ae2d31b90e155b733930825a4989efcfbdf6f4ac788069981ed679cd0ddb8",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_54",
+      "file": "assets/tarot-original-54.webp",
+      "sha256": "508b2fcc09525787a3744fa487215303b22e1629e25a1bcff913f1473d15ad29",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_55",
+      "file": "assets/tarot-original-55.webp",
+      "sha256": "072750c09c846901d019993da69a9973af88bd3f43e0c59a47d079292be22df0",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_56",
+      "file": "assets/tarot-original-56.webp",
+      "sha256": "74b7b9d813f26b63ce6affa0b843e9a528e05d7c17bca348db94d30aec649b02",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_57",
+      "file": "assets/tarot-original-57.webp",
+      "sha256": "5015eb1caf6d24935ac51e1b259e0184e03e8594ef228e6d4953d2f66ad449a8",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_58",
+      "file": "assets/tarot-original-58.webp",
+      "sha256": "0514f5eba1144c3b40da23f7f6ad58b8217945fb202051c5e4d6f6473d27dd58",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_59",
+      "file": "assets/tarot-original-59.webp",
+      "sha256": "4504f91c073f6c008edde54c4b32fc7603db9c7fe62cf306303a5e8033c2e2af",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_60",
+      "file": "assets/tarot-original-60.webp",
+      "sha256": "3113345a972b0e3367d3405fc7e31fdf97780bba5bd05d9284b256e6c44a1ab1",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_61",
+      "file": "assets/tarot-original-61.webp",
+      "sha256": "afe488d41c153380923efe70b61a822fb8fa92e2d66d593b225ac9ed3585d6a4",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_62",
+      "file": "assets/tarot-original-62.webp",
+      "sha256": "6631f1d7249ffb1043a7c77fc347b33d6d87f149c3bc58143769cee0a5bc8d43",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_63",
+      "file": "assets/tarot-original-63.webp",
+      "sha256": "5e752408749e14b79ef53f25986499c518e19d1bf75a7ca33d70c0747948f097",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_64",
+      "file": "assets/tarot-original-64.webp",
+      "sha256": "db6092e490cba8855089520ffad2d2eb7002ceb997091dea48efeff786ed4f0b",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_65",
+      "file": "assets/tarot-original-65.webp",
+      "sha256": "4a5425bb4d6de40a01f9ecbedcaf99e8ee9115828a709c2e1c92e813eb098cb3",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_66",
+      "file": "assets/tarot-original-66.webp",
+      "sha256": "065167cf728348609497f1bb6849e4e37e20d4bba559f62d76fd818bae6baa4d",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_67",
+      "file": "assets/tarot-original-67.webp",
+      "sha256": "16d8d568e89c79b94666669f85508a886f4e4fb67c1a78bfd23652ab76674bfb",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_68",
+      "file": "assets/tarot-original-68.webp",
+      "sha256": "edca60561e953f072cfbc1cc8422dfb0be4fc9f2ee76e73f4af757aefc4f1d96",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_69",
+      "file": "assets/tarot-original-69.webp",
+      "sha256": "e9f87419f43f9048e7260a41023e3d2c4d6f15ad4f9fdcf96e65732c01fad577",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_70",
+      "file": "assets/tarot-original-70.webp",
+      "sha256": "34785fe4fbac827d7acbdc443cdc9191708b3714d764be37f0cb925a25219e0d",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_71",
+      "file": "assets/tarot-original-71.webp",
+      "sha256": "a2d55d1d3e66710688f9de51f437d85e44fdf0b7d27a4405dcf1d439a5afbf54",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_72",
+      "file": "assets/tarot-original-72.webp",
+      "sha256": "fe253bcd45d6432bd7f67dcc70e7d4b9192e2353e3ef0ec7cf1dd7ed733c8ea4",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_73",
+      "file": "assets/tarot-original-73.webp",
+      "sha256": "a3a4a2b84facf60c09f73e44235050e52ab83a195e239a768dd2923d14e3a015",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_74",
+      "file": "assets/tarot-original-74.webp",
+      "sha256": "c2861b20ef85e5a0293308c7799f897baa768c2f62cfb131d95c54b0aaf89085",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_75",
+      "file": "assets/tarot-original-75.webp",
+      "sha256": "0a1e66c923fe3d4140d008428bdc3d692188f8ed9b61660ef24ab0e642e16c81",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_76",
+      "file": "assets/tarot-original-76.webp",
+      "sha256": "e795f1eab97159be06c58446f6b41c592a5cbc29bf10433281552f95aef94328",
+      "source": "new-original-minor"
+    },
+    {
+      "id": "TAROT_77",
+      "file": "assets/tarot-original-77.webp",
+      "sha256": "c6996b9dcfa6309acf57af6894de338bf4f319a0cf2df5c72401e1c4e093502f",
+      "source": "new-original-minor"
+    }
+  ]
+}

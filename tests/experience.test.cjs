@@ -117,7 +117,7 @@ test('Local structured interpretation visibly connects the actual question, cont
 });
 test('RC21 chooser presents tarot and astrology with one action for each system',()=>{
  const h=createHarness();const cases=h.all('#reading-systems .reading-entry');assert.equal(cases.length,2);
- assert.deepEqual(cases.map(card=>card.querySelector('button').textContent),['Draw my cards','Explore my birth chart']);
+ assert.deepEqual(cases.map(card=>card.querySelector('button').textContent),['Draw my cards','Explore the charts']);
  assert(cases[0].querySelector('img'));assert(cases[1].querySelector('.natal-preview'));
  for(const card of cases){assert(card.querySelector('.entry-promise'));assert(card.querySelector('.entry-purpose'));assert.equal(card.querySelector('.entry-case'),null);assert.equal(card.querySelectorAll('button').length,1);}
 });

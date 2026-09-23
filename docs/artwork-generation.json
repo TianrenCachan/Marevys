@@ -1,0 +1,971 @@
+{
+  "prompts": {
+    "method": "built-in image_gen",
+    "requested_dimensions": [
+      3584,
+      1536
+    ],
+    "columns": 7,
+    "rows": 2,
+    "order": [
+      "Ace",
+      "Two",
+      "Three",
+      "Four",
+      "Five",
+      "Six",
+      "Seven",
+      "Eight",
+      "Nine",
+      "Ten",
+      "Page",
+      "Knight",
+      "Queen",
+      "King"
+    ],
+    "prompts": {
+      "wands": "Use case: illustration-story.\nAsset type: one production website artwork atlas for an ORIGINAL tarot deck called MARÉVYS.\nPrimary request: Generate exactly fourteen distinct original portrait tarot illustrations as ONE precisely aligned edge-to-edge rectangular 7-COLUMN by 2-ROW ATLAS. Request canvas exactly 3584 pixels wide by 1536 pixels tall, the highest available resolution. Each of the fourteen cells is exactly 512 wide by 768 tall, portrait 2:3. ALL cells equal size. No gutters, no outer margins, no inset frames, no divider lines, no printed borders, no text, no numerals, no captions, no watermarks. Cell edges must align at precisely one-seventh width and one-half height. Separate scenes end cleanly at the exact cell boundary. This is an atlas of fourteen fully painted independent illustrations, not one panoramic scene.\nStyle/medium: consistent exquisite traditional watercolor and thin gouache on finely textured aged ivory rag paper, nuanced translucent washes, semi-realistic elegant human faces and anatomy, delicate natural folds in linen robes, architectural atmosphere, restrained fine detail, subtle mottled paper texture throughout. Match this visual language: muted deep indigo and charcoal shadow, ivory stone and skin, warm grey, old tarnished gold accents, subdued dusty earth and grey-green; matte surface, no bright saturation, no synthetic gloss, no cartoon look, no neon. Each portrait has a generous central figure or symbol clearly readable at thumbnail size. Painterly scenes can fill the whole portrait with paper visible through the washes. Harmonious but clearly distinct compositions. Meaningful varied original scenes, emotionally evocative, historically timeless Mediterranean fantasy. Do not copy any existing tarot card illustration or the composition of Rider Waite Smith cards.\nComposition/framing: Strict row-major reading order. TOP ROW left to right: Ace, Two, Three, Four, Five, Six, Seven. BOTTOM ROW left to right: Eight, Nine, Ten, Page, Knight, Queen, King. No labels on the image. Each cell depicts only its specified scene. For numbered cards depict the specified number of the suit objects, never ambiguous suit symbols. The four court cards must clearly differ in age, role, pose and face. Do not let one card's objects cross into an adjacent cell.\n\nSUIT: WANDS. Fourteen cell scenes in exact row-major order:\n1. Ace: one luminous budding ashwood wand rises from a fissure in volcanic stone beside a tiny new green shoot, dawn mist behind.\n2. Two: a cloaked female architect studies an unfinished footbridge between two towering upright wands over a narrow river, view from the riverbank.\n3. Three: three tall wands support a pale sail on a small experimental land vessel as an explorer watches a distant open valley.\n4. Four: four flower-wound wooden wands mark the corners of a courtyard where two elders quietly welcome a returning traveler with warm bread.\n5. Five: five young craftspeople each carry one wand while debating how to raise a fallen canopy in gusty weather, lively cooperative tension, no fighting.\n6. Six: six upright wands form a fan behind a weary expedition leader being greeted on foot by villagers with small lanterns, no mounted triumph.\n7. Seven: a determined gardener holds one wand as a lever to raise a storm-fallen trellis built from six other wands, wind in the orchard.\n8. Eight: eight wands lashed vertically to a river raft carry small streamers as the current sweeps it through a narrow canyon, view from above.\n9. Nine: nine fire-scorched wands form a shelter frame around a calm sentinel tending its last embers after a storm, no head bandage.\n10. Ten: a stooped artisan unties ten wands from a heavy bundle at a threshold while someone opens the door to share the burden.\n11. Page: a curious young apprentice in plain ivory and indigo robes crouches to inspect a tiny red bud on one wooden wand in a dry garden.\n12. Knight: a purposeful rider pauses beside a dark horse and holds one long branch-like wand upright while studying an ascending mountain path.\n13. Queen: a composed queen in softly weathered gold and indigo robes stands in an herb garden holding one flowering wand, warm eyes, no sunflower or black cat.\n14. King: a mature bearded king with a simple aged-gold circlet stands beside a worktable of architectural sketches and holds a living oak wand, distant kiln glow.",
+      "cups": "Use case: illustration-story.\nAsset type: one production website artwork atlas for an ORIGINAL tarot deck called MARÉVYS.\nPrimary request: Generate exactly fourteen distinct original portrait tarot illustrations as ONE precisely aligned edge-to-edge rectangular 7-COLUMN by 2-ROW ATLAS. Request canvas exactly 3584 pixels wide by 1536 pixels tall, the highest available resolution. Each of the fourteen cells is exactly 512 wide by 768 tall, portrait 2:3. ALL cells equal size. No gutters, no outer margins, no inset frames, no divider lines, no printed borders, no text, no numerals, no captions, no watermarks. Cell edges must align at precisely one-seventh width and one-half height. Separate scenes end cleanly at the exact cell boundary. This is an atlas of fourteen fully painted independent illustrations, not one panoramic scene.\nStyle/medium: consistent exquisite traditional watercolor and thin gouache on finely textured aged ivory rag paper, nuanced translucent washes, semi-realistic elegant human faces and anatomy, delicate natural folds in linen robes, architectural atmosphere, restrained fine detail, subtle mottled paper texture throughout. Match this visual language: muted deep indigo and charcoal shadow, ivory stone and skin, warm grey, old tarnished gold accents, subdued dusty earth and grey-green; matte surface, no bright saturation, no synthetic gloss, no cartoon look, no neon. Each portrait has a generous central figure or symbol clearly readable at thumbnail size. Painterly scenes can fill the whole portrait with paper visible through the washes. Harmonious but clearly distinct compositions. Meaningful varied original scenes, emotionally evocative, historically timeless Mediterranean fantasy. Do not copy any existing tarot card illustration or the composition of Rider Waite Smith cards.\nComposition/framing: Strict row-major reading order. TOP ROW left to right: Ace, Two, Three, Four, Five, Six, Seven. BOTTOM ROW left to right: Eight, Nine, Ten, Page, Knight, Queen, King. No labels on the image. Each cell depicts only its specified scene. For numbered cards depict the specified number of the suit objects, never ambiguous suit symbols. The four court cards must clearly differ in age, role, pose and face. Do not let one card's objects cross into an adjacent cell.\n\nSUIT: CUPS. Fourteen cell scenes in exact row-major order:\n1. Ace: one engraved aged-gold chalice catches a single spring of clear water beneath a low stone arch, moonlit ripples, no hand in cloud.\n2. Two: two close companions sit side by side on a small pier, each holding one chalice, reflections meeting in still water, intimate quiet trust.\n3. Three: three artisans pause their evening work at a long table and gently raise three chalices, interior candlelight, no dancing circle.\n4. Four: an introspective traveler sits in a window alcove with four chalices arranged along the sill while rain beads on the glass, no offered floating cup.\n5. Five: a woman kneels beside a tidepool containing three overturned chalices, two standing safely on a rock behind her, muted grief under pale dawn.\n6. Six: an elderly potter and a child place six small chalices on a drying shelf in a sunlit courtyard, affectionate memory and patient teaching.\n7. Seven: a dreamer peers into seven different chalices suspended on branches of a silver willow, each reflecting a distinct possible landscape, grounded original dream.\n8. Eight: a lone figure walks through a moonlit doorway out of a flooded ceremonial hall, leaving eight chalices on a long stone table, no mountain climbing.\n9. Nine: a contented baker closes a wooden cupboard displaying nine chalices after hosting friends, warm lamplight and humble abundance.\n10. Ten: a multi-generation family shares a meal beside the sea with ten chalices on a circular table, calm affection and a pale gold evening sky, no rainbow.\n11. Page: a thoughtful young apprentice in flowing blue robes holds a single shell-shaped chalice near a tidepool and listens closely, no fish inside the cup.\n12. Knight: a traveler in worn light armor and a soft indigo cloak kneels to offer one chalice to a thirsty person beside a resting grey horse.\n13. Queen: a serene queen with dark wavy hair stands in a water garden, cradling one lidded engraved chalice, reeds and pale lotus leaves.\n14. King: a silver-haired king in a plain circlet sits at a coastal stone desk listening compassionately to an unseen visitor, one ornate chalice by his hand.",
+      "swords": "Use case: illustration-story.\nAsset type: one production website artwork atlas for an ORIGINAL tarot deck called MARÉVYS.\nPrimary request: Generate exactly fourteen distinct original portrait tarot illustrations as ONE precisely aligned edge-to-edge rectangular 7-COLUMN by 2-ROW ATLAS. Request canvas exactly 3584 pixels wide by 1536 pixels tall, the highest available resolution. Each of the fourteen cells is exactly 512 wide by 768 tall, portrait 2:3. ALL cells equal size. No gutters, no outer margins, no inset frames, no divider lines, no printed borders, no text, no numerals, no captions, no watermarks. Cell edges must align at precisely one-seventh width and one-half height. Separate scenes end cleanly at the exact cell boundary. This is an atlas of fourteen fully painted independent illustrations, not one panoramic scene.\nStyle/medium: consistent exquisite traditional watercolor and thin gouache on finely textured aged ivory rag paper, nuanced translucent washes, semi-realistic elegant human faces and anatomy, delicate natural folds in linen robes, architectural atmosphere, restrained fine detail, subtle mottled paper texture throughout. Match this visual language: muted deep indigo and charcoal shadow, ivory stone and skin, warm grey, old tarnished gold accents, subdued dusty earth and grey-green; matte surface, no bright saturation, no synthetic gloss, no cartoon look, no neon. Each portrait has a generous central figure or symbol clearly readable at thumbnail size. Painterly scenes can fill the whole portrait with paper visible through the washes. Harmonious but clearly distinct compositions. Meaningful varied original scenes, emotionally evocative, historically timeless Mediterranean fantasy. Do not copy any existing tarot card illustration or the composition of Rider Waite Smith cards.\nComposition/framing: Strict row-major reading order. TOP ROW left to right: Ace, Two, Three, Four, Five, Six, Seven. BOTTOM ROW left to right: Eight, Nine, Ten, Page, Knight, Queen, King. No labels on the image. Each cell depicts only its specified scene. For numbered cards depict the specified number of the suit objects, never ambiguous suit symbols. The four court cards must clearly differ in age, role, pose and face. Do not let one card's objects cross into an adjacent cell.\n\nSUIT: SWORDS. Fourteen cell scenes in exact row-major order:\n1. Ace: one upright silver sword is embedded in an old anvil within a roofless observatory, clear dawn beam on the blade, no floating hand or crown.\n2. Two: a calm mediator at a round stone table considers two swords laid parallel between two empty seats, balanced window light, no blindfold.\n3. Three: three silver swords stand in cracks of a shattered bell beside a solitary grieving figure, rain beyond the open doorway, no pierced heart.\n4. Four: a sleeping traveler rests beneath an olive tree with four sheathed swords carefully laid on a folded cloak, stillness in pale morning light.\n5. Five: five discarded swords lie scattered on an empty tiled debate chamber floor as two figures leave through opposite doorways, costly conflict without victor.\n6. Six: a ferryman guides a narrow boat under an ancient aqueduct while six sheathed swords are bundled securely across its center, passengers facing new light.\n7. Seven: a resourceful scout uses one sword to lift a locked garden gate while six sheathed swords remain in a rack beside it, stealthy moonlight.\n8. Eight: a woman studies the space between eight swords planted in a circular hedge and begins to part the branches herself, no bindings or blindfold.\n9. Nine: a sleepless scholar sits at a desk facing nine narrow sword-shaped shadows cast on an indigo wall, restless candlelight, no figure in bed.\n10. Ten: ten swords lean against a ruined tower as a weary figure sets down their armor and steps into the first light beyond it, no impaled body.\n11. Page: a vigilant young student with cropped dark hair holds one sword low while observing the movement of clouds from a windswept rooftop.\n12. Knight: a decisive rider leads a white horse across a windswept shallow ford, one sword held upright at rest, no charging attack.\n13. Queen: a clear-eyed queen with silver hair stands beside an open window holding one sword vertically with its point down, an unsealed letter in her other hand.\n14. King: a thoughtful mature king in charcoal and indigo robes stands in a library beside a terrestrial globe, one sword resting upright against his chair.",
+      "pentacles": "Use case: illustration-story.\nAsset type: one production website artwork atlas for an ORIGINAL tarot deck called MARÉVYS.\nPrimary request: Generate exactly fourteen distinct original portrait tarot illustrations as ONE precisely aligned edge-to-edge rectangular 7-COLUMN by 2-ROW ATLAS. Request canvas exactly 3584 pixels wide by 1536 pixels tall, the highest available resolution. Each of the fourteen cells is exactly 512 wide by 768 tall, portrait 2:3. ALL cells equal size. No gutters, no outer margins, no inset frames, no divider lines, no printed borders, no text, no numerals, no captions, no watermarks. Cell edges must align at precisely one-seventh width and one-half height. Separate scenes end cleanly at the exact cell boundary. This is an atlas of fourteen fully painted independent illustrations, not one panoramic scene.\nStyle/medium: consistent exquisite traditional watercolor and thin gouache on finely textured aged ivory rag paper, nuanced translucent washes, semi-realistic elegant human faces and anatomy, delicate natural folds in linen robes, architectural atmosphere, restrained fine detail, subtle mottled paper texture throughout. Match this visual language: muted deep indigo and charcoal shadow, ivory stone and skin, warm grey, old tarnished gold accents, subdued dusty earth and grey-green; matte surface, no bright saturation, no synthetic gloss, no cartoon look, no neon. Each portrait has a generous central figure or symbol clearly readable at thumbnail size. Painterly scenes can fill the whole portrait with paper visible through the washes. Harmonious but clearly distinct compositions. Meaningful varied original scenes, emotionally evocative, historically timeless Mediterranean fantasy. Do not copy any existing tarot card illustration or the composition of Rider Waite Smith cards.\nComposition/framing: Strict row-major reading order. TOP ROW left to right: Ace, Two, Three, Four, Five, Six, Seven. BOTTOM ROW left to right: Eight, Nine, Ten, Page, Knight, Queen, King. No labels on the image. Each cell depicts only its specified scene. For numbered cards depict the specified number of the suit objects, never ambiguous suit symbols. The four court cards must clearly differ in age, role, pose and face. Do not let one card's objects cross into an adjacent cell.\n\nSUIT: PENTACLES. Fourteen cell scenes in exact row-major order:\n1. Ace: one large aged-gold disc engraved with a clearly visible five-point star rests in rich dark earth among fresh roots, soft sunrise, no floating hand.\n2. Two: a market keeper weighs two star-engraved gold discs on a small balance while wind gently lifts fabric awnings, practical adaptation, no juggling.\n3. Three: a mason, a woodworker and a designer study three star-engraved discs inset into a newly built stone arch, shared patient craft.\n4. Four: a guarded collector closes a carved wooden chest around four star-engraved discs in a dim storeroom, tense hands, no coins beneath feet or above head.\n5. Five: two tired travelers shelter in a small pottery workshop with five star-engraved discs on the lintel, a distant welcoming lamp, no snowy church window.\n6. Six: a village steward and a gardener fairly divide six star-engraved discs on a broad outdoor table with seed baskets, generosity without kneeling beggars.\n7. Seven: an orchard keeper rests beside a young fruit tree bearing seven small star-engraved gold discs among its branches, quiet assessment after work.\n8. Eight: a focused artisan engraves the eighth of eight star-engraved discs at a low workbench, seven completed discs on a cloth, original side-view workshop.\n9. Nine: a self-possessed woman in an ivory and indigo dress walks through her cultivated herb terraces where nine star-engraved discs decorate an irrigation basin, no falcon.\n10. Ten: a family of three generations restores an old home, ten star-engraved discs set into a circular floor mosaic, craft and inheritance, no heraldic arch scene.\n11. Page: a young apprentice gardener kneels to study one star-engraved disc beside a tray of seedlings, attentive curiosity in the morning light.\n12. Knight: a dependable traveler leads a patient dark horse pulling a small seed cart, holding one star-engraved disc against an indigo cloak.\n13. Queen: a warm mature queen with a simple circlet tends a potted olive sapling on a stone terrace, one star-engraved disc cradled in her free hand.\n14. King: a dignified older king in dark indigo linen oversees a granary from a wooden balcony, one large star-engraved disc resting on the rail beside his hand."
+    },
+    "scenes": {
+      "wands": [
+        "Ace: one luminous budding ashwood wand rises from a fissure in volcanic stone beside a tiny new green shoot, dawn mist behind.",
+        "Two: a cloaked female architect studies an unfinished footbridge between two towering upright wands over a narrow river, view from the riverbank.",
+        "Three: three tall wands support a pale sail on a small experimental land vessel as an explorer watches a distant open valley.",
+        "Four: four flower-wound wooden wands mark the corners of a courtyard where two elders quietly welcome a returning traveler with warm bread.",
+        "Five: five young craftspeople each carry one wand while debating how to raise a fallen canopy in gusty weather, lively cooperative tension, no fighting.",
+        "Six: six upright wands form a fan behind a weary expedition leader being greeted on foot by villagers with small lanterns, no mounted triumph.",
+        "Seven: a determined gardener holds one wand as a lever to raise a storm-fallen trellis built from six other wands, wind in the orchard.",
+        "Eight: eight wands lashed vertically to a river raft carry small streamers as the current sweeps it through a narrow canyon, view from above.",
+        "Nine: nine fire-scorched wands form a shelter frame around a calm sentinel tending its last embers after a storm, no head bandage.",
+        "Ten: a stooped artisan unties ten wands from a heavy bundle at a threshold while someone opens the door to share the burden.",
+        "Page: a curious young apprentice in plain ivory and indigo robes crouches to inspect a tiny red bud on one wooden wand in a dry garden.",
+        "Knight: a purposeful rider pauses beside a dark horse and holds one long branch-like wand upright while studying an ascending mountain path.",
+        "Queen: a composed queen in softly weathered gold and indigo robes stands in an herb garden holding one flowering wand, warm eyes, no sunflower or black cat.",
+        "King: a mature bearded king with a simple aged-gold circlet stands beside a worktable of architectural sketches and holds a living oak wand, distant kiln glow."
+      ],
+      "cups": [
+        "Ace: one engraved aged-gold chalice catches a single spring of clear water beneath a low stone arch, moonlit ripples, no hand in cloud.",
+        "Two: two close companions sit side by side on a small pier, each holding one chalice, reflections meeting in still water, intimate quiet trust.",
+        "Three: three artisans pause their evening work at a long table and gently raise three chalices, interior candlelight, no dancing circle.",
+        "Four: an introspective traveler sits in a window alcove with four chalices arranged along the sill while rain beads on the glass, no offered floating cup.",
+        "Five: a woman kneels beside a tidepool containing three overturned chalices, two standing safely on a rock behind her, muted grief under pale dawn.",
+        "Six: an elderly potter and a child place six small chalices on a drying shelf in a sunlit courtyard, affectionate memory and patient teaching.",
+        "Seven: a dreamer peers into seven different chalices suspended on branches of a silver willow, each reflecting a distinct possible landscape, grounded original dream.",
+        "Eight: a lone figure walks through a moonlit doorway out of a flooded ceremonial hall, leaving eight chalices on a long stone table, no mountain climbing.",
+        "Nine: a contented baker closes a wooden cupboard displaying nine chalices after hosting friends, warm lamplight and humble abundance.",
+        "Ten: a multi-generation family shares a meal beside the sea with ten chalices on a circular table, calm affection and a pale gold evening sky, no rainbow.",
+        "Page: a thoughtful young apprentice in flowing blue robes holds a single shell-shaped chalice near a tidepool and listens closely, no fish inside the cup.",
+        "Knight: a traveler in worn light armor and a soft indigo cloak kneels to offer one chalice to a thirsty person beside a resting grey horse.",
+        "Queen: a serene queen with dark wavy hair stands in a water garden, cradling one lidded engraved chalice, reeds and pale lotus leaves.",
+        "King: a silver-haired king in a plain circlet sits at a coastal stone desk listening compassionately to an unseen visitor, one ornate chalice by his hand."
+      ],
+      "swords": [
+        "Ace: one upright silver sword is embedded in an old anvil within a roofless observatory, clear dawn beam on the blade, no floating hand or crown.",
+        "Two: a calm mediator at a round stone table considers two swords laid parallel between two empty seats, balanced window light, no blindfold.",
+        "Three: three silver swords stand in cracks of a shattered bell beside a solitary grieving figure, rain beyond the open doorway, no pierced heart.",
+        "Four: a sleeping traveler rests beneath an olive tree with four sheathed swords carefully laid on a folded cloak, stillness in pale morning light.",
+        "Five: five discarded swords lie scattered on an empty tiled debate chamber floor as two figures leave through opposite doorways, costly conflict without victor.",
+        "Six: a ferryman guides a narrow boat under an ancient aqueduct while six sheathed swords are bundled securely across its center, passengers facing new light.",
+        "Seven: a resourceful scout uses one sword to lift a locked garden gate while six sheathed swords remain in a rack beside it, stealthy moonlight.",
+        "Eight: a woman studies the space between eight swords planted in a circular hedge and begins to part the branches herself, no bindings or blindfold.",
+        "Nine: a sleepless scholar sits at a desk facing nine narrow sword-shaped shadows cast on an indigo wall, restless candlelight, no figure in bed.",
+        "Ten: ten swords lean against a ruined tower as a weary figure sets down their armor and steps into the first light beyond it, no impaled body.",
+        "Page: a vigilant young student with cropped dark hair holds one sword low while observing the movement of clouds from a windswept rooftop.",
+        "Knight: a decisive rider leads a white horse across a windswept shallow ford, one sword held upright at rest, no charging attack.",
+        "Queen: a clear-eyed queen with silver hair stands beside an open window holding one sword vertically with its point down, an unsealed letter in her other hand.",
+        "King: a thoughtful mature king in charcoal and indigo robes stands in a library beside a terrestrial globe, one sword resting upright against his chair."
+      ],
+      "pentacles": [
+        "Ace: one large aged-gold disc engraved with a clearly visible five-point star rests in rich dark earth among fresh roots, soft sunrise, no floating hand.",
+        "Two: a market keeper weighs two star-engraved gold discs on a small balance while wind gently lifts fabric awnings, practical adaptation, no juggling.",
+        "Three: a mason, a woodworker and a designer study three star-engraved discs inset into a newly built stone arch, shared patient craft.",
+        "Four: a guarded collector closes a carved wooden chest around four star-engraved discs in a dim storeroom, tense hands, no coins beneath feet or above head.",
+        "Five: two tired travelers shelter in a small pottery workshop with five star-engraved discs on the lintel, a distant welcoming lamp, no snowy church window.",
+        "Six: a village steward and a gardener fairly divide six star-engraved discs on a broad outdoor table with seed baskets, generosity without kneeling beggars.",
+        "Seven: an orchard keeper rests beside a young fruit tree bearing seven small star-engraved gold discs among its branches, quiet assessment after work.",
+        "Eight: a focused artisan engraves the eighth of eight star-engraved discs at a low workbench, seven completed discs on a cloth, original side-view workshop.",
+        "Nine: a self-possessed woman in an ivory and indigo dress walks through her cultivated herb terraces where nine star-engraved discs decorate an irrigation basin, no falcon.",
+        "Ten: a family of three generations restores an old home, ten star-engraved discs set into a circular floor mosaic, craft and inheritance, no heraldic arch scene.",
+        "Page: a young apprentice gardener kneels to study one star-engraved disc beside a tray of seedlings, attentive curiosity in the morning light.",
+        "Knight: a dependable traveler leads a patient dark horse pulling a small seed cart, holding one star-engraved disc against an indigo cloak.",
+        "Queen: a warm mature queen with a simple circlet tends a potted olive sapling on a stone terrace, one star-engraved disc cradled in her free hand.",
+        "King: a dignified older king in dark indigo linen oversees a granary from a wooden balcony, one large star-engraved disc resting on the rail beside his hand."
+      ]
+    }
+  },
+  "exports": {
+    "method": "Four built-in image_gen requests; no retries or variants. Deterministic crop/export with ImageMagick.",
+    "requestedAtlasSize": [
+      3584,
+      1536
+    ],
+    "actualAtlasSizes": {
+      "wands": [
+        1915,
+        821
+      ],
+      "cups": [
+        1915,
+        821
+      ],
+      "swords": [
+        1916,
+        821
+      ],
+      "pentacles": [
+        1916,
+        821
+      ]
+    },
+    "notes": [
+      "Tool returned lower than requested resolution. Website assets only; not print masters.",
+      "Observed cell widths vary; use individual crop exports, not a uniform CSS atlas grid.",
+      "Counts of suit objects are not consistently exact in generated artwork; rank identity should also rely on card labels."
+    ],
+    "cards": [
+      {
+        "id": 22,
+        "suit": "wands",
+        "rank": "Ace",
+        "row": 0,
+        "column": 0,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-22.webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 260,
+          "height": 407
+        }
+      },
+      {
+        "id": 23,
+        "suit": "wands",
+        "rank": "Two",
+        "row": 0,
+        "column": 1,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-23.webp",
+        "crop": {
+          "x": 266,
+          "y": 0,
+          "width": 256,
+          "height": 407
+        }
+      },
+      {
+        "id": 24,
+        "suit": "wands",
+        "rank": "Three",
+        "row": 0,
+        "column": 2,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-24.webp",
+        "crop": {
+          "x": 528,
+          "y": 0,
+          "width": 289,
+          "height": 407
+        }
+      },
+      {
+        "id": 25,
+        "suit": "wands",
+        "rank": "Four",
+        "row": 0,
+        "column": 3,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-25.webp",
+        "crop": {
+          "x": 823,
+          "y": 0,
+          "width": 271,
+          "height": 407
+        }
+      },
+      {
+        "id": 26,
+        "suit": "wands",
+        "rank": "Five",
+        "row": 0,
+        "column": 4,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-26.webp",
+        "crop": {
+          "x": 1100,
+          "y": 0,
+          "width": 286,
+          "height": 407
+        }
+      },
+      {
+        "id": 27,
+        "suit": "wands",
+        "rank": "Six",
+        "row": 0,
+        "column": 5,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-27.webp",
+        "crop": {
+          "x": 1392,
+          "y": 0,
+          "width": 257,
+          "height": 407
+        }
+      },
+      {
+        "id": 28,
+        "suit": "wands",
+        "rank": "Seven",
+        "row": 0,
+        "column": 6,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-28.webp",
+        "crop": {
+          "x": 1655,
+          "y": 0,
+          "width": 260,
+          "height": 407
+        }
+      },
+      {
+        "id": 29,
+        "suit": "wands",
+        "rank": "Eight",
+        "row": 1,
+        "column": 0,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-29.webp",
+        "crop": {
+          "x": 0,
+          "y": 413,
+          "width": 260,
+          "height": 408
+        }
+      },
+      {
+        "id": 30,
+        "suit": "wands",
+        "rank": "Nine",
+        "row": 1,
+        "column": 1,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-30.webp",
+        "crop": {
+          "x": 266,
+          "y": 413,
+          "width": 256,
+          "height": 408
+        }
+      },
+      {
+        "id": 31,
+        "suit": "wands",
+        "rank": "Ten",
+        "row": 1,
+        "column": 2,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-31.webp",
+        "crop": {
+          "x": 528,
+          "y": 413,
+          "width": 289,
+          "height": 408
+        }
+      },
+      {
+        "id": 32,
+        "suit": "wands",
+        "rank": "Page",
+        "row": 1,
+        "column": 3,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-32.webp",
+        "crop": {
+          "x": 823,
+          "y": 413,
+          "width": 271,
+          "height": 408
+        }
+      },
+      {
+        "id": 33,
+        "suit": "wands",
+        "rank": "Knight",
+        "row": 1,
+        "column": 4,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-33.webp",
+        "crop": {
+          "x": 1100,
+          "y": 413,
+          "width": 286,
+          "height": 408
+        }
+      },
+      {
+        "id": 34,
+        "suit": "wands",
+        "rank": "Queen",
+        "row": 1,
+        "column": 5,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-34.webp",
+        "crop": {
+          "x": 1392,
+          "y": 413,
+          "width": 257,
+          "height": 408
+        }
+      },
+      {
+        "id": 35,
+        "suit": "wands",
+        "rank": "King",
+        "row": 1,
+        "column": 6,
+        "source": "minor-art/wands-atlas.png",
+        "file": "minor-art/cards/tarot-35.webp",
+        "crop": {
+          "x": 1655,
+          "y": 413,
+          "width": 260,
+          "height": 408
+        }
+      },
+      {
+        "id": 36,
+        "suit": "cups",
+        "rank": "Ace",
+        "row": 0,
+        "column": 0,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-36.webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 257,
+          "height": 406
+        }
+      },
+      {
+        "id": 37,
+        "suit": "cups",
+        "rank": "Two",
+        "row": 0,
+        "column": 1,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-37.webp",
+        "crop": {
+          "x": 263,
+          "y": 0,
+          "width": 246,
+          "height": 406
+        }
+      },
+      {
+        "id": 38,
+        "suit": "cups",
+        "rank": "Three",
+        "row": 0,
+        "column": 2,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-38.webp",
+        "crop": {
+          "x": 515,
+          "y": 0,
+          "width": 251,
+          "height": 406
+        }
+      },
+      {
+        "id": 39,
+        "suit": "cups",
+        "rank": "Four",
+        "row": 0,
+        "column": 3,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-39.webp",
+        "crop": {
+          "x": 772,
+          "y": 0,
+          "width": 302,
+          "height": 406
+        }
+      },
+      {
+        "id": 40,
+        "suit": "cups",
+        "rank": "Five",
+        "row": 0,
+        "column": 4,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-40.webp",
+        "crop": {
+          "x": 1080,
+          "y": 0,
+          "width": 257,
+          "height": 406
+        }
+      },
+      {
+        "id": 41,
+        "suit": "cups",
+        "rank": "Six",
+        "row": 0,
+        "column": 5,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-41.webp",
+        "crop": {
+          "x": 1343,
+          "y": 0,
+          "width": 285,
+          "height": 406
+        }
+      },
+      {
+        "id": 42,
+        "suit": "cups",
+        "rank": "Seven",
+        "row": 0,
+        "column": 6,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-42.webp",
+        "crop": {
+          "x": 1634,
+          "y": 0,
+          "width": 281,
+          "height": 406
+        }
+      },
+      {
+        "id": 43,
+        "suit": "cups",
+        "rank": "Eight",
+        "row": 1,
+        "column": 0,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-43.webp",
+        "crop": {
+          "x": 0,
+          "y": 413,
+          "width": 256,
+          "height": 408
+        }
+      },
+      {
+        "id": 44,
+        "suit": "cups",
+        "rank": "Nine",
+        "row": 1,
+        "column": 1,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-44.webp",
+        "crop": {
+          "x": 262,
+          "y": 413,
+          "width": 246,
+          "height": 408
+        }
+      },
+      {
+        "id": 45,
+        "suit": "cups",
+        "rank": "Ten",
+        "row": 1,
+        "column": 2,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-45.webp",
+        "crop": {
+          "x": 514,
+          "y": 413,
+          "width": 322,
+          "height": 408
+        }
+      },
+      {
+        "id": 46,
+        "suit": "cups",
+        "rank": "Page",
+        "row": 1,
+        "column": 3,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-46.webp",
+        "crop": {
+          "x": 842,
+          "y": 413,
+          "width": 231,
+          "height": 408
+        }
+      },
+      {
+        "id": 47,
+        "suit": "cups",
+        "rank": "Knight",
+        "row": 1,
+        "column": 4,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-47.webp",
+        "crop": {
+          "x": 1079,
+          "y": 413,
+          "width": 272,
+          "height": 408
+        }
+      },
+      {
+        "id": 48,
+        "suit": "cups",
+        "rank": "Queen",
+        "row": 1,
+        "column": 5,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-48.webp",
+        "crop": {
+          "x": 1357,
+          "y": 413,
+          "width": 271,
+          "height": 408
+        }
+      },
+      {
+        "id": 49,
+        "suit": "cups",
+        "rank": "King",
+        "row": 1,
+        "column": 6,
+        "source": "minor-art/cups-atlas.png",
+        "file": "minor-art/cards/tarot-49.webp",
+        "crop": {
+          "x": 1634,
+          "y": 413,
+          "width": 281,
+          "height": 408
+        }
+      },
+      {
+        "id": 50,
+        "suit": "swords",
+        "rank": "Ace",
+        "row": 0,
+        "column": 0,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-50.webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 265,
+          "height": 408
+        }
+      },
+      {
+        "id": 51,
+        "suit": "swords",
+        "rank": "Two",
+        "row": 0,
+        "column": 1,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-51.webp",
+        "crop": {
+          "x": 271,
+          "y": 0,
+          "width": 261,
+          "height": 408
+        }
+      },
+      {
+        "id": 52,
+        "suit": "swords",
+        "rank": "Three",
+        "row": 0,
+        "column": 2,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-52.webp",
+        "crop": {
+          "x": 538,
+          "y": 0,
+          "width": 268,
+          "height": 408
+        }
+      },
+      {
+        "id": 53,
+        "suit": "swords",
+        "rank": "Four",
+        "row": 0,
+        "column": 3,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-53.webp",
+        "crop": {
+          "x": 812,
+          "y": 0,
+          "width": 263,
+          "height": 408
+        }
+      },
+      {
+        "id": 54,
+        "suit": "swords",
+        "rank": "Five",
+        "row": 0,
+        "column": 4,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-54.webp",
+        "crop": {
+          "x": 1081,
+          "y": 0,
+          "width": 268,
+          "height": 408
+        }
+      },
+      {
+        "id": 55,
+        "suit": "swords",
+        "rank": "Six",
+        "row": 0,
+        "column": 5,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-55.webp",
+        "crop": {
+          "x": 1355,
+          "y": 0,
+          "width": 277,
+          "height": 408
+        }
+      },
+      {
+        "id": 56,
+        "suit": "swords",
+        "rank": "Seven",
+        "row": 0,
+        "column": 6,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-56.webp",
+        "crop": {
+          "x": 1638,
+          "y": 0,
+          "width": 278,
+          "height": 408
+        }
+      },
+      {
+        "id": 57,
+        "suit": "swords",
+        "rank": "Eight",
+        "row": 1,
+        "column": 0,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-57.webp",
+        "crop": {
+          "x": 0,
+          "y": 414,
+          "width": 265,
+          "height": 407
+        }
+      },
+      {
+        "id": 58,
+        "suit": "swords",
+        "rank": "Nine",
+        "row": 1,
+        "column": 1,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-58.webp",
+        "crop": {
+          "x": 271,
+          "y": 414,
+          "width": 261,
+          "height": 407
+        }
+      },
+      {
+        "id": 59,
+        "suit": "swords",
+        "rank": "Ten",
+        "row": 1,
+        "column": 2,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-59.webp",
+        "crop": {
+          "x": 538,
+          "y": 414,
+          "width": 268,
+          "height": 407
+        }
+      },
+      {
+        "id": 60,
+        "suit": "swords",
+        "rank": "Page",
+        "row": 1,
+        "column": 3,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-60.webp",
+        "crop": {
+          "x": 812,
+          "y": 414,
+          "width": 263,
+          "height": 407
+        }
+      },
+      {
+        "id": 61,
+        "suit": "swords",
+        "rank": "Knight",
+        "row": 1,
+        "column": 4,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-61.webp",
+        "crop": {
+          "x": 1081,
+          "y": 414,
+          "width": 268,
+          "height": 407
+        }
+      },
+      {
+        "id": 62,
+        "suit": "swords",
+        "rank": "Queen",
+        "row": 1,
+        "column": 5,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-62.webp",
+        "crop": {
+          "x": 1355,
+          "y": 414,
+          "width": 277,
+          "height": 407
+        }
+      },
+      {
+        "id": 63,
+        "suit": "swords",
+        "rank": "King",
+        "row": 1,
+        "column": 6,
+        "source": "minor-art/swords-atlas.png",
+        "file": "minor-art/cards/tarot-63.webp",
+        "crop": {
+          "x": 1638,
+          "y": 414,
+          "width": 278,
+          "height": 407
+        }
+      },
+      {
+        "id": 64,
+        "suit": "pentacles",
+        "rank": "Ace",
+        "row": 0,
+        "column": 0,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-64.webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 270,
+          "height": 406
+        }
+      },
+      {
+        "id": 65,
+        "suit": "pentacles",
+        "rank": "Two",
+        "row": 0,
+        "column": 1,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-65.webp",
+        "crop": {
+          "x": 276,
+          "y": 0,
+          "width": 268,
+          "height": 406
+        }
+      },
+      {
+        "id": 66,
+        "suit": "pentacles",
+        "rank": "Three",
+        "row": 0,
+        "column": 2,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-66.webp",
+        "crop": {
+          "x": 550,
+          "y": 0,
+          "width": 269,
+          "height": 406
+        }
+      },
+      {
+        "id": 67,
+        "suit": "pentacles",
+        "rank": "Four",
+        "row": 0,
+        "column": 3,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-67.webp",
+        "crop": {
+          "x": 825,
+          "y": 0,
+          "width": 266,
+          "height": 406
+        }
+      },
+      {
+        "id": 68,
+        "suit": "pentacles",
+        "rank": "Five",
+        "row": 0,
+        "column": 4,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-68.webp",
+        "crop": {
+          "x": 1097,
+          "y": 0,
+          "width": 268,
+          "height": 406
+        }
+      },
+      {
+        "id": 69,
+        "suit": "pentacles",
+        "rank": "Six",
+        "row": 0,
+        "column": 5,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-69.webp",
+        "crop": {
+          "x": 1371,
+          "y": 0,
+          "width": 269,
+          "height": 406
+        }
+      },
+      {
+        "id": 70,
+        "suit": "pentacles",
+        "rank": "Seven",
+        "row": 0,
+        "column": 6,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-70.webp",
+        "crop": {
+          "x": 1646,
+          "y": 0,
+          "width": 270,
+          "height": 406
+        }
+      },
+      {
+        "id": 71,
+        "suit": "pentacles",
+        "rank": "Eight",
+        "row": 1,
+        "column": 0,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-71.webp",
+        "crop": {
+          "x": 0,
+          "y": 414,
+          "width": 270,
+          "height": 407
+        }
+      },
+      {
+        "id": 72,
+        "suit": "pentacles",
+        "rank": "Nine",
+        "row": 1,
+        "column": 1,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-72.webp",
+        "crop": {
+          "x": 276,
+          "y": 414,
+          "width": 268,
+          "height": 407
+        }
+      },
+      {
+        "id": 73,
+        "suit": "pentacles",
+        "rank": "Ten",
+        "row": 1,
+        "column": 2,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-73.webp",
+        "crop": {
+          "x": 550,
+          "y": 414,
+          "width": 269,
+          "height": 407
+        }
+      },
+      {
+        "id": 74,
+        "suit": "pentacles",
+        "rank": "Page",
+        "row": 1,
+        "column": 3,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-74.webp",
+        "crop": {
+          "x": 825,
+          "y": 414,
+          "width": 266,
+          "height": 407
+        }
+      },
+      {
+        "id": 75,
+        "suit": "pentacles",
+        "rank": "Knight",
+        "row": 1,
+        "column": 4,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-75.webp",
+        "crop": {
+          "x": 1097,
+          "y": 414,
+          "width": 268,
+          "height": 407
+        }
+      },
+      {
+        "id": 76,
+        "suit": "pentacles",
+        "rank": "Queen",
+        "row": 1,
+        "column": 5,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-76.webp",
+        "crop": {
+          "x": 1371,
+          "y": 414,
+          "width": 269,
+          "height": 407
+        }
+      },
+      {
+        "id": 77,
+        "suit": "pentacles",
+        "rank": "King",
+        "row": 1,
+        "column": 6,
+        "source": "minor-art/pentacles-atlas.png",
+        "file": "minor-art/cards/tarot-77.webp",
+        "crop": {
+          "x": 1646,
+          "y": 414,
+          "width": 270,
+          "height": 407
+        }
+      }
+    ]
+  }
+}

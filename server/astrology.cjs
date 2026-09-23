@@ -2,7 +2,7 @@
 
 const Astronomy = require('astronomy-engine');
 const { Temporal } = require('@js-temporal/polyfill');
-const { LOCATIONS } = require('./astrology-locations.cjs');
+const { getLocationById } = require('./astrology-locations.cjs');
 const DAY = 86400000;
 const RAD = Math.PI / 180;
 const BODIES = ['Sun','Moon','Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune','Pluto'];
@@ -57,7 +57,7 @@ function normalizeInput(raw) {
   let {latitude,longitude,timezone}=raw;
   let locationId = null;
   if (raw.locationId !== undefined && raw.locationId !== null && raw.locationId !== '') {
-    const city=LOCATIONS.find(p=>p.id===raw.locationId);
+    const city=getLocationById(raw.locationId);
     if (!city) fail('INVALID_LOCATION');
     ({latitude,longitude,timezone}=city); locationId=city.id;
   }
@@ -189,29 +189,33 @@ function calculateChart(raw) {
       source:'https://github.com/cosinekitty/astronomy',license:'MIT'}};
 }
 
-const THEMES={
-  fr:['initiative et autonomie','stabilité et continuité','curiosité et échange','protection et appartenance','expression et reconnaissance','discernement et amélioration','réciprocité et équilibre','intensité et transformation','exploration et sens','responsabilité et construction','indépendance et collectif','sensibilité et imagination'],
-  zh:['主动性与自主决定','稳定感与持续投入','好奇心与交流','保护感与归属','表达与被看见','分辨与改善','互惠与平衡','深入与转变','探索与意义','责任与长期建设','独立与群体','敏感度与想象'],
-  en:['initiative and autonomy','stability and continuity','curiosity and exchange','protection and belonging','expression and recognition','discernment and improvement','reciprocity and balance','intensity and transformation','exploration and meaning','responsibility and building','independence and community','sensitivity and imagination'],
+const EVERYDAY={
+  zh:['先试试看，再根据结果调整','把节奏放稳，让事情有个着落','多聊一聊，听听不同的想法','熟悉的人和环境，以及被认真照顾的感觉','坦率表达自己，也希望自己的付出被看见','把问题拆小，找到一件能改进的事','先听双方的想法，再找到彼此能接受的办法','把话说深一点，确认彼此是否真诚','留出尝试新事物、看远一点的空间','说清责任，并一步一步把计划做完','保留自己的空间，也尊重与自己不同的想法','先感受气氛，再慢慢找到自己的表达'],
+  fr:['essayer, puis ajuster en fonction du résultat','avancer à un rythme stable avec des repères clairs','échanger et entendre plusieurs points de vue','retrouver des personnes familières et une attention concrète','vous exprimer franchement et voir vos efforts reconnus','découper le problème et améliorer une petite chose','écouter les deux côtés et chercher un accord acceptable','aller au fond de la discussion et vérifier la sincérité','garder de la place pour découvrir et élargir vos possibilités','clarifier les responsabilités et avancer étape par étape','préserver votre espace et accueillir des avis différents','sentir l’ambiance avant de trouver vos mots'],
+  en:['trying something first, then adjusting to the result','keeping a steady pace and knowing where things stand','talking things through and hearing different ideas','familiar people and practical signs of care','speaking openly and having your effort recognized','breaking a problem down and improving one small thing','hearing both sides and finding an acceptable agreement','talking honestly about what is underneath the surface','leaving room to try something new and see a wider picture','clarifying responsibilities and following through step by step','keeping your own space while respecting different ideas','noticing the atmosphere before finding your own words']
 };
-function basicReading(chart,locale='fr') {
-  if(!['fr','zh','en'].includes(locale)) locale='fr';
-  const descriptors={
-    fr:{Sun:['Votre direction','le sentiment de direction'],Moon:['Votre vie intérieure','les besoins de réconfort'],Venus:['Vos liens','la manière de créer du lien'],Mars:['Votre élan','la manière de prendre une initiative']},
-    zh:{Sun:['你关注的方向','方向感'],Moon:['内在需要','获得安定的方式'],Venus:['关系与价值','建立联系的方式'],Mars:['行动与边界','采取行动的方式']},
-    en:{Sun:['Your direction','a sense of direction'],Moon:['Inner needs','the need for comfort'],Venus:['Connection and values','how connection is built'],Mars:['Action and boundaries','how initiative is taken']},
-  };
-  const sections=['Sun','Moon','Venus','Mars'].map(id=>{
-    const p=chart.planets.find(p=>p.id===id); const [title,role]=descriptors[locale][id];
-    const signs=p.range?p.range.possibleSigns:[p.sign];
-    if(signs.length>1) return {title,text:locale==='zh'?`${p.name}当天可能位于${signs.map(s=>s.name).join('或')}。出生时间不足以确定，因此这里不选择单一星座来描述你。`:locale==='en'?`${p.name} may be in ${signs.map(s=>s.name).join(' or ')} on this date. Without a birth time, a single sign is not assigned to you.`:`${p.name} peut se trouver en ${signs.map(s=>s.name).join(' ou ')} ce jour-là. Sans heure de naissance, aucun signe unique ne vous est attribué.`};
-    const sign=signs[0],theme=THEMES[locale][sign.index];
-    return {title,text:locale==='zh'?`${p.name}位于${sign.name}。在占星象征中，${role}可以从“${theme}”这个角度探索。这不是对你的定论：回想一个你觉得自然、又一个需要努力的具体场景，看看这个主题是否贴近真实经历。`:locale==='en'?`${p.name} is in ${sign.name}. In astrological symbolism, ${role} can be explored through ${theme}. This is a prompt, not a conclusion about you: compare a situation that feels natural with one that takes effort, and see whether this theme fits your experience.`:`${p.name} se trouve en ${sign.name}. Dans le langage symbolique de l’astrologie, ${role} peut se lire à travers ${theme}. C’est une piste, pas une conclusion sur vous : comparez une situation fluide et une situation qui demande un effort pour voir si ce thème correspond à votre vécu.`};
+function basicReading(chart,locale='fr',context={}) {
+  if(!['fr','zh','en'].includes(locale))locale='fr';
+  const pick=value=>value[locale],question=String(context.question||''),topic=context.topic||'self';
+  const boundaries=/拒绝|边界|讨好|说不|boundar|say no|limite|dire non/i.test(question);
+  const change=/换工作|跳槽|辞职|转行|change.{0,15}(job|career)|quitter|reconversion/i.test(question);
+  const core=boundaries?pick({zh:'如果你想学会表达边界，可以先从一件小事开始：说清自己能做什么、做到什么时候，以及哪些事需要别人承担。不必等到委屈积累很多，才一次性说出来。',en:'If you want to set clearer boundaries, start with one small request: say what you can do, by when, and what needs someone else’s help. You do not have to wait until frustration builds up.',fr:'Pour poser vos limites, commencez par une petite demande : ce que vous pouvez faire, dans quel délai et ce qui nécessite l’aide de quelqu’un d’autre. N’attendez pas d’être à bout pour le dire.'}):change?pick({zh:'如果你在考虑换工作，先把“想离开什么”和“想得到什么”分开写下来。再用一次谈话或一个小项目核实新方向，星盘可以帮助你反思偏好，不能替你判断一份工作的实际条件。',en:'If you are considering a job change, separate what you want to leave from what you want to move towards. Check the new direction through a conversation or small project; the chart cannot assess an offer’s real conditions.',fr:'Si vous envisagez de changer de travail, distinguez ce que vous voulez quitter de ce que vous souhaitez trouver. Vérifiez la nouvelle piste par un échange ou un petit projet ; le thème ne peut pas évaluer les conditions réelles d’un poste.'}):topic==='relations'?pick({zh:'在关系里，可以先看清自己希望怎样被对待，再观察对方有没有用行动回应。下面的线索帮助你把需要说具体，不替你猜测对方的想法。',en:'In a relationship, start with how you want to be treated and whether the other person responds through actions. The prompts below can help you name your needs; they do not reveal someone else’s thoughts.',fr:'Dans une relation, clarifiez comment vous souhaitez être traité·e, puis regardez les actes de l’autre. Les pistes ci-dessous aident à nommer vos besoins, pas à deviner ses pensées.'}):topic==='work'?pick({zh:'面对工作问题，可以先分清：你不喜欢的是任务本身，还是时间、沟通和分工。选一件能调整的小事，观察改变后自己有没有更轻松。',en:'For a work question, separate the task itself from the timing, communication and division of work. Choose one small change and see whether it makes your day easier.',fr:'Au travail, distinguez la tâche elle-même des délais, de la communication et du partage des responsabilités. Essayez un petit ajustement et voyez si votre journée devient plus simple.'}):pick({zh:'先不用急着给自己下定义。想一件最近让你舒服的事，再想一件让你很费力的事，看看它们的差别。下面几个角度可以帮助你把这种感受说清楚。',en:'You do not need to define yourself straight away. Think of one recent situation that felt comfortable and one that took effort. The prompts below can help you put the difference into words.',fr:'Pas besoin de vous définir tout de suite. Pensez à une situation récente où vous étiez à l’aise et à une autre plus difficile. Les pistes ci-dessous aident à mettre des mots sur cette différence.'});
+  const roles=[
+    {id:'Sun',title:{zh:'什么让你更有动力',en:'What gives you momentum',fr:'Ce qui vous donne de l’élan'},prompt:{zh:'回想最近一次让你觉得“这件事值得做”的经历：你是自己选的，还是因为别人期待你去做？',en:'Recall something that recently felt worth doing. Did you choose it yourself, or did someone else expect it of you?',fr:'Repensez à une chose récente qui valait l’effort. L’aviez-vous choisie, ou répondiez-vous à une attente ?'}},
+    {id:'Moon',title:{zh:'累的时候，你需要什么',en:'What helps when you are tired',fr:'Ce qui vous aide quand vous êtes fatigué·e'},prompt:{zh:'想想压力大时，什么最能让你缓下来。把这个需要告诉身边的人，会比等他们猜到更容易得到支持。',en:'Notice what helps you settle when you feel under pressure. Naming that need makes support easier than waiting for someone to guess it.',fr:'Observez ce qui vous apaise sous pression. Nommer ce besoin facilite le soutien, plutôt que d’attendre que l’autre le devine.'}},
+    {id:'Mercury',title:{zh:'怎样把想法说清楚',en:'Putting your thoughts into words',fr:'Trouver les mots justes'},prompt:{zh:'下一次重要对话，先说一件具体发生的事，再说你的感受和希望对方怎样回应。',en:'For your next important conversation, describe one concrete event, then how you felt and what response would help.',fr:'Lors du prochain échange important, décrivez un fait concret, puis votre ressenti et la réponse qui vous aiderait.'}},
+    {id:topic==='relations'?'Venus':'Mars',title:{zh:topic==='relations'?'你喜欢怎样的相处':'下一步可以怎样做',en:topic==='relations'?'The connection you enjoy':'Taking the next step',fr:topic==='relations'?'Le lien qui vous fait du bien':'Faire le prochain pas'},prompt:{zh:topic==='relations'?'选一件你在关系中真正看重的小事，说给对方听，也问问对方最在意什么。':'挑一件今天就能开始的小事。做完以后再调整，不必先把所有结果想清楚。',en:topic==='relations'?'Name one small thing that matters to you in a relationship, and ask what matters to the other person.':'Choose one small thing you can begin today. Adjust after trying it; you do not need every answer first.',fr:topic==='relations'?'Nommez une petite chose qui compte pour vous dans le lien, puis demandez ce qui compte pour l’autre.':'Choisissez une petite chose à commencer aujourd’hui. Ajustez après l’essai, sans attendre toutes les réponses.'}}
+  ];
+  const sections=roles.map(role=>{
+    const p=chart.planets.find(p=>p.id===role.id),signs=p.range?p.range.possibleSigns:[p.sign];
+    if(signs.length!==1)return {title:pick(role.title),text:pick({zh:`${p.name}在这一天可能位于${signs.map(s=>s.name).join('或')}。时间不足以确定，所以这里不替你选一个。${pick(role.prompt)}`,en:`${p.name} could be in ${signs.map(s=>s.name).join(' or ')} on this date, so no single sign is assigned. ${pick(role.prompt)}`,fr:`${p.name} peut être en ${signs.map(s=>s.name).join(' ou ')} ce jour-là ; aucun signe unique n’est retenu. ${pick(role.prompt)}`})};
+    const sign=signs[0],theme=EVERYDAY[locale][sign.index];
+    return {title:pick(role.title),text:pick({zh:`${pick(role.prompt)}\n${p.name}在${sign.name}，在占星的象征语言里，会让人联想到“${theme}”。看看这是否贴近你的真实经历；不贴近的部分无需套在自己身上。`,en:`${pick(role.prompt)}\n${p.name} in ${sign.name} symbolically suggests ${theme}. Compare that with your experience and leave aside what does not fit.`,fr:`${pick(role.prompt)}\n${p.name} en ${sign.name} évoque symboliquement le fait de ${theme}. Comparez cette piste à votre vécu, sans retenir ce qui ne vous correspond pas.`})};
   });
-  if(chart.ascendant) sections.push({title:locale==='zh'?'上升与宫位':locale==='en'?'Ascendant and houses':'Ascendant et maisons',text:locale==='zh'?`上升为${chart.ascendant.sign.name}，${chart.ascendant.degreeInSign.toFixed(2)}°。本盘采用整宫制：上升所在星座整体为第一宫，每个后续星座对应下一宫；中天保留为独立角点，不强制等于第十宫起点。`:locale==='en'?`The Ascendant is ${chart.ascendant.sign.name}, ${chart.ascendant.degreeInSign.toFixed(2)}°. Whole Sign houses place the entire rising sign in house 1. The MC is an independent angle and does not have to begin house 10.`:`L’Ascendant est en ${chart.ascendant.sign.name}, à ${chart.ascendant.degreeInSign.toFixed(2)}°. Les maisons en signes entiers placent tout le signe ascendant dans la maison 1. Le milieu du ciel reste un angle indépendant, sans être imposé au début de la maison 10.`});
-  return {mode:'symbolic-basic',title:locale==='zh'?'你的本命盘 · 基础象征解读':locale==='en'?'Your natal chart · basic symbolic reading':'Votre thème natal · lecture symbolique de base',
-    introduction:locale==='zh'?'行星位置由天文程序计算。以下文字是明确标注的基础象征参考，不是AI深度解读。':locale==='en'?'Planet positions are calculated by astronomy software. The text below is a labelled basic symbolic guide, not a deep AI reading.':'Les positions sont calculées par un moteur astronomique. Le texte ci-dessous est un repère symbolique de base, clairement identifié, et non une lecture approfondie par IA.',sections,
-    disclaimer:locale==='zh'?'占星是自我探索的象征工具，不是经过科学验证的性格诊断或未来预测。':locale==='en'?'Astrology is a symbolic tool for reflection, not a scientifically validated personality diagnosis or prediction.':'L’astrologie est un support symbolique de réflexion, pas un diagnostic de personnalité ni une prédiction validée scientifiquement.'};
+  return {mode:'symbolic-basic',title:pick({zh:'从日常生活，慢慢认识自己',en:'Get to know yourself through everyday life',fr:'Mieux vous connaître au quotidien'}),coreAnswer:core,
+    introduction:pick({zh:'以下为根据计算位置整理的基础参考，不是 AI 深入解读。',en:'These are basic prompts based on calculated positions, not a deep AI reading.',fr:'Ces premiers repères partent des positions calculées, sans lecture approfondie par IA.'}),sections,
+    actions:[pick({zh:'把最贴近你的一点记下来，选一件小事试一试，再回来看它是否真的有帮助。',en:'Write down the point that fits best, try one small change, then return to see whether it helped.',fr:'Notez la piste la plus juste pour vous, essayez un petit changement, puis revenez voir s’il vous a aidé·e.'})],
+    disclaimer:pick({zh:'占星是帮助反思的象征工具，不是经过科学验证的性格诊断或未来预测。',en:'Astrology is a symbolic tool for reflection, not a scientifically validated personality diagnosis or prediction.',fr:'L’astrologie est un support symbolique de réflexion, pas un diagnostic de personnalité ni une prédiction validée scientifiquement.'})};
 }
 
 module.exports={AstrologyError,normalizeInput,resolveBirth,calculateChart,calculateAngles,calculateAspects,basicReading,longitudeAt,motionAt};

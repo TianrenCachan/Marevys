@@ -148,3 +148,44 @@ test('DOM integration: language change preserves birth form and editing a city c
   p.fill('#astroCity','Paris');p.click('[data-astro="search"]');await until(()=>p.q('[data-astro="location"]'),'city results');p.click('[data-astro="location"]');assert.equal(p.q('#astroTimezone').value,'Europe/Paris');
   p.fill('#astroCity','Lyon');assert.equal(p.q('#astroTimezone').value,'');assert.equal(p.q('#astroLatitude').value,'');assert.equal(p.q('#astroLongitude').value,'');p.close();
 });
+
+test('DOM integration: rotating deck browses all 78 hidden indices and preserves manual selection order',async()=>{
+  const p=page();
+  p.w.startTarot();p.fill('#studioQuestion','How can I make a little more space for a personal project?');p.submit('#studioQuestionForm');
+  p.click('input[name="consent"]');p.submit('#studioDetailsForm');await until(()=>p.q('.view-draw'),'rotating draw');
+  assert(p.q('#readingStudio').classList.contains('tarot-night'),'Tarot uses the midnight studio throughout');
+  assert.equal(p.qa('.deck-card').length,11,'Only the visible arc is mounted initially');
+  assert.equal(p.q('.deck-grid'),null,'The full-deck grid is absent');
+  assert(p.qa('.deck-card img').every(img=>img.src===p.w.MAREVYS_ASSETS.tarotBack||img.getAttribute('src')===p.w.MAREVYS_ASSETS.tarotBack),'Every visible card stays face down');
+  const started=p.calls.find(call=>call.path==='/api/tarot'&&call.payload?.action==='start');
+  assert.equal(started.response.cards,undefined,'Server keeps all faces private before reveal');
+  const keys=key=>p.q('.deck-viewport').dispatchEvent(new p.w.KeyboardEvent('keydown',{key,bubbles:true,cancelable:true}));
+  const seen=new Set();for(let i=0;i<78;i++){seen.add(Number(p.q('.deck-card.at-center').dataset.pick));keys('ArrowRight');}
+  assert.equal(seen.size,78,'Every shuffled server index is reachable using arrows');
+  assert.equal(p.q('.deck-card.at-center').dataset.pick,'0','The deck wraps around');
+  await until(()=>p.qa('.deck-card').length===11,'departing carousel cards are removed');
+  p.click('.deck-card.at-center');keys('End');p.click('.deck-card.at-center');
+  p.click('[data-remove="0"]');p.click('.deck-card.at-center');p.click('.deck-card.at-center');
+  assert.equal(p.qa('.draw-slot.filled').length,3,'Removed card leaves its slot available for a new draw');
+  p.click('[data-action="reveal"]');await until(()=>p.q('.view-reveal'),'manual reveal');
+  const reveal=p.calls.find(call=>call.path==='/api/tarot'&&call.payload?.action==='reveal');
+  assert.deepEqual(reveal.payload.indices,[77,0,1],'Choice order, including removal, is sent to the real server unchanged');
+  assert.equal(new Set(reveal.response.cards.map(c=>c.id)).size,3);
+  assert.equal(p.qa('.revealed-card.face-up').length,0,'Faces await the deliberate reveal interaction');
+  p.click('[data-flip="0"]');assert.equal(p.qa('.revealed-card.face-up').length,1);
+  assert.equal(p.q('[data-action="interpret"]'),null,'Reading waits until all cards are turned');
+  p.close();
+});
+
+test('DOM integration: dragging the rotating deck does not accidentally select a card',async()=>{
+  const p=page();p.w.startTarot();p.fill('#studioQuestion','What should I keep in mind about my next step?');p.submit('#studioQuestionForm');
+  p.click('input[name="consent"]');p.submit('#studioDetailsForm');await until(()=>p.q('.view-draw'),'draw for drag');
+  const viewport=p.q('.deck-viewport');
+  const pointer=(type,x,y)=>{const event=new p.w.MouseEvent(type,{bubbles:true,cancelable:true,clientX:x,clientY:y,button:0});Object.defineProperty(event,'pointerId',{value:1});viewport.dispatchEvent(event);};
+  pointer('pointerdown',200,100);pointer('pointermove',97,102);pointer('pointerup',97,102);
+  assert.equal(p.q('.deck-card.at-center').dataset.pick,'3','A horizontal swipe turns the deck');
+  p.click('.deck-card.at-center');assert.equal(p.qa('.draw-slot.filled').length,0,'The click following a swipe is suppressed');
+  pointer('pointerdown',180,100);pointer('pointermove',179,150);pointer('pointerup',179,150);
+  assert.equal(p.q('.deck-card.at-center').dataset.pick,'3','Vertical page scrolling does not rotate the deck');
+  p.close();
+});

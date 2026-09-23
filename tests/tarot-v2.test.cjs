@@ -183,3 +183,25 @@ test('Astrology AI normalizes birth by recomputing server facts and preserves un
   assert(!JSON.stringify(input.reference).includes('made up'));
   assert.deepEqual(validateDeepResponse(answer(input), input), answer(input));
 });
+
+test('Synastry AI uses server comparisons, strips both birth records, and rejects invalid relationship modes', () => {
+  const birth={date:'1995-04-15',time:'12:30',timeUnknown:false,latitude:48.8566,longitude:2.3522,timezone:'Europe/Paris'};
+  const partnerBirth={date:'1992-07-10',time:'09:15',timeUnknown:false,latitude:31.2304,longitude:121.4737,timezone:'Asia/Shanghai'};
+  const body={schemaVersion:2,system:'ASTROLOGY',mode:'synastry',locale:'zh',birth,partnerBirth,relationshipType:'romantic',relationshipStage:'getting-to-know',question:'我们容易在哪里产生误会？',chart:{crossAspects:[{fake:true}]}};
+  const input=normalizeDeepRequest(body,env,fixedNow);
+  assert.equal(input.reference.mode,'synastry');
+  assert.equal(input.userContent.question,body.question);
+  assert.equal(input.userContent.relationshipStage,'getting-to-know');
+  for(const p of [input.reference.chart.personA,input.reference.chart.personB]) {
+    for(const key of ['birth','instantUtc','intervalUtc','utcOffset'])assert.equal(p[key],undefined,key);
+    assert(p.planets.length>=7);
+  }
+  const encoded=JSON.stringify(input.reference);
+  assert(!encoded.includes('1995-04-15'));assert(!encoded.includes('1992-07-10'));assert(!encoded.includes('fake'));
+  assert.deepEqual(validateDeepResponse(answer(input),input),answer(input));
+  const unknown=normalizeDeepRequest({...body,partnerBirth:{...partnerBirth,timeUnknown:true,time:null}},env,fixedNow);
+  assert.equal(unknown.reference.chart.personB.timeKnown,false);
+  assert.deepEqual(unknown.reference.chart.crossAspects,[]);
+  assert.throws(()=>normalizeDeepRequest({...body,mode:'composite'},env,fixedNow),/INVALID_MODE/);
+  assert.throws(()=>normalizeDeepRequest({...body,relationshipType:'invented'},env,fixedNow),/INVALID_RELATIONSHIP_TYPE/);
+});

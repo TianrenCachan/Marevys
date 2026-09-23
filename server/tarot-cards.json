@@ -26,7 +26,7 @@
       "fr": "Le désir d'échapper à un engagement peut prendre l'apparence de la liberté. Distinguez un nouveau départ utile d'une responsabilité laissée en suspens.",
       "zh": "想摆脱责任的冲动可能被理解成追求自由。先区分值得尝试的新开始，以及尚未处理就想离开的旧问题。"
     },
-    "imageKey": "tarotClassic00",
+    "imageKey": "tarot00",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -71,7 +71,7 @@
       "fr": "Les capacités peuvent être dispersées, inutilisées ou employées pour maîtriser l'image donnée aux autres. Vérifiez si les promesses se traduisent en actes.",
       "zh": "能力可能尚未发挥，也可能用在包装形象或控制他人的反应上。需要检验承诺是否有真实行动支持，不凭这张牌断定有人欺骗。"
     },
-    "imageKey": "tarotClassic01",
+    "imageKey": "tarot01",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -115,7 +115,7 @@
       "fr": "Vos impressions peuvent être ignorées, ou la réflexion doit désormais retrouver la vie quotidienne. Confrontez votre ressenti au dialogue et aux faits observables.",
       "zh": "可能忽略了自己的感受，也可能已经独处思考太久，需要回到现实验证。直觉是值得探索的线索，不能直接当成事实。"
     },
-    "imageKey": "tarotClassic02",
+    "imageKey": "tarot02",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -158,7 +158,7 @@
       "fr": "L'envie de prendre soin peut dépasser les ressources disponibles. Examinez les besoins négligés, le soutien fragilisé ou des attentes difficiles à vivre au quotidien.",
       "zh": "理想中的照顾与实际能够付出的力量可能不一致。检查被忽略的需求、紧张的支持关系，以及难以落地的期待。"
     },
-    "imageKey": "tarotClassic03",
+    "imageKey": "tarot03",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -196,7 +196,7 @@
       "fr": "Le cadre peut manquer de suivi, ou l'autorité s'assouplir sans responsabilité claire. Repérez la décision ou la discipline quotidienne qui est évitée.",
       "zh": "框架可能缺乏执行，或规则放松后没有明确责任。应找出迟迟回避的决定和需要恢复的日常自律。"
     },
-    "imageKey": "tarotClassic04",
+    "imageKey": "tarot04",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -234,7 +234,7 @@
       "fr": "Remettre en question les règles reçues peut ouvrir une voie personnelle. Évitez de remplacer une autorité incontestée par une autre et assumez vos choix.",
       "zh": "重新审视既有规则，可能帮助你建立自己的方向。但若只是换一个对象依赖，就仍未真正为自己的判断负责。"
     },
-    "imageKey": "tarotClassic05",
+    "imageKey": "tarot05",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -272,7 +272,7 @@
       "fr": "Les attentes peuvent dépasser la réalité d'une relation ou d'un choix. Examinez les valeurs contradictoires et les engagements inachevés avant de chercher une nouvelle étape.",
       "zh": "对下一阶段的期待可能超过现实基础。先看价值冲突与尚未完成的承诺，不要假定换一个关系或身份就能解决问题。"
     },
-    "imageKey": "tarotClassic06",
+    "imageKey": "tarot06",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -314,7 +314,7 @@
       "fr": "Des tensions non résolues peuvent disperser l'action. Ralentissez pour les nommer et choisir une manière concrète de les traiter.",
       "zh": "尚未处理的矛盾可能让行动失去方向。先辨认哪些情绪和目标互相冲突，再调整处理方式，而不是不断加大控制。"
     },
-    "imageKey": "tarotClassic07",
+    "imageKey": "tarot07",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -352,7 +352,7 @@
       "fr": "Le doute ou la peur de perdre le contrôle peuvent rendre les difficultés écrasantes. Réduisez la pression et reconstruisez la confiance avec du soutien et de petites étapes.",
       "zh": "自我怀疑或害怕失控，可能让挑战显得难以应付。需要降低压力、获得支持，并通过可以完成的小步骤恢复信心。"
     },
-    "imageKey": "tarotClassic08",
+    "imageKey": "tarot08",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -392,7 +392,7 @@
       "fr": "L'activité peut masquer la solitude, ou le retrait durer au-delà de son utilité. Voyez si vous avez besoin d'un vrai recul ou de renouer le contact.",
       "zh": "忙碌可能用来回避孤独，也可能已经退缩太久。区分自己需要的是有效独处，还是重新建立与他人的联系。"
     },
-    "imageKey": "tarotClassic09",
+    "imageKey": "tarot09",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -434,7 +434,7 @@
       "fr": "Un tournant difficile ou un schéma répétitif appelle une autre réponse. Distinguez ce qui peut être influencé de ce qui demande une adaptation.",
       "zh": "不顺利的转折或反复出现的模式，需要新的应对方式。分清可以影响的部分和必须适应的部分，不把暂时受阻等同于持续厄运。"
     },
-    "imageKey": "tarotClassic10",
+    "imageKey": "tarot10",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -476,7 +476,7 @@
       "fr": "Un traitement inégal, les reproches ou des informations incomplètes peuvent fausser la décision. Clarifiez les critères et les responsabilités avant de conclure.",
       "zh": "不平等的对待、互相指责或信息缺失，可能影响判断。应先澄清标准与各方责任，避免把困难简单归为某个人的过错。"
     },
-    "imageKey": "tarotClassic11",
+    "imageKey": "tarot11",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -516,7 +516,7 @@
       "fr": "L'attente peut devenir résistance, ou le sacrifice servir surtout les attentes d'autrui. Demandez ce que cette pause vous apprend et ce qui permettrait d'y mettre fin.",
       "zh": "等待可能已经变成抗拒，也可能为了迎合期待而牺牲自己。需要明确暂停究竟带来什么认识，以及何时可以结束。"
     },
-    "imageKey": "tarotClassic12",
+    "imageKey": "tarot12",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -555,7 +555,7 @@
       "fr": "La peur du changement peut maintenir un schéma épuisé. Nommez ce que vous protégez et le coût de cette immobilité avant d'organiser une transition.",
       "zh": "对改变的害怕可能维持着已经失去作用的模式。先理解自己在保护什么，以及维持现状的代价，再寻找能够承受的过渡方式。"
     },
-    "imageKey": "tarotClassic13",
+    "imageKey": "tarot13",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -597,7 +597,7 @@
       "fr": "Les excès ou des rythmes incompatibles peuvent déséquilibrer la situation. Retrouvez un rythme durable et essayez un ajustement plutôt qu'un équilibre parfait immédiat.",
       "zh": "过度投入或不一致的节奏，可能破坏整体协调。先恢复可持续的节奏，每次调整一个环节，不要求立刻达到完美平衡。"
     },
-    "imageKey": "tarotClassic14",
+    "imageKey": "tarot14",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -640,7 +640,7 @@
       "fr": "Reconnaître un attachement limitant peut amorcer un détachement. Comprendre le mécanisme précède l'idée que le lien serait déjà rompu.",
       "zh": "看见限制自己的依赖，是尝试松绑的开始。意识到问题并不等于已经摆脱，需要理解模式并逐步改变具体行为。"
     },
-    "imageKey": "tarotClassic15",
+    "imageKey": "tarot15",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -682,7 +682,7 @@
       "fr": "Un changement nécessaire peut être contenu ou repoussé, laissant la tension intacte. Voyez ce qui peut être modifié volontairement avant qu'elle ne s'accentue.",
       "zh": "必要的改变可能被压住或拖延，表面平静却仍有紧张。可以先主动调整能够处理的部分，减少继续维持脆弱结构的代价。"
     },
-    "imageKey": "tarotClassic16",
+    "imageKey": "tarot16",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -724,7 +724,7 @@
       "fr": "L'inspiration peut sembler lointaine et le découragement réduire l'horizon. Retrouvez des pratiques qui vous soutiennent, sans vous imposer un optimisme immédiat.",
       "zh": "灵感可能暂时难以接近，失望也会缩小对可能性的感知。需要重新接触支持自己的活动与关系，不强迫自己马上乐观。"
     },
-    "imageKey": "tarotClassic17",
+    "imageKey": "tarot17",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -766,7 +766,7 @@
       "fr": "Une peur jusque-là tue peut demander de l'attention ou devenir plus facile à nommer. En parler peut aider, sans rendre chaque soupçon exact.",
       "zh": "之前难以表达的害怕可能浮现，或开始变得可以理解。说清楚有助于处理，但不意味着这些担心已经被现实证实。"
     },
-    "imageKey": "tarotClassic18",
+    "imageKey": "tarot18",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -808,7 +808,7 @@
       "fr": "Les possibilités positives demeurent, mais le doute ou la comparaison peuvent les assombrir. Explorez la peur de manquer de reconnaissance, de soutien ou d'occasions.",
       "zh": "积极可能仍然存在，但怀疑和比较会遮住满足感。可以检视对认可、支持或机会不足的担心，而不是否定已有进展。"
     },
-    "imageKey": "tarotClassic19",
+    "imageKey": "tarot19",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -851,7 +851,7 @@
       "fr": "Une décision importante peut être reportée pour préserver le familier. Revenez à la question laissée ouverte, sans transformer la réflexion en condamnation de soi.",
       "zh": "为了保留熟悉感，可能迟迟不回应已经意识到的改变。应重新面对悬而未决的问题，同时避免把反省变成持续责备自己。"
     },
-    "imageKey": "tarotClassic20",
+    "imageKey": "tarot20",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -897,7 +897,7 @@
       "fr": "Un accomplissement apparent peut manquer d'intégration ou d'appuis durables. Repérez ce qui reste inachevé sans dévaloriser l'ensemble ni précipiter le prochain cycle.",
       "zh": "看似完成的阶段，可能仍有尚未整合的部分或缺少持续支撑。找到具体缺口，不必否定全部成果，也不要匆忙转向下一个循环。"
     },
-    "imageKey": "tarotClassic21",
+    "imageKey": "tarot21",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -939,7 +939,7 @@
       "fr": "L'élan existe, mais les engagements inachevés ou la dispersion peuvent retarder le départ. Levez un obstacle et choisissez ce qui peut réellement recevoir votre attention.",
       "zh": "想开始的动力仍在，但未完成的事务或分散的精力可能造成拖延。先处理一个阻碍，为新计划留出实际空间。"
     },
-    "imageKey": "tarotClassic22",
+    "imageKey": "tarotOriginal22",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -978,7 +978,7 @@
       "fr": "L'insatisfaction peut coexister avec la peur de quitter une position sûre. Voyez si l'évaluation répétée est devenue une manière de repousser la décision.",
       "zh": "对现状不满，却又担心离开安全区域。需要辨别反复权衡是否已经成为拖延决定的方式。"
     },
-    "imageKey": "tarotClassic23",
+    "imageKey": "tarotOriginal23",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1017,7 +1017,7 @@
       "fr": "Le développement peut ralentir parce que le choix initial ou la méthode doit être revu. Utilisez les nouvelles informations pour réexaminer la direction.",
       "zh": "进展受阻可能提醒你重新审视最初的选择或方法。根据新信息调整，比单纯延长等待更有帮助。"
     },
-    "imageKey": "tarotClassic24",
+    "imageKey": "tarotOriginal24",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1056,7 +1056,7 @@
       "fr": "Le cadre peut être provisoire, instable ou difficile à investir. Clarifiez ce qui permettrait de vous sentir à votre place avant d'attendre la suite.",
       "zh": "环境可能暂时、不稳定，或让人难以产生归属感。先理解安定与参与需要哪些条件，再期待关系或项目继续成长。"
     },
-    "imageKey": "tarotClassic25",
+    "imageKey": "tarotOriginal25",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1095,7 +1095,7 @@
       "fr": "La résistance à un autre point de vue peut s'assouplir. Profitez-en pour comprendre le désaccord et modifier la coopération, sans seulement faire taire la tension.",
       "zh": "对不同看法的抵触可能开始松动。可以借机理解争执并改变合作方式，而不是只求表面不再争吵。"
     },
-    "imageKey": "tarotClassic26",
+    "imageKey": "tarotOriginal26",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1134,7 +1134,7 @@
       "fr": "La confiance peut dépendre du regard extérieur, ou la pression pousser à abandonner trop tôt. Examinez les faits avant de confondre le doute avec l'échec.",
       "zh": "自信可能过度依赖外界认可，也可能因压力而过早放弃。先看真实进展，不把怀疑和暂时缺少掌声直接当成失败。"
     },
-    "imageKey": "tarotClassic27",
+    "imageKey": "tarotOriginal27",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1177,7 +1177,7 @@
       "fr": "La manière actuelle de résister peut dépasser vos forces. Revoyez une position ou une méthode afin de défendre vos besoins sans répondre à chaque provocation.",
       "zh": "目前的抗争方式可能超出可用精力。需要调整旧立场或方法，让维护需求不再等于应付所有挑战。"
     },
-    "imageKey": "tarotClassic28",
+    "imageKey": "tarotOriginal28",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1216,7 +1216,7 @@
       "fr": "L'enthousiasme peut manquer d'appui concret, ou des obstacles non résolus couper l'élan. Vérifiez le calendrier, les échanges et le travail restant avant d'accélérer.",
       "zh": "热情可能缺少落地条件，未解决的障碍也会中断进展。先核对时间、沟通与剩余工作，再追求速度。"
     },
-    "imageKey": "tarotClassic29",
+    "imageKey": "tarotOriginal29",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1255,7 +1255,7 @@
       "fr": "La peur ou l'épuisement peut rendre l'ancienne défense inefficace. Cherchez une autre approche et du soutien, sans assimiler l'adaptation à une faiblesse.",
       "zh": "害怕或疲惫可能让旧有防御方式失去作用。可以寻求不同做法与支持，不把调整方式视作软弱。"
     },
-    "imageKey": "tarotClassic30",
+    "imageKey": "tarotOriginal30",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1298,7 +1298,7 @@
       "fr": "La surcharge peut repousser un besoin personnel non traité. Alléger les tâches aide si vous comprenez aussi comment cette charge s'est accumulée.",
       "zh": "过度忙碌可能正在掩盖未处理的个人需求。除了减少任务，还要理解负担如何积累，否则容易再次接下同样的重量。"
     },
-    "imageKey": "tarotClassic31",
+    "imageKey": "tarotOriginal31",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1339,7 +1339,7 @@
       "fr": "La préparation ou l'enthousiasme peut rester sans suite, et les nouvelles tarder. Choisissez un petit engagement concret pour éprouver la durée de cet intérêt.",
       "zh": "构想或兴奋感可能尚未变成行动，也可能在等待迟来的消息。用一个小的落实步骤检验这份兴趣能否持续。"
     },
-    "imageKey": "tarotClassic32",
+    "imageKey": "tarotOriginal32",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1378,7 +1378,7 @@
       "fr": "La précipitation ou la recherche constante de nouveauté peut interrompre ce qui est commencé. Laissez la réflexion rejoindre l'action et prenez un engagement tenable.",
       "zh": "急躁或不断追求新鲜感，可能让已开始的事情难以完成。让思考跟上行动，并选择一个能够兑现的承诺。"
     },
-    "imageKey": "tarotClassic33",
+    "imageKey": "tarotOriginal33",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1418,7 +1418,7 @@
       "fr": "Le doute peut se traduire par la rivalité, des conseils imposés ou une perte d'élan. Reconstruisez votre confiance sans devoir diriger tout votre entourage.",
       "zh": "自我怀疑可能表现为竞争、强势建议或失去热情。需要恢复自身信心，不必通过控制周围的人来证明能力。"
     },
-    "imageKey": "tarotClassic34",
+    "imageKey": "tarotOriginal34",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1457,7 +1457,7 @@
       "fr": "Les possibilités futures peuvent détourner des engagements présents, ou l'élan dépasser les forces disponibles. Réévaluez les promesses tenables et la décision évitée.",
       "zh": "注意力可能过度投向未来机会，忽略眼前责任，或冲劲已经超过精力。需要重新评估能兑现的承诺与回避的决定。"
     },
-    "imageKey": "tarotClassic35",
+    "imageKey": "tarotOriginal35",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1499,7 +1499,7 @@
       "fr": "La déception ou l'épuisement affectif peut rendre l'accueil difficile. Accordez une place à vos besoins avant d'attendre d'un nouveau lien qu'il comble tout le manque.",
       "zh": "失望或情感消耗，可能让人难以接受新的连接。先照顾内在需要，不把填补全部空缺的任务交给一段新关系。"
     },
-    "imageKey": "tarotClassic36",
+    "imageKey": "tarotOriginal36",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1542,7 +1542,7 @@
       "fr": "La peur, un investissement inégal ou une lutte de contrôle peut fragiliser le lien. Examinez les échanges sans conclure que la relation doit se terminer.",
       "zh": "害怕、不对等的投入或控制拉扯，可能干扰连接。需要看双方如何互动，不能仅凭这张牌认定关系必然结束。"
     },
-    "imageKey": "tarotClassic37",
+    "imageKey": "tarotOriginal37",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1581,7 +1581,7 @@
       "fr": "Le groupe peut décevoir vos attentes, ou la joie partagée rester passagère. Clarifiez la place de chacun : la carte ne prouve pas une infidélité.",
       "zh": "群体支持可能不如预期，或相聚的满足比较短暂。需要厘清参与和期待，不可把这张牌直接当作存在第三者的证据。"
     },
-    "imageKey": "tarotClassic38",
+    "imageKey": "tarotOriginal38",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1620,7 +1620,7 @@
       "fr": "Une pause intérieure peut s'achever et laisser place à une nouvelle participation. Cherchez une autre manière de vous engager au lieu d'attendre du familier qu'il change.",
       "zh": "沉思的阶段可能接近结束，可以重新参与现实。与其期待旧选择自动带来新鲜感，不如探索不同的投入方式。"
     },
-    "imageKey": "tarotClassic39",
+    "imageKey": "tarotOriginal39",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1659,7 +1659,7 @@
       "fr": "Vous pouvez devenir plus disponible au soutien et moins retenu par une perte passée. Ce mouvement peut rester progressif sans effacer ce qui a compté.",
       "zh": "可能开始愿意接受支持，并逐渐松开过去失落的影响。恢复可以缓慢进行，不必否认那段经历曾经重要。"
     },
-    "imageKey": "tarotClassic40",
+    "imageKey": "tarotOriginal40",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1698,7 +1698,7 @@
       "fr": "Dépasser un ancien schéma peut demander de moins s'appuyer sur la sécurité connue. Revisitez le passé pour qu'il éclaire la suite sans la décider à votre place.",
       "zh": "走出旧模式，可能需要减少对熟悉安全感的依赖。回顾过去是为了理解自己，不是让过去替现在作决定。"
     },
-    "imageKey": "tarotClassic41",
+    "imageKey": "tarotOriginal41",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1737,7 +1737,7 @@
       "fr": "Une décision peut transformer une possibilité imaginée en action. Vérifiez que la réussite concrète répond à un besoin important plutôt que de l'éviter.",
       "zh": "可以开始把某个设想变成行动。但也要确认，追求实际成果是在回应重要需求，而不是继续绕开它。"
     },
-    "imageKey": "tarotClassic42",
+    "imageKey": "tarotOriginal42",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1776,7 +1776,7 @@
       "fr": "La difficulté peut être de rester par peur ou de partir avant d'avoir traité ce qui peut l'être. Le contexte permet de distinguer ces deux lectures.",
       "zh": "可能因为害怕而留下，也可能尚未处理可改善之处就急着离开。要结合背景辨别：你正在靠近什么，又在逃离什么。"
     },
-    "imageKey": "tarotClassic43",
+    "imageKey": "tarotOriginal43",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1815,7 +1815,7 @@
       "fr": "Un résultat agréable en apparence peut laisser un besoin intérieur sans réponse. Définissez votre satisfaction avant de chercher davantage d'approbation ou de plaisir immédiat.",
       "zh": "外表令人满意的结果，可能没有回应内在需求。需要先理解自己的满足来自哪里，再继续追求认可、拥有或即时享受。"
     },
-    "imageKey": "tarotClassic44",
+    "imageKey": "tarotOriginal44",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1854,7 +1854,7 @@
       "fr": "La distance ou la compétition peut fragiliser le sentiment d'appartenance. Explorez une expression plus honnête des besoins personnels et des responsabilités communes.",
       "zh": "疏离或竞争可能削弱原本重要的归属感。需要更诚实地表达个人需求，也重新协商共同责任。"
     },
-    "imageKey": "tarotClassic45",
+    "imageKey": "tarotOriginal45",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1895,7 +1895,7 @@
       "fr": "Une nouvelle attendue peut décevoir ou tarder et rendre les sentiments incertains. Rassemblez les faits avant de vous engager sur une réponse imaginée.",
       "zh": "期待的消息可能迟到或不如预期，让感受难以稳定。先收集已知信息，不围绕想象中的回应作出承诺。"
     },
-    "imageKey": "tarotClassic46",
+    "imageKey": "tarotOriginal46",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1934,7 +1934,7 @@
       "fr": "Une proposition idéalisée peut manquer de suite ou d'engagement clair. Distinguez les belles paroles de ce que la personne est prête à maintenir.",
       "zh": "动人的提议可能缺少持续行动或明确承诺。需要区分表达得很美好的部分，以及对方真正能够持续承担的部分。"
     },
-    "imageKey": "tarotClassic47",
+    "imageKey": "tarotOriginal47",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -1974,7 +1974,7 @@
       "fr": "Une blessure passée ou un soutien perdu peut colorer les émotions présentes. Retrouvez des limites et des liens fiables avant de prendre chaque réaction pour toute la réalité.",
       "zh": "过去的受伤或支持中断，可能影响当下感受。需要恢复情感边界与可靠联系，不把每次情绪反应都当作完整事实。"
     },
-    "imageKey": "tarotClassic48",
+    "imageKey": "tarotOriginal48",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2013,7 +2013,7 @@
       "fr": "La peur ou une blessure peut se traduire par le contrôle affectif, le retrait ou une influence indirecte. Examinez les comportements sans enfermer quelqu'un dans un portrait.",
       "zh": "害怕或未处理的受伤，可能表现为情绪控制、退缩或间接施压。应观察具体行为，而不凭牌面给某个人定性。"
     },
-    "imageKey": "tarotClassic49",
+    "imageKey": "tarotOriginal49",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2055,7 +2055,7 @@
       "fr": "Les idées peuvent être confuses, irréalistes ou sans objectif clair. Revoyez les hypothèses et les informations disponibles avant de conclure avec certitude.",
       "zh": "想法可能混乱、脱离现实，或缺少明确目标。作出确定判断前，需要重新检查前提与已经掌握的信息。"
     },
-    "imageKey": "tarotClassic50",
+    "imageKey": "tarotOriginal50",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2094,7 +2094,7 @@
       "fr": "Les émotions contenues ou la peur peuvent compliquer le choix. Nommez ce que vous évitez de ressentir avant d'ajouter des options et des arguments.",
       "zh": "被压住的情绪或害怕，可能让选择更加困难。与其不断增加分析，不如先承认自己一直不愿面对的感受。"
     },
-    "imageKey": "tarotClassic51",
+    "imageKey": "tarotOriginal51",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2133,7 +2133,7 @@
       "fr": "Une douleur non exprimée peut continuer à peser sur le présent. Reconnaissez ce qui a été retenu et cherchez une manière sûre de le partager.",
       "zh": "尚未表达的伤痛可能持续占用精力，并影响当下。需要承认压住的感受，寻找可以安全表达的方式。"
     },
-    "imageKey": "tarotClassic52",
+    "imageKey": "tarotOriginal52",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2176,7 +2176,7 @@
       "fr": "Une période de retrait peut s'achever et permettre un retour au quotidien. Mettez les apprentissages de cette pause en pratique à un rythme tenable.",
       "zh": "退隐阶段可能接近结束，可以逐渐回到日常行动。把暂停期间获得的理解，以可持续的节奏应用出来。"
     },
-    "imageKey": "tarotClassic53",
+    "imageKey": "tarotOriginal53",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2215,7 +2215,7 @@
       "fr": "Après le conflit, chacun peut être plus disponible pour examiner sa part. Le dialogue aide s'il traite le mécanisme plutôt que la dernière accusation.",
       "zh": "冲突之后，可能更愿意反省各自的参与方式。有效沟通需要触及重复模式，而不只围绕最近一次指责。"
     },
-    "imageKey": "tarotClassic54",
+    "imageKey": "tarotOriginal54",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2258,7 +2258,7 @@
       "fr": "Un changement peut rouvrir une question non réglée. Une conversation difficile peut faire avancer lorsque l'évitement a maintenu le problème.",
       "zh": "变化可能重新触及尚未处理的问题。若回避一直维持着困扰，一次困难但必要的沟通，也可能是前进的一部分。"
     },
-    "imageKey": "tarotClassic55",
+    "imageKey": "tarotOriginal55",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2297,7 +2297,7 @@
       "fr": "Une tactique habituelle peut ne plus fonctionner, surtout si elle protège une hypothèse inconfortable. Cherchez un autre regard et vérifiez votre explication.",
       "zh": "惯用的方法可能已经失效，尤其当它维持着不愿面对的假设时。可以听取不同意见，检验一直依赖的解释。"
     },
-    "imageKey": "tarotClassic56",
+    "imageKey": "tarotOriginal56",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2340,7 +2340,7 @@
       "fr": "Une croyance limitante peut se relâcher et rendre les options plus visibles. Traduisez cette compréhension en un choix possible, sans attendre la disparition de tous les obstacles.",
       "zh": "限制自己的信念可能开始松动，让选择更清楚。将新的认识落实为一个可行决定，不要求所有障碍立刻消失。"
     },
-    "imageKey": "tarotClassic57",
+    "imageKey": "tarotOriginal57",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2379,7 +2379,7 @@
       "fr": "Des peurs cachées peuvent devenir plus faciles à reconnaître et à partager. Les rêves ou les pensées récurrentes offrent des pistes de réflexion, pas des preuves de l'avenir.",
       "zh": "隐藏的害怕可能变得可以辨认和表达。梦境或反复出现的念头可以帮助反思，但不是某个事件必然发生的证据。"
     },
-    "imageKey": "tarotClassic58",
+    "imageKey": "tarotOriginal58",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2418,7 +2418,7 @@
       "fr": "Un répit après une difficulté ouvre une autre direction. Profitez-en pour modifier le mécanisme sous-jacent plutôt que de compter seulement sur le soulagement.",
       "zh": "困难后的喘息提供了调整方向的空间。需要趁机改变原有模式，而不假定一时缓解会自动持续。"
     },
-    "imageKey": "tarotClassic59",
+    "imageKey": "tarotOriginal59",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2463,7 +2463,7 @@
       "fr": "Une nouvelle peut tarder, être mal vérifiée ou circuler hors contexte. Vérifiez le message et reliez la réflexion aux actes avant de diffuser une interprétation.",
       "zh": "消息可能迟到、缺少核实或被脱离背景传播。应先验证信息，并让思考对应行动，再转述某种判断。"
     },
-    "imageKey": "tarotClassic60",
+    "imageKey": "tarotOriginal60",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2502,7 +2502,7 @@
       "fr": "L'impatience ou la dispersion peut produire beaucoup d'action sans progrès utile. Revoyez le plan et ses conséquences avant de vouloir rattraper le temps en accélérant.",
       "zh": "急躁或思路散乱，可能造成大量行动却没有有效进展。应先复核计划与后果，不靠继续加速来弥补焦虑。"
     },
-    "imageKey": "tarotClassic61",
+    "imageKey": "tarotOriginal61",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2546,7 +2546,7 @@
       "fr": "Une ancienne blessure peut transformer le discernement en méfiance ou en exigences impossibles. Distinguez une limite utile d'une critique qui écarte toute vulnérabilité.",
       "zh": "旧伤可能让敏锐判断变成怀疑、冷淡或无法达到的标准。要区分必要辨别，以及用批评阻止一切亲近的防御。"
     },
-    "imageKey": "tarotClassic62",
+    "imageKey": "tarotOriginal62",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2585,7 +2585,7 @@
       "fr": "L'assurance intellectuelle peut masquer un raisonnement incohérent, un contrôle dur ou des idées sans suite. Demandez des faits et des actes conformes aux critères annoncés.",
       "zh": "思维上的自信可能掩盖推理不一致、严厉控制或缺乏落实。需要明确证据，以及符合宣称标准的实际行为。"
     },
-    "imageKey": "tarotClassic63",
+    "imageKey": "tarotOriginal63",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2637,7 +2637,7 @@
       "fr": "Une occasion peut échapper faute de conditions concrètes réunies. Revoyez les moyens et la préparation avant de compter seulement sur l'envie de commencer.",
       "zh": "有价值的机会可能因实际条件不足而难以把握。需要复核资源与准备程度，不把愿望本身当作已经具备条件。"
     },
-    "imageKey": "tarotClassic64",
+    "imageKey": "tarotOriginal64",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2681,7 +2681,7 @@
       "fr": "Il peut ne plus être possible de maintenir tous les engagements. Choisissez ce qui doit être réduit ou laissé de côté pour rendre l'effort utile.",
       "zh": "可能已经无法同时维持所有承诺。需要决定减少或放下什么，让有限投入能够产生有效结果。"
     },
-    "imageKey": "tarotClassic65",
+    "imageKey": "tarotOriginal65",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2729,7 +2729,7 @@
       "fr": "Une occasion d'apprendre peut être négligée ou l'effort interrompu trop tôt. Repérez la préparation, le retour ou l'engagement qui manque.",
       "zh": "学习机会可能被忽略，或努力在能力形成前就中断。需要找到缺少的准备、反馈与持续投入，而不只依靠天赋。"
     },
-    "imageKey": "tarotClassic66",
+    "imageKey": "tarotOriginal66",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2773,7 +2773,7 @@
       "fr": "Le contrôle peut se relâcher par générosité ou par manque de cadre. Le contexte indique si cette ouverture libère ou laisse des besoins essentiels sans appui.",
       "zh": "控制可能通过慷慨而松开，也可能是原有结构正在失去稳定。要结合背景区分：这种放手是在释放空间，还是让重要需求失去支撑。"
     },
-    "imageKey": "tarotClassic67",
+    "imageKey": "tarotOriginal67",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2817,7 +2817,7 @@
       "fr": "Une possibilité de soutien ou de changement peut apparaître lorsqu'une contrainte se relâche. Accueillir une autre approche peut compter davantage que tout porter seul.",
       "zh": "限制松动后，可能出现新的支持与选择。接受不同做法，可能比证明自己能够独自承担一切更有帮助。"
     },
-    "imageKey": "tarotClassic68",
+    "imageKey": "tarotOriginal68",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2865,7 +2865,7 @@
       "fr": "Un échange déséquilibré peut donner davantage de contrôle à l'un des côtés. Revoyez les attentes et les limites avant de donner au-delà de vos possibilités.",
       "zh": "失衡的交换或不稳定的安排，可能让一方拥有更多控制。需要重新讨论期待与边界，避免持续超出能力地付出。"
     },
-    "imageKey": "tarotClassic69",
+    "imageKey": "tarotOriginal69",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2909,7 +2909,7 @@
       "fr": "L'insatisfaction peut durer parce que l'activité remplace l'évaluation, ou que la réflexion devient attente. Identifiez le cas et fixez un point de réexamen ou d'action.",
       "zh": "不满可能来自忙碌挤掉评估，也可能因为思考太久未再行动。先辨别属于哪种情况，再明确复盘或落实的节点。"
     },
-    "imageKey": "tarotClassic70",
+    "imageKey": "tarotOriginal70",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -2953,7 +2953,7 @@
       "fr": "L'effort peut manquer de compétence, de régularité ou d'intérêt pour le travail. Revoyez ce qui doit être appris et le sens auquel vous pouvez vous engager.",
       "zh": "投入可能缺少技能、持续性，或对工作本身已经没有兴趣。需要重新确认应学习什么，以及目标是否仍值得承诺。"
     },
-    "imageKey": "tarotClassic71",
+    "imageKey": "tarotOriginal71",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -3001,7 +3001,7 @@
       "fr": "L'effort peut aller vers une priorité qui laisse peu de place à l'essentiel. Revoyez le lien entre le travail quotidien et la vie que vous cherchez à construire.",
       "zh": "精力可能投入在不合适的重点上，让真正重视的生活没有空间。需要重新连接每天的工作与希望建立的生活方式。"
     },
-    "imageKey": "tarotClassic72",
+    "imageKey": "tarotOriginal72",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -3045,7 +3045,7 @@
       "fr": "Un cadre apparemment établi peut manquer de bases fiables. Vérifiez sa continuité et les engagements partagés avant de compter sur son apparente solidité.",
       "zh": "看似成熟稳定的安排，可能缺乏真正可靠的基础。需要核实持续性与共同承诺，不只依靠外表上的稳固感。"
     },
-    "imageKey": "tarotClassic73",
+    "imageKey": "tarotOriginal73",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -3092,7 +3092,7 @@
       "fr": "Les changements de direction ou la distraction peuvent fragiliser l'apprentissage. Revenez à une tâche réalisable et choisissez si vous souhaitez poursuivre cette voie.",
       "zh": "反复换方向或注意力分散，可能削弱学习承诺。先回到一项能够完成的任务，再决定是否真正愿意继续这条路。"
     },
-    "imageKey": "tarotClassic74",
+    "imageKey": "tarotOriginal74",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -3136,7 +3136,7 @@
       "fr": "L'engagement peut devenir étroit, distant ou difficile à tenir. Voyez si la routine soutient votre but ou remplace une valeur personnelle réduite aux résultats.",
       "zh": "投入可能变得狭窄、疏离或难以持续。需要检视日常惯例是否仍服务于目标，以及是否把自我价值完全绑定在成就上。"
     },
-    "imageKey": "tarotClassic75",
+    "imageKey": "tarotOriginal75",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -3182,7 +3182,7 @@
       "fr": "L'insécurité peut orienter vers le statut ou les biens au détriment des besoins quotidiens. Revenez aux gestes de soin et aux conditions qui vous stabilisent.",
       "zh": "缺乏安全感可能让注意力过度转向地位或拥有，却忽略日常需求。需要回到具体照顾与让自己安定的生活条件。"
     },
-    "imageKey": "tarotClassic76",
+    "imageKey": "tarotOriginal76",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",
@@ -3226,7 +3226,7 @@
       "fr": "Le désir de confort, d'influence ou de résultats rapides peut dépasser le bon sens. Examinez les conditions, l'effort et la responsabilité derrière une promesse séduisante.",
       "zh": "对舒适、影响力或快速成果的追求，可能超过务实判断。需要查看诱人承诺背后的条件、真实投入与责任安排。"
     },
-    "imageKey": "tarotClassic77",
+    "imageKey": "tarotOriginal77",
     "sourceRefs": [
       {
         "sourceId": "tarot_already",

@@ -22,7 +22,7 @@ const files={
 };
 for(let number=5;number<=24;number++)files['runeStoneBack'+number]='rune-stone-back-'+String(number).padStart(2,'0')+'.webp';
 for(let number=0;number<=21;number++)files['tarot'+String(number).padStart(2,'0')]='tarot-'+String(number).padStart(2,'0')+'.webp';
-for(let number=0;number<=77;number++)files['tarotClassic'+String(number).padStart(2,'0')]='tarotClassic'+String(number).padStart(2,'0')+'.webp';
+for(let number=22;number<=77;number++)files['tarotOriginal'+String(number).padStart(2,'0')]='tarot-original-'+String(number).padStart(2,'0')+'.webp';
 const embedded={};
 const mime={'.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png'};
 for(const [key,file] of Object.entries(files)){
@@ -33,7 +33,7 @@ for(const [key,file] of Object.entries(files)){
 }
 for(const [,key] of template.matchAll(/data-image="([^"]+)"/g))if(!files[key])throw new Error('Unknown image '+key);
 function build(map){
- const assets='window.MAREVYS_ASSETS = '+serializePublicJson(map)+';\nwindow.MAREVYS_TAROT_CARDS = '+serializePublicJson(readPublicTarotCards())+';\nwindow.MAREVYS_BUILD_VERSION = \'RC21\';';
+ const assets='window.MAREVYS_ASSETS = '+serializePublicJson(map)+';\nwindow.MAREVYS_TAROT_CARDS = '+serializePublicJson(readPublicTarotCards())+';\nwindow.MAREVYS_BUILD_VERSION = \'RC22\';';
  // Callbacks insert code literally. Replacement strings would interpret $$, $&, etc.
  return template.replace('<!--STYLES-->',()=>'<style>\n'+css+'\n</style>').replace('<!--SCRIPTS-->',()=>'<script>\n'+assets+'\n'+scripts+'\n</script>');
 }
@@ -45,5 +45,5 @@ if(finalScripts.length!==1)throw new Error('Expected one complete inline applica
 finalScripts.forEach((match,i)=>new vm.Script(match[1],{filename:'generated-inline-'+i+'.js'}));
 if(!complete.includes(scripts))throw new Error('Source changed during HTML embedding');
 fs.writeFileSync(path.join(root,'index.html'),complete);
-fs.writeFileSync(path.join(root,'../MAREVYS_PARIS_RC21_Complete_Embedded.html'),complete);
-console.log(JSON.stringify({version:'RC21',languages:['en','fr','zh-Hans'],readingSystems:['tarot-78','natal-astrology'],archivedSystems:['runes','i-ching'],onlineApiRequired:true,embeddedAssets:Object.keys(files).length,finalBundleSyntax:'passed',completeBytes:Buffer.byteLength(complete)}));
+fs.writeFileSync(path.join(root,'../MAREVYS_PARIS_RC22_Complete_Embedded.html'),complete);
+console.log(JSON.stringify({version:'RC22',languages:['en','fr','zh-Hans'],readingSystems:['tarot-78','natal-astrology'],archivedSystems:['runes','i-ching'],onlineApiRequired:true,embeddedAssets:Object.keys(files).length,finalBundleSyntax:'passed',completeBytes:Buffer.byteLength(complete)}));

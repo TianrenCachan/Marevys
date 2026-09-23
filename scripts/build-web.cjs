@@ -31,7 +31,7 @@ function readPublicTarotCards() {
   // Deliberate allowlist: book excerpts, private corpus chunks, source paths and
   // internal review metadata must never enter the public application bundle.
   return cards.map((card,index)=>{
-    if(card.id!==`TAROT_${String(index).padStart(2,'0')}`||card.number!==index||card.imageKey!==`tarotClassic${String(index).padStart(2,'0')}`)throw new Error('Tarot image/card ordering mismatch');
+    if(card.id!==`TAROT_${String(index).padStart(2,'0')}`||card.number!==index||card.imageKey!==(index<22?`tarot${String(index).padStart(2,'0')}`:`tarotOriginal${String(index).padStart(2,'0')}`))throw new Error('Tarot image/card ordering mismatch');
     return {id:card.id,number:card.number,suit:card.suit,rank:card.rank,name:localized(card.name),upright:localized(card.upright),reversed:localized(card.reversed),imageKey:card.imageKey};
   });
 }
@@ -80,10 +80,10 @@ function buildWeb({ outputDir = path.join(ROOT, 'dist') } = {}) {
       assetMap[asset.key] = writeAsset(path.basename(asset.file), bytes);
       dimensions.set(asset.key, asset);
     }
-    if (Object.keys(assetMap).length !== 183) throw new Error('Expected 105 preserved images plus 78 classic tarot faces');
+    if (Object.keys(assetMap).length !== 161) throw new Error('Expected 105 preserved images plus 56 original minor tarot faces');
 
-    const artCreditsUrl=writeAsset('RWS_1909_ATTRIBUTION.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','RWS_1909_ATTRIBUTION.md')));
-    const artProvenanceUrl=writeAsset('RWS_1909_PROVENANCE.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','RWS_1909_PROVENANCE.json')));
+    const artCreditsUrl=writeAsset('MAREVYS_ARTWORK.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','MAREVYS_ARTWORK.md')));
+    const artProvenanceUrl=writeAsset('MAREVYS_ARTWORK_PROVENANCE.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','MAREVYS_ARTWORK_PROVENANCE.json')));
     const astronomyLicenseUrl=writeAsset('Astronomy_Engine_MIT.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','Astronomy_Engine_MIT.txt')));
 
     const fontUrl = writeAsset('noto-sans-runic-runic-400-normal.woff2',
@@ -113,7 +113,7 @@ function buildWeb({ outputDir = path.join(ROOT, 'dist') } = {}) {
       return source;
     }).join('\n');
     new vm.Script(scripts, { filename: 'marevys-online.js' });
-    const bootstrap = `window.MAREVYS_ASSETS = ${serializePublicJson(assetMap)};\nwindow.MAREVYS_TAROT_CARDS = ${serializePublicJson(readPublicTarotCards())};\nwindow.MAREVYS_BUILD_VERSION = 'RC21';\nwindow.MAREVYS_AI_ENDPOINT = '/api/reading';\nwindow.MAREVYS_CREDITS = ${serializePublicJson({artCreditsUrl,artProvenanceUrl,astronomyLicenseUrl})};\n`;
+    const bootstrap = `window.MAREVYS_ASSETS = ${serializePublicJson(assetMap)};\nwindow.MAREVYS_TAROT_CARDS = ${serializePublicJson(readPublicTarotCards())};\nwindow.MAREVYS_BUILD_VERSION = 'RC22';\nwindow.MAREVYS_AI_ENDPOINT = '/api/reading';\nwindow.MAREVYS_CREDITS = ${serializePublicJson({artCreditsUrl,artProvenanceUrl,astronomyLicenseUrl})};\n`;
     const bootstrapUrl = writeAsset('marevys-runtime.js', bootstrap);
     const scriptUrl = writeAsset('marevys-app.js', scripts);
     let html = fs.readFileSync(path.join(ROOT, 'src', 'template.html'), 'utf8');

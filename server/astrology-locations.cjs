@@ -1,7 +1,9 @@
 'use strict';
 
-// Deliberately bounded, offline city-centre catalogue. Manual coordinates remain
-// available in the UI. Time zones are IANA IDs, never a current fixed UTC offset.
+// A small curated set preserves familiar aliases and historical saved IDs.
+// The searchable GeoNames gazetteer below adds 25,286 places and multilingual
+// alternate names. Coordinates and IANA zones come from the source records,
+// never from a longitude or current-offset approximation.
 const rows = [
   ['paris','Paris','巴黎','FR',48.8566,2.3522,'Europe/Paris'],
   ['lyon','Lyon','里昂','FR',45.7640,4.8357,'Europe/Paris'],
@@ -64,10 +66,159 @@ const rows = [
   ['auckland','Auckland','奥克兰','NZ',-36.8485,174.7633,'Pacific/Auckland'],
 ];
 const LOCATIONS = Object.freeze(rows.map(([id,name,zh,country,latitude,longitude,timezone]) => Object.freeze({id,name,zh,country,latitude,longitude,timezone})));
-const simplify = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
-function findLocations(query = '', locale = 'fr') {
-  const q = simplify(String(query).slice(0,80));
-  return LOCATIONS.filter(p => !q || simplify([p.id,p.name,p.zh,p.country].join(' ')).includes(q)).slice(0,60)
-    .map(({zh,...p}) => ({...p,name:locale === 'zh' ? zh : p.name}));
+const fs = require('node:fs');
+const path = require('node:path');
+const { gunzipSync } = require('node:zlib');
+const adminNames = require('./data/locations-admin1.json');
+const SOURCE = Object.freeze({
+  name: 'GeoNames', url: 'https://www.geonames.org/',
+  license: 'CC BY 4.0', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+  snapshot: '2021-11-02', dataset: 'GeoNames cities15000 via geonamescache 1.3.0',
+});
+const MAX_RESULTS = 20;
+const MAX_QUERY = 80;
+const simplify = value => String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
+const validLocale = value => ['zh','fr','en'].includes(value) ? value : 'fr';
+const zoneCache = new Map();
+const countryCache = new Map();
+let catalogue;
+const adminTranslations = {
+  zh:{Anhui:'安徽',Beijing:'北京',Chongqing:'重庆',Fujian:'福建',Gansu:'甘肃',Guangdong:'广东',Guangxi:'广西',Guizhou:'贵州',Hainan:'海南',Hebei:'河北',Heilongjiang:'黑龙江',Henan:'河南',Hubei:'湖北',Hunan:'湖南',Jiangsu:'江苏',Jiangxi:'江西',Jilin:'吉林',Liaoning:'辽宁',Ningxia:'宁夏',Qinghai:'青海',Shaanxi:'陕西',Shandong:'山东',Shanghai:'上海',Shanxi:'山西',Sichuan:'四川',Tianjin:'天津',Tibet:'西藏',Xinjiang:'新疆',Yunnan:'云南',Zhejiang:'浙江','Inner Mongolia':'内蒙古'},
+  fr:{Brittany:'Bretagne',Normandy:'Normandie',Corsica:'Corse','Grand Est':'Grand Est','Hauts-de-France':'Hauts-de-France','Île-de-France':'Île-de-France'},
+};
+const timeConventionLabels = {
+  zh:{beijing:'北京时间','xinjiang-local':'新疆当地时间'},
+  fr:{beijing:'heure de Pékin','xinjiang-local':'heure locale du Xinjiang'},
+  en:{beijing:'Beijing time','xinjiang-local':'Xinjiang local time'},
+};
+
+function normalizeTimezone(value) {
+  if (typeof value !== 'string' || !/^(?:UTC|[A-Za-z_+-]+(?:\/[A-Za-z0-9_+-]+)+)$/.test(value)) return null;
+  if (!zoneCache.has(value)) {
+    try { zoneCache.set(value, new Intl.DateTimeFormat('en', {timeZone: value}).resolvedOptions().timeZone); }
+    catch { zoneCache.set(value, null); }
+  }
+  return zoneCache.get(value);
 }
-module.exports = { LOCATIONS, findLocations };
+
+function countryName(code, locale) {
+  const key = `${locale}:${code}`;
+  if (!countryCache.has(key)) {
+    try { countryCache.set(key, new Intl.DisplayNames([locale], {type:'region'}).of(code) || code); }
+    catch { countryCache.set(key, code); }
+  }
+  return countryCache.get(key);
+}
+
+function validCoordinates(latitude, longitude) {
+  return typeof latitude === 'number' && Number.isFinite(latitude) && latitude > -90 && latitude < 90
+    && typeof longitude === 'number' && Number.isFinite(longitude) && longitude >= -180 && longitude <= 180;
+}
+
+function loadCatalogue() {
+  if (catalogue) return catalogue;
+  const data = JSON.parse(gunzipSync(fs.readFileSync(path.join(__dirname, 'data', 'locations-geonames.json.gz'))));
+  const byId = new Map();
+  const entries = [];
+  for (const row of data) {
+    const [id,name,country,adminCode,latitude,longitude,timeZone,population,aliases] = row;
+    const timezone = normalizeTimezone(timeZone);
+    if (!Number.isSafeInteger(id) || !name || !/^[A-Z]{2}$/.test(country) || !timezone || !validCoordinates(latitude,longitude)) continue;
+    const admin = adminNames[`${country}.${adminCode}`] || '';
+    const allNames = [...new Set([name,...(Array.isArray(aliases) ? aliases : [])].filter(v=>typeof v==='string'))];
+    const hasTwoClocks = timezone === 'Asia/Urumqi';
+    const place = Object.freeze({id:`geonames:${id}`,name,country,admin,latitude,longitude,timezone,source:'geonames',
+      ...(hasTwoClocks ? {timeConvention:'xinjiang-local'} : {})});
+    const entry = {
+      place, aliases:allNames, keys:[...new Set(allNames.map(simplify))], population:Number(population)||0,
+      context:simplify([admin,adminCode,country,...['zh','fr','en'].map(l=>countryName(country,l))].join(' ')),
+    };
+    byId.set(place.id,entry);
+    entries.push(entry);
+    if (hasTwoClocks) {
+      // Birth records in Xinjiang may use either clock convention. Keep the
+      // source ID for Xinjiang local time and an explicit, trusted variant for
+      // Beijing time. Historical UTC conversion still uses the chosen IANA zone.
+      const beijing = {...entry,place:Object.freeze({...place,id:`geonames:${id}:beijing`,
+        timezone:'Asia/Shanghai',timeConvention:'beijing'})};
+      byId.set(beijing.place.id,beijing);
+      entries.push(beijing);
+    }
+  }
+  for (const place of LOCATIONS) {
+    const keys = [place.id,place.name,place.zh].map(simplify);
+    // Use the curated name/ID for nearby matching entries, avoiding duplicate
+    // choices while retaining every old bookmarked/saved city ID.
+    const related = entries.find(e=>e.place.country===place.country && e.place.timezone===normalizeTimezone(place.timezone) && Math.abs(e.place.latitude-place.latitude)<0.2
+      && Math.abs(e.place.longitude-place.longitude)<0.2 && e.keys.some(k=>keys.includes(k)));
+    const admin = related?.place.admin || '';
+    const entry = {
+      place:Object.freeze({...place,admin,source:'curated',
+        ...(related?.place.timeConvention ? {timeConvention:related.place.timeConvention} : {}),
+        ...(place.id==='urumqi' ? {name:'Urumqi',zh:'乌鲁木齐',timeConvention:'beijing'} : {})}),
+      aliases:[place.name,place.zh,...(related?.aliases||[])],
+      keys:[...new Set([...keys,...(related?.keys||[])])],
+      context:related?.context || simplify([place.country,...['zh','fr','en'].map(l=>countryName(place.country,l))].join(' ')),
+      population:related?.population||0, curated:true,
+    };
+    if (related) entries.splice(entries.indexOf(related),1);
+    entries.push(entry);
+    byId.set(place.id,entry);
+  }
+  catalogue = {entries,byId};
+  return catalogue;
+}
+
+function displayLocation(entry, locale='fr') {
+  const {zh,...place} = entry.place;
+  // The source's alternate-name array has no language tags. Chinese-only
+  // aliases are reliable for the Chinese UI; other names remain the sourced
+  // spelling instead of pretending that a machine-generated translation is data.
+  const chinese = zh || entry.aliases.find(v=>/^[\p{Script=Han}·・]+$/u.test(v));
+  const admin = adminTranslations[locale]?.[place.admin] || place.admin;
+  const baseName = locale==='zh' && chinese ? chinese : place.name;
+  const clock = timeConventionLabels[locale]?.[place.timeConvention];
+  const name = clock ? locale==='zh' ? `${baseName}（${clock}）` : `${baseName} (${clock})` : baseName;
+  return {...place,name,admin,countryName:countryName(place.country,locale)};
+}
+
+function getLocationById(id, locale='fr') {
+  if (typeof id !== 'string' || id.length > 64) return null;
+  const entry = loadCatalogue().byId.get(id);
+  return entry ? displayLocation(entry,validLocale(locale)) : null;
+}
+
+function findLocations(query='', locale='fr', limit=MAX_RESULTS) {
+  locale = validLocale(locale);
+  const text = String(query).trim().slice(0,MAX_QUERY);
+  const q = simplify(text);
+  const {entries,byId} = loadCatalogue();
+  if (!q) return LOCATIONS.map(p=>displayLocation(byId.get(p.id),locale));
+  const tokens = text.split(/[\s,，;；]+/u).map(simplify).filter(Boolean);
+  const matches=[];
+  for (const entry of entries) {
+    let score=0;
+    if (entry.keys.includes(q)) score=500;
+    else if (entry.keys.some(k=>k.startsWith(q))) score=300;
+    else if (entry.keys.some(k=>k.includes(q))) score=150;
+    else if (tokens.length>1 && tokens.some(t=>entry.keys.some(k=>k.includes(t)))
+      && tokens.every(t=>entry.context.includes(t)||entry.keys.some(k=>k.includes(t)))) score=100;
+    if (score) matches.push({entry,score:score+(entry.curated?10:0)});
+  }
+  const count = Math.min(MAX_RESULTS,Math.max(1,Number.isFinite(limit)?Math.floor(limit):MAX_RESULTS));
+  return matches.sort((a,b)=>b.score-a.score||b.entry.population-a.entry.population||a.entry.place.id.localeCompare(b.entry.place.id))
+    .slice(0,count).map(({entry})=>displayLocation(entry,locale));
+}
+
+function searchLocations(query='',locale='fr') {
+  const q=String(query).trim();
+  const locations=findLocations(q,locale).slice(0,q ? MAX_RESULTS : 12);
+  return {
+    locations,status:!simplify(q)?'suggestions':locations.length?'ok':'no_results',
+    // This worldwide snapshot covers larger towns and capitals, not every village.
+    limited:true,total:loadCatalogue().entries.length,source:'geonames-offline',
+    coverage:'cities15000',snapshot:SOURCE.snapshot,attribution:[SOURCE],
+  };
+}
+
+module.exports = {LOCATIONS,findLocations,getLocationById,searchLocations,normalizeTimezone,validCoordinates,SOURCE,MAX_QUERY};

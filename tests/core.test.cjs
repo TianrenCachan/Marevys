@@ -46,22 +46,22 @@ test('Bundled JavaScript preserves every source byte including double-dollar sel
  const joined=sourceFiles.map(f=>fs.readFileSync(path.join(root,'src',f),'utf8').replace(/<\/script/gi,'<\\/script')).join('\n');
  assert(html.includes(joined),'HTML replacement modified JavaScript source');
 });
-test('Complete HTML contains one embedded copy of each RC21 asset and the Runic font',()=>{assert.equal((html.match(/data:image\/webp;base64,/g)||[]).length,182);assert.equal((html.match(/data:image\/png;base64,/g)||[]).length,1);assert.equal((html.match(/data:font\/woff2;base64,/g)||[]).length,1);});
+test('Complete HTML contains one embedded copy of each RC22 asset and the Runic font',()=>{assert.equal((html.match(/data:image\/webp;base64,/g)||[]).length,160);assert.equal((html.match(/data:image\/png;base64,/g)||[]).length,1);assert.equal((html.match(/data:font\/woff2;base64,/g)||[]).length,1);});
 const embeddedAssets=JSON.parse(html.match(/window\.MAREVYS_ASSETS = (\{[^\n]+\});/)[1]);
 test('RC19 style and source layers are present in the delivered bundle',()=>{
- assert.equal(Object.keys(embeddedAssets).length,183);assert(html.includes('/* RC19 — tactile reading surfaces, a clearer commerce reveal and one-action flow. */'));assert(html.includes("font-family:'Marevys Runic'"));
+ assert.equal(Object.keys(embeddedAssets).length,161);assert(html.includes('/* RC19 — tactile reading surfaces, a clearer commerce reveal and one-action flow. */'));assert(html.includes("font-family:'Marevys Runic'"));
  assert(html.includes('.experience-v19 #s4 .stone-inscription'));assert(html.includes('.experience-v19 .ritual-bookmarks'));assert(html.includes('var(--reading-record-image)'));
  assert(html.includes(fs.readFileSync(path.join(root,'src/rc19.css'),'utf8')));
  assert(html.includes(fs.readFileSync(path.join(root,'src/i18n-rc19.js'),'utf8')));
 });
-test('RC21 build targets a matching complete embedded output',()=>{
- const build=fs.readFileSync(path.join(root,'build.cjs'),'utf8'),output=path.join(root,'..','MAREVYS_PARIS_RC21_Complete_Embedded.html');
- assert(build.includes("version:'RC21'"));assert(build.includes("'../MAREVYS_PARIS_RC21_Complete_Embedded.html'"));
+test('RC22 build targets a matching complete embedded output',()=>{
+ const build=fs.readFileSync(path.join(root,'build.cjs'),'utf8'),output=path.join(root,'..','MAREVYS_PARIS_RC22_Complete_Embedded.html');
+ assert(build.includes("version:'RC22'"));assert(build.includes("'../MAREVYS_PARIS_RC22_Complete_Embedded.html'"));
  assert(fs.existsSync(output));assert(fs.readFileSync(output).equals(fs.readFileSync(path.join(root,'index.html'))));
 });
 test('All embedded image bytes match the delivered final assets',()=>{
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'ASSET_MANIFEST.json'),'utf8'));
- assert.equal(manifest.version,'RC21');assert.equal(manifest.assets.length,183);
+ assert.equal(manifest.version,'RC22');assert.equal(manifest.assets.length,161);
  assert.equal(Object.keys(embeddedAssets).length,manifest.assets.length);
  for(const asset of manifest.assets){
   const data=embeddedAssets[asset.key];assert(data,asset.key);
@@ -82,14 +82,14 @@ test('Every non-logo photograph has one semantic purpose and unique source bytes
  assert.equal(bookmarkKeys.length,12);assert.equal(new Set(bookmarkKeys).size,12);assert.equal(bookmarkKeys.filter(key=>productKeys.includes(key)||ritualKeys.includes(key)).length,0);
  const tarotKeys=Array.from({length:22},(_,number)=>'tarot'+String(number).padStart(2,'0'));
  const physicalKeys=[...Array.from({length:24},(_,number)=>'runeStoneBack'+(number+1)),'tarotBack','runeReadingSurface','tarotReadingSurface','ichingReadingSurface'];
- const classicKeys=Array.from({length:78},(_,number)=>'tarotClassic'+String(number).padStart(2,'0'));
- const semantic=['hero','ichingReading','runes','yi',...classicKeys,...tarotKeys,...staticKeys,...productKeys,...ritualKeys,...physicalKeys,'readingRecordReturn01',...matchKeys,...bookmarkKeys];
- assert.equal(semantic.length,182);assert.equal(new Set(semantic).size,182);
+ const originalMinorKeys=Array.from({length:56},(_,number)=>'tarotOriginal'+String(number+22).padStart(2,'0'));
+ const semantic=['hero','ichingReading','runes','yi',...originalMinorKeys,...tarotKeys,...staticKeys,...productKeys,...ritualKeys,...physicalKeys,'readingRecordReturn01',...matchKeys,...bookmarkKeys];
+ assert.equal(semantic.length,160);assert.equal(new Set(semantic).size,160);
  assert(!Object.hasOwn(embeddedAssets,'tarotReading'));
  for(const key of tarotKeys)assert(embeddedAssets[key],key);
  assert.deepEqual([...new Set(semantic)].sort(),Object.keys(embeddedAssets).filter(key=>key!=='logo').sort());
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'ASSET_MANIFEST.json'),'utf8')),content=manifest.assets.filter(asset=>asset.key!=='logo');
- assert.equal(new Set(content.map(asset=>asset.sha256)).size,182,'no duplicated or renamed content image bytes');
+ assert.equal(new Set(content.map(asset=>asset.sha256)).size,160,'no duplicated or renamed content image bytes');
  for(const key of physicalKeys)assert(embeddedAssets[key],key);
  assert(rc19.includes('.experience-v19 .ritual-bookmark>img'));
  assert(rc19.includes("feTurbulence type='fractalNoise'"));assert(rc19.includes('var(--tarot-reading-surface)'));assert(rc19.includes('var(--reading-record-image)'));
@@ -144,7 +144,7 @@ const appSource=fs.readFileSync(path.join(root,'src/app.js'),'utf8');
 test('Homepage introduces tarot and astrology and the collection without a large overlaid logo',()=>{
  const hero=template.match(/<section class="hero"[^>]*>([\s\S]*?)<\/section>/)[1];
  assert(!hero.includes('data-image="logo"'));assert(!html.includes('hero-seal'));assert(!html.includes('hero-brand-mark'));
- assert(hero.includes('Make room for clarity.'));assert(hero.includes('Draw my cards'));assert(hero.includes('Explore my birth chart'));assert(!hero.includes('Explore the collection'));assert(embeddedAssets.hero);
+ assert(hero.includes('Make room for clarity.'));assert(hero.includes('Draw my cards'));assert(hero.includes('Explore the charts'));assert(!hero.includes('Explore the collection'));assert(embeddedAssets.hero);
 });
 test('All top-left brand marks are native home links',()=>{
  const links=[...template.matchAll(/<a class="brand-identity brand-home"[^>]*>/g)];

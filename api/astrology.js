@@ -2,6 +2,7 @@
 const { randomUUID } = require('node:crypto');
 const { AstrologyError,calculateChart,basicReading }=require('../server/astrology.cjs');
 
+const {calculateSynastry,basicSynastryReading}=require('../server/synastry.cjs');
 const MAX_BODY=8*1024;
 async function readBody(req) {
   if(!/^application\/json(?:\s*;|$)/i.test(req.headers['content-type']||'')) throw Object.assign(new Error(),{status:415,code:'JSON_REQUIRED'});
@@ -41,8 +42,10 @@ function createHandler() {
       if(req.method!=='POST'){res.setHeader('Allow','POST');return send(405,{error:{code:'METHOD_NOT_ALLOWED'},requestId});}
       if(!originAllowed(req))return send(403,{error:{code:'ORIGIN_DENIED'},requestId});
       const body=await readBody(req);
-      const chart=calculateChart(body);
-      return send(200,{ok:true,chart,reading:basicReading(chart,body.locale),requestId});
+      if(body?.mode!==undefined&&!['natal','synastry'].includes(body.mode))throw new AstrologyError(400,'INVALID_INPUT',body.locale);
+      const synastry=body?.mode==='synastry';
+      const chart=synastry?calculateSynastry(body):calculateChart(body?.birth?{...body.birth,locale:body.locale,topic:body.topic}:body);
+      return send(200,{ok:true,chart,reading:synastry?basicSynastryReading(chart,body.locale,body):basicReading(chart,body.locale,body),requestId});
     }catch(error){
       if(error instanceof AstrologyError)return send(error.status,{error:{code:error.code,message:error.message},requestId});
       const allowed=['JSON_REQUIRED','BODY_TOO_LARGE','INVALID_JSON'];
