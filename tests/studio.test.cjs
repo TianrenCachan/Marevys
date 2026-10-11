@@ -47,8 +47,9 @@ test.after(async()=>{
   if(temp)fs.rmSync(temp,{recursive:true,force:true});
 });
 
-function page(seed={}){
+function page(seed={},options={}){
   const errors=[],calls=[];
+  const readingResponder=options.reading;
   const console=new VirtualConsole();
   console.on('jsdomError',error=>errors.push(error));
   const dom=new JSDOM(html,{url:origin+'/',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:console,beforeParse(window){
@@ -62,11 +63,16 @@ function page(seed={}){
     window.fetch=async(url,options={})=>{
       const absolute=new URL(url,origin);assert.equal(absolute.origin,origin,'Public runtime may only call our isolated API');
       const request={path:absolute.pathname,payload:options.body?JSON.parse(options.body):null};calls.push(request);
+      if(request.path==='/api/reading'&&readingResponder){
+        const value=await readingResponder(request,calls);
+        request.status=200;request.response=value;return new Response(JSON.stringify(value),{status:200,headers:{'Content-Type':'application/json'}});
+      }
       const response=await fetch(absolute,{...options,headers:{...options.headers,Origin:origin}});
       request.status=response.status;request.response=await response.clone().json();return response;
     };
     window.localStorage.setItem('marevys.language.v1',JSON.stringify('en'));
     for(const [key,value] of Object.entries(seed))window.localStorage.setItem(key,JSON.stringify(value));
+    for(const [key,value] of Object.entries(options.session||{}))window.sessionStorage.setItem(key,JSON.stringify(value));
   }});
   windows.add(dom);for(const source of scripts)dom.window.eval(source);
   const q=selector=>dom.window.document.querySelector(selector);
@@ -188,4 +194,90 @@ test('DOM integration: dragging the rotating deck does not accidentally select a
   pointer('pointerdown',180,100);pointer('pointermove',179,150);pointer('pointerup',179,150);
   assert.equal(p.q('.deck-card.at-center').dataset.pick,'3','Vertical page scrolling does not rotate the deck');
   p.close();
+});
+
+function aiFixture(cards,{question=null,answer='Wait until you have a written offer before leaving.',headline='Keep your current job for now.'}={}){
+  return {source:'ai',reading:{headline,coreAnswer:answer,cardReadings:cards.map(c=>({cardId:c.id,positionId:c.positionId,text:'This card suggests checking the practical details first.'})),connections:['The cards favour preparation before a change.'],uncertainties:['The cards cannot confirm an employer’s decision.'],actions:['Ask when the written offer will arrive.'],reflection:'What would make this change manageable?',sources:[{sourceId:'tarot_19_lessons',page:24}],followupAnswer:answer,clarificationQuestion:question}};
+}
+
+test('DOM integration: short guided answer preserves the draw, sends context, and clears the latest prompt across save and refresh',async()=>{
+  let cards=[],responses=0;
+  const firstQuestion='你已经拿到书面录用通知了吗？',secondQuestion='对方说过什么时候会给你回复吗？';
+  const p=page({}, {reading:async()=>aiFixture(cards,{question:[firstQuestion,secondQuestion,null,null][responses++],answer:responses===1?'先不要辞职，等书面录用通知后再决定。':'既然还没有书面通知，先保留目前的工作。'})});
+  const revealed=await draw(p,1);cards=revealed.cards;p.w.MarevysStudio.applyLanguage('zh');p.click('[data-action="interpret"]');
+  await until(()=>p.q('#studioGuidedReply')&&!p.q('.studio-loading'),'initial concise reading');
+  const baseText=p.q('.reading-core').textContent;
+  assert(baseText.includes('先说结论'));
+  assert.equal(p.q('.reading-details').open,false,'Longer reasoning starts collapsed');
+  assert(p.q('.reading-details .position-readings'),'Card explanations remain available in the details');
+  assert(p.q('.reading-core').compareDocumentPosition(p.q('.result-card-ribbon'))&p.w.Node.DOCUMENT_POSITION_FOLLOWING,'The answer is shown before the card ribbon');
+  assert(p.q('.reading-core + .reading-section').textContent.includes('接下来怎么做'));
+  p.fill('#studioGuidedReply','没有');p.submit('#studioGuidedForm');
+  await until(()=>p.q('#guidedQuestion')?.textContent===secondQuestion&&!p.q('.studio-loading'),'next guided prompt');
+  const readingCalls=()=>p.calls.filter(c=>c.path==='/api/reading');
+  const guided=readingCalls()[1].payload;
+  assert.equal(guided.followupQuestion,'没有');assert.equal(guided.guidedQuestion,firstQuestion);
+  assert.equal(guided.token,revealed.token,'The same signed draw is used for the answer');
+  assert(guided.conversation[0].answer.includes('先不要辞职'),'The initial advice is sent on the first follow-up');
+  assert.equal(p.qa('.result-card-ribbon .revealed-card').length,1);
+  assert(p.q('.reading-core').textContent.includes('最初的解读'),'Original advice is labeled separately from later replies');
+  assert(p.q('.reading-core').textContent.includes('先不要辞职'));
+  assert.equal(p.w.document.activeElement,p.q('.followup-message'),'The new reply receives focus');
+  p.fill('#studioFollowup','没有');p.click('[data-action="ask"]');assert.equal(readingCalls().length,2,'Free questions retain the five-character minimum');
+  p.fill('#studioFollowup','那我今天应该先做什么？');p.click('[data-action="ask"]');
+  await until(()=>readingCalls().length===3&&!p.q('.studio-loading'),'free follow-up response');
+  const free=readingCalls()[2].payload;
+  assert.equal(free.guidedQuestion,undefined,'An independent question is not mislabeled as a guided answer');
+  assert.equal(free.token,revealed.token);
+  assert.equal(free.conversation.at(-1).question,'没有');assert.equal(free.conversation.at(-1).guidedQuestion,firstQuestion);
+  assert.equal(p.q('#studioGuidedForm'),null,'A null clears the latest prompt instead of reviving the first one');
+  p.click('[data-action="save"]');
+  const saved=JSON.parse(p.w.localStorage.getItem('marevys.readings.v2'))[0];
+  assert.equal(saved.reading.clarificationQuestion,firstQuestion,'Original reading remains intact');assert.equal(saved.pendingClarification,null);
+  assert.equal(saved.followups[0].question,'没有');assert.equal(saved.followups[0].guidedQuestion,firstQuestion);assert.deepEqual(saved.cards,revealed.cards);
+  const draft=JSON.parse(p.w.sessionStorage.getItem('marevys.currentReading.v2'));
+  p.click('[data-action="archive"]');p.click('[data-record="0"]');
+  assert(p.q('.notebook-record').textContent.includes('解读向你提问'));assert(p.q('.notebook-record').textContent.includes('你回答'));assert.equal(p.q('.saved-clarification'),null);
+  p.close();
+  const restored=page({}, {session:{'marevys.currentReading.v2':draft}});restored.w.startTarot();assert.equal(restored.q('#studioGuidedForm'),null);assert.equal(restored.qa('.followup-message').length,2);restored.close();
+});
+
+test('DOM integration: pending guided reply survives refresh and submitted text is captured before a delayed response',async()=>{
+  let cards=[],release;
+  const first=page({}, {reading:async()=>aiFixture(cards,{question:'Have you discussed the offer in writing?'})});
+  const revealed=await draw(first,1);cards=revealed.cards;first.click('[data-action="interpret"]');await until(()=>first.q('#studioGuidedReply'),'guided draft');
+  first.fill('#studioGuidedReply','Not yet');first.w.MarevysStudio.pause();const draft=JSON.parse(first.w.sessionStorage.getItem('marevys.currentReading.v2'));first.close();
+  const p=page({}, {session:{'marevys.currentReading.v2':draft},reading:()=>new Promise(resolve=>{release=()=>resolve(aiFixture(cards));})});
+  p.w.startTarot();assert.equal(p.q('#studioGuidedReply').value,'Not yet');p.submit('#studioGuidedForm');
+  await until(()=>release,'delayed request');
+  // Even an intervening render/capture cannot change the turn already sent.
+  p.q('#studioGuidedReply').value='A different unsent answer';p.w.MarevysStudio.applyLanguage('fr');release();
+  await until(()=>p.q('.followup-message')&&!p.q('.studio-loading'),'delayed answer applied');
+  assert.equal(p.calls.find(c=>c.path==='/api/reading').payload.followupQuestion,'Not yet');assert.equal(p.q('.conversation-reader p').textContent,'Not yet');p.close();
+});
+
+test('DOM integration: bounded multibyte conversation fits the full request and a clarifier retains guided facts',async()=>{
+  let cards=[];
+  const p=page({}, {reading:async()=>aiFixture(cards,{question:'Do you already have an offer?'})});
+  const revealed=await draw(p,1);cards=revealed.cards;p.click('[data-action="interpret"]');await until(()=>p.q('#studioGuidedReply'),'initial offer question');
+  p.fill('#studioGuidedReply','I already have a written offer.');p.submit('#studioGuidedForm');await until(()=>p.q('.followup-message')&&!p.q('.studio-loading'),'guided offer fact');
+  p.fill('#studioFollowup','What should I check before accepting the offer?');p.click('[data-action="clarify"]');
+  await until(()=>p.calls.some(c=>c.path==='/api/tarot'&&c.payload?.action==='clarify'&&c.response)&&!p.q('.studio-loading'),'clarified reread');
+  const clarified=p.calls.find(c=>c.path==='/api/tarot'&&c.payload?.action==='clarify').response;
+  const reread=p.calls.filter(c=>c.path==='/api/reading').at(-1).payload;
+  assert.equal(reread.token,clarified.token);assert.equal(clarified.cards.length,2);assert.equal(clarified.cards[0].id,revealed.cards[0].id);
+  assert(reread.conversation.some(c=>c.question==='I already have a written offer.'),'A reread after the single clarifier keeps the guided facts');
+  assert.equal(p.q('[data-action="clarify"]'),null,'A second clarification card is not offered');
+  p.w.MarevysStudio.pause();const draft=JSON.parse(p.w.sessionStorage.getItem('marevys.currentReading.v2'));p.close();
+  draft.session.token='x'.repeat(24000);draft.followups=Array.from({length:8},(_,i)=>({question:`${i} ${'问题'.repeat(350)}`,answer:'答复'.repeat(900),guidedQuestion:'背景'.repeat(150)}));
+  const bounded=page({}, {session:{'marevys.currentReading.v2':draft},reading:async()=>aiFixture(cards)});bounded.w.startTarot();bounded.fill('#studioFollowup','接下来我应该问谁具体确认这些事情？');bounded.click('[data-action="ask"]');
+  await until(()=>bounded.calls.some(c=>c.path==='/api/reading'&&c.response),'bounded request');
+  const payload=bounded.calls.find(c=>c.path==='/api/reading').payload;
+  assert(payload.conversation.length<=4);assert(Buffer.byteLength(JSON.stringify(payload.conversation),'utf8')<=8000);assert(Buffer.byteLength(JSON.stringify(payload),'utf8')<=31000);
+  assert.equal(bounded.qa('.followup-message').length,9,'Local transcript is not truncated to the server excerpt');bounded.close();
+});
+
+test('DOM integration: older saved tarot records and current sessions need no clarification fields',()=>{
+  const record={id:'old-tarot',system:'TAROT',date:'2026-01-01T12:00:00Z',question:'An older question',cards:[],reading:{headline:'Earlier advice',coreAnswer:'The original saved advice.'},followups:[{question:'Can you explain this further?',answer:'The original follow-up answer.'}]};
+  const p=page({'marevys.readings.v2':[record]});p.w.openPath();p.click('[data-record="0"]');assert(p.q('.notebook-record').textContent.includes('The original follow-up answer.'));assert.equal(p.q('.saved-clarification'),null);p.close();
 });

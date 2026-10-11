@@ -39,3 +39,30 @@ body.experience-v21{--studio-ink:#162938;--studio-paper:#faf8f3;--studio-gold:#a
 @keyframes card-reveal{from{opacity:.2;transform:perspective(800px) rotateY(-75deg)}to{opacity:1;transform:perspective(800px) rotateY(0)}}
 @media(max-width:760px){.tarot-night .studio-nav.readnav{padding-left:17px;padding-right:12px}.tarot-night .studio-progress{gap:7px}.tarot-night .studio-brand{font-size:15px}.tarot-night .studio-progress small{display:none}.tarot-night .studio-panel h1{font-size:31px;line-height:1.4}.tarot-night .studio-intro{font-size:16px;line-height:1.8}.tarot-night .draw-atelier{padding:32px 20px 42px}.tarot-night .draw-atelier .studio-eyebrow{font-size:10px;margin-bottom:12px}.tarot-night .draw-atelier h1{font-size:30px;margin-bottom:13px}.tarot-night .draw-atelier .studio-intro{font-size:16px;margin-bottom:16px;max-width:29ch}.tarot-night .studio-question{font-size:17px;line-height:1.7;margin:16px auto 9px;max-width:29ch}.deck-stage{margin:2px -20px 0}.deck-viewport{height:277px}.deck-orbit{inset:30px -32px 0}.studio-panel .deck-orbit button.deck-card{width:115px;--orbit-scale:1;box-shadow:0 10px 24px #0006}.deck-halo{top:125px;left:1%;right:1%;height:110px}.deck-navigation{gap:24px;margin-top:-3px}.studio-panel button.deck-arrow{width:44px;height:44px}.deck-instructions{font-size:12px;margin-top:11px}.draw-tray{margin-top:22px;padding-top:18px}.tarot-night .draw-count{font-size:13px;margin-bottom:20px}.draw-next{display:block;margin:4px 0 0;font-size:12px}.draw-positions{gap:9px;margin:0}.draw-slot{flex:1;max-width:92px}.draw-slot-card{width:45px;margin-bottom:11px}.draw-positions .draw-slot>span{font-size:11px;line-height:1.65}.draw-positions .draw-slot>span>b{display:block;margin:0 0 2px;font-size:11px}.studio-panel .draw-slot-card button{width:27px;height:27px;right:-9px;top:-10px}.tarot-night .draw-actions{gap:15px;margin-top:25px;justify-content:space-between;flex-wrap:nowrap}.tarot-night .draw-actions .studio-primary{padding:13px 16px;font-size:14px;margin:0}.tarot-night .draw-actions .studio-link{font-size:13px}.tarot-night .spread-choice span{font-size:12px}.tarot-night .spread-choice{padding:14px 10px}.tarot-night .revealed-cards{gap:24px 15px;margin-top:30px}.tarot-night .revealed-card .card-position{font-size:12px;min-height:38px}.tarot-night .revealed-card h3{font-size:16px}.tarot-night .revealed-card small{font-size:12px}.tarot-night .revealed-cards .revealed-card{flex-basis:calc(50% - 15px);min-width:110px;max-width:150px}.tarot-night .revealed-cards.count-1 .revealed-card{flex-basis:210px;max-width:210px}.tarot-night .studio-result{padding:34px 22px 60px}.tarot-night .studio-result>.studio-question{font-size:21px}.tarot-night .result-card-ribbon{gap:16px 12px;justify-content:center}.tarot-night .result-card-ribbon .revealed-card{flex-basis:calc(33.333% - 12px);min-width:72px;max-width:114px}.tarot-night .result-card-ribbon h3{font-size:13px}.tarot-night .result-card-ribbon .card-position{font-size:11px;min-height:38px}.tarot-night .reading-core h2{font-size:26px}.tarot-night .reading-core p{font-size:18px}.tarot-night .reading-section h2{font-size:25px}.tarot-night .studio-ritual{padding:22px}.tarot-night .reading-followup .studio-form-actions{gap:14px}}
 @media(prefers-reduced-motion:reduce){.tarot-night .studio-panel *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Short answer first; the reasoning stays available on demand. */
+.reading-core .answer-label{display:block;font:13px/1.6 Arial,'Noto Sans SC',sans-serif;letter-spacing:.04em;margin-bottom:10px;color:#907441}
+.reading-details{border-top:1px solid #d5d9d3;border-bottom:1px solid #d5d9d3;margin:20px 0 32px;padding:18px 0}
+.reading-details>summary{cursor:pointer;font-size:17px;line-height:1.65;color:#374e5b;padding:6px 0}
+.reading-details[open]>summary{margin-bottom:10px}
+.reading-details .position-readings>article:last-child{border-bottom:0}
+.reading-guided{margin:30px 0;padding:25px 28px;background:#ebe7dc;border:1px solid #cdbfa8;border-radius:4px}
+.reading-guided h2{font-size:24px;margin-bottom:14px}
+.reading-guided .guided-question{font-size:19px;line-height:1.7;margin:0 0 10px;overflow-wrap:anywhere}
+.reading-guided .studio-small{margin:0}
+.reading-guided textarea{min-height:90px}
+.reading-guided button{margin-top:18px}
+.reading-conversation{margin-top:30px}
+.reading-conversation>h2{font-size:23px}
+.followup-message small,.saved-clarification>small{display:block;font-size:12px;color:#907441;margin-bottom:6px}
+.followup-message p{margin:0 0 16px;overflow-wrap:anywhere}
+.followup-message .conversation-answer p{font-size:18px}
+.followup-message .conversation-prompt{border-left:2px solid #aa885270;padding-left:14px}
+.tarot-night .reading-core .answer-label,.tarot-night .followup-message small,.tarot-night .saved-clarification>small{color:#bda884}
+.tarot-night .reading-details{border-color:var(--night-line)}
+.tarot-night .reading-details>summary{color:#d1c3a7}
+.tarot-night .reading-guided{background:#b9a47c0c;border-color:#b9a47c45}
+.tarot-night .reading-guided .guided-question{color:#e1dacb}
+.tarot-night .reading-guided h2{font-size:24px}
+.tarot-night .followup-message .conversation-answer p{color:#d1d6cf;font-size:18px}
+@media(max-width:760px){.reading-guided{padding:20px}.reading-guided button{width:100%;padding:14px}.reading-guided h2,.tarot-night .reading-guided h2{font-size:22px}.reading-guided .guided-question{font-size:18px}.reading-details>summary{font-size:16px}}
