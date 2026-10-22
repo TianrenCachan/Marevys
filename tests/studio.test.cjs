@@ -159,7 +159,7 @@ test('DOM integration: rotating deck browses all 78 hidden indices and preserves
   const p=page();
   p.w.startTarot();p.fill('#studioQuestion','How can I make a little more space for a personal project?');p.submit('#studioQuestionForm');
   p.click('input[name="consent"]');p.submit('#studioDetailsForm');await until(()=>p.q('.view-draw'),'rotating draw');
-  assert(p.q('#readingStudio').classList.contains('tarot-night'),'Tarot uses the midnight studio throughout');
+  assert(!p.q('#readingStudio').classList.contains('tarot-night'),'Tarot uses the light studio throughout');
   assert.equal(p.qa('.deck-card').length,11,'Only the visible arc is mounted initially');
   assert.equal(p.q('.deck-grid'),null,'The full-deck grid is absent');
   assert(p.qa('.deck-card img').every(img=>img.src===p.w.MAREVYS_ASSETS.tarotBack||img.getAttribute('src')===p.w.MAREVYS_ASSETS.tarotBack),'Every visible card stays face down');
@@ -210,7 +210,7 @@ test('DOM integration: short guided answer preserves the draw, sends context, an
   assert(baseText.includes('先说结论'));
   assert.equal(p.q('.reading-details').open,false,'Longer reasoning starts collapsed');
   assert(p.q('.reading-details .position-readings'),'Card explanations remain available in the details');
-  assert(p.q('.reading-core').compareDocumentPosition(p.q('.result-card-ribbon'))&p.w.Node.DOCUMENT_POSITION_FOLLOWING,'The answer is shown before the card ribbon');
+  assert(p.q('.result-card-ribbon').compareDocumentPosition(p.q('.reading-core'))&p.w.Node.DOCUMENT_POSITION_FOLLOWING,'Compact fixed cards precede the conversational answer');
   assert(p.q('.reading-core + .reading-section').textContent.includes('接下来怎么做'));
   p.fill('#studioGuidedReply','没有');p.submit('#studioGuidedForm');
   await until(()=>p.q('#guidedQuestion')?.textContent===secondQuestion&&!p.q('.studio-loading'),'next guided prompt');

@@ -71,6 +71,15 @@ class Element{
  hasAttribute(k){return this.attributes.has(k);}
  removeAttribute(k){this.attributes.delete(k);}
  append(...nodes){for(let node of nodes){if(typeof node==='string')node=new TextNode(node,this.ownerDocument);if(node.parentElement)node.parentElement.childNodes=node.parentElement.childNodes.filter(n=>n!==node);node.parentElement=this;this.childNodes.push(node);}}
+ appendChild(node){this.append(node);return node;}
+ insertAdjacentElement(where,node){
+  if(where==='beforeend'){this.append(node);return node;}
+  if(where==='afterbegin'){if(node.parentElement)node.parentElement.childNodes=node.parentElement.childNodes.filter(n=>n!==node);node.parentElement=this;this.childNodes.unshift(node);return node;}
+  if(!this.parentElement)return null;
+  const parent=this.parentElement;if(node.parentElement)node.parentElement.childNodes=node.parentElement.childNodes.filter(n=>n!==node);
+  const index=parent.childNodes.indexOf(this);node.parentElement=parent;parent.childNodes.splice(index+(where==='afterend'?1:0),0,node);return node;
+ }
+ matches(selector){return matches(this,selector);}
  replaceChildren(...nodes){this.childNodes.forEach(n=>n.parentElement=null);this.childNodes=[];this.append(...nodes);}
  get textContent(){return this.childNodes.map(n=>n.textContent).join('');}
  set textContent(v){this.replaceChildren(new TextNode(String(v),this.ownerDocument));}

@@ -1,6 +1,7 @@
 'use strict';
 const { createCipheriv, createDecipheriv, createHash, randomBytes, randomInt, randomUUID } = require('node:crypto');
 const { ReadingError } = require('./reading.cjs');
+const { getMode } = require('./experience-catalog.cjs');
 const DAY = 86400000;
 const DEV_SECRET = randomBytes(32);
 const AAD = Buffer.from('marevys:tarot-session:v2');
@@ -13,6 +14,12 @@ const SPREADS = Object.freeze({
   five: [position('theme', 'The central question', 'Le cœur de la question', '核心课题'), position('obstacle', 'The obstacle', 'Le point de tension', '关键阻碍'), position('opportunity', 'The opportunity', 'Une ouverture', '可把握的机会'), position('support', 'Your support', 'Un appui', '可用的支持'), position('perspective', 'The wider perspective', 'Une vue plus large', '更大的课题')]
 });
 const CLARIFIER = position('clarifier', 'A clarifying perspective', 'Un éclairage complémentaire', '补充线索');
+function sessionMode(context) { return getMode(context.modeId === undefined ? 'open' : context.modeId); }
+function sessionPositions(context) {
+  const mode = sessionMode(context);
+  assert(mode && (!mode.spreadId || mode.spreadId === context.spreadId), 'INVALID_SESSION');
+  return mode.positions || SPREADS[context.spreadId];
+}
 function assert(condition, code = 'INVALID_REQUEST', status = 400) { if (!condition) throw new ReadingError(status, code); }
 function text(value, max, min = 0, code = 'INVALID_REQUEST') {
   assert(typeof value === 'string' && value.length <= max && !/[\x00-\x08\x0b\x0c\x0e-\x1f]/.test(value), code);
@@ -50,6 +57,7 @@ function decryptSession(token, env = process.env, now = Date.now()) {
   assert(object(session) && session.version === 2 && typeof session.readingId === 'string' && locales.includes(session.context?.locale), 'INVALID_SESSION');
   assert(Number.isSafeInteger(session.expiresAt) && session.expiresAt > now, 'SESSION_EXPIRED', 410);
   assert(Object.hasOwn(SPREADS, session.context.spreadId) && Array.isArray(session.deck) && session.deck.length === 78, 'INVALID_SESSION');
+  sessionPositions(session.context);
   assert(session.deck.every(card => object(card) && /^TAROT_\d{2}$/.test(card.id) && Number(card.id.slice(6)) < 78 && ['upright', 'reversed'].includes(card.orientation)) && new Set(session.deck.map(card => card.id)).size === 78, 'INVALID_SESSION');
   assert(Array.isArray(session.indices) && [0, SPREADS[session.context.spreadId].length].includes(session.indices.length), 'INVALID_SESSION');
   assert(session.indices.every(i => Number.isInteger(i) && i >= 0 && i < 78) && new Set(session.indices).size === session.indices.length, 'INVALID_SESSION');
@@ -58,10 +66,14 @@ function decryptSession(token, env = process.env, now = Date.now()) {
 function startSession(raw, now = Date.now()) {
   assert(object(raw) && locales.includes(raw.locale), 'INVALID_LOCALE');
   assert(Object.hasOwn(SPREADS, raw.spreadId), 'INVALID_SPREAD');
+  const mode = getMode(raw.modeId === undefined ? 'open' : raw.modeId);
+  assert(mode, 'INVALID_MODE');
+  assert(!mode.spreadId || mode.spreadId === raw.spreadId, 'INVALID_MODE_SPREAD');
   assert(typeof raw.usesReversals === 'boolean', 'INVALID_REVERSALS');
   const context = { locale: raw.locale, question: text(raw.question, 2000, 5, 'INVALID_QUESTION'),
     background: text(raw.background === undefined ? '' : raw.background, 3000, 0, 'INVALID_BACKGROUND'),
-    timeframe: text(raw.timeframe, 160, 1, 'INVALID_TIMEFRAME'), spreadId: raw.spreadId, usesReversals: raw.usesReversals };
+    timeframe: text(raw.timeframe, 160, 1, 'INVALID_TIMEFRAME'), spreadId: raw.spreadId, usesReversals: raw.usesReversals,
+    ...(raw.modeId === undefined ? {} : { modeId: mode.id }) };
   const deck = Array.from({ length: 78 }, (_, i) => ({ id: `TAROT_${String(i).padStart(2, '0')}`, orientation: context.usesReversals && randomInt(2) === 1 ? 'reversed' : 'upright' }));
   // Fisher–Yates with node:crypto rejection sampling: unbiased, independently shuffled sessions.
   for (let i = deck.length - 1; i > 0; i--) { const j = randomInt(i + 1); [deck[i], deck[j]] = [deck[j], deck[i]]; }
@@ -83,7 +95,7 @@ function clarifySession(session, question) {
 function drawnCards(session) {
   const catalog = require('./tarot-cards.json');
   const records = Array.isArray(catalog) ? catalog : catalog.cards;
-  const positions = SPREADS[session.context.spreadId];
+  const positions = sessionPositions(session.context);
   const indices = [...session.indices];
   if (session.clarifierQuestion !== null) indices.push(session.deck.findIndex((_, i) => !session.indices.includes(i)));
   return indices.map((index, i) => {
@@ -95,7 +107,7 @@ function drawnCards(session) {
 function publicSession(session, token) {
   return { schemaVersion: 2, token, readingId: session.readingId,
     status: session.clarifierQuestion !== null ? 'clarified' : session.indices.length ? 'revealed' : 'shuffled',
-    context: { ...session.context, positions: SPREADS[session.context.spreadId] }, cardCount: 78, expiresAt: session.expiresAt,
+    context: { ...session.context, positions: sessionPositions(session.context) }, cardCount: 78, expiresAt: session.expiresAt,
     ...(session.indices.length ? { cards: drawnCards(session) } : {}), clarifierQuestion: session.clarifierQuestion };
 }
-module.exports = { SPREADS, CLARIFIER, DAY, production, sessionKey, encryptSession, decryptSession, startSession, revealSession, clarifySession, drawnCards, publicSession, text, assert };
+module.exports = { SPREADS, CLARIFIER, DAY, production, sessionKey, encryptSession, decryptSession, startSession, revealSession, clarifySession, drawnCards, publicSession, sessionMode, sessionPositions, text, assert };

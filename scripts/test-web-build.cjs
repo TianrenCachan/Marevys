@@ -39,7 +39,8 @@ test('online build preserves approved content, assets and dependency order witho
   vm.runInNewContext(runtime, context);
   assert.equal(context.window.MAREVYS_AI_ENDPOINT, '/api/reading');
   assert.equal(Object.keys(context.window.MAREVYS_ASSETS).length, 161);
-  assert.equal(context.window.MAREVYS_BUILD_VERSION, 'RC22');
+  assert.equal(context.window.MAREVYS_BUILD_VERSION, 'RC23');
+  assert.equal(Object.keys(context.window.MAREVYS_DECK_ASSETS).filter(key=>key.startsWith('tarotClassic')).length,78);
   assert.equal(context.window.MAREVYS_TAROT_CARDS.length, 78);
   for(const card of context.window.MAREVYS_TAROT_CARDS){
     assert.ok(context.window.MAREVYS_ASSETS[card.imageKey]);
@@ -64,7 +65,7 @@ test('online build preserves approved content, assets and dependency order witho
   assert.match(read(result.fontLicenseUrl).toString(), /SIL OPEN FONT LICENSE/);
   assert.match(read(result.artCreditsUrl).toString(), /MARÉVYS/);
   assert.equal(JSON.parse(read(result.artProvenanceUrl).toString()).cardCount,78);
-  assert.doesNotMatch(runtime,/tarotClassic/);
+  assert(Object.keys(context.window.MAREVYS_ASSETS).every(key=>!key.startsWith('tarotClassic')),'Original product imagery stays separate from optional digital decks');
   assert(context.window.MAREVYS_TAROT_CARDS.slice(0,22).every((card,i)=>card.imageKey==='tarot'+String(i).padStart(2,'0')));
   assert.match(read(result.astronomyLicenseUrl).toString(), /MIT License/);
   assert.doesNotMatch(html + css + runtime, /data:(?:image|font)\/|source-images\//i);

@@ -1,0 +1,195 @@
+{
+  "release": "RC23",
+  "method": "Original imagegen art; production WebP quality 88 whole-sheet encodings, with unchanged PNG originals retained in the full handoff archive",
+  "coverage": "Each complete style:22illustratedmajorcards+56code-nativepip/courtminorcards",
+  "images": [
+    {
+      "source": "christmas-sheet-0.png",
+      "sourceBytes": 3740134,
+      "sourceSha256": "131e8c45b68c5cb945195eebcd458c0e660b834c26f902618d689c75b90427b9",
+      "web": "christmas-sheet-0.webp",
+      "webBytes": 373114,
+      "webSha256": "5cd321d82f741bf51caca2c3dff20038d2d98f6f0b716a51f649bac97b27b1c0",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "christmas-sheet-1.png",
+      "sourceBytes": 3868217,
+      "sourceSha256": "b9514587893f3194e5e9a26f1369ba1a1f890a9b29e3b3493173459426bbf744",
+      "web": "christmas-sheet-1.webp",
+      "webBytes": 407410,
+      "webSha256": "4ee3ef02dfdaf9773cba86152952ebb698b3979221a40ba9b385873d1fe6f089",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "christmas-sheet-2.png",
+      "sourceBytes": 3835658,
+      "sourceSha256": "b0c58fff156ce85b0806e33a034dd17ca0de71e937780f0cb29d0a215a0a4a6d",
+      "web": "christmas-sheet-2.webp",
+      "webBytes": 394258,
+      "webSha256": "44a33a71c72daaec733b31f68bdc57d9277ddab3c3fe00c7c11774f2a2f0d9cc",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "christmas-sheet-3.png",
+      "sourceBytes": 3839734,
+      "sourceSha256": "172eb65d39d714a0054b9381d5127bb28a12b53a7dfb4a498dd7b77a960ef03e",
+      "web": "christmas-sheet-3.webp",
+      "webBytes": 381436,
+      "webSha256": "478dee6462257fa9fca4b4abbe529c6cdff0ba2ab13b0cf02ff010c3fb3f997c",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "cute-sheet-0.png",
+      "sourceBytes": 3538576,
+      "sourceSha256": "1782b0e0f41f654172cf0cf94460ffbc795d6e446c5b9991fd86a581e28c77f8",
+      "web": "cute-sheet-0.webp",
+      "webBytes": 334382,
+      "webSha256": "492cda6657f4278f8be657cc02f7327a8249ffdfd04a3f0679f1305b9790f6a9",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "cute-sheet-1.png",
+      "sourceBytes": 3187403,
+      "sourceSha256": "f8439faecc717f5779b6b7248281340f56efef646b792660d559c1b1b3558975",
+      "web": "cute-sheet-1.webp",
+      "webBytes": 269754,
+      "webSha256": "b443affa9a2266985627775bef66e2b2ffe2fd54053f6cda5c452edf28d1dce9",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "cute-sheet-2.png",
+      "sourceBytes": 3535159,
+      "sourceSha256": "044dd7ee89bfcda2627a4d1cc4d21ed2f4a42bde68194c6388356062fce76cc6",
+      "web": "cute-sheet-2.webp",
+      "webBytes": 321576,
+      "webSha256": "161fdd7976ff74c15d394894d4ad0a3e8e47a3fe2c2cff78fc01beb6397aebe5",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "cute-sheet-3.png",
+      "sourceBytes": 3112885,
+      "sourceSha256": "96d2c2c3b24aa9bd6a07f989efbc636a650e1c05b1909312548ff42c11e6a939",
+      "web": "cute-sheet-3.webp",
+      "webBytes": 248518,
+      "webSha256": "d14d476df52c70f38567a83f29dcbd72a32450aa85f42b45f94df8d3439f9b4c",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "deck-christmas-atlas.png",
+      "sourceBytes": 3731174,
+      "sourceSha256": "1cefc386a0079a5b56aa20eb0556868133895ada06c274429cab66139b127472",
+      "web": "deck-christmas-atlas.webp",
+      "webBytes": 389172,
+      "webSha256": "0111cb26911b00edd7fb17c76e61f803f5165d314705d58d12f5cf3469152cd6",
+      "dimensions": "1536x1024"
+    },
+    {
+      "source": "deck-cute-atlas.png",
+      "sourceBytes": 3710324,
+      "sourceSha256": "2f8bb6a7570c0feea9f94a625c30848c46869a0589eb452ebc3466fab275d40b",
+      "web": "deck-cute-atlas.webp",
+      "webBytes": 379748,
+      "webSha256": "fa384fefef6acbbf85032f3c7099c30e88211a0962e4f19b17e19e3a0fd9cc33",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "deck-fairytale-atlas.png",
+      "sourceBytes": 3981683,
+      "sourceSha256": "1331aff76ac2a7f6ce6ce2026d73528fb326ce54928281ddeb1b4a5fd1caa653",
+      "web": "deck-fairytale-atlas.webp",
+      "webBytes": 415600,
+      "webSha256": "ad51483aab98483d13ce42ad17373a52750ea11af03900936f533351dab4a028",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "deck-realistic-atlas.png",
+      "sourceBytes": 3143910,
+      "sourceSha256": "ab4ce5ff9b786861109e49a10861225e00eaadb8ef35e62604e5a2f51b27bb8e",
+      "web": "deck-realistic-atlas.webp",
+      "webBytes": 261136,
+      "webSha256": "d1f2df9a4d82c2540144a645f0f88d2a1a4afaeb86a37d7b94e6d6439f6440c5",
+      "dimensions": "1536x1024"
+    },
+    {
+      "source": "fairytale-sheet-0.png",
+      "sourceBytes": 3894072,
+      "sourceSha256": "c4ec034e4e21583506dc0c7111a3408fc4d66b9b26ec673edfb56d2d9595b790",
+      "web": "fairytale-sheet-0.webp",
+      "webBytes": 405676,
+      "webSha256": "d2f4011992ad1bc1cf567d215ed1ed3dc437f26f8c2994c6fbbdd1bb50d633d0",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "fairytale-sheet-1.png",
+      "sourceBytes": 3890068,
+      "sourceSha256": "601ac3de8ab1598da08c23cb85b21066542ca4db73262ba26d4ff8196367d841",
+      "web": "fairytale-sheet-1.webp",
+      "webBytes": 403726,
+      "webSha256": "534d863d796a6fb40c568db963c153dcf407787aeeb07a5027025885ed503609",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "fairytale-sheet-2.png",
+      "sourceBytes": 3955593,
+      "sourceSha256": "88ad05fcd095f1d41845c09530e549c08096fb10d2d7b198b62bf728cd44313a",
+      "web": "fairytale-sheet-2.webp",
+      "webBytes": 412050,
+      "webSha256": "abf4ed0627b614ccb9c149fa9922eafa7cfa889d69151d69a5c960fb9caa7aee",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "fairytale-sheet-3.png",
+      "sourceBytes": 3694063,
+      "sourceSha256": "ad851f80e7d766d1c9391fe5f779f541af662ad9051b3d2f8120da75f19acc2e",
+      "web": "fairytale-sheet-3.webp",
+      "webBytes": 350672,
+      "webSha256": "b724fecda97675d2c39edef4939399ec19bb286710ae391b801b17dfa167c655",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "realistic-sheet-0.png",
+      "sourceBytes": 3421611,
+      "sourceSha256": "565db232699f656a5f5197d41aff0820e8643a5d1b26288761324e24073f0e11",
+      "web": "realistic-sheet-0.webp",
+      "webBytes": 304142,
+      "webSha256": "f21ab7e6a9ba25d5851ff7251b9e7810f7d72dd152ff53ed9108bceaa9c1dba2",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "realistic-sheet-1.png",
+      "sourceBytes": 3310476,
+      "sourceSha256": "dacf8e7cf73fe2211dc22d04a1b9f75096a4e006a4c1aaa45d1a24f12f2603bc",
+      "web": "realistic-sheet-1.webp",
+      "webBytes": 288804,
+      "webSha256": "3a2e89ceff7fb65afda8d4a2acaf96aecdb33f42650a185b5d1df39c52286c98",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "realistic-sheet-2.png",
+      "sourceBytes": 3328637,
+      "sourceSha256": "e668b114e47ae7bcb9b391648acf859372c54bc779f3a7ef6f6207c109755c14",
+      "web": "realistic-sheet-2.webp",
+      "webBytes": 308442,
+      "webSha256": "645dd34522af6dacdc53bd071fce2fbc067d5da78a69c7772d58f2b2c5010bd2",
+      "dimensions": "1254x1254"
+    },
+    {
+      "source": "realistic-sheet-3.png",
+      "sourceBytes": 3292557,
+      "sourceSha256": "867f34008d85930e230128f0ce329363389a76577d66523b2472ac3911e423d0",
+      "web": "realistic-sheet-3.webp",
+      "webBytes": 292666,
+      "webSha256": "d8c3ef4519e123dfbeec6b53bbe6c83109b916a9c1a423d0e00075bc152ea9b0",
+      "dimensions": "1254x1254"
+    }
+  ],
+  "sourceAvailability": {
+    "inPublicRepository": false,
+    "requiredForBuild": false,
+    "handoffArchive": "Marevys-RC23-Ready-to-Upload.zip",
+    "archiveDirectory": "marevys/assets/decks/",
+    "sourceCount": 20,
+    "note": "Original PNG filenames, byte sizes and SHA-256 values below describe archived source images; production files are the WebP entries."
+  }
+}

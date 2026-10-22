@@ -1,0 +1,249 @@
+/* One warm paper surface for every reading, including saved and legacy views. */
+body.experience-v21{--studio-paper:#f4efe4;--studio-ink:#343b34;--studio-gold:#987b4c}
+#readingStudio,#readingStudio.reading-light{background:#f4efe4;color:#343b34;color-scheme:light}
+#readingStudio .studio-content{background:transparent;color:#343b34}
+#readingStudio .studio-nav.readnav{background:#f4efe4f5;border-color:#d8cfbd;box-shadow:none}
+#readingStudio .studio-brand,#readingStudio .studio-nav .close{color:#304637}
+#readingStudio .studio-panel :is(h1,h2,h3){color:#343b34}
+#readingStudio .studio-panel h1{font-size:clamp(34px,4.4vw,53px);letter-spacing:-.035em}
+#readingStudio .studio-panel :is(p,li){overflow-wrap:anywhere}
+#readingStudio .studio-intro,#readingStudio .studio-question{color:#686a5e}
+#readingStudio .studio-eyebrow,#readingStudio .card-position{color:#927c58}
+#readingStudio .studio-progress>span{color:#918d7d}
+#readingStudio .studio-progress b{border-color:#c9bfac}
+#readingStudio .studio-progress .current{color:#294638}
+#readingStudio .studio-progress .current b{background:#294638;border-color:#294638;color:#fffaf0}
+#readingStudio .studio-progress .complete b{border-color:#ac9773;color:#847149}
+@media(max-width:760px){
+  #readingStudio .studio-progress{margin-left:auto;margin-right:86px;gap:0}
+  #readingStudio .studio-progress>span{display:none}
+  #readingStudio .studio-progress>span.current{display:flex;gap:6px;white-space:nowrap}
+  #readingStudio .studio-progress>span.current:after{content:"/ 5";font-size:11px;color:#7c7d6d}
+}
+#readingStudio .studio-panel form>label,#readingStudio .studio-save>label,#readingStudio .reading-followup label{color:#555e50}
+#readingStudio .studio-panel textarea,#readingStudio .studio-panel select{border:1px solid #d2c8b4;background:#fffcf6;color:#3c4439;border-radius:10px;color-scheme:light}
+#readingStudio .studio-panel textarea::placeholder{color:#929182;opacity:1}
+#readingStudio .studio-panel :is(textarea,select):focus{border-color:#6c8874;box-shadow:0 0 0 3px #446c4d15}
+#readingStudio .studio-primary,#readingStudio .studio-secondary{border-radius:7px}
+#readingStudio .studio-primary{background:#294e3b;border-color:#294e3b;color:#fffaf0;box-shadow:0 3px 8px #294e3b12}
+#readingStudio .studio-primary:hover:not(:disabled){background:#1d402f;border-color:#1d402f}
+#readingStudio .studio-secondary{background:#f9f6ed;color:#31553e;border-color:#b5c1ae}
+#readingStudio .studio-secondary:hover:not(:disabled){background:#e7ecdf}
+#readingStudio .studio-link{color:#48634a;border-color:#9cae8e}
+#readingStudio button:focus-visible,#readingStudio summary:focus-visible{outline:2px solid #6a805e;outline-offset:4px}
+#readingStudio .spread-choices legend,#readingStudio .spread-choice strong{color:#3c493a}
+#readingStudio .spread-choice{background:#faf7f0;border-color:#d6cebc;border-radius:9px}
+#readingStudio .spread-choice:has(input:checked){border-color:#849472;background:#e9ebdf}
+#readingStudio .spread-choice span,#readingStudio .studio-small,#readingStudio .studio-check small{color:#797b6c}
+#readingStudio .studio-check input,#readingStudio .spread-choice input{accent-color:#31553e}
+#readingStudio .studio-consent{border-color:#d6cebc}
+#readingStudio .studio-error{background:#f6e9de;color:#7d493e;border-color:#d7bba3}
+#readingStudio .studio-loading{color:#6e765f}
+#readingStudio .studio-question-starters{margin-top:18px}
+#readingStudio .studio-question-starters>p{font-size:12px;color:#898774;margin:0 0 10px}
+#readingStudio .studio-prompt-chips{display:flex;flex-wrap:wrap;gap:8px}
+#readingStudio .studio-prompt-chips>button{padding:10px 13px;min-height:40px;border:1px solid #d5cbb5;border-radius:30px;background:#f9f6ed;color:#687058;text-align:left;font-size:12px;line-height:1.5}
+#readingStudio .studio-prompt-chips>button:hover:not(:disabled){background:#e8ecdf;border-color:#a7b594;color:#36533b}
+#readingStudio .studio-deck-choice{display:flex;gap:17px;align-items:center;border:1px solid #d9cfbc;background:#faf7ef;border-radius:10px;padding:15px 18px;margin:27px 0 12px}
+#readingStudio .studio-deck-preview{flex:0 0 45px;width:45px;aspect-ratio:2/3;border-radius:4px;overflow:hidden;box-shadow:0 3px 8px #433e2526}
+#readingStudio .studio-deck-preview img{display:block;object-fit:cover;width:100%;height:100%}
+#readingStudio .studio-deck-choice small,#readingStudio .studio-deck-choice strong{display:block}
+#readingStudio .studio-deck-choice small{font-size:11px;color:#8b826d}
+#readingStudio .studio-deck-choice strong{font:20px/1.5 Georgia,'Noto Serif SC',serif;color:#45533d}
+#readingStudio .studio-deck-choice button{font-size:12px;min-height:28px;padding:2px 0}
+#readingStudio .draw-atelier{padding-top:43px}
+#readingStudio .draw-atelier .studio-intro{max-width:560px;margin-bottom:18px}
+#readingStudio .deck-halo{border-color:#b7a78140;box-shadow:0 0 70px #bba37015,inset 0 0 70px #bba37008}
+#readingStudio .deck-halo:after{border-color:#b7a78124}
+#readingStudio .deck-orbit button.deck-card{background:#e5dac2;border-color:#c4ad77;box-shadow:0 12px 25px #4f47252b}
+#readingStudio .deck-orbit button.deck-card.at-center{border-color:#a28d61;box-shadow:0 17px 32px #4f47253b}
+#readingStudio .deck-orbit .deck-card img,#readingStudio .draw-slot-card img{filter:none}
+#readingStudio .deck-card.chosen img{opacity:1}
+#readingStudio button.deck-arrow{color:#476043;border-color:#b6b89c;background:#f8f5eb}
+#readingStudio button.deck-arrow:hover{background:#e7ecdd}
+#readingStudio .deck-position,#readingStudio .deck-instructions,#readingStudio .draw-count{color:#7d806b}
+#readingStudio .deck-position b{color:#4c6545}
+#readingStudio .draw-tray{border-color:#d7cfba}
+#readingStudio .draw-slot-card{border-color:#b7ae92;background:#e8e1d145}
+#readingStudio .draw-slot.is-next .draw-slot-card{border-color:#9baf83;background:#e9eddf}
+#readingStudio .draw-slot-card>b{color:#b3a88d}
+#readingStudio .draw-positions .draw-slot>span{color:#898b75}
+#readingStudio .draw-positions .draw-slot.filled>span{color:#4b5e40}
+#readingStudio .draw-positions .draw-slot>span>b{color:#a08b60}
+#readingStudio .draw-slot-card button{background:#faf7ef;color:#4c6344;border-color:#b5bd9d;box-shadow:0 2px 4px #655d3615}
+#readingStudio .revealed-card small{color:#868878}
+#readingStudio .card-turn{background:transparent;box-shadow:0 7px 16px #5b503424}
+#readingStudio .card-turn:disabled{opacity:1}
+#readingStudio .card-turn img{opacity:1;filter:none}
+#readingStudio .reading-origin{border-color:#cfc6ae;background:#faf7ef;color:#7b805f;border-radius:20px;padding:4px 10px;font-size:10px;letter-spacing:.05em}
+#readingStudio .studio-result{max-width:930px;padding-top:43px}
+#readingStudio .studio-result>h1{margin-bottom:12px}
+#readingStudio .conversation-card-strip{padding:21px 0 17px;border-bottom:1px solid #d9d0bd;margin-bottom:26px}
+#readingStudio .conversation-card-strip>.studio-eyebrow{font-size:10px;margin-bottom:13px}
+#readingStudio .conversation-card-strip .result-card-ribbon{gap:15px;justify-content:flex-start;flex-wrap:nowrap;overflow:auto;margin:0;padding:3px 1px 8px}
+#readingStudio .conversation-card-strip .revealed-card{flex:0 0 88px;max-width:88px;min-width:0}
+#readingStudio .conversation-card-strip .card-position{font-size:10px;line-height:1.45;margin-bottom:7px;min-height:30px}
+#readingStudio .conversation-card-strip .card-turn{width:55px;margin:auto;box-shadow:0 4px 9px #5b503426}
+#readingStudio .conversation-card-strip .revealed-card h3{font-size:12px;line-height:1.45;margin:8px 0 2px}
+#readingStudio .conversation-card-strip .revealed-card small{font-size:9px}
+#readingStudio .reading-chat{display:flex;flex-direction:column;gap:23px;margin-top:20px}
+#readingStudio .chat-user,#readingStudio .chat-assistant{box-sizing:border-box;position:relative;max-width:92%;border-radius:17px;overflow-wrap:anywhere}
+#readingStudio .chat-user{margin-left:auto;background:#e8e1cf;color:#525b47;padding:16px 21px;border-bottom-right-radius:4px}
+#readingStudio .chat-user small{display:block;font-size:10px;color:#8a856b;margin-bottom:6px;letter-spacing:.06em}
+#readingStudio .chat-user .studio-question{margin:0;font:17px/1.7 var(--sans,Arial,sans-serif);color:#48533e;font-style:normal}
+#readingStudio .chat-assistant{padding:23px 27px;background:#fffcf6;border:1px solid #e3d9c5;border-bottom-left-radius:4px;color:#4b5744}
+#readingStudio .initial-answer{padding-left:31px}
+#readingStudio .chat-signature{position:absolute;left:-13px;top:21px;display:grid;place-items:center;background:#f4efe4;border:1px solid #c5b78f;width:25px;height:25px;font:14px Georgia,serif;border-radius:50%;color:#8e7c51}
+#readingStudio .reading-core{padding:0;border:0}
+#readingStudio .reading-core h2{font:400 26px/1.45 Georgia,'Noto Serif SC',serif;margin:0 0 12px;color:#3e4c38}
+#readingStudio .reading-core p{font:16px/1.85 var(--sans,Arial,sans-serif);color:#58604e;margin:0 0 12px}
+#readingStudio .reading-core .answer-label{font-size:10px;letter-spacing:.08em;color:#9a8458;margin-bottom:9px}
+#readingStudio .chat-assistant .reading-section{border:0;padding:17px 0 0;margin:15px 0 0;border-top:1px solid #e9e1d0}
+#readingStudio .chat-assistant .reading-section h2{font-size:18px;margin-bottom:8px}
+#readingStudio .chat-assistant .reading-section :is(p,li){font-size:14px;line-height:1.9;color:#6a705d}
+#readingStudio .reading-conversation{display:flex;flex-direction:column;gap:23px;margin:0}
+#readingStudio .reading-conversation>h2{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:#9a8f71;margin:0;text-align:center}
+#readingStudio .followup-message{display:flex;flex-direction:column;gap:18px;margin:0;padding:0;border:0}
+#readingStudio .followup-message p{font-size:16px;line-height:1.85;margin:0 0 12px}
+#readingStudio .followup-message .conversation-reader p:last-child,#readingStudio .followup-message .conversation-answer>p:last-child{margin-bottom:0}
+#readingStudio .followup-message .conversation-answer small,#readingStudio .conversation-prompt small{color:#9a8458;font-size:10px}
+#readingStudio .followup-message .conversation-prompt{border:1px solid #e3d9c5;border-left:3px solid #c3b58c;padding:16px 23px;background:#fbf8ef}
+#readingStudio .reading-guided{background:#fbf8ef;border:1px solid #d9cdb2;border-radius:13px;max-width:92%;margin:24px 0;padding:23px 27px}
+#readingStudio .reading-guided h2{font-size:20px}
+#readingStudio .reading-guided .guided-question{font-size:16px;color:#59654c}
+#readingStudio .reading-details{border-color:#d9d0bd;padding:17px 0;margin:27px 0}
+#readingStudio .reading-details>summary{color:#72805e;font-size:13px;min-height:30px}
+#readingStudio .reading-details .reading-section h2{font-size:22px}
+#readingStudio .reading-details .position-readings article{border-color:#dfd5c0}
+#readingStudio .reading-details :is(p,li){font-size:14px;color:#69705c}
+#readingStudio .ai-notice{margin:25px 0;background:#faf4e7;border-color:#dacaaa}
+#readingStudio .reading-followup{background:#f9f6ed;border:1px solid #d8cfb9;border-radius:14px;padding:24px 25px;margin:30px 0}
+#readingStudio .reading-followup h2{font-size:23px;margin-bottom:6px}
+#readingStudio .reading-followup .studio-small{margin:0 0 17px;line-height:1.7;font-size:12px}
+#readingStudio .reading-followup label{display:block;font-size:12px;margin:17px 0 7px}
+#readingStudio .reading-followup textarea{min-height:88px;background:#fffcf6}
+#readingStudio .reading-followup .studio-form-actions{justify-content:flex-end;margin-top:14px;gap:17px}
+#readingStudio .reading-followup .clarify-hint{font-size:10px;margin-top:17px;margin-bottom:0}
+#readingStudio .reading-more-options{border-top:1px solid #d8cfb9;border-bottom:1px solid #d8cfb9;padding:17px 0;margin-top:25px}
+#readingStudio .reading-more-options>summary{font-size:13px;color:#7f8066;cursor:pointer}
+#readingStudio .reading-more-options .studio-save{border:0;padding-top:5px}
+#readingStudio .studio-ritual{background:#eee8d8;border-color:#d5c9ae;border-radius:8px}
+#readingStudio .notebook-page,#readingStudio .notebook-empty{background:#faf7ef;border-color:#d8cfb9;color:#4f6047}
+#readingStudio .notebook-page p{color:#797d68}
+#readingStudio .notebook-record .reading-core{padding:20px 0}
+#readingStudio .notebook-record .reading-core p{font-size:17px}
+#readingStudio .notebook-record .result-card-ribbon{justify-content:flex-start}
+#readingStudio .notebook-record .followup-message{margin:21px 0}
+
+/* Birth forms and computed charts use the same light surface as Tarot. */
+#readingStudio .astro-studio{--astro-ink:#384231;--astro-gold:#9a8051;--astro-paper:#f4efe4;background:#f4efe4;border:0;color:#46523d;border-radius:0;padding-top:43px}
+#readingStudio .astro-studio :is(h1,h2,h3),#readingStudio .astro-form legend{color:#3f4d36}
+#readingStudio .astro-studio .astro-eyebrow{color:#9a8051}
+#readingStudio .astro-intro p,#readingStudio .astro-chart-summary p,#readingStudio .astro-reading p,#readingStudio .astro-actions-list,#readingStudio .astro-ai-invite p,#readingStudio .astro-ai-invite .astro-check{color:#6f755f}
+#readingStudio .astro-helper,#readingStudio .astro-status,#readingStudio .astro-save p,#readingStudio .astro-position-row small,#readingStudio .astro-location-selected small,#readingStudio .astro-key-placements dt{color:#858570}
+#readingStudio .astro-field>label,#readingStudio .astro-field>span{color:#5c654d}
+#readingStudio .astro-studio input:not([type=checkbox]):not([type=radio]),#readingStudio .astro-studio select,#readingStudio .astro-studio textarea{background:#fffcf6;color:#46523d;border-color:#d3c8b2;color-scheme:light;border-radius:8px}
+#readingStudio .astro-studio input::placeholder,#readingStudio .astro-studio textarea::placeholder{color:#96927d}
+#readingStudio .astro-studio input:disabled{background:#e8e3d6;color:#8f917f;opacity:.7}
+#readingStudio .astro-studio :is(input,select,textarea):focus{border-color:#82946e;box-shadow:0 0 0 3px #446c4d12}
+#readingStudio .astro-studio input[type=checkbox],#readingStudio .astro-studio input[type=radio]{accent-color:#31553e}
+#readingStudio .astro-button{background:#31553e;color:#fffaf0;border-color:#31553e;border-radius:7px}
+#readingStudio .astro-button:hover:not(:disabled){background:#24442e}
+#readingStudio .astro-button.astro-secondary{background:#faf7ef;color:#4b6440;border-color:#b3bf9f}
+#readingStudio .astro-button.astro-secondary:hover:not(:disabled){background:#e6ebdc}
+#readingStudio .astro-link{color:#657b50}
+#readingStudio .astro-topic{border-color:#d0c6b1;background:#faf7ef}
+#readingStudio .astro-topic:has(input:checked){background:#e7ebdd;border-color:#8fa378}
+#readingStudio .astro-time-note{background:#f3ecd9;border-color:#c5af7a;color:#867148}
+#readingStudio .astro-error{background:#f5e7dc;color:#915c46;border-color:#d7b99b}
+#readingStudio .astro-location-results{background:#fffcf6;border-color:#cfc5ad;box-shadow:0 8px 18px #655d3620}
+#readingStudio .astro-location-results button{color:#4e5e40;border-color:#e4dcc9}
+#readingStudio .astro-location-results button:hover,#readingStudio .astro-location-results button:focus-visible{background:#e9eddc}
+#readingStudio .astro-location-results button span{color:#899077}
+#readingStudio .astro-location-selected{background:#e9eddf;border-color:#b3c29d}
+#readingStudio .astro-person{border-color:#d6cdb8!important;background:#faf7ef;border-radius:11px}
+#readingStudio .astro-mode-switch{background:#e9e3d5;border-color:#d5cbb6}
+#readingStudio .astro-mode-switch button{color:#85856c}
+#readingStudio .astro-mode-switch button[aria-pressed=true]{background:#fffcf6;color:#4b6240;box-shadow:0 2px 5px #655d3612}
+#readingStudio .astro-mode-switch button:hover{color:#4d6641}
+#readingStudio .astro-positions,#readingStudio .astro-position-row,#readingStudio .astro-key-placements div,#readingStudio .astro-reading section,#readingStudio .astro-save{border-color:#d7cdb7}
+#readingStudio .astro-positions summary{color:#7e856a}
+#readingStudio .astro-wheel .astro-sign-symbol{fill:#967f50}
+#readingStudio .astro-wheel .astro-planet-symbol{fill:#526540}
+#readingStudio .astro-wheel .astro-house-label{fill:#8e957b}
+#readingStudio .astro-wheel .astro-wheel-angle{fill:#758953}
+#readingStudio .astro-wheel>circle{stroke:#b8b799}
+#readingStudio .astro-wheel>circle:first-child{fill:#faf6eb}
+#readingStudio .astro-wheel circle[fill="#182b35"]{fill:#f4efe4}
+#readingStudio .astro-reading .astro-core{color:#586349}
+#readingStudio .astro-reading .astro-reflection{background:#ede8d8;border-color:#c0b188;color:#6e7757}
+#readingStudio .astro-ai-invite{background:#faf7ef;border-color:#d4c8ad;border-radius:11px}
+#readingStudio .astro-disclaimer{color:#96917b}
+#readingStudio .astro-question-quote{color:#5b6948!important}
+#readingStudio .astro-question-quote small{color:#9a8051}
+
+/* Astrology conversations keep the same alternating, editable chat rhythm. */
+#readingStudio .astro-chat{max-width:850px;margin:30px auto}
+#readingStudio .astro-chat-thread{display:flex;flex-direction:column;gap:20px}
+#readingStudio .astro-chat-message{max-width:92%;border-radius:16px;padding:20px 25px;overflow-wrap:anywhere}
+#readingStudio .astro-chat-message.is-user{margin-left:auto;background:#e8e1cf;border-bottom-right-radius:4px;color:#526044}
+#readingStudio .astro-chat-message.is-reader{margin-right:auto;background:#fffcf6;border:1px solid #e3d9c5;border-bottom-left-radius:4px;color:#58634c}
+#readingStudio .astro-chat-label{display:block;font-size:10px;letter-spacing:.07em;color:#96825a;margin-bottom:8px}
+#readingStudio .astro-chat-body p{font:16px/1.85 var(--sans,Arial,sans-serif);color:#626c53;margin:0 0 12px}
+#readingStudio .astro-chat-body p:last-child{margin-bottom:0}
+#readingStudio .astro-chat-body .astro-core{font-size:17px}
+#readingStudio .astro-chat-details{border-top:1px solid #d9d0bd;border-bottom:1px solid #d9d0bd;padding:16px 0;margin:24px 0}
+#readingStudio .astro-chat-details>summary{font-size:13px;color:#78835f;cursor:pointer}
+#readingStudio .astro-chat-suggestions{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0}
+#readingStudio .astro-chat-suggestions button{border:1px solid #d5cbb5;background:#f9f6ed;border-radius:25px;color:#6e7759;padding:9px 13px;font-size:12px;line-height:1.5;cursor:pointer}
+#readingStudio .astro-chat-suggestions button:hover{background:#e8ecdf;border-color:#a7b594;color:#36533b}
+#readingStudio .astro-chat-compose,#readingStudio .astro-chat-guided{background:#faf7ef;border:1px solid #d8cfb9;border-radius:13px;padding:23px;margin:24px 0}
+#readingStudio .astro-chat-compose label,#readingStudio .astro-chat-guided label{display:block;font-size:12px;color:#6f785a;margin-bottom:8px}
+#readingStudio .astro-chat-compose textarea,#readingStudio .astro-chat-guided textarea{min-height:88px;background:#fffcf6}
+#readingStudio .astro-chat-compose button,#readingStudio .astro-chat-guided button{margin-top:12px}
+
+/* Earlier saved rune and I Ching screens remain readable on the same paper. */
+body.experience-v21 :is(#reading,#oracleReading){--oracle-bg:#f4efe4;--oracle-ink:#454b3c;--oracle-line:#d1c7b0;--oracle-accent:#63754b;--oracle-accent-soft:#9d865a;background:#f4efe4!important;color:#454b3c;color-scheme:light}
+body.experience-v21 :is(#reading,#oracleReading) :is(.stage,.oracle-stage,.reading-dossier,.editorial-reading,.oracle-interpretation-panel){background:#f4efe4!important;color:#454b3c!important}
+body.experience-v21 :is(#reading,#oracleReading) :is(.readnav,.oracle-readnav){background:#f4efe4f5!important;border-color:#d2c8b3!important;color:#49543e}
+body.experience-v21 :is(#reading,#oracleReading) :is(h1,h2,h3,h4,p,li,blockquote){color:#545e47!important}
+body.experience-v21 :is(#reading,#oracleReading) :is(small,label,.eyebrow,.journey-step){color:#8e8368!important}
+body.experience-v21 :is(#reading,#oracleReading) :is(textarea,input,select){background:#fffcf6!important;color:#4c5b40!important;border-color:#cfc6ae!important;color-scheme:light}
+body.experience-v21 :is(#reading,#oracleReading) :is(.primary,button.primary){background:#31553e!important;border-color:#31553e!important;color:#fffaf0!important}
+body.experience-v21 :is(#reading,#oracleReading) :is(.secondary,.close,.brand-identity,.logo,.text-btn){color:#58714a!important}
+body.experience-v21 :is(#reading,#oracleReading) :is(.evidence-card,.action-card,.caution-card,.oracle-thread,.oracle-reflection-prompt,.oracle-onboarding,.reading-onboarding,.reading-thesis){background:#faf7ef!important;border-color:#d1c7b0!important}
+body.experience-v21 :is(#reading,#oracleReading) .oracle-interpretation-panel:after{display:none!important}
+
+@media(max-width:760px){
+  #readingStudio .studio-nav.readnav{height:68px;padding-left:17px;padding-right:12px}
+  #readingStudio .studio-brand{font-size:15px}
+  #readingStudio .studio-progress{gap:7px}
+  #readingStudio .studio-progress small{display:none}
+  #readingStudio .studio-panel{padding:34px 20px 65px}
+  #readingStudio .studio-panel h1{font-size:34px;line-height:1.25}
+  #readingStudio .studio-question-starters .studio-prompt-chips>button{width:100%;border-radius:8px}
+  #readingStudio .draw-atelier{padding-left:15px;padding-right:15px}
+  #readingStudio .studio-result{padding:30px 19px 60px}
+  #readingStudio .conversation-card-strip .revealed-card{flex-basis:75px;max-width:75px}
+  #readingStudio .conversation-card-strip .result-card-ribbon{gap:10px}
+  #readingStudio .conversation-card-strip .card-position{min-height:29px;font-size:9px}
+  #readingStudio .chat-user,#readingStudio .chat-assistant,#readingStudio .reading-guided,#readingStudio .astro-chat-message{max-width:96%}
+  #readingStudio .chat-assistant,#readingStudio .reading-guided{padding:20px}
+  #readingStudio .chat-user{padding:14px 17px}
+  #readingStudio .chat-user .studio-question{font-size:15px}
+  #readingStudio .reading-core h2{font-size:23px}
+  #readingStudio .reading-core p,#readingStudio .followup-message p{font-size:15px}
+  #readingStudio .chat-signature{left:-10px;width:22px;height:22px;font-size:12px}
+  #readingStudio .reading-followup{padding:21px 18px}
+  #readingStudio .reading-followup .studio-form-actions{align-items:stretch;justify-content:flex-start}
+  #readingStudio .reading-followup .studio-primary{width:100%}
+  #readingStudio .reading-followup .studio-link{font-size:11px}
+  #readingStudio .reading-followup .studio-prompt-chips{gap:7px}
+  #readingStudio .reading-followup .studio-prompt-chips>button{padding:8px 11px;font-size:11px;min-height:36px}
+  #readingStudio .astro-studio{padding:31px 18px 60px}
+  #readingStudio .astro-person{padding:17px!important}
+  #readingStudio .astro-chat-message{padding:18px}
+  #readingStudio .astro-chat-body p{font-size:15px}
+  #readingStudio .astro-chat-compose,#readingStudio .astro-chat-guided{padding:19px}
+}
+@media(prefers-reduced-motion:reduce){#readingStudio *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}

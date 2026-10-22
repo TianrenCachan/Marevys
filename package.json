@@ -1,17 +1,18 @@
 {
   "name": "marevys-paris",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "private": true,
   "description": "MAR\u00c9VYS original tarot, natal and relationship astrology",
   "engines": {
     "node": "22.x"
   },
   "scripts": {
+    "pretest": "node build.cjs",
     "build": "npm run build:web",
     "build:web": "node server/generate-canonical.cjs && node scripts/build-web.cjs",
     "build:offline": "node build.cjs",
     "dev": "node --env-file-if-exists=.env.local scripts/serve-web.cjs",
-    "test": "node --test tests/core.test.cjs tests/experience.test.cjs tests/oracle.test.cjs tests/server.test.cjs tests/release-assets.test.cjs tests/tarot-v2.test.cjs tests/astrology.test.cjs tests/studio.test.cjs tests/synastry.test.cjs tests/locations.test.cjs && node scripts/test-web-build.cjs",
+    "test": "node --test tests/*.test.cjs && node scripts/test-web-build.cjs",
     "check:config": "node --env-file-if-exists=.env.local scripts/check-config.cjs"
   },
   "dependencies": {

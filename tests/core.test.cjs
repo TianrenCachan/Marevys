@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.join(__dirname,'..');
 const ctx={window:{}};vm.createContext(ctx);
-const sourceFiles=['data.js','experience-data.js','oracle-data.js','i18n.js','i18n-runes.js','i18n-house.js','i18n-flow.js','i18n-experience.js','i18n-oracles.js','i18n-rc15.js','i18n-rc16-gate.js','i18n-rc16.js','i18n-rc17.js','i18n-rc18.js','i18n-rc19.js','core.js','oracle.js','app.js','astrology-studio.js','reading-studio.js'];
+const sourceFiles=require('../scripts/build-web.cjs').SCRIPT_SOURCES;
 for(const file of sourceFiles.slice(0,sourceFiles.indexOf('oracle.js')))vm.runInContext(fs.readFileSync(path.join(root,'src',file),'utf8'),ctx,{filename:file});
 const w=ctx.window,C=w.MarevysCore,D=w.MAREVYS_DATA,E=w.MAREVYS_EXPERIENCE,tr=C.makeTranslator(w.MAREVYS_TEXT);
 let count=0;function test(name,fn){fn();count++;console.log('PASS '+name);}
@@ -46,7 +46,7 @@ test('Bundled JavaScript preserves every source byte including double-dollar sel
  const joined=sourceFiles.map(f=>fs.readFileSync(path.join(root,'src',f),'utf8').replace(/<\/script/gi,'<\\/script')).join('\n');
  assert(html.includes(joined),'HTML replacement modified JavaScript source');
 });
-test('Complete HTML contains one embedded copy of each RC22 asset and the Runic font',()=>{assert.equal((html.match(/data:image\/webp;base64,/g)||[]).length,160);assert.equal((html.match(/data:image\/png;base64,/g)||[]).length,1);assert.equal((html.match(/data:font\/woff2;base64,/g)||[]).length,1);});
+test('Complete HTML contains separate canonical and optional deck registries plus one Runic font',()=>{const main=JSON.parse(html.match(/window\.MAREVYS_ASSETS = (\{[^\n]+\});/)[1]);const decks=JSON.parse(html.match(/window\.MAREVYS_DECK_ASSETS = (\{[^\n]+\});/)[1]);assert.equal(Object.keys(main).length,161);assert.equal(Object.keys(decks).filter(k=>k.startsWith('tarotClassic')).length,78);for(const data of [...Object.values(main),...Object.values(decks)])assert.match(data,/^data:image\/(webp|png);base64,/);assert.equal((html.match(/data:font\/woff2;base64,/g)||[]).length,1);});
 const embeddedAssets=JSON.parse(html.match(/window\.MAREVYS_ASSETS = (\{[^\n]+\});/)[1]);
 test('RC19 style and source layers are present in the delivered bundle',()=>{
  assert.equal(Object.keys(embeddedAssets).length,161);assert(html.includes('/* RC19 — tactile reading surfaces, a clearer commerce reveal and one-action flow. */'));assert(html.includes("font-family:'Marevys Runic'"));
@@ -54,9 +54,9 @@ test('RC19 style and source layers are present in the delivered bundle',()=>{
  assert(html.includes(fs.readFileSync(path.join(root,'src/rc19.css'),'utf8')));
  assert(html.includes(fs.readFileSync(path.join(root,'src/i18n-rc19.js'),'utf8')));
 });
-test('RC22 build targets a matching complete embedded output',()=>{
- const build=fs.readFileSync(path.join(root,'build.cjs'),'utf8'),output=path.join(root,'..','MAREVYS_PARIS_RC22_Complete_Embedded.html');
- assert(build.includes("version:'RC22'"));assert(build.includes("'../MAREVYS_PARIS_RC22_Complete_Embedded.html'"));
+test('RC23 build targets a matching complete embedded output',()=>{
+ const build=fs.readFileSync(path.join(root,'build.cjs'),'utf8'),output=path.join(root,'..','MAREVYS_PARIS_RC23_Complete_Embedded.html');
+ assert(build.includes("version:'RC23'"));assert(build.includes("'../MAREVYS_PARIS_RC23_Complete_Embedded.html'"));
  assert(fs.existsSync(output));assert(fs.readFileSync(output).equals(fs.readFileSync(path.join(root,'index.html'))));
 });
 test('All embedded image bytes match the delivered final assets',()=>{

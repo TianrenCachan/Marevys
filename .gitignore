@@ -6,6 +6,7 @@ dist/
 *.zip
 index.html
 source-images/
+/assets/decks/*.png
 alternatives/
 brand/
 tmp/

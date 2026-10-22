@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const vm = require('node:vm');
+const { deckAssetFiles } = require('./deck-assets.cjs');
 
 const ROOT = path.resolve(__dirname, '..');
 // Preserve the dependency and cascade order of the approved offline build.
@@ -13,12 +14,12 @@ const SCRIPT_SOURCES = [
   'i18n-runes.js', 'i18n-house.js', 'i18n-flow.js', 'i18n-experience.js',
   'i18n-oracles.js', 'i18n-rc15.js', 'i18n-rc16-gate.js', 'i18n-rc16.js',
   'i18n-rc17.js', 'i18n-rc18.js', 'i18n-rc19.js', 'core.js', 'oracle.js', 'app.js',
-  'astrology-studio.js', 'reading-studio.js'
+  'deck-gallery.js', 'astrology-studio.js', 'reading-studio.js', 'discovery-studio.js'
 ];
 const STYLE_SOURCES = [
   'base.css', 'refinement.css', 'experience.css', 'oracle.css', 'rc15.css',
   'rc16-gate.css', 'rc16.css', 'rc17.css', 'rc18.css', 'rc19.css',
-  'astrology-studio.css', 'reading-studio.css'
+  'astrology-studio.css', 'reading-studio.css', 'reading-light.css', 'discovery-studio.css'
 ];
 
 function readPublicTarotCards() {
@@ -82,8 +83,15 @@ function buildWeb({ outputDir = path.join(ROOT, 'dist') } = {}) {
     }
     if (Object.keys(assetMap).length !== 161) throw new Error('Expected 105 preserved images plus 56 original minor tarot faces');
 
+    const deckAssetMap = {};
+    for (const [key, relative] of Object.entries(deckAssetFiles())) {
+      if (!/^assets\/(?:decks\/)?[A-Za-z0-9_-]+\.(png|webp)$/.test(relative)) throw new Error('Invalid digital deck asset');
+      deckAssetMap[key] = writeAsset(path.basename(relative), fs.readFileSync(path.join(ROOT, relative)));
+    }
+
     const artCreditsUrl=writeAsset('MAREVYS_ARTWORK.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','MAREVYS_ARTWORK.md')));
     const artProvenanceUrl=writeAsset('MAREVYS_ARTWORK_PROVENANCE.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','MAREVYS_ARTWORK_PROVENANCE.json')));
+    const heritageCreditsUrl=writeAsset('RWS_1909_ATTRIBUTION.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','RWS_1909_ATTRIBUTION.md')));
     const astronomyLicenseUrl=writeAsset('Astronomy_Engine_MIT.txt',fs.readFileSync(path.join(ROOT,'THIRD_PARTY_LICENSES','Astronomy_Engine_MIT.txt')));
 
     const fontUrl = writeAsset('noto-sans-runic-runic-400-normal.woff2',
@@ -113,7 +121,7 @@ function buildWeb({ outputDir = path.join(ROOT, 'dist') } = {}) {
       return source;
     }).join('\n');
     new vm.Script(scripts, { filename: 'marevys-online.js' });
-    const bootstrap = `window.MAREVYS_ASSETS = ${serializePublicJson(assetMap)};\nwindow.MAREVYS_TAROT_CARDS = ${serializePublicJson(readPublicTarotCards())};\nwindow.MAREVYS_BUILD_VERSION = 'RC22';\nwindow.MAREVYS_AI_ENDPOINT = '/api/reading';\nwindow.MAREVYS_CREDITS = ${serializePublicJson({artCreditsUrl,artProvenanceUrl,astronomyLicenseUrl})};\n`;
+    const bootstrap = `window.MAREVYS_ASSETS = ${serializePublicJson(assetMap)};\nwindow.MAREVYS_DECK_ASSETS = ${serializePublicJson(deckAssetMap)};\nwindow.MAREVYS_TAROT_CARDS = ${serializePublicJson(readPublicTarotCards())};\nwindow.MAREVYS_BUILD_VERSION = 'RC23';\nwindow.MAREVYS_AI_ENDPOINT = '/api/reading';\nwindow.MAREVYS_CREDITS = ${serializePublicJson({artCreditsUrl,artProvenanceUrl,astronomyLicenseUrl,heritageCreditsUrl})};\n`;
     const bootstrapUrl = writeAsset('marevys-runtime.js', bootstrap);
     const scriptUrl = writeAsset('marevys-app.js', scripts);
     let html = fs.readFileSync(path.join(ROOT, 'src', 'template.html'), 'utf8');
@@ -138,6 +146,7 @@ function buildWeb({ outputDir = path.join(ROOT, 'dist') } = {}) {
     fs.renameSync(stageDir, outputDir);
     return {
       outputDir, canonicalImages: Object.keys(assetMap).length,
+      digitalDeckImages: Object.keys(deckAssetMap).length,
       htmlBytes: Buffer.byteLength(html), cssBytes: Buffer.byteLength(css),
       applicationBytes: Buffer.byteLength(scripts), runtimeBytes: Buffer.byteLength(bootstrap),
       totalFiles: emitted.size + 1,

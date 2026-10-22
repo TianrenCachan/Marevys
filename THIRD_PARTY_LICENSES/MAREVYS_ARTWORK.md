@@ -1,8 +1,10 @@
-# MARÉVYS — original deck artwork
+# MARÉVYS — deck artwork credits
 
 The active RC22 tarot deck uses the existing 22 original MARÉVYS mineral-watercolour illustrations and the original lunar card back, unchanged. The 56 minor illustrations extend that visual direction with new AI-generated scenes.
 
-No book illustrations, scanned Rider–Waite–Smith cards, or third-party site's card artwork are used in the active deck. The historical RWS provenance files remain in source control solely as an archive of the prior release and are not shipped as current artwork credits.
+The default original collection uses no book illustrations, scanned Rider–Waite–Smith cards or competitor artwork. RC23 also restores the optional Heritage collection: the historical 1909 Rider–Waite–Smith illustrations are credited separately in RWS_1909_ATTRIBUTION.md and RWS_1909_PROVENANCE.json. The deck selector provides that separate credit link.
+
+New cute, fairytale, realistic and Christmas collections use original generated Major Arcana illustrations and code-rendered ornamental Minor Arcana. Exact coverage, scene order, prompts and file mapping are documented in assets/decks/README.md in the source repository. The PNG masters are retained unchanged; production WebP files are display encodings of those same complete sheets.
 
 The original books inform editorial interpretation methods only. They are not included in the public web application.
 
